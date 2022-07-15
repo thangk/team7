@@ -7,16 +7,47 @@
 
 
 
-.top-title {
-  @apply text-2xl bg-stone-400
+// body
+body {
+  @apply bg-stone-100
 }
 
+
+// navbar/header
+
+.header-wrapper {
+  @apply w-screen bg-stone-100 drop-shadow-lg z-10
+}
+
+.header {
+  @apply flex justify-between mt-12 w-2/5 mx-auto
+}
+
+.searchbox {
+  @apply h-8 border-0 my-auto bg-stone-200 focus:ring-stone-300 rounded-sm text-stone-600
+}
+
+.navbar {
+  @apply flex justify-center gap-8 py-2 font-bebas-neue my-auto
+}
+
+.links {
+  @apply hover:underline text-stone-400 hover:text-stone-500 tracking-wider text-xl 
+}
+
+.brand-logo {
+  @apply text-4xl py-4 text-stone-600 font-extrabold font-bebas-neue
+}
+
+.logo-image {
+  @apply w-32
+}
 
 
 
 // Products page
 .container {
-  @apply bg-stone-300 flex gap-2 p-8 max-w-full h-screen justify-center
+  @apply bg-stone-100 flex gap-2 p-8 max-w-full h-screen justify-center
 }
 
 img {
@@ -27,10 +58,6 @@ img {
   @apply h-96 w-40 bg-cyan-400 flex
 }
 
-.brand-title {
-  @apply text-8xl py-4 text-stone-500 font-extrabold
-}
 
-.links {
-  @apply hover:underline hover:text-stone-100 tracking-wider text-xl text-stone-300
-}
+
+

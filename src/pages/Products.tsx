@@ -1,22 +1,28 @@
 import React from 'react'
 
+import logo from '../images/icons/logo-icon.png'
+import account from '../images/icons/account-icon.png'
+import logo2 from '../images/icons/logo2-icon.png'
+
 function Products() {
   return (
     <>
       {/* <h1 className='top-title'>Welcome to Team 7's Products page</h1>
       <h3 className='bg-red-400 text-4xl'>A subtitle text</h3> */}
 
-<div className="bg-stone-300 h-full w-full flex flex-col text-center font-bebas-neue drop-shadow-lg z-1">
-        <h1 className="brand-title">The Watchmen</h1>
-        <nav className="flex justify-center gap-8 py-2 bg-stone-500 first-line:gap-6">
-            <a href="/#" className="links">Products</a>
-            <a href="/#" className="links">Account</a>
-            <a href="/#" className="links">Cart</a>
-            <a href="/#" className="links">Menu</a>
-            <a href="/#" className="links">News</a>
-            <a href="/#" className="links">About</a>
-        </nav>
+<div className='header-wrapper'>
+
+    <div className="header">
+            <input className="searchbox" type="text" placeholder='Search' />
+            {/* <h1 className="brand-logo">The Watchmen</h1> */}
+            <img src={logo2} alt='logo2' className='logo-image' />
+            <nav className="navbar">
+                <a href="/#" className="links">Account</a>
+                <a href="/#" className="links">Cart</a>
+                <a href="/#" className="links">Menu</a>
+            </nav>
     </div>
+</div>
 
     
     <div className="container">
