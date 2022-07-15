@@ -1,11 +1,22 @@
 import './styles/App.module.scss';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Products from './pages/Products';
+import ErrorPage from './pages/ErrorPage';
 
 function App() {
   return (
-    <>
-      <h1 className='top-title'>Welcome to Team 7's frontend</h1>
-      <h3 className='bg-red-400 text-4xl'>A subtitle text</h3>
-    </>
+    <Router>
+
+      {/* place to add navbar and header */}
+
+      <Routes>
+        {/* copy the following method to add your page after adding the file in "pages" folder */}
+        <Route path='/' element={<Products />} />
+        <Route path='/' element={<ErrorPage />} />
+      </Routes>
+
+      {/* place to add footer */}
+    </Router>
   );
 }
 
