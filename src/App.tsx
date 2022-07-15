@@ -12,9 +12,9 @@ function App() {
 
       <Routes>
         {/* copy the following method to add your page after adding the file in "pages" folder */}
-        <Route path='/' element={<Home />} />
-        <Route path='/products' element={<Products />} />
-        <Route path='*' element={<ErrorPage />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
 
       {/* place to add footer */}
