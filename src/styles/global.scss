@@ -9,14 +9,14 @@
 
 // body
 body {
-  @apply bg-stone-100
+  @apply bg-slate-50
 }
 
 
 // navbar/header
 
 .header-wrapper {
-  @apply w-screen bg-stone-100 drop-shadow-lg z-10
+  @apply w-screen bg-slate-50 drop-shadow-lg z-10
 }
 
 .header {
@@ -24,7 +24,7 @@ body {
 }
 
 .searchbox {
-  @apply h-8 border-0 my-auto bg-stone-200 focus:ring-stone-300 rounded-sm text-stone-600
+  @apply h-8 border-0 my-auto bg-slate-200 focus:ring-slate-300 rounded-sm text-slate-600
 }
 
 .navbar {
@@ -32,11 +32,11 @@ body {
 }
 
 .links {
-  @apply hover:underline text-stone-400 hover:text-stone-500 tracking-wider text-xl 
+  @apply hover:underline text-slate-400 hover:text-slate-500 tracking-wider text-xl 
 }
 
 .brand-logo {
-  @apply text-4xl py-4 text-stone-600 font-extrabold font-bebas-neue
+  @apply text-4xl py-4 text-slate-600 font-extrabold font-bebas-neue
 }
 
 .logo-image {
@@ -47,7 +47,7 @@ body {
 
 // Products page
 .container {
-  @apply bg-stone-100 flex gap-2 p-8 max-w-full h-screen justify-center
+  @apply bg-slate-50 flex gap-2 p-8 max-w-full h-screen justify-center
 }
 
 img {
