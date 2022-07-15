@@ -1,7 +1,7 @@
 import React from 'react'
 
-import logo from '../images/icons/logo-icon.png'
-import account from '../images/icons/account-icon.png'
+// import logo from '../images/icons/logo-icon.png'
+// import account from '../images/icons/account-icon.png'
 import logo2 from '../images/icons/logo2-icon.png'
 
 function Products() {
