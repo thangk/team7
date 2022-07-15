@@ -1,0 +1,57 @@
+[
+    {
+        "name": "Ombre",
+        "price": "$99,999.00",
+        "brand": "Rolex",
+        "desc": "Golden perfection",
+        "caseColour": "Red Velvet",
+        "bandColour": "Arctic White",
+        "bandType": "Metal",
+        "movementType": "Mechanical",
+        "faceSize": "48mm"
+    },
+    {
+        "name": "Silver tone mesh diamond watch",
+        "price": "$175.00",
+        "brand": "Guess",
+        "desc": "(desc goes here)",
+        "caseColour": "Silver",
+        "bandColour": "Silver",
+        "bandType": "Mesh",
+        "movementType": "Analog",
+        "faceSize": "44mm"
+    },
+    {
+        "name": "Apple Watch Series 3",
+        "price": "$399.00",
+        "brand": "Apple",
+        "desc": "(desc goes here)",
+        "caseColour": "White",
+        "bandColour": "Black",
+        "bandType": "Silicone",
+        "movementType": "Digital",
+        "faceSize": "38mm"
+    },
+    {
+        "name": "Black and Gold tone analog watch",
+        "price": "$145.00",
+        "brand": "Guess",
+        "desc": "(desc goes here)",
+        "caseColour": "Gold",
+        "bandColour": "Black",
+        "bandType": "Silicone",
+        "movementType": "Analog",
+        "faceSize": "44mm"
+    },
+    {
+        "name": "Oversized brecken silver tone watch",
+        "price": "$390.00",
+        "brand": "Michael Kors",
+        "desc": "(desc goes here)",
+        "caseColour": "Black",
+        "bandColour": "Silver",
+        "bandType": "Steel",
+        "movementType": "Quartz",
+        "faceSize": "45mm"
+    }
+]

@@ -40,7 +40,7 @@ body {
 }
 
 .logo-image {
-  @apply w-32
+  @apply w-44
 }
 
 
@@ -58,6 +58,49 @@ img {
   @apply h-96 w-40 bg-cyan-400 flex
 }
 
+.productspage-wrapper {
+  @apply flex flex-col gap-4 w-2/5 mx-auto pt-12
+}
 
+.page-title {
+  @apply text-3xl font-bebas-neue text-slate-400
+}
+
+.products-content-wrapper {
+  @apply w-full h-max flex gap-4
+}
+
+.filter-panel {
+  @apply w-1/4 h-auto bg-slate-400 text-slate-200 flex justify-center items-center
+}
+
+.placeholder-text {
+  @apply text-xl font-bebas-neue
+}
+
+.products-panel {
+  @apply bg-slate-400 w-3/4 p-4
+}
+
+
+.product-cards-wrapper {
+  @apply flex flex-wrap gap-4
+}
+
+.product-card {
+  @apply w-56
+}
+
+.product-card img {
+  @apply object-cover object-center
+}
+
+.product-card-text {
+  @apply py-2
+}
+
+.product-card-text h1 {
+  @apply break-words
+}
 
 
