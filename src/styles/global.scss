@@ -167,7 +167,7 @@ body {
 
 
   .header-wrapper {
-    @apply w-full h-auto theme-bg drop-shadow-lg
+    @apply min-w-max h-auto theme-bg drop-shadow-lg
   }
 
   .header {
@@ -175,7 +175,7 @@ body {
   }
 
   .searchbox {
-    @apply flex h-8 border-0 my-auto bg-slate-200 focus:ring-slate-300 rounded-sm text-slate-600
+    @apply flex h-8 border-0 my-auto bg-slate-200 focus:ring-slate-300 rounded-sm theme-text-darkest
   }
 
   .header {
