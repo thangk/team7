@@ -5,18 +5,56 @@
 @tailwind components;
 @tailwind utilities;
 
+$theme-bg: 'bg-slate-50';
 
+$theme-text: 'text-slate-400';
+$theme-text-darker: 'text-slate-500';
+$theme-text-darkest: 'text-slate-600';
+
+
+/* theme colours START ############################################### */
+
+.theme-font {
+  @apply font-bebas-neue
+}
+
+.theme-bg {
+  @apply bg-slate-50
+}
+
+.theme-border {
+  @apply border-slate-200
+}
+
+.theme-text {
+  @apply text-slate-400
+}
+
+.hover-theme-text-darker {
+  @apply hover:text-slate-500
+}
+
+.theme-text-darker {
+  @apply text-slate-500
+}
+
+.theme-text-darkest {
+  @apply text-slate-600
+}
+
+
+/* theme colours END ############################################### */
 
 // body
 body {
-  @apply bg-slate-50
+  @apply theme-bg
 }
 
 
 // navbar/header
 
 .header-wrapper {
-  @apply w-screen bg-slate-50 drop-shadow-lg z-10
+  @apply w-screen theme-bg drop-shadow-lg z-10
 }
 
 .header {
@@ -32,12 +70,9 @@ body {
 }
 
 .links {
-  @apply hover:underline text-slate-400 hover:text-slate-500 tracking-wider text-xl 
+  @apply hover:underline theme-text hover-theme-text-darker tracking-wider text-xl 
 }
 
-.brand-logo {
-  @apply text-4xl py-4 text-slate-600 font-extrabold font-bebas-neue
-}
 
 .logo-image {
   @apply w-44
@@ -50,20 +85,13 @@ body {
   @apply bg-slate-50 flex gap-2 p-8 max-w-full h-screen justify-center
 }
 
-img {
-  @apply object-cover object-center w-full
-}
-
-.img-container {
-  @apply h-96 w-40 bg-cyan-400 flex
-}
 
 .productspage-wrapper {
   @apply flex flex-col gap-4 w-2/5 mx-auto pt-12
 }
 
 .page-title {
-  @apply text-3xl font-bebas-neue text-slate-400
+  @apply text-3xl font-bebas-neue theme-text
 }
 
 .products-content-wrapper {
@@ -71,24 +99,27 @@ img {
 }
 
 .filter-panel {
-  @apply w-1/4 h-auto bg-slate-400 text-slate-200 flex justify-center items-center
+  @apply w-1/4 h-auto border-2 theme-border theme-text flex justify-center items-center
 }
 
 .placeholder-text {
-  @apply text-xl font-bebas-neue
+  @apply text-xl theme-font theme-text
 }
 
 .products-panel {
-  @apply bg-slate-400 w-3/4 p-4
+  @apply border-2 theme-border w-3/4 p-4 flex
 }
 
-
 .product-cards-wrapper {
-  @apply flex flex-wrap gap-4
+  @apply flex flex-wrap gap-6 
 }
 
 .product-card {
   @apply w-56
+}
+
+.product-card-image {
+  @apply p-2 border-2 theme-border
 }
 
 .product-card img {
@@ -96,11 +127,21 @@ img {
 }
 
 .product-card-text {
-  @apply py-2
+  @apply py-2  theme-text
 }
 
 .product-card-text h1 {
-  @apply break-words
+  @apply break-words 
 }
 
+.pagination-wrapper {
+  @apply w-full h-max flex justify-end gap-4 
+}
 
+.left-side {
+  @apply w-1/4
+}
+
+.product-cards-pagination {
+  @apply w-3/4 flex p-4 border-2 theme-bg
+}

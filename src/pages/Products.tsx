@@ -36,40 +36,47 @@ function Products() {
             <div className='placeholder-text'>filter panel</div>
           </section>
 
+            {/* products listing RIGHT SIDE */}
+            <section className='products-panel'>
 
-          {/* products listing RIGHT SIDE */}
-          <section className='products-panel'>
+              <div className='product-cards-wrapper'>
+              {data.map(item => {
+                  return (
+                  
 
-            <div className='product-cards-wrapper'>
-            {data.map(item => {
-                return (
-                
+                    <div className='product-card'>
 
-                  <div className='product-card'>
-                    <img src={noimage} alt='noimage' />
+                      <div className='product-card-image'>
+                        <img src={noimage} alt='noimage' />
+                      </div>
 
-                    <div className='product-card-text'>
-                      
-                      <div>Brand: {item.brand}</div>
-                      <div>Name: {item.name}</div>
-                      <div>Price: {item.price}</div>
-                      
-                      
+                      <div className='product-card-text'>
+                        
+                        <div>Brand: {item.brand}</div>
+                        <div>Name: {item.name}</div>
+                        <div>Price: {item.price}</div>
+                        
+                        
 
+                      </div>
                     </div>
-                  </div>
-                
-                )
+                  
+                  )
 
-              })}
+                })}
 
-              </div>
+                </div>
 
+            </section>
 
-
-
-          </section>
         </div>
+
+        <section className='pagination-wrapper'>
+          <div className='left-side'></div>
+          <div className='product-cards-pagination'>
+                <div className='placeholder-text'>1 2 3 4 5 6</div>
+          </div>
+        </section>
 
 
       </main>
