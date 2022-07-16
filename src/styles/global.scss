@@ -34,6 +34,10 @@
   @apply hover:text-slate-500
 }
 
+.hover-theme-bg-dark {
+  @apply hover:bg-slate-100
+}
+
 .theme-text-darker {
   @apply text-slate-500
 }
@@ -76,7 +80,7 @@ body {
 
 
 .logo-image {
-  @apply w-44
+  @apply w-44 hover:cursor-pointer
 }
 
 
@@ -108,7 +112,7 @@ body {
 }
 
 .product-card {
-
+  @apply theme-bg hover-theme-bg-dark hover:drop-shadow-lg p-2 hover:cursor-pointer transition ease-in-out duration-500
 }
 
 
@@ -159,6 +163,8 @@ body {
 
 
 @screen sm {
+
+
 
   .header-wrapper {
     @apply w-full h-auto theme-bg drop-shadow-lg
