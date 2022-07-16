@@ -15,7 +15,6 @@ function Products() {
 
           <div className="header">
                   <input className="searchbox" type="text" placeholder='Search' />
-                  {/* <h1 className="brand-logo">The Watchmen</h1> */}
                   <img src={logo2} alt='logo2' className='logo-image' />
                   <nav className="navbar">
                       <a href="/#" className="links">Account</a>
@@ -40,6 +39,7 @@ function Products() {
             <section className='products-panel'>
 
               <div className='product-cards-wrapper'>
+
               {data.map(item => {
                   return (
                   
@@ -52,8 +52,8 @@ function Products() {
 
                       <div className='product-card-text'>
                         
-                        <div>Brand: {item.brand}</div>
                         <div>Name: {item.name}</div>
+                        <div>Brand: {item.brand}</div>
                         <div>Price: {item.price}</div>
                         
                         

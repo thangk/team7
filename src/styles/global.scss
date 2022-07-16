@@ -1,15 +1,15 @@
 /* import fonts here */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-$theme-bg: 'bg-slate-50';
 
-$theme-text: 'text-slate-400';
-$theme-text-darker: 'text-slate-500';
-$theme-text-darkest: 'text-slate-600';
+
+
 
 
 /* theme colours START ############################################### */
@@ -54,15 +54,16 @@ body {
 // navbar/header
 
 .header-wrapper {
-  @apply w-screen theme-bg drop-shadow-lg z-10
+  @apply w-full h-auto theme-bg drop-shadow-lg
 }
 
+
 .header {
-  @apply flex justify-between mt-12 w-2/5 mx-auto
+  @apply flex flex-col w-full gap-2 items-center mt-6 mx-auto
 }
 
 .searchbox {
-  @apply h-8 border-0 my-auto bg-slate-200 focus:ring-slate-300 rounded-sm text-slate-600
+  @apply hidden
 }
 
 .navbar {
@@ -87,7 +88,7 @@ body {
 
 
 .productspage-wrapper {
-  @apply flex flex-col gap-4 w-2/5 mx-auto pt-12
+  @apply flex flex-col gap-4 w-full mx-auto py-12 px-4
 }
 
 .page-title {
@@ -95,28 +96,34 @@ body {
 }
 
 .products-content-wrapper {
-  @apply w-full h-max flex gap-4
+  @apply w-full h-max flex flex-col gap-4
 }
 
 .filter-panel {
-  @apply w-1/4 h-auto border-2 theme-border theme-text flex justify-center items-center
+  @apply w-full h-auto p-8 border-2 theme-border theme-text flex justify-center items-center
 }
+
+.products-panel {
+  @apply w-full flex
+}
+
+.product-card {
+
+}
+
+
+
 
 .placeholder-text {
   @apply text-xl theme-font theme-text
 }
 
-.products-panel {
-  @apply border-2 theme-border w-3/4 p-4 flex
-}
-
 .product-cards-wrapper {
-  @apply flex flex-wrap gap-6 
+  @apply grid grid-cols-2 gap-3
 }
 
-.product-card {
-  @apply w-56
-}
+
+
 
 .product-card-image {
   @apply p-2 border-2 theme-border
@@ -139,9 +146,74 @@ body {
 }
 
 .left-side {
-  @apply w-1/4
+  @apply hidden
 }
 
 .product-cards-pagination {
-  @apply w-3/4 flex p-4 border-2 theme-bg
+  @apply w-full flex p-4 border-2 theme-bg
 }
+
+
+
+/* mobile screens sm START ############################################### */
+
+
+@screen sm {
+
+  .header-wrapper {
+    @apply w-full h-auto theme-bg drop-shadow-lg
+  }
+
+  .header {
+    @apply flex flex-row justify-between mt-12 w-full mx-auto px-4
+  }
+
+  .searchbox {
+    @apply flex h-8 border-0 my-auto bg-slate-200 focus:ring-slate-300 rounded-sm text-slate-600
+  }
+
+  .header {
+    @apply flex justify-between mt-12 w-[1024px] mx-auto
+  }
+
+  .productspage-wrapper {
+    @apply flex flex-col gap-4 w-[1024px] mx-auto py-12
+  }
+
+  .product-cards-wrapper {
+    @apply grid grid-cols-3 gap-4
+  }
+  
+  .products-content-wrapper {
+    @apply w-full h-max flex flex-row gap-4
+  }
+
+  .filter-panel {
+    @apply w-1/4 h-auto p-8 border-2 theme-border theme-text flex justify-center items-center
+  }
+
+  .products-panel {
+    @apply border-2 theme-border p-4 w-3/4  flex
+  }
+
+  
+
+
+
+  .left-side {
+    @apply flex w-1/4
+  }
+
+  .product-cards-pagination {
+    @apply w-3/4 flex p-4 border-2 theme-bg
+  }
+
+
+  .placeholder-text {
+    @apply text-xl theme-font theme-text
+  }
+}
+
+
+
+/* mobile screens sm END ############################################### */
