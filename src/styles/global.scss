@@ -92,7 +92,7 @@ body {
 
 
 .productspage-wrapper {
-  @apply flex flex-col gap-4 w-full mx-auto py-12 px-4
+  @apply flex flex-col gap-4 w-full mx-auto py-12 px-4  transition ease-in-out duration-700
 }
 
 .page-title {
