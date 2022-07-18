@@ -1,225 +1,202 @@
 /* import fonts here */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
-
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-
-
-
-
 /* theme colours START ############################################### */
 
 .theme-font {
-  @apply font-bebas-neue
+	@apply font-bebas-neue;
 }
 
 .theme-bg {
-  @apply bg-slate-50
+	@apply bg-slate-50;
 }
 
 .theme-border {
-  @apply border-slate-200
+	@apply border-slate-200;
 }
 
 .theme-text {
-  @apply text-slate-400
+	@apply text-slate-400;
 }
 
 .hover-theme-text-darker {
-  @apply hover:text-slate-500
+	@apply hover:text-slate-500;
 }
 
 .hover-theme-bg-dark {
-  @apply hover:bg-slate-100
+	@apply hover:bg-slate-100;
 }
 
 .theme-text-darker {
-  @apply text-slate-500
+	@apply text-slate-500;
 }
 
 .theme-text-darkest {
-  @apply text-slate-600
+	@apply text-slate-600;
 }
-
 
 /* theme colours END ############################################### */
 
 // body
 body {
-  @apply theme-bg
+	@apply theme-bg;
 }
-
 
 // navbar/header
 
 .header-wrapper {
-  @apply w-full h-auto theme-bg drop-shadow-lg
+	@apply w-full h-auto theme-bg drop-shadow-lg;
 }
 
-
 .header {
-  @apply flex flex-col w-full gap-2 items-center mt-6 mx-auto
+	@apply flex flex-col w-full gap-2 items-center mt-6 mx-auto;
 }
 
 .searchbox {
-  @apply hidden
+	@apply hidden;
 }
 
 .navbar {
-  @apply flex justify-center gap-8 py-2 font-bebas-neue my-auto
+	@apply flex justify-center gap-8 py-2 font-bebas-neue my-auto;
 }
 
 .links {
-  @apply hover:underline theme-text hover-theme-text-darker tracking-wider text-xl 
+	@apply hover:underline theme-text hover-theme-text-darker tracking-wider text-xl;
 }
-
 
 .logo-image {
-  @apply w-44 hover:cursor-pointer
+	@apply w-44 hover:cursor-pointer;
 }
-
-
 
 // Products page
 .container {
-  @apply bg-slate-50 flex gap-2 p-8 max-w-full h-screen justify-center
+	@apply bg-slate-50 flex gap-2 p-8 max-w-full h-screen justify-center;
 }
 
-
 .productspage-wrapper {
-  @apply flex flex-col gap-4 w-full mx-auto py-12 px-4  transition ease-in-out duration-700
+	@apply flex flex-col gap-4 w-full mx-auto py-12 px-4  transition ease-in-out duration-700;
 }
 
 .page-title {
-  @apply text-3xl font-bebas-neue theme-text
+	@apply text-3xl font-bebas-neue theme-text;
 }
 
 .products-content-wrapper {
-  @apply w-full h-max flex flex-col gap-4
+	@apply w-full h-max flex flex-row gap-4;
+}
+
+.products-content-wrapper[data-ison="true"] {
+	@apply w-full h-max flex flex-col gap-4;
 }
 
 .filter-panel {
-  @apply w-full h-auto p-8 border-2 theme-border theme-text flex justify-center items-center
+	@apply w-full h-auto p-8 border-2 theme-border theme-text flex justify-center items-center;
 }
 
 .products-panel {
-  @apply w-full flex
+	@apply w-full flex;
 }
 
 .product-card {
-  @apply theme-bg hover-theme-bg-dark hover:drop-shadow-lg p-2 hover:cursor-pointer transition ease-in-out duration-500
+	@apply theme-bg hover-theme-bg-dark hover:drop-shadow-lg p-2 hover:cursor-pointer;
 }
 
-
-
-
 .placeholder-text {
-  @apply text-xl theme-font theme-text
+	@apply text-xl theme-font theme-text;
 }
 
 .product-cards-wrapper {
-  @apply grid grid-cols-2 gap-3
+	@apply grid grid-cols-2 gap-3;
 }
 
-
-
-
 .product-card-image {
-  @apply p-2 border-2 theme-border
+	@apply p-2 border-2 theme-border;
 }
 
 .product-card img {
-  @apply object-cover object-center
+	@apply object-cover object-center;
 }
 
 .product-card-text {
-  @apply py-2  theme-text
+	@apply py-2  theme-text;
 }
 
 .product-card-text h1 {
-  @apply break-words 
+	@apply break-words;
 }
 
 .pagination-wrapper {
-  @apply w-full h-max flex justify-end gap-4 
+	@apply w-full h-max flex justify-end gap-4;
 }
 
 .left-side {
-  @apply hidden
+	@apply hidden;
 }
 
 .product-cards-pagination {
-  @apply w-full flex p-4 border-2 theme-bg
+	@apply w-full flex p-4 border-2 theme-bg;
 }
 
-
+.bg-black {
+	@apply bg-blue-500
+}
 
 /* mobile screens sm START ############################################### */
 
-
 @screen sm {
+	.header-wrapper {
+		@apply min-w-max h-auto theme-bg drop-shadow-lg;
+	}
 
+	.header {
+		@apply flex flex-row justify-between mt-12 w-full mx-auto px-4;
+	}
 
+	.searchbox {
+		@apply flex h-8 border-0 my-auto bg-slate-200 focus:ring-slate-300 rounded-sm theme-text-darkest;
+	}
 
-  .header-wrapper {
-    @apply min-w-max h-auto theme-bg drop-shadow-lg
-  }
+	.header {
+		@apply flex justify-between mt-12 w-[1024px] mx-auto;
+	}
 
-  .header {
-    @apply flex flex-row justify-between mt-12 w-full mx-auto px-4
-  }
+	.productspage-wrapper {
+		@apply flex flex-col gap-4 w-[1024px] mx-auto py-12;
+	}
 
-  .searchbox {
-    @apply flex h-8 border-0 my-auto bg-slate-200 focus:ring-slate-300 rounded-sm theme-text-darkest
-  }
+	.product-cards-wrapper {
+		@apply grid grid-cols-3 gap-4;
+	}
 
-  .header {
-    @apply flex justify-between mt-12 w-[1024px] mx-auto
-  }
+	/*
+	.products-content-wrapper {
+		@apply w-full h-max flex flex-row gap-4;
+	}
+	*/
 
-  .productspage-wrapper {
-    @apply flex flex-col gap-4 w-[1024px] mx-auto py-12
-  }
+	.filter-panel {
+		@apply w-1/4 h-auto p-8 border-2 theme-border theme-text flex flex-col justify-center items-center;
+	}
 
-  .product-cards-wrapper {
-    @apply grid grid-cols-3 gap-4
-  }
-  
-  .products-content-wrapper {
-    @apply w-full h-max flex flex-row gap-4
-  }
+	.products-panel {
+		@apply border-2 theme-border p-4 w-3/4  flex;
+	}
 
-  .filter-panel {
-    @apply w-1/4 h-auto p-8 border-2 theme-border theme-text flex justify-center items-center
-  }
+	.left-side {
+		@apply flex w-1/4;
+	}
 
-  .products-panel {
-    @apply border-2 theme-border p-4 w-3/4  flex
-  }
+	.product-cards-pagination {
+		@apply w-3/4 flex p-4 border-2 theme-bg;
+	}
 
-  
-
-
-
-  .left-side {
-    @apply flex w-1/4
-  }
-
-  .product-cards-pagination {
-    @apply w-3/4 flex p-4 border-2 theme-bg
-  }
-
-
-  .placeholder-text {
-    @apply text-xl theme-font theme-text
-  }
+	.placeholder-text {
+		@apply text-xl theme-font theme-text;
+	}
 }
-
-
 
 /* mobile screens sm END ############################################### */
