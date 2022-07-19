@@ -1,16 +1,47 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 // import logo from '../images/icons/logo-icon.png'
 // import account from '../images/icons/account-icon.png'
 import logo2 from '../images/icons/logo2-icon.png'
 import data from '../assets/template.json'
 import noimage from '../images/icons/noimage.jpg'
-
+import axios from 'axios'
+import ReactPaginate from 'react-paginate'
+import { fadeInOut } from '../components/FramerMotions'
+import { nanoid } from 'nanoid'
 
 
 function Products() {
 
+  const [products, setProducts] = useState(data)
+  const [loading, setLoading] = useState(false)
+  const [pageNumber, setPageNumber] = useState(0)
+  const productsPerPage = 6
+
+
+  // useEffect(() => {
+    // const fetchProducts = async () => {
+    //   setLoading(true);
+    //   const res = await axios.get('../assets/template.json')
+    //   setProducts(res.data)
+    //   setLoading(false)
+    // }
+
+    // fetchProducts()
+
+  //   console.log(products)
+  // }, [pageNumber])
+
+  const pagesVisited = pageNumber * productsPerPage;
+  const displayProducts = products.slice(pagesVisited, pagesVisited + productsPerPage);
+  const pageCount = (Math.ceil(products.length / productsPerPage))
+
+
+  // @ts-ignore
+  const changePage = ({ selected }) => {
+    setPageNumber(selected)
+  }
 
   return (
     <>
@@ -36,9 +67,7 @@ function Products() {
 
         <h1 className='page-title'>Products</h1>
 
-        <div 
-        className='products-content-wrapper'
-        >
+        <div className='products-content-wrapper'>
 
           {/* filtering panel LEFT SIDE */}
           <section className='filter-panel' >
@@ -47,15 +76,21 @@ function Products() {
           </section>
 
             {/* products listing RIGHT SIDE */}
-            <section className='products-panel' >
+            <section
+             className='products-panel' >
 
-              <div className='product-cards-wrapper'>
+              <motion.div  
+              initial={{ opacity: 0}}
+              animate={{ opacity: 1}}
+              key={nanoid()}
+              className='product-cards-wrapper'>
 
-              {data.map((item, index) => {
+              {displayProducts.map((item, index) => {
                   return (
                   
 
-                    <motion.div className='product-card' onClick={() => alert('product details page will be made soon')} key={item.price} whileHover={{ y: -10 }}>
+                    <motion.div 
+                    className='product-card' onClick={() => alert('product details page will be made soon')} key={index} whileHover={{ y: -10 }}>
 
                       <div className='product-card-image'>
                         <img src={noimage} alt='noimage' />
@@ -66,7 +101,7 @@ function Products() {
                         <div>Name: {item.name}</div>
                         <div>Brand: {item.brand}</div>
                         <div>Price: {item.price}</div>
-                        
+                        <div>ID: {item.id}</div>
                         
 
                       </div>
@@ -76,8 +111,7 @@ function Products() {
 
                 })}
 
-                </div>
-
+                </motion.div>
             </section>
 
         </div>
@@ -85,7 +119,21 @@ function Products() {
         <section className='pagination-wrapper'>
           <div className='left-side'></div>
           <div className='product-cards-pagination'>
-                <div className='placeholder-text'>1 2 3 4 5 6</div>
+                <ReactPaginate
+                  previousLabel={'Back'}
+                  nextLabel={'Next'}
+                  pageCount={pageCount}
+                  onPageChange={changePage}
+                  containerClassName={'paginationButtonsContainer'}
+                  pageClassName={'paginationButtons'}
+                  previousLinkClassName={'backButton'}
+                  nextLinkClassName={'nextButton'}
+                  disabledLinkClassName={'paginationDisabledButton'}
+                  activeClassName={'paginationActiveButton'}
+                  breakLabel={'|'}
+                  pageRangeDisplayed={1}
+                  marginPagesDisplayed={2}
+                />
           </div>
         </section>
 

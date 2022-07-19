@@ -12,8 +12,16 @@
   @apply bg-slate-50;
 }
 
+.theme-bg-darker {
+  @apply bg-slate-500;
+}
+
 .theme-border {
   @apply border-slate-200;
+}
+
+.theme-text-light {
+  @apply text-slate-50;
 }
 
 .theme-text {
@@ -26,6 +34,10 @@
 
 .hover-theme-bg-dark {
   @apply hover:bg-slate-100;
+}
+
+.hover-theme-bg-darker {
+  @apply hover:bg-slate-500;
 }
 
 .theme-text-darker {
@@ -70,7 +82,7 @@ body {
 }
 
 .productspage-wrapper {
-  @apply flex flex-col gap-4 w-full mx-auto py-12 px-4  transition ease-in-out duration-700;
+  @apply flex flex-row gap-4 w-full mx-auto py-12 px-4;
 }
 
 .page-title {
@@ -78,7 +90,7 @@ body {
 }
 
 .products-content-wrapper {
-  @apply w-full h-max flex flex-col gap-4;
+  @apply w-full h-max flex flex-row gap-4;
 }
 
 .filter-panel {
@@ -90,7 +102,7 @@ body {
 }
 
 .product-card {
-  @apply theme-bg hover-theme-bg-dark hover:drop-shadow-lg p-2 hover:cursor-pointer transition ease-in-out duration-500;
+  @apply theme-bg hover-theme-bg-dark hover:drop-shadow-lg p-2 hover:cursor-pointer;
 }
 
 .placeholder-text {
@@ -129,6 +141,30 @@ body {
   @apply w-full flex p-4 border-2 theme-bg;
 }
 
+.bg-black {
+  @apply bg-blue-500;
+}
+
+.paginationButtonsContainer {
+  @apply flex flex-row gap-6;
+}
+
+.paginationActiveButton {
+  @apply theme-bg-darker text-slate-50;
+}
+
+.paginationButtons, .backButton, .nextButton {
+  @apply theme-text font-medium py-2 px-4 hover-theme-bg-darker hover:text-slate-50 hover:cursor-pointer select-none;
+}
+
+.backButton, .nextButton {
+  @apply flex;
+}
+
+.paginationActiveButton {
+  @apply theme-bg-darker text-slate-50;
+}
+
 /* mobile screens sm START ############################################### */
 @screen sm {
   .header-wrapper {
@@ -150,10 +186,10 @@ body {
     @apply grid grid-cols-3 gap-4;
   }
   .products-content-wrapper {
-    @apply w-full h-max flex flex-row gap-4;
+    @apply w-full h-max flex flex-col gap-4;
   }
   .filter-panel {
-    @apply w-1/4 h-auto p-8 border-2 theme-border theme-text flex justify-center items-center;
+    @apply w-1/4 h-auto p-8 border-2 theme-border theme-text flex flex-col justify-center items-center;
   }
   .products-panel {
     @apply border-2 theme-border p-4 w-3/4  flex;

@@ -8,7 +8,8 @@
         "bandColour": "Arctic White",
         "bandType": "Metal",
         "movementType": "Mechanical",
-        "faceSize": "48mm"
+        "faceSize": "48mm",
+        "id": "1"
     },
     {
         "name": "Silver tone mesh diamond watch",
@@ -19,7 +20,8 @@
         "bandColour": "Silver",
         "bandType": "Mesh",
         "movementType": "Analog",
-        "faceSize": "44mm"
+        "faceSize": "44mm",
+        "id": "2"
     },
     {
         "name": "Apple Watch Series 3",
@@ -30,7 +32,8 @@
         "bandColour": "Black",
         "bandType": "Silicone",
         "movementType": "Digital",
-        "faceSize": "38mm"
+        "faceSize": "38mm",
+        "id": "3"
     },
     {
         "name": "Black and Gold tone analog watch",
@@ -41,7 +44,8 @@
         "bandColour": "Black",
         "bandType": "Silicone",
         "movementType": "Analog",
-        "faceSize": "44mm"
+        "faceSize": "44mm",
+        "id": "4"
     },
     {
         "name": "Oversized brecken silver tone watch",
@@ -52,6 +56,247 @@
         "bandColour": "Silver",
         "bandType": "Steel",
         "movementType": "Quartz",
-        "faceSize": "45mm"
+        "faceSize": "45mm",
+        "id": "5"
+    },
+    {
+        "name": "Silver tone mesh diamond watch",
+        "price": "$175.00",
+        "brand": "Guess",
+        "desc": "(desc goes here)",
+        "caseColour": "Silver",
+        "bandColour": "Silver",
+        "bandType": "Mesh",
+        "movementType": "Analog",
+        "faceSize": "44mm",
+        "id": "6"
+    },
+    {
+        "name": "Apple Watch Series 3",
+        "price": "$399.00",
+        "brand": "Apple",
+        "desc": "(desc goes here)",
+        "caseColour": "White",
+        "bandColour": "Black",
+        "bandType": "Silicone",
+        "movementType": "Digital",
+        "faceSize": "38mm",
+        "id": "7"
+    },
+    {
+        "name": "Black and Gold tone analog watch",
+        "price": "$145.00",
+        "brand": "Guess",
+        "desc": "(desc goes here)",
+        "caseColour": "Gold",
+        "bandColour": "Black",
+        "bandType": "Silicone",
+        "movementType": "Analog",
+        "faceSize": "44mm",
+        "id": "8"
+    },
+    {
+        "name": "Oversized brecken silver tone watch",
+        "price": "$390.00",
+        "brand": "Michael Kors",
+        "desc": "(desc goes here)",
+        "caseColour": "Black",
+        "bandColour": "Silver",
+        "bandType": "Steel",
+        "movementType": "Quartz",
+        "faceSize": "45mm",
+        "id": "9"
+    },
+    {
+        "name": "Silver tone mesh diamond watch",
+        "price": "$175.00",
+        "brand": "Guess",
+        "desc": "(desc goes here)",
+        "caseColour": "Silver",
+        "bandColour": "Silver",
+        "bandType": "Mesh",
+        "movementType": "Analog",
+        "faceSize": "44mm",
+        "id": "10"
+    },
+    {
+        "name": "Apple Watch Series 3",
+        "price": "$399.00",
+        "brand": "Apple",
+        "desc": "(desc goes here)",
+        "caseColour": "White",
+        "bandColour": "Black",
+        "bandType": "Silicone",
+        "movementType": "Digital",
+        "faceSize": "38mm",
+        "id": "11"
+    },
+    {
+        "name": "Black and Gold tone analog watch",
+        "price": "$145.00",
+        "brand": "Guess",
+        "desc": "(desc goes here)",
+        "caseColour": "Gold",
+        "bandColour": "Black",
+        "bandType": "Silicone",
+        "movementType": "Analog",
+        "faceSize": "44mm",
+        "id": "12"
+    },
+    {
+        "name": "Oversized brecken silver tone watch",
+        "price": "$390.00",
+        "brand": "Michael Kors",
+        "desc": "(desc goes here)",
+        "caseColour": "Black",
+        "bandColour": "Silver",
+        "bandType": "Steel",
+        "movementType": "Quartz",
+        "faceSize": "45mm",
+        "id": "13"
+    },
+    {
+        "name": "Silver tone mesh diamond watch",
+        "price": "$175.00",
+        "brand": "Guess",
+        "desc": "(desc goes here)",
+        "caseColour": "Silver",
+        "bandColour": "Silver",
+        "bandType": "Mesh",
+        "movementType": "Analog",
+        "faceSize": "44mm",
+        "id": "14"
+    },
+    {
+        "name": "Apple Watch Series 3",
+        "price": "$399.00",
+        "brand": "Apple",
+        "desc": "(desc goes here)",
+        "caseColour": "White",
+        "bandColour": "Black",
+        "bandType": "Silicone",
+        "movementType": "Digital",
+        "faceSize": "38mm",
+        "id": "15"
+    },
+    {
+        "name": "Black and Gold tone analog watch",
+        "price": "$145.00",
+        "brand": "Guess",
+        "desc": "(desc goes here)",
+        "caseColour": "Gold",
+        "bandColour": "Black",
+        "bandType": "Silicone",
+        "movementType": "Analog",
+        "faceSize": "44mm",
+        "id": "16"
+    },
+    {
+        "name": "Oversized brecken silver tone watch",
+        "price": "$390.00",
+        "brand": "Michael Kors",
+        "desc": "(desc goes here)",
+        "caseColour": "Black",
+        "bandColour": "Silver",
+        "bandType": "Steel",
+        "movementType": "Quartz",
+        "faceSize": "45mm",
+        "id": "17"
+    },
+    {
+        "name": "Silver tone mesh diamond watch",
+        "price": "$175.00",
+        "brand": "Guess",
+        "desc": "(desc goes here)",
+        "caseColour": "Silver",
+        "bandColour": "Silver",
+        "bandType": "Mesh",
+        "movementType": "Analog",
+        "faceSize": "44mm",
+        "id": "18"
+    },
+    {
+        "name": "Apple Watch Series 3",
+        "price": "$399.00",
+        "brand": "Apple",
+        "desc": "(desc goes here)",
+        "caseColour": "White",
+        "bandColour": "Black",
+        "bandType": "Silicone",
+        "movementType": "Digital",
+        "faceSize": "38mm",
+        "id": "19"
+    },
+    {
+        "name": "Black and Gold tone analog watch",
+        "price": "$145.00",
+        "brand": "Guess",
+        "desc": "(desc goes here)",
+        "caseColour": "Gold",
+        "bandColour": "Black",
+        "bandType": "Silicone",
+        "movementType": "Analog",
+        "faceSize": "44mm",
+        "id": "20"
+    },
+    {
+        "name": "Oversized brecken silver tone watch",
+        "price": "$390.00",
+        "brand": "Michael Kors",
+        "desc": "(desc goes here)",
+        "caseColour": "Black",
+        "bandColour": "Silver",
+        "bandType": "Steel",
+        "movementType": "Quartz",
+        "faceSize": "45mm",
+        "id": "21"
+    },
+    {
+        "name": "Silver tone mesh diamond watch",
+        "price": "$175.00",
+        "brand": "Guess",
+        "desc": "(desc goes here)",
+        "caseColour": "Silver",
+        "bandColour": "Silver",
+        "bandType": "Mesh",
+        "movementType": "Analog",
+        "faceSize": "44mm",
+        "id": "22"
+    },
+    {
+        "name": "Apple Watch Series 3",
+        "price": "$399.00",
+        "brand": "Apple",
+        "desc": "(desc goes here)",
+        "caseColour": "White",
+        "bandColour": "Black",
+        "bandType": "Silicone",
+        "movementType": "Digital",
+        "faceSize": "38mm",
+        "id": "23"
+    },
+    {
+        "name": "Black and Gold tone analog watch",
+        "price": "$145.00",
+        "brand": "Guess",
+        "desc": "(desc goes here)",
+        "caseColour": "Gold",
+        "bandColour": "Black",
+        "bandType": "Silicone",
+        "movementType": "Analog",
+        "faceSize": "44mm",
+        "id": "24"
+    },
+    {
+        "name": "Oversized brecken silver tone watch",
+        "price": "$390.00",
+        "brand": "Michael Kors",
+        "desc": "(desc goes here)",
+        "caseColour": "Black",
+        "bandColour": "Silver",
+        "bandType": "Steel",
+        "movementType": "Quartz",
+        "faceSize": "45mm",
+        "id": "25"
     }
 ]
