@@ -15,15 +15,15 @@ import ProductsFilterPanel from '../components/ProductsFilterPanel'
 
 
 const SCREEN_SM = 640;
-const SCREEN_MD = 768;
-const SCREEN_LG = 1024;
-const SCREEN_XL = 1280;
-const SCREEN_2XL = 1536;
+// const SCREEN_MD = 768;
+// const SCREEN_LG = 1024;
+// const SCREEN_XL = 1280;
+// const SCREEN_2XL = 1536;
 
 function Products() {
 
-  const [products, setProducts] = useState(data)
-  const [loading, setLoading] = useState(false)
+  const [products] = useState(data)
+  // const [loading, setLoading] = useState(false)
   const [pageNumber, setPageNumber] = useState(0)
   
   const screenSize = window.innerWidth;

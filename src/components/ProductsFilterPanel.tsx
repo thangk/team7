@@ -1,10 +1,10 @@
-import { format } from 'path'
-import React, { useEffect, useState } from 'react'
+
+import React from 'react'
 
 //@ts-ignore
 function ProductsFilterPanel({ products }) {
 
-  const [keysValues, setKeysValues] = useState([])
+  // const [keysValues, setKeysValues] = useState([])
 
   
   //@ts-ignore
@@ -34,18 +34,18 @@ function ProductsFilterPanel({ products }) {
   }
 
 
-  const dispalyValues = (values: any) => {
+  // const dispalyValues = (values: any) => {
 
-    return values.map((item: any) => {
-      return (
+  //   return values.map((item: any) => {
+  //     return (
         
-            // <div className='filter-option' key={item}>
-              // <input type='checkbox' id={item} name={item} />
-              <label key={item} htmlFor={item}>{item}</label>
-            // </div>
-      )
-    })
-  }
+  //           // <div className='filter-option' key={item}>
+  //             // <input type='checkbox' id={item} name={item} />
+  //             <label key={item} htmlFor={item}>{item}</label>
+  //           // </div>
+  //     )
+  //   })
+  // }
 
   
  
