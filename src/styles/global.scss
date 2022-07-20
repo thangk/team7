@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* import fonts here */
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
@@ -5,11 +9,9 @@
 /* import other styles here */
 @import './Products_pagination.scss';
 @import './ProductsFilterPanel.scss';
+@import './MenuStyles.scss';
 
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 /* theme colours START ############################################### */
 
@@ -67,24 +69,34 @@ body {
 // navbar/header
 
 .header-wrapper {
-	@apply w-full h-auto theme-bg drop-shadow-lg;
+	@apply w-full h-fit theme-bg drop-shadow-lg;
 }
 
 .header {
-	@apply flex flex-col w-full gap-2 items-center mt-6 mx-auto;
+	@apply flex flex-row justify-between items-center w-full -ml-6 -mt-6 ;
 }
 
-.searchbox {
-	@apply hidden;
+.header img, .header nav {
+	@apply -mb-6
 }
+
+.logo-image {
+	@apply scale-50 hover:cursor-pointer
+}
+
 
 .navbar {
-	@apply flex justify-center gap-8 py-2 font-bebas-neue my-auto;
+	@apply relative flex flex-row justify-center items-center content-center gap-8 font-bebas-neue;
 }
 
 .links {
-	@apply theme-text hover-theme-text-darker tracking-wider text-3xl;
+	@apply theme-text hover-theme-text-darker tracking-wider text-3xl cursor-pointer;
 }
+
+.socials {
+	@apply hidden
+}
+
 
 .logo-image {
 	@apply w-44 hover:cursor-pointer;
@@ -96,7 +108,7 @@ body {
 }
 
 .productspage-wrapper {
-	@apply flex flex-col gap-4 w-full mx-auto py-12 px-4;
+	@apply flex flex-col gap-4 w-full mx-auto py-6 px-4;
 }
 
 .page-title {
@@ -161,32 +173,27 @@ body {
 
 
 
-
-
-
-
-
 /* mobile screens sm START ############################################### */
 
 @screen sm {
 	.header-wrapper {
-		@apply min-w-max h-auto theme-bg drop-shadow-lg;
+		@apply min-w-max h-auto theme-bg drop-shadow-lg pb-4;
+	}
+
+	.logo-image {
+		@apply w-44 scale-100 hover:cursor-pointer;
 	}
 
 	.header {
-		@apply flex flex-row justify-between mt-12 w-full mx-auto px-4;
-	}
-
-	.searchbox {
-		@apply flex h-8 border-0 my-auto bg-slate-200 focus:ring-slate-300 rounded-sm theme-text-darker font-barlow placeholder:font-barlow;
-	}
-
-	.header {
-		@apply flex justify-between mt-12 w-[1024px] mx-auto;
+		@apply flex justify-between mt-1 w-[1024px] p-4 mx-auto;
 	}
 
 	.links {
 		@apply theme-text hover-theme-text-darker tracking-wider text-2xl;
+	}
+
+	.socials {
+		@apply flex
 	}
 
 	.productspage-wrapper {

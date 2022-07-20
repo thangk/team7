@@ -1,0 +1,82 @@
+/*  MENU start */
+
+.menu-wrapper {
+	@apply absolute top-10 right-0 z-50
+}
+
+.menubtn {
+	@apply ml-4 -top-8 right-0 border-none outline-none absolute bg-transparent stroke-slate-400 fill-slate-400
+}
+
+
+.menu-wrapper-spot {
+	@apply w-6
+}
+
+.menubg-true {
+	@apply bg-slate-50 transition ease-in-out duration-700 rounded-xl
+}
+
+.menubg-false {
+	@apply bg-transparent transition ease-in-out duration-700 rounded-xl
+}
+
+.menu-ul {
+	@apply pl-8 w-fit pt-10
+}
+
+.menu-li {
+	@apply list-none mb-5 flex items-center cursor-pointer text-xl
+}
+
+.icon-placeholder {
+	@apply flex items-center w-10 h-10 mr-5
+}
+
+.text-placeholder {
+	@apply flex pt-1 items-center w-48 h-8
+}
+
+
+/*  MENU end */
+
+@screen sm {
+
+    .menu-wrapper {
+        @apply absolute top-10 right-0
+    }
+    
+    .menubtn {
+        @apply ml-4 -top-9 right-0 border-none outline-none absolute bg-transparent border-slate-500
+    }
+    
+    .menu-wrapper-spot {
+        @apply w-6
+    }
+    
+    .menubg-true {
+        @apply bg-slate-50 transition ease-in-out duration-700
+    }
+    
+    .menubg-false {
+        @apply bg-transparent transition ease-in-out duration-700 
+    }
+    
+    .menu-ul {
+        @apply p-8 w-fit pt-20 static
+    }
+    
+    .menu-li {
+        @apply list-none mb-5 flex items-center cursor-pointer text-2xl
+    }
+    
+    .icon-placeholder {
+        @apply flex items-center w-10 h-10 mr-5
+    }
+    
+    .text-placeholder {
+        @apply flex pt-1 items-center w-48 h-8
+    }
+
+
+}

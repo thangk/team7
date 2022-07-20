@@ -10,6 +10,7 @@ function App() {
 
       {/* place to add navbar and header */}
 
+      
       <Routes>
         {/* copy the following method to add your page after adding the file in "pages" folder */}
         <Route path="/" element={<Home />} />
