@@ -21,6 +21,17 @@ input[type='checkbox'] {
     @apply border-slate-300 rounded-md text-slate-400 focus:ring-slate-400
 }
 
+
+
 #searchbox {
-    @apply w-full
+    @apply w-full flex h-8 border-0 my-auto bg-slate-200 focus:ring-slate-300 rounded-sm theme-text-darker font-barlow placeholder:font-barlow col-span-2;
 }
+
+
+@screen sm {
+    #searchbox {
+        @apply w-full
+    }
+}
+
+

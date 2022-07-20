@@ -110,7 +110,7 @@ body {
 
 
 .filter-panel {
-	@apply w-full h-auto p-8 border-2 theme-border theme-text flex justify-center items-center;
+	@apply w-full h-auto p-8 border-2 theme-border theme-text grid grid-cols-2 gap-3;
 }
 
 .products-panel {
@@ -204,7 +204,7 @@ body {
 	
 
 	.filter-panel {
-		@apply w-1/4 h-auto p-8 border-2 theme-border theme-text flex justify-start items-start p-4;
+		@apply w-1/4 h-auto border-2 theme-border theme-text flex justify-start items-start p-4;
 	}
 
 	.products-panel {
