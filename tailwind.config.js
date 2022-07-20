@@ -5,7 +5,8 @@ module.exports = {
     extend: {
 
       fontFamily: {
-        'bebas-neue': ['Bebas Neue', 'cursive']
+        'bebas-neue': ['Bebas Neue', 'cursive'],
+        'barlow': ['Barlow', 'sans-serif']
       }
     },
   },

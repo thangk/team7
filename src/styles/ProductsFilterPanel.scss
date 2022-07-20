@@ -1,0 +1,22 @@
+
+
+
+form {
+    @apply w-full
+}
+
+label {
+    @apply ml-2 select-none
+}
+
+section {
+    @apply flex flex-col gap-2
+}
+
+.filter-options {
+    @apply ml-4
+}
+
+input[type='checkbox'] {
+    @apply border-slate-300 rounded-md text-slate-400 focus:ring-slate-400
+}

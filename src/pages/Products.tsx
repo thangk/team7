@@ -1,37 +1,42 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 // import logo from '../images/icons/logo-icon.png'
 // import account from '../images/icons/account-icon.png'
 import logo2 from '../images/icons/logo2-icon.png'
 import data from '../assets/template.json'
 import noimage from '../images/icons/noimage.jpg'
-import axios from 'axios'
+// import axios from 'axios'
 import ReactPaginate from 'react-paginate'
-import { fadeInOut } from '../components/FramerMotions'
 import { nanoid } from 'nanoid'
+import { AiFillShopping, AiOutlineCaretLeft, AiOutlineCaretRight, AiOutlineMenu, AiOutlineUser } from 'react-icons/ai'
+import ProductsFilterPanel from '../components/ProductsFilterPanel'
 
+
+
+const SCREEN_SM = 640;
+const SCREEN_MD = 768;
+const SCREEN_LG = 1024;
+const SCREEN_XL = 1280;
+const SCREEN_2XL = 1536;
 
 function Products() {
 
   const [products, setProducts] = useState(data)
   const [loading, setLoading] = useState(false)
   const [pageNumber, setPageNumber] = useState(0)
-  const productsPerPage = 6
+  
+  const screenSize = window.innerWidth;
 
+  
+  const getDisplayRangeNMarginPages = () => {
 
-  // useEffect(() => {
-    // const fetchProducts = async () => {
-    //   setLoading(true);
-    //   const res = await axios.get('../assets/template.json')
-    //   setProducts(res.data)
-    //   setLoading(false)
-    // }
+    if (screenSize < SCREEN_SM) return {displayRange: 2, marginPages: 1, itemsPerPage: 4 }
+    
+    return {displayRange: 4, marginPages: 2, itemsPerPage: 6 }
+  };
 
-    // fetchProducts()
-
-  //   console.log(products)
-  // }, [pageNumber])
+  const productsPerPage = getDisplayRangeNMarginPages().itemsPerPage
 
   const pagesVisited = pageNumber * productsPerPage;
   const displayProducts = products.slice(pagesVisited, pagesVisited + productsPerPage);
@@ -56,9 +61,13 @@ function Products() {
                       <motion.a href='/#' 
                       className="links" 
                       onClick={() => alert("account page isn't made yet")} 
-                      whileHover={{ y: -2 }}>Account</motion.a>
-                      <motion.a href='/#' className="links" onClick={() => alert("cart page isn't made yet")} whileHover={{ y: -2 }} >Cart</motion.a>
-                      <motion.a href='/#' className="links" onClick={() => alert("menu page isn't made yet")} whileHover={{ y: -2 }} >Menu</motion.a>
+                      whileHover={{ y: -2 }}><AiOutlineUser /></motion.a>
+                      <motion.a href='/#' className="links" onClick={() => alert("cart page isn't made yet")} whileHover={{ y: -2 }} ><AiFillShopping /></motion.a>
+
+                      <motion.a href='/#' className="links" onClick={() => alert("menu page isn't made yet")} whileHover={{ y: -2 }} ><AiOutlineMenu /></motion.a>
+
+        
+
                   </nav>
           </div>
       </div>
@@ -71,7 +80,7 @@ function Products() {
 
           {/* filtering panel LEFT SIDE */}
           <section className='filter-panel' >
-            <div className='placeholder-text'>filter panel</div>
+            <ProductsFilterPanel products={products} />
             
           </section>
 
@@ -120,19 +129,20 @@ function Products() {
           <div className='left-side'></div>
           <div className='product-cards-pagination'>
                 <ReactPaginate
-                  previousLabel={'Back'}
-                  nextLabel={'Next'}
+                  previousLabel={<AiOutlineCaretLeft />}
+                  nextLabel={<AiOutlineCaretRight />}
                   pageCount={pageCount}
                   onPageChange={changePage}
                   containerClassName={'paginationButtonsContainer'}
                   pageClassName={'paginationButtons'}
-                  previousLinkClassName={'backButton'}
-                  nextLinkClassName={'nextButton'}
-                  disabledLinkClassName={'paginationDisabledButton'}
+                  previousClassName={'backButton'}
+                  nextClassName={'nextButton'}
+                  disabledClassName={'paginationDisabledButton'}
                   activeClassName={'paginationActiveButton'}
-                  breakLabel={'|'}
-                  pageRangeDisplayed={1}
-                  marginPagesDisplayed={2}
+                  breakLabel={'...'}
+                  breakClassName={'breakLabel'}
+                  pageRangeDisplayed={getDisplayRangeNMarginPages().displayRange}
+                  marginPagesDisplayed={getDisplayRangeNMarginPages().marginPages}
                 />
           </div>
         </section>

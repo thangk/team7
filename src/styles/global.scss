@@ -1,5 +1,11 @@
 /* import fonts here */
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+
+/* import other styles here */
+@import './Products_pagination.scss';
+@import './ProductsFilterPanel.scss';
+
 
 @tailwind base;
 @tailwind components;
@@ -77,7 +83,7 @@ body {
 }
 
 .links {
-	@apply hover:underline theme-text hover-theme-text-darker tracking-wider text-xl;
+	@apply theme-text hover-theme-text-darker tracking-wider text-3xl;
 }
 
 .logo-image {
@@ -98,7 +104,7 @@ body {
 }
 
 .products-content-wrapper {
-	@apply w-full h-max flex flex-col gap-4;
+	@apply w-full h-max flex flex-col gap-4 font-barlow;
 }
 
 
@@ -139,17 +145,13 @@ body {
 	@apply break-words;
 }
 
-.pagination-wrapper {
-	@apply w-full h-max flex justify-end gap-4;
-}
+
 
 .left-side {
 	@apply hidden;
 }
 
-.product-cards-pagination {
-	@apply w-full flex p-4 border-2 theme-bg;
-}
+
 
 .bg-black {
 	@apply bg-blue-500
@@ -157,31 +159,7 @@ body {
 
 
 
-.paginationButtonsContainer {
-	@apply  flex flex-row gap-6 font-medium theme-text
-}
 
-.paginationDisabledButton {
-	@apply text-slate-300 pointer-events-none
-}
-
-
-.paginationButtons a, .backButton, .nextButton {
-	@apply py-2 px-4 hover-theme-bg-darker hover:text-slate-50 hover:cursor-pointer hover:rounded-full select-none
-}
-
-.paginationButtons {
-	@apply flex
-}
-
-
-.backButton, .nextButton {
-	@apply flex
-}
-
-.paginationActiveButton {
-	@apply theme-bg-darker text-slate-50 rounded-full
-}
 
 
 
@@ -200,11 +178,15 @@ body {
 	}
 
 	.searchbox {
-		@apply flex h-8 border-0 my-auto bg-slate-200 focus:ring-slate-300 rounded-sm theme-text-darkest;
+		@apply flex h-8 border-0 my-auto bg-slate-200 focus:ring-slate-300 rounded-sm theme-text-darker font-barlow placeholder:font-barlow;
 	}
 
 	.header {
 		@apply flex justify-between mt-12 w-[1024px] mx-auto;
+	}
+
+	.links {
+		@apply theme-text hover-theme-text-darker tracking-wider text-2xl;
 	}
 
 	.productspage-wrapper {
@@ -222,7 +204,7 @@ body {
 	
 
 	.filter-panel {
-		@apply w-1/4 h-auto p-8 border-2 theme-border theme-text flex flex-col justify-center items-center;
+		@apply w-1/4 h-auto p-8 border-2 theme-border theme-text flex justify-start items-start p-4;
 	}
 
 	.products-panel {
@@ -233,9 +215,7 @@ body {
 		@apply flex w-1/4;
 	}
 
-	.product-cards-pagination {
-		@apply w-3/4 flex p-4 border-2 theme-bg;
-	}
+
 
 	.placeholder-text {
 		@apply text-xl theme-font theme-text;
