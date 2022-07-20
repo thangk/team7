@@ -20,3 +20,7 @@ section {
 input[type='checkbox'] {
     @apply border-slate-300 rounded-md text-slate-400 focus:ring-slate-400
 }
+
+#searchbox {
+    @apply w-full
+}

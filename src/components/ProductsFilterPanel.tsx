@@ -76,7 +76,7 @@ function ProductsFilterPanel({ products }) {
 
   return (
     <>
-    <input className="searchbox" type="text" placeholder='Search' />
+    <input className="searchbox" id='searchbox' type="text" placeholder='Search' />
 
           {keys_values.map((item: any) => {
 
