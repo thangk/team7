@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Products from './pages/Products';
 import ErrorPage from './pages/ErrorPage';
 import Home from './pages/Home';
+import Products_DetailsPage from './components/Products_DetailsPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="*" element={<ErrorPage />} />
+        <Route path="/ProductDetails" element={<Products_DetailsPage/>} /> {/*Temporarily added to access product details*/}
       </Routes>
 
       {/* place to add footer */}
