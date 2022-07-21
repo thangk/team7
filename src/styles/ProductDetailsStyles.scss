@@ -1,11 +1,11 @@
 .product-details-wrapper {
-	@apply ml-32 mr-32
+	@apply mt-32 ml-96 mr-96 p-12 border-2 theme-border   
 }
 
 .product-details-image {
-	@apply inline
+	@apply inline-block
 }
 
 .product-details-text {
-	@apply theme-text text-xl
+	@apply inline-block theme-text ml-5 text-xl flex-col
 }
