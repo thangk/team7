@@ -20,7 +20,7 @@ export default function LoginPage()
         </div>
         <div className="container">
           <button type="button" className="cancelbtn">Cancel</button>
-          <span className="psw">Forgot <a href="#">password?</a></span>
+          <span className="psw">Forgot <a href="/#">password?</a></span>
         </div>
       </form>
     </>
