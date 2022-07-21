@@ -1,0 +1,139 @@
+
+
+
+
+
+
+.footers-wrapper {
+    @apply bg-slate-200 mt-36 pb-10 font-barlow text-slate-500
+}
+
+.footers-wrapper Link {
+    @apply hover:underline
+}
+
+.footer1-wrapper, .footer2-wrapper {
+    @apply w-full mx-auto
+}
+
+.footer1-wrapper {
+    @apply flex flex-col gap-6 p-6
+}
+
+.footer-brand-name {
+    @apply font-bebas-neue text-2xl
+}
+
+.footer-links {
+    @apply flex flex-col gap-4
+}
+
+.footer-links-left {
+    @apply grid grid-cols-2 gap-1
+}
+
+.footer-socials {
+    @apply flex gap-2 text-2xl justify-center
+}
+
+#email-sub-form {
+    @apply flex flex-col gap-1
+}
+
+#email-sub-form input[type='email'] {
+    @apply rounded-l-md border-0 w-2/3 focus:ring-slate-400
+}
+
+#email-sub-form button {
+    @apply rounded-r-md border-slate-400 bg-slate-400 py-2 px-3 text-slate-50 border
+}
+
+hr {
+    @apply border border-slate-300 -mb-3
+}
+
+.footer2-wrapper {
+    @apply flex flex-col gap-4
+}
+
+.footer2-links-wrapper {
+    @apply flex flex-row gap-2 justify-center text-xs
+}
+
+.footer2-copyright {
+    @apply flex justify-center text-xs
+}
+
+.footer-link-item {
+    @apply hover:underline
+}
+
+
+@screen sm {
+
+    .footers-wrapper {
+        @apply bg-slate-200 mt-36 pb-10 font-barlow text-slate-500
+    }
+    
+    .footers-wrapper Link {
+        @apply hover:underline
+    }
+    
+    .footer1-wrapper, .footer2-wrapper {
+        @apply w-[1024px] mx-auto
+    }
+    
+    .footer1-wrapper {
+        @apply flex flex-col gap-6 p-6
+    }
+    
+    .footer-brand-name {
+        @apply font-bebas-neue text-2xl
+    }
+    
+    .footer-links {
+        @apply flex flex-row justify-between
+    }
+    
+    .footer-links-left {
+        @apply grid grid-cols-2
+    }
+    
+    .footer-socials {
+        @apply flex gap-2 text-2xl justify-start
+    }
+    
+    #email-sub-form {
+        @apply flex flex-col gap-1
+    }
+    
+    #email-sub-form input[type='email'] {
+        @apply rounded-l-md focus:ring-slate-400 border-slate-50 border-0
+    }
+    
+    #email-sub-form button {
+        @apply rounded-r-md bg-slate-400 py-2 px-3 text-slate-50 border-slate-400 border
+    }
+    
+    hr {
+        @apply border border-slate-300 -mb-3
+    }
+    
+    .footer2-wrapper {
+        @apply flex flex-col gap-4
+    }
+    
+    .footer2-links-wrapper {
+        @apply flex flex-row gap-6 justify-center text-base
+    }
+    
+    .footer2-copyright {
+        @apply flex justify-center text-base
+    }
+    
+    .footer-link-item {
+        @apply hover:underline
+    }
+
+
+}

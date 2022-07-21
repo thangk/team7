@@ -12,9 +12,8 @@ import { nanoid } from 'nanoid'
 import { AiFillShopping, AiOutlineCaretLeft, AiOutlineCaretRight, AiOutlineUser } from 'react-icons/ai'
 import { FaFacebookSquare, FaInstagramSquare, FaTwitterSquare } from 'react-icons/fa'
 import ProductsFilterPanel from '../components/ProductsFilterPanel'
-import { MenuToggle } from '../components/MenuToggle'
+import { MenuToggle, MenuList } from '../components/HeaderMenu'
 import { useDimensions } from '../customHooks/useDimension'
-import { MenuList } from '../components/MenuList'
 
 function Products_DetailsPage() {
   return (

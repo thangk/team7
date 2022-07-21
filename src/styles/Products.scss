@@ -1,0 +1,96 @@
+
+// Products page
+.container {
+	@apply bg-slate-50 flex gap-2 p-8 max-w-full h-screen justify-center;
+}
+
+.productspage-wrapper {
+	@apply flex flex-col gap-4 w-full mx-auto py-6 px-4;
+}
+
+.page-title {
+	@apply text-3xl font-bebas-neue theme-text;
+}
+
+.products-content-wrapper {
+	@apply w-full h-max flex flex-col gap-4 font-barlow;
+}
+
+
+.filter-panel {
+	@apply w-full h-auto p-8 border-2 theme-border theme-text grid grid-cols-2 gap-3;
+}
+
+.products-panel {
+	@apply w-full flex;
+}
+
+.product-card {
+	@apply theme-bg hover-theme-bg-dark hover:drop-shadow-lg p-2 hover:cursor-pointer;
+}
+
+.placeholder-text {
+	@apply text-xl theme-font theme-text;
+}
+
+.product-cards-wrapper {
+	@apply grid grid-cols-2 gap-3;
+}
+
+.product-card-image {
+	@apply p-2 border-2 theme-border;
+}
+
+.product-card img {
+	@apply object-cover object-center;
+}
+
+.product-card-text {
+	@apply py-2  theme-text;
+}
+
+.product-card-text h1 {
+	@apply break-words;
+}
+
+
+.left-side {
+	@apply hidden;
+}
+
+
+
+
+@screen sm {
+
+
+	.productspage-wrapper {
+		@apply flex flex-col gap-4 w-[1024px] mx-auto py-12;
+	}
+
+	.product-cards-wrapper {
+		@apply grid grid-cols-3 gap-4;
+	}
+
+	
+	.products-content-wrapper {
+		@apply w-full h-max flex flex-row gap-4;
+	}
+	
+
+	.filter-panel {
+		@apply w-1/4 h-auto border-2 theme-border theme-text flex justify-start items-start p-4;
+	}
+
+	.products-panel {
+		@apply border-2 theme-border p-4 w-3/4 flex;
+	}
+
+	.left-side {
+		@apply flex w-1/4;
+	}
+
+
+
+
+}

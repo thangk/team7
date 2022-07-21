@@ -1,3 +1,4 @@
+/* these Tailwind base directives have to be here, don't remove them */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,14 +7,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
 
-/* import other styles here */
-@import './Products_pagination.scss';
+/* import other styles here ############################################### */
+/* aded by Kap start */
+@import './Header.scss';
+@import './HeaderMenu.scss';
+@import './Footer.scss';
+@import './Products.scss';
+@import './ProductsPagination.scss';
 @import './ProductsFilterPanel.scss';
-@import './MenuStyles.scss';
+/* aded by Kap end */
+
 @import './ProductDetailsStyles.scss';
 
 
+
 /* theme colours START ############################################### */
+/* these are some custom made colours for our theme that I picked. Can be changed (Kap)*/
 
 .theme-font {
 	@apply font-bebas-neue;
@@ -61,108 +70,20 @@
 
 /* theme colours END ############################################### */
 
+
+
+
+
+
+
+
+
+
+
 // body
 body {
 	@apply theme-bg;
 }
-
-// navbar/header
-
-.header-wrapper {
-	@apply w-full h-fit theme-bg drop-shadow-lg;
-}
-
-.header {
-	@apply flex flex-row justify-between items-center w-full -ml-6 -mt-6 ;
-}
-
-.header img, .header nav {
-	@apply -mb-6
-}
-
-.logo-image {
-	@apply scale-50 hover:cursor-pointer
-}
-
-
-.navbar {
-	@apply relative flex flex-row justify-center items-center content-center gap-8 font-bebas-neue;
-}
-
-.links {
-	@apply theme-text hover-theme-text-darker tracking-wider text-3xl cursor-pointer;
-}
-
-.socials {
-	@apply hidden
-}
-
-
-.logo-image {
-	@apply w-44 hover:cursor-pointer;
-}
-
-// Products page
-.container {
-	@apply bg-slate-50 flex gap-2 p-8 max-w-full h-screen justify-center;
-}
-
-.productspage-wrapper {
-	@apply flex flex-col gap-4 w-full mx-auto py-6 px-4;
-}
-
-.page-title {
-	@apply text-3xl font-bebas-neue theme-text;
-}
-
-.products-content-wrapper {
-	@apply w-full h-max flex flex-col gap-4 font-barlow;
-}
-
-
-
-.filter-panel {
-	@apply w-full h-auto p-8 border-2 theme-border theme-text grid grid-cols-2 gap-3;
-}
-
-.products-panel {
-	@apply w-full flex;
-}
-
-.product-card {
-	@apply theme-bg hover-theme-bg-dark hover:drop-shadow-lg p-2 hover:cursor-pointer;
-}
-
-.placeholder-text {
-	@apply text-xl theme-font theme-text;
-}
-
-.product-cards-wrapper {
-	@apply grid grid-cols-2 gap-3;
-}
-
-.product-card-image {
-	@apply p-2 border-2 theme-border;
-}
-
-.product-card img {
-	@apply object-cover object-center;
-}
-
-.product-card-text {
-	@apply py-2  theme-text;
-}
-
-.product-card-text h1 {
-	@apply break-words;
-}
-
-
-
-.left-side {
-	@apply hidden;
-}
-
 
 
 .bg-black {
@@ -176,53 +97,19 @@ body {
 /* mobile screens sm START ############################################### */
 
 @screen sm {
-	.header-wrapper {
-		@apply min-w-max h-auto theme-bg drop-shadow-lg pb-4;
-	}
 
-	.logo-image {
-		@apply w-44 scale-100 hover:cursor-pointer;
-	}
-
-	.header {
-		@apply flex justify-between mt-1 w-[1024px] p-4 mx-auto;
-	}
-
-	.links {
-		@apply theme-text hover-theme-text-darker tracking-wider text-2xl;
-	}
-
-	.socials {
-		@apply flex
-	}
-
-	.productspage-wrapper {
-		@apply flex flex-col gap-4 w-[1024px] mx-auto py-12;
-	}
-
-	.product-cards-wrapper {
-		@apply grid grid-cols-3 gap-4;
-	}
-
+	/* every styling you put here will be for screens sm and up, so since we only have two, that means this block of styling will be for Desktop 
 	
-	.products-content-wrapper {
-		@apply w-full h-max flex flex-row gap-4;
-	}
+	these sizes are Tailwind standards 
+	sm - 640 px width
+	md - 768 px width
+	lg - 1024 px width
+	xl - 1280 px width
+	2xl - 1536px width
 	
-
-	.filter-panel {
-		@apply w-1/4 h-auto border-2 theme-border theme-text flex justify-start items-start p-4;
-	}
-
-	.products-panel {
-		@apply border-2 theme-border p-4 w-3/4 flex;
-	}
-
-	.left-side {
-		@apply flex w-1/4;
-	}
-
-
+	from this link: https://tailwindcss.com/docs/screens
+	
+	but we can always use any manualy sizes we want by setting custom values in the tailwind.config.js file				*/
 
 	.placeholder-text {
 		@apply text-xl theme-font theme-text;
