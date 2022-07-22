@@ -19,7 +19,8 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/products" element={<Products />} />
         <Route path="*" element={<ErrorPage />} />
-        <Route path="/ProductDetails" element={<Products_DetailsPage />} />{" "}
+        <Route path="/ProductDetails" element={<Products_DetailsPage />} />
+        
         {/*Temporarily added to access product details*/}
       </Routes>
 
