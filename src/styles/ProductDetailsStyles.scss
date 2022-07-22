@@ -1,11 +1,40 @@
 .product-details-wrapper {
-	@apply mt-32 ml-96 mr-96 p-12 border-2 theme-border   
+	@apply mt-10 ml-96 mr-96 p-12 border-2 theme-border
 }
 
-.product-details-image {
-	@apply inline-block
+@media only screen and (max-width: 1500px){
+	.product-details-wrapper {
+		@apply ml-10 mr-10
+	}
+}
+
+@media only screen and (max-width: 1000px){
+
+	.product-details-text {
+		@apply items-center
+	}
+}
+
+.product-details-title {
+	@apply text-center mb-5
+}
+
+.inner-flex {
+	@apply flex gap-5 flex-wrap
 }
 
 .product-details-text {
-	@apply inline-block theme-text ml-5 text-xl flex-col
+	@apply flex flex-col theme-text text-xl gap-12 flex-grow
 }
+
+.price-field {
+	@apply text-5xl
+}
+
+.btn {
+	color: white;
+	transition: 0.5s;
+	@apply theme-bg-darker p-4
+}
+
+/*Make hover effect*/

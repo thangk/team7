@@ -3,9 +3,10 @@ import Products from './pages/Products';
 import LoginPage from './pages/loginPage';
 import ErrorPage from './pages/ErrorPage';
 import Home from './pages/Home';
-import Products_DetailsPage from './components/Products_DetailsPage';
+import ProductsDetailsPage from './components/ProductsDetailsPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import AboutPage from './components/AboutPage';
 
 function App() {
   return (
@@ -19,8 +20,8 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/products" element={<Products />} />
         <Route path="*" element={<ErrorPage />} />
-        <Route path="/ProductDetails" element={<Products_DetailsPage />} />
-        
+        <Route path="/ProductDetails" element={<ProductsDetailsPage />} />{" "}
+        <Route path='/About' element={<AboutPage />} />
         {/*Temporarily added to access product details*/}
       </Routes>
 
