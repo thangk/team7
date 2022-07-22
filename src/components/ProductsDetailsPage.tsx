@@ -1,7 +1,7 @@
-import React, { useRef, useState } from 'react'
+import React from 'react'
 import noimage from '../images/icons/noimage.jpg'
 
-function Products_DetailsPage() {
+function ProductsDetailsPage() {
   return (
     
     <>
@@ -32,4 +32,4 @@ function Products_DetailsPage() {
   )
 }
 
-export default Products_DetailsPage
+export default ProductsDetailsPage
