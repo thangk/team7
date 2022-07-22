@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react'
-import noimage from '../images/icons/noimage.jpg'
+import React from 'react'
+// import noimage from '../images/icons/noimage.jpg'
 
 function Products_DetailsPage() {
   return (
