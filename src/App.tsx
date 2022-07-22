@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Products_DetailsPage from './components/Products_DetailsPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import AboutPage from './components/AboutPage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="*" element={<ErrorPage />} />
         <Route path="/ProductDetails" element={<Products_DetailsPage />} />{" "}
+        <Route path='/About' element={<AboutPage />} />
         {/*Temporarily added to access product details*/}
       </Routes>
 
