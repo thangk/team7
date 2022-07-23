@@ -7,8 +7,10 @@ import ProductsDetailsPage from './components/ProductsDetailsPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import AboutPage from './components/AboutPage';
+import LoremPages from './components/LoremPages';
 
 function App() {
+
   return (
     <Router>
       {/* place to add navbar and header */}
@@ -19,9 +21,13 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/products" element={<Products />} />
-        <Route path="*" element={<ErrorPage />} />
+        <Route path="/404" element={<ErrorPage />} />
         <Route path="/ProductDetails" element={<ProductsDetailsPage />} />{" "}
         <Route path='/About' element={<AboutPage />} />
+
+        {/* this line has to be in the last line */}
+        <Route path='/:lorem' element={<LoremPages />} /> 
+
         {/*Temporarily added to access product details*/}
       </Routes>
 

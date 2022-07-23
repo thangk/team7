@@ -1,0 +1,42 @@
+
+// lorempage page
+.container {
+	@apply bg-slate-50 flex gap-2 p-8 max-w-full h-screen justify-center;
+}
+
+.lorempage-wrapper {
+	@apply flex flex-col gap-4 w-full mx-auto py-6 px-4;
+}
+
+.page-title {
+	@apply text-3xl font-bebas-neue theme-text;
+}
+
+.lorempage-content-wrapper {
+	@apply w-full h-max flex flex-col gap-4 font-barlow;
+}
+
+
+
+
+@screen sm {
+
+
+	.lorempage-wrapper {
+		@apply flex flex-col gap-4 w-[1024px] mx-auto py-12;
+	}
+
+	.product-cards-wrapper {
+		@apply grid grid-cols-3 gap-4;
+	}
+
+	
+	.lorempage-content-wrapper {
+		@apply w-full h-max p-12 border-2 theme-border;
+	}
+	
+    .lorempage-content-wrapper p {
+        @apply indent-8 pb-4 text-justify text-slate-600
+    }
+
+}

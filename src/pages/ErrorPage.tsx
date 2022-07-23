@@ -1,31 +1,24 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import images from '../assets/errorimages.json'
-import test from "../images/error_images/ei1.jpg"
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function ErrorPage() {
-
   const navigate = useNavigate();
-
-  // const errArray = JSON.parse(errorImages)
-
-  console.log(images.images[0])
+  const randomIndex = Math.floor(Math.random() * 8) + 1;
 
   return (
-    <main className='errorpage-wrapper'>
+    <main className="errorpage-wrapper">
+      <img src={require(`../images/error_images/ei${randomIndex}.jpg`)} alt="error" />
 
-      <h1>404 Error</h1>
+      <section className="error-text-wrapper">
+        <h1>404 Error</h1>
+        <p>Sorry, the page you're trying to visit doesn't exist.</p>
 
-      <img src={test} alt='error' />
-
-      <p>The page you're trying to visit doesn't exist.</p>
-
-      <button className='backbutton' onClick={() => navigate(-1)}>Go Back</button>
-
-
-
-    </main> 
-  )
+        <button className="backbutton" onClick={() => navigate(-3)}>
+          Go Back
+        </button>
+      </section>
+    </main>
+  );
 }
 
-export default ErrorPage
+export default ErrorPage;
