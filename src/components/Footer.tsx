@@ -21,12 +21,12 @@ const Footer = () => {
                 <section className="footer-links">
 
                     <div className="footer-links-left">
-                        <Link className="footer-link-item" to='/careers'>Careers</Link>
-                        <Link className='footer-link-item' to='/consumer-care'>Consumer care</Link>
-                        <Link className='footer-link-item' to='/our-watches'>Our watches</Link>
-                        <Link className='footer-link-item' to='/ica'>Infinity Watches Canada</Link>
-                        <Link className='footer-link-item' to='/success-stories'>Success stories</Link>
-                        <Link className='footer-link-item' to='/ius'>Infinity Watches U.S.A.</Link>
+                        <Link className='footer-link-item' onClick={() => window.scrollTo(0, 0)} to='/careers'>Careers</Link>
+                        <Link className='footer-link-item' onClick={() => window.scrollTo(0, 0)} to='/consumer-care'>Consumer care</Link>
+                        <Link className='footer-link-item' onClick={() => window.scrollTo(0, 0)} to='/our-watches'>Our watches</Link>
+                        <Link className='footer-link-item' onClick={() => window.scrollTo(0, 0)} to='/iwca'>Infinity Watches Canada</Link>
+                        <Link className='footer-link-item' onClick={() => window.scrollTo(0, 0)} to='/success-stories'>Success stories</Link>
+                        <Link className='footer-link-item' onClick={() => window.scrollTo(0, 0)} to='/iwus'>Infinity Watches U.S.A.</Link>
                     </div>
 
                     <div className="footer-links-right">
@@ -63,9 +63,9 @@ const Footer = () => {
             <main className="footer2-wrapper">
                 <hr />
                 <section className="footer2-links-wrapper">
-                    <Link className='footer-link-item' to='tos'>Terms of Service</Link>|
-                    <Link className='footer-link-item' to='privacy-policy'>Privacy Policy</Link>|
-                    <Link className='footer-link-item' to='accessibility-statement'>Accessibility Statement</Link>
+                    <Link className='footer-link-item' onClick={() => window.scrollTo(0, 0)} to='terms-of-service'>Terms of Service</Link>|
+                    <Link className='footer-link-item' onClick={() => window.scrollTo(0, 0)} to='privacy-policy'>Privacy Policy</Link>|
+                    <Link className='footer-link-item' onClick={() => window.scrollTo(0, 0)} to='accessibility-statement'>Accessibility Statement</Link>
                 </section>
                 <h1 className="footer2-copyright">&copy;2022 Infinity Watches, LLC. All Rights Reserved.</h1>
             </main>

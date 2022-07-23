@@ -5,6 +5,7 @@ import { FaFacebookSquare, FaInstagramSquare, FaTwitterSquare } from "react-icon
 import { useDimensions } from "../customHooks/useDimension";
 import { MenuList, MenuToggle } from "./HeaderMenu";
 import logo2 from "../images/icons/logo2-icon.png";
+import { useNavigate } from "react-router-dom";
 
 const sidebar = {
   open: {
@@ -30,6 +31,8 @@ const Header = () => {
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
 
+  const navigate = useNavigate();
+
   return (
     <>
       {/* Navbar */}
@@ -49,7 +52,7 @@ const Header = () => {
             </motion.a>
           </nav>
 
-          <img src={logo2} alt="logo2" className="logo-image" />
+          <img src={logo2} alt="logo2" className="logo-image" onClick={() => navigate('/', {replace: true})} />
 
           <nav className="navbar">
             <motion.a className="links" onClick={() => alert("account page isn't made yet")} whileHover={{ y: -2 }}>
