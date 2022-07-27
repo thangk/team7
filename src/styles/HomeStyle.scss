@@ -3,5 +3,8 @@
   }
 
 .background-image{
-    @apply w-1/2;
+    @apply w-full object-contain object-center;
+}
+.background-wrapper {
+  @apply relative w-[1920px] h-[1400px] mx-auto mt-12
 }

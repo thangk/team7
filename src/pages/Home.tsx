@@ -6,17 +6,18 @@ function Home() {
     //@ts-ignore
     
     <>
-      <br></br>
-      <br></br>
       <h1 className="page-title-center">"Revolutionizing the way you Shop for Watches"</h1>
       <br></br>
       <br></br>
-      <div className="background-image">
-        <img src={watch} alt="watch" />
+      <div className="background-wrapper">
+
+        <div className="background-image">
+          <img src={watch} alt="watch" />
+        </div>
       </div>
-      <br></br>
-      <br></br>
       <h1 className="page-title-center">Newest Additions</h1>
+
+
       </>
     //Adding comment to test pull request
   )
