@@ -1,7 +1,7 @@
 /*  MENU start */
 
 .menu-wrapper {
-	@apply absolute top-10 right-0 z-50
+	@apply absolute top-10 right-0 z-20
 }
 
 .menubtn {
@@ -10,19 +10,16 @@
 
 
 .menu-wrapper-spot {
-	@apply w-6
+	@apply  w-6
 }
 
-.menubg-true {
-	@apply bg-slate-50 transition ease-in-out duration-700 rounded-xl
-}
 
-.menubg-false {
-	@apply bg-transparent transition ease-in-out duration-700 rounded-xl
+.menu-bg {
+    @apply relative
 }
 
 .menu-ul {
-	@apply pl-8 w-fit pt-10
+	@apply absolute -right-6 h-screen pl-8 w-fit pt-10 bg-slate-50
 }
 
 .menu-li {
@@ -43,7 +40,7 @@
 @screen sm {
 
     .menu-wrapper {
-        @apply absolute top-10 right-0
+        @apply absolute top-10 right-0 z-20
     }
     
     .menubtn {
@@ -51,19 +48,11 @@
     }
     
     .menu-wrapper-spot {
-        @apply w-6
-    }
-    
-    .menubg-true {
-        @apply bg-slate-50 transition ease-in-out duration-700
-    }
-    
-    .menubg-false {
-        @apply bg-transparent transition ease-in-out duration-700 
+        @apply w-6 -mt-6
     }
     
     .menu-ul {
-        @apply p-8 w-fit pt-20 static
+        @apply p-8 w-fit h-fit pt-20 static bg-slate-50 rounded-xl
     }
     
     .menu-li {

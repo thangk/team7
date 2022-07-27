@@ -1,8 +1,5 @@
 
 // lorempage page
-.container {
-	@apply bg-slate-50 flex gap-2 p-8 max-w-full h-screen justify-center;
-}
 
 .lorempage-wrapper {
 	@apply flex flex-col gap-4 w-full mx-auto py-6 px-4;
@@ -13,7 +10,11 @@
 }
 
 .lorempage-content-wrapper {
-	@apply w-full h-max flex flex-col gap-4 font-barlow;
+	@apply w-full h-max flex flex-col gap-4 p-4 border-2 theme-border;
+}
+
+.lorempage-content-wrapper p {
+    @apply indent-8 pb-4 text-justify text-slate-600 font-barlow
 }
 
 

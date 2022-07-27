@@ -18,6 +18,7 @@
 @import './ErrorPage.scss';
 @import './LoremPages.scss';
 @import './HomeStyle.scss';
+@import './Utils.scss';
 /* aded by Kap end */
 
 
@@ -87,7 +88,7 @@
 
 // body
 body {
-	@apply theme-bg;
+	@apply flex flex-col theme-bg;
 }
 
 

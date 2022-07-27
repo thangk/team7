@@ -1,14 +1,9 @@
 .errorpage-wrapper {
-    @apply relative w-full h-[426px] mx-auto mt-12
+    @apply flex justify-center items-center w-full h-[426px] mx-auto mt-12 bg-cover bg-center
 }
-
-.errorpage-wrapper img {
-    @apply w-full h-full object-cover object-center
-}
-
 
 .error-text-wrapper {
-    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-fit bg-slate-300 bg-opacity-25 w-2/3 p-6 flex flex-col gap-6 backdrop-blur-sm
+    @apply h-fit bg-slate-900 bg-opacity-75 w-2/3 p-6 flex flex-col gap-6 
 }
 
 .error-text-wrapper h1 {
@@ -25,20 +20,15 @@
 
 @screen sm {
     .errorpage-wrapper {
-        @apply relative w-[1024px] h-[628px] mx-auto mt-12
+        @apply flex justify-center items-center w-[1024px] h-[628px] mx-auto mt-12 bg-cover bg-center
     }
-
-    .errorpage-wrapper img {
-        @apply w-full h-full object-cover object-center
-    }
-
 
     .error-text-wrapper {
-        @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-fit bg-slate-300 bg-opacity-25 p-6 flex flex-col gap-6 backdrop-blur-sm
+        @apply h-fit bg-slate-900 bg-opacity-75 p-6 flex flex-col gap-6 
     }
 
     .error-text-wrapper h1 {
-        @apply font-bebas-neue tracking-widest text-8xl text-center text-slate-50
+        @apply font-bebas-neue tracking-widest text-8xl text-center text-slate-50 
     }
 
     .error-text-wrapper p {

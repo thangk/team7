@@ -6,16 +6,16 @@ import noimage from "../images/icons/noimage.jpg";
 import { nanoid } from "nanoid";
 import ProductsFilterPanel from "../components/ProductsFilterPanel";
 import ProductsPagination from "../components/ProductsPagination";
+import { useNavigate } from "react-router-dom";
 
 const SCREEN_SM = 640;
-// const SCREEN_MD = 768;
-// const SCREEN_LG = 1024;
-// const SCREEN_XL = 1280;
-// const SCREEN_2XL = 1536;
 
 function Products() {
   const [products] = useState(data);
+  const [searchResult, setSearchResult] = useState(data);
   const [pageNumber, setPageNumber] = useState(0);
+
+  const navigate = useNavigate();
 
   const screenSize = window.innerWidth;
 
@@ -27,7 +27,11 @@ function Products() {
 
   const productsPerPage = getDisplayRangeNMarginPages().itemsPerPage;
   const pagesVisited = pageNumber * productsPerPage;
-  const displayProducts = products.slice(pagesVisited, pagesVisited + productsPerPage);
+  const displayProducts = searchResult.slice(pagesVisited, pagesVisited + productsPerPage);
+
+  // useEffect(() => {
+  //   console.log(searchResult)
+  // }, [searchResult])
 
   return (
     <>
@@ -37,7 +41,7 @@ function Products() {
         <div className="products-content-wrapper">
           {/* filtering panel LEFT SIDE */}
           <section className="filter-panel">
-            <ProductsFilterPanel products={products} />
+            <ProductsFilterPanel products={products} setSearchResult={setSearchResult} />
           </section>
 
           {/* products listing RIGHT SIDE */}
@@ -52,7 +56,9 @@ function Products() {
                 return (
                   <motion.div
                     className="product-card"
-                    onClick={() => alert(`Product ID: ${item.id}. Details coming soon.`)}
+                    onClick={() => {
+                      navigate(`/${item.id}`); console.log(`/${item.id}`)
+                    }}
                     key={index}
                     whileHover={{ y: -10 }}
                   >

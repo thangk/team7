@@ -8,6 +8,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import AboutPage from './components/AboutPage';
 import LoremPages from './components/LoremPages';
+import { HeaderSpacer } from './components/Utils';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
     <Router>
       {/* place to add navbar and header */}
       <Header />
+      <HeaderSpacer />
 
       <Routes>
         {/* copy the following method to add your page after adding the file in "pages" folder */}

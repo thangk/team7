@@ -9,12 +9,4 @@ export const fadeInOut = {
         opacity: 1
     },
 
-    // transition: {
-    //     duration: 1,
-    //     ease: 'easeOut'
-    // },
-
-    // exit: {
-    //     opacity: 1
-    // }
 };

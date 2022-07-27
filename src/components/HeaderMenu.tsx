@@ -118,8 +118,9 @@ export const MenuToggle = ({ toggle }) => (
 
 const itemIds = [0, 1, 2, 3, 4];
 
-export const MenuList = () => (
-  <motion.ul className="menu-ul" variants={variant2}>
+// @ts-ignore
+export const MenuList = ({ isOpen }) => (
+  <motion.ul className={`menu-ul menu-${isOpen}-ul-zindex`} variants={variant2}>
     {itemIds.map((i) => (
       <MenuItem i={i} key={i} />
     ))}

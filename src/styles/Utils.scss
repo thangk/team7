@@ -1,0 +1,11 @@
+
+.header-spacer {
+    @apply h-[1px] mb-16
+}
+
+@screen sm {
+    .header-spacer {
+        @apply hidden
+    }
+}
+

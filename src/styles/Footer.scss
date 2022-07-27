@@ -5,7 +5,7 @@
 
 
 .footers-wrapper {
-    @apply bg-slate-200 mt-36 pb-10 font-barlow text-slate-500
+    @apply self-end w-full bg-slate-200 mt-36 pb-10 font-barlow text-slate-500
 }
 
 .footers-wrapper Link {
@@ -41,7 +41,7 @@
 }
 
 #email-sub-form input[type='email'] {
-    @apply rounded-l-md border-0 w-fit focus:ring-slate-400
+    @apply rounded-l-md border-0 w-1/2 focus:ring-slate-400
 }
 
 #email-sub-form button {
@@ -72,7 +72,7 @@ hr {
 @screen sm {
 
     .footers-wrapper {
-        @apply bg-slate-200 mt-36 pb-10 font-barlow text-slate-500
+        @apply self-end w-full bg-slate-200 pb-10 font-barlow text-slate-500
     }
     
     .footers-wrapper Link {
