@@ -1,7 +1,5 @@
 import { motion, useCycle } from "framer-motion";
 import { useRef, useState } from "react";
-import { AiFillShopping, AiOutlineUser } from "react-icons/ai";
-import { BsGrid1X2Fill } from 'react-icons/bs'
 import { useDimensions } from "../customHooks/useDimension";
 import { MenuList, MenuToggle } from "./HeaderMenu";
 import logo2 from "../images/icons/logo2-icon.png";
