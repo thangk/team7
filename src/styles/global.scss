@@ -87,8 +87,8 @@
 
 
 // body
-body {
-	@apply flex flex-col theme-bg;
+.body1 {
+	@apply flex flex-col gap-4 theme-bg;
 }
 
 

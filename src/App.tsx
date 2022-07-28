@@ -15,6 +15,7 @@ function App() {
   return (
     <Router>
       {/* place to add navbar and header */}
+      <main className='body1'>
       <Header />
       <HeaderSpacer />
 
@@ -35,6 +36,7 @@ function App() {
 
       {/* place to add footer */}
       <Footer />
+      </main>
     </Router>
   );
 }
