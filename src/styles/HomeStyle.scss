@@ -1,10 +1,16 @@
+
+.homepage-wrapper {
+  @apply flex flex-col gap-8
+}
+
 .page-title-center {
     @apply text-6xl font-bebas-neue theme-text text-center;
   }
 
-.background-image{
-    @apply w-full object-contain object-center;
-}
 .background-wrapper {
-  @apply relative w-[1920px] h-[1400px] mx-auto mt-12
+  @apply w-full h-[350px] mx-auto mt-12
+}
+
+.background-wrapper img {
+  @apply w-full h-full object-cover object-center ;
 }

@@ -3,23 +3,23 @@ import React from 'react'
 
 function Home() {
   return (
-    //@ts-ignore
     
-    <>
-      <h1 className="page-title-center">"Revolutionizing the way you Shop for Watches"</h1>
-      <br></br>
-      <br></br>
-      <div className="background-wrapper">
+      <main className="homepage-wrapper">
 
-        <div className="background-image">
+        <h1 className="page-title-center">"Revolutionizing the way you Shop for Watches"</h1>
+  
+  
+        <div className="background-wrapper">
           <img src={watch} alt="watch" />
         </div>
-      </div>
-      <h1 className="page-title-center">Newest Additions</h1>
+
+        <h1 className="page-title-center">Newest Additions</h1>
 
 
-      </>
-    //Adding comment to test pull request
+      </main>
+
+
+
   )
 }
 
