@@ -1,7 +1,14 @@
 import watch from "../images/icons/watch.jpg";
-import React from 'react'
+import React from 'react';
+import data from "../assets/template.json";
+import noimage from "../images/icons/noimage.jpg";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import { nanoid } from "nanoid";
 
 function Home() {
+
+  const navigate = useNavigate();
   return (
     
       <main className="homepage-wrapper">
@@ -14,6 +21,38 @@ function Home() {
         </div>
 
         <h1 className="page-title-center">Newest Additions</h1>
+
+        {/*Newest addition listings*/}
+
+        
+        <section className="home-products-panel">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          key={nanoid()}
+          className="product-cards-wrapper"
+        >         
+
+        <motion.div
+          className="product-card"
+          onClick={() => {
+            navigate(`/${data[0].id}`); console.log(`/${data[0].id}`)
+          }}
+          whileHover={{ y: -10 }}
+        >
+
+        <div className="product-card-image">
+          <img src={noimage} alt="noimage" />
+        </div>
+        <div className="product-card-text">
+          <div>Name: {data[0].name}</div>
+          <div>Brand: {data[0].brand}</div>
+          <div>Price: {data[0].price}</div>
+          <div>ID: {data[0].id}</div>
+        </div>
+            </motion.div>
+          </motion.div>
+        </section>
 
 
       </main>
