@@ -8,7 +8,7 @@
   }
 
 .background-wrapper {
-  @apply w-full h-[350px] mx-auto mt-12
+  @apply w-full h-[450px] mx-auto ;
 }
 
 .background-wrapper img {
@@ -16,5 +16,21 @@
 }
 
 .home-products-panel {
-	@apply w-full ;
+	@apply flex w-full gap-4 justify-center;
+}
+
+.home-product-cards-wrapper {
+	@apply grid grid-cols-2 gap-3;
+}
+
+.home-product-card {
+	@apply  w-[415px] theme-bg hover-theme-bg-dark hover:drop-shadow-lg p-2 hover:cursor-pointer;
+}
+
+.home-product-card-image {
+	@apply p-2 border-2 theme-border flex w-[400px];
+}
+
+.home-product-card-text {
+	@apply py-2  theme-text;
 }
