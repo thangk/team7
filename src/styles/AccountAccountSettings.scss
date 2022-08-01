@@ -1,0 +1,38 @@
+.accountsettings__pagewrapper {
+    @apply flex flex-col gap-4 text-slate-600 font-barlow
+}
+
+.accountsettings__item {
+    @apply p-4 flex flex-col gap-2
+}
+
+.accountsettings__item_col1 {
+    @apply w-full
+}
+
+.accountsettings__pagewrapper button {
+    @apply bg-slate-300 hover:bg-slate-400 text-slate-600 hover:text-slate-100 py-2 px-4 text-center font-barlow rounded-md
+}
+
+
+
+
+@screen sm {
+
+
+    .accountsettings__pagewrapper {
+        @apply flex flex-col gap-4 text-slate-600 font-barlow
+    }
+    
+    .accountsettings__item {
+        @apply p-4 flex flex-row
+    }
+    
+    .accountsettings__item_col1 {
+        @apply w-[200px]
+    }
+    
+    .accountsettings__pagewrapper button {
+        @apply bg-slate-300 hover:bg-slate-400 text-slate-600 hover:text-slate-100 py-2 px-4 text-center font-barlow rounded-md
+    }
+}

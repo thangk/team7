@@ -1,11 +1,11 @@
 /*  MENU start */
 
 .menu-wrapper {
-	@apply absolute top-10 right-0 z-20
+	@apply absolute top-10 right-0 z-50
 }
 
 .menubtn {
-	@apply ml-4 -top-8 right-0 border-none outline-none absolute bg-transparent stroke-slate-400 fill-slate-400
+	@apply ml-4 -top-8 right-0 border-none outline-none absolute bg-transparent 
 }
 
 
@@ -40,11 +40,11 @@
 @screen sm {
 
     .menu-wrapper {
-        @apply absolute top-10 right-0 z-20
+        @apply absolute top-10 right-0 z-50
     }
     
     .menubtn {
-        @apply ml-4 -top-9 right-0 border-none outline-none absolute bg-transparent border-slate-500
+        @apply ml-4 -top-9 right-0 border-none outline-none absolute bg-transparent 
     }
     
     .menu-wrapper-spot {

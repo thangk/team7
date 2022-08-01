@@ -5,7 +5,7 @@
 
 
 .footers-wrapper {
-    @apply self-end w-full bg-slate-200 mt-36 pb-10 font-barlow text-slate-500
+    @apply self-end w-full  mt-36 pb-10 font-barlow 
 }
 
 .footers-wrapper Link {
@@ -41,15 +41,15 @@
 }
 
 #email-sub-form input[type='email'] {
-    @apply rounded-l-md border-0 w-1/2 focus:ring-slate-400
+    @apply rounded-l-md border-0 w-1/2 
 }
 
 #email-sub-form button {
-    @apply rounded-r-md border-slate-400 bg-slate-400 py-2 px-3 text-slate-50 border
+    @apply rounded-r-md   py-2 px-3  border
 }
 
-hr {
-    @apply border border-slate-300 -mb-3
+.footer2-wrapper hr {
+    @apply border  -mb-3
 }
 
 .footer2-wrapper {
@@ -72,7 +72,7 @@ hr {
 @screen sm {
 
     .footers-wrapper {
-        @apply self-end w-full bg-slate-200 pb-10 font-barlow text-slate-500
+        @apply self-end w-full  pb-10 font-barlow 
     }
     
     .footers-wrapper Link {
@@ -108,15 +108,15 @@ hr {
     }
     
     #email-sub-form input[type='email'] {
-        @apply rounded-l-md focus:ring-slate-400 border-slate-50 border-0
+        @apply rounded-l-md rounded-r-none border-0
     }
     
     #email-sub-form button {
-        @apply rounded-r-md bg-slate-400 py-2 px-3 text-slate-50 border-slate-400 border
+        @apply rounded-r-md  py-2 px-3 border
     }
     
     hr {
-        @apply border border-slate-300 -mb-3
+        @apply border  -mb-3
     }
     
     .footer2-wrapper {

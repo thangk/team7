@@ -1,0 +1,38 @@
+
+
+
+
+
+    
+.accountorders__pagewrapper {
+    @apply flex flex-col gap-1 text-slate-600 font-barlow max-h-[480px] min-h-[fit] overflow-y-auto
+}
+
+.accountorders__contentwrapper hr {
+    @apply mb-1
+}
+
+.accountorders__contentwrapper_header {
+    @apply flex p-2
+}
+
+
+.accountorders__contentwrapper_item {
+    @apply flex p-2 rounded-md bg-slate-200 hover:bg-slate-300 hover:cursor-pointer
+}
+
+.accountorders__hr {
+    @apply static block
+}
+
+.accountorders__contentwrapper_col1 {
+    @apply flex-1 
+}
+
+.accountorders__contentwrapper_col2 {
+    @apply w-12  text-center
+}
+
+.accountorders__contentwrapper_col3 {
+    @apply w-24  text-center
+}

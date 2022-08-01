@@ -1,0 +1,45 @@
+
+
+
+.ie__pagewrapper {
+    @apply flex flex-col w-full h-full justify-center items-center gap-6
+}
+
+.ie__wrapper {
+    @apply flex flex-col justify-center gap-4 items-center w-[250px] h-fit bg-slate-700 p-4 rounded-md text-slate-200 py-6
+}
+
+.ie__wrapper h1 {
+    @apply text-2xl capitalize
+}
+
+.ie__wrapper div {
+    @apply flex flex-col gap-2 justify-center items-center
+}
+
+.ie__wrapper div input[type='file'] {
+    @apply w-24
+}
+
+
+@screen sm {
+    .ie__pagewrapper {
+        @apply flex flex-row w-full h-full justify-center items-center gap-6
+    }
+    
+    .ie__wrapper {
+        @apply flex flex-col justify-center gap-12 items-center w-[250px] h-fit bg-slate-700 p-4 rounded-md text-slate-200 py-12
+    }
+    
+    .ie__wrapper h1 {
+        @apply text-3xl capitalize
+    }
+    
+    .ie__wrapper div {
+        @apply flex flex-col gap-2 justify-center items-center
+    }
+    
+    .ie__wrapper div input[type='file'] {
+        @apply w-24
+    }
+}

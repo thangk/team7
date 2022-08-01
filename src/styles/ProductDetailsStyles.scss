@@ -1,5 +1,5 @@
 .product-details-wrapper {
-	@apply mt-10 ml-96 mr-96 p-12 border-2 theme-border
+	@apply mt-10 ml-96 mr-96 p-12 border-2 
 }
 
 @media only screen and (max-width: 1500px){
@@ -24,7 +24,7 @@
 }
 
 .product-details-text {
-	@apply flex flex-col theme-text text-xl gap-12 flex-grow
+	@apply flex flex-col text-xl gap-12 flex-grow
 }
 
 .price-field {
@@ -34,7 +34,7 @@
 .btn {
 	color: white;
 	transition: 0.5s;
-	@apply theme-bg-darker p-4
+	@apply p-4
 }
 
 /*Make hover effect*/

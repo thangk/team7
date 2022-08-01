@@ -1,0 +1,92 @@
+.admincontents__wrapper {
+    @apply relative flex flex-col justify-between gap-8 h-full
+}
+
+.admincontents__wrapper h1 {
+    @apply text-slate-300 text-3xl h-fit
+}
+
+.admincontents__action-buttons-wrapper {
+    @apply flex flex-row gap-2 h-fit
+}
+
+
+
+
+.admincontents__listing {
+    @apply flex flex-col gap-2 font-barlow text-slate-300 flex-1 overflow-auto
+}
+
+.admincontents__listing_headerwrapper {
+    @apply flex font-bold sticky top-0 bg-slate-500 drop-shadow-md py-2 w-full
+}
+
+.admincontents__listing_contents {
+    @apply mt-1
+}
+
+.admincontents__listing_item {
+    @apply flex hover:bg-slate-400 hover:cursor-pointer py-1 items-center
+}
+
+// item sizes
+
+.admincontents__listing_item_id {
+    @apply w-8 text-center
+}
+
+.admincontents__listing_item_image {
+    @apply w-12 justify-center items-center
+}
+
+.admincontents__listing_item_price, .admincontents__listing_item_stock {
+    @apply w-12 text-center
+}
+
+.admincontents__listing_item_facesize {
+    @apply w-16 text-center
+}
+
+.admincontents__listing_item_brand {
+    @apply w-20 text-center
+}
+
+.admincontents__listing_item_movementtype, .admincontents__listing_item_bandtype, .admincontents__listing_item_bandcolour, .admincontents__listing_item_casecolour {
+    @apply w-24 text-center
+}
+
+.admincontents__listing_item_firstname, .admincontents__listing_item_lastname, .admincontents__listing_item_role {
+    @apply w-32
+}
+
+.admincontents__listing_item_email, .admincontents__listing_item_name {
+    @apply flex-1
+}
+
+
+
+
+.admincontents__listing table {
+    @apply table-auto border border-slate-300 text-slate-300 font-barlow
+}
+
+
+.admincontents__listing tbody {
+    @apply h-24
+}
+
+.admincontents__listing thead {
+    @apply sticky
+}
+
+.admincontents__listing th {
+    @apply sticky border border-slate-300 py-1
+}
+
+.admincontents__listing td {
+    @apply pl-2 h-10
+}
+
+.admincontents__listing tbody tr {
+    @apply hover:bg-slate-400 hover:cursor-pointer
+}

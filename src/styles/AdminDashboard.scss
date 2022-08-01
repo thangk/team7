@@ -1,0 +1,45 @@
+
+
+
+.admindashboard__pagewrapper {
+    @apply flex flex-col w-full h-full justify-center items-center gap-6
+}
+
+.admindashboard__wrapper {
+    @apply h-fit flex flex-col justify-center gap-2 items-center min-w-[225px] bg-slate-700 p-4 rounded-md text-slate-200
+}
+
+.admindashboard__wrapper h1 {
+    @apply text-4xl capitalize
+}
+
+.admindashboard__wrapper h2 {
+    @apply text-xl capitalize
+}
+
+.admindashboard__wrapper div {
+    @apply flex gap-4
+}
+
+
+@screen sm {
+    .admindashboard__pagewrapper {
+        @apply flex flex-row w-full h-full justify-center items-center gap-6
+    }
+    
+    .admindashboard__wrapper {
+        @apply h-[250px] flex flex-col justify-center gap-12 items-center min-w-[250px] bg-slate-700 p-4 rounded-md text-slate-200
+    }
+    
+    .admindashboard__wrapper h1 {
+        @apply text-6xl capitalize
+    }
+    
+    .admindashboard__wrapper h2 {
+        @apply text-3xl capitalize
+    }
+    
+    .admindashboard__wrapper div {
+        @apply flex gap-4
+    }
+}

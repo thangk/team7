@@ -1,0 +1,38 @@
+.accountdashboard__dashboard_wrapper {
+    @apply flex justify-around
+}
+
+
+.accountdashboard__dashboard_wrapper section {
+    @apply bg-slate-300 p-8 rounded-md text-center font-barlow capitalize text-slate-600
+}
+
+.accountdashboard__dashboard_wrapper h1 {
+    @apply text-3xl
+}
+
+.accountdashboard__dashboard_wrapper h2 {
+    @apply text-2xl
+}
+
+
+
+@screen sm {
+
+    .accountdashboard__dashboard_wrapper {
+        @apply flex justify-around
+    }
+    
+    
+    .accountdashboard__dashboard_wrapper section {
+        @apply bg-slate-300 p-14 rounded-md text-center font-barlow capitalize text-slate-600
+    }
+    
+    .accountdashboard__dashboard_wrapper h1 {
+        @apply text-4xl
+    }
+    
+    .accountdashboard__dashboard_wrapper h2 {
+        @apply text-2xl
+    }
+}

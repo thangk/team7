@@ -1,5 +1,6 @@
 import { FaFacebookSquare, FaInstagram, FaPinterest, FaTwitter, FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useTheme } from "../contexts/ThemeContext";
 
 
 
@@ -7,11 +8,11 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
 
-    
+    const { currentTheme } = useTheme()
 
     return (
         <>
-        <div className="footers-wrapper">
+        <div className={`footers-wrapper theme-bg-${currentTheme}-darker theme-text-${currentTheme}-2`}>
             <main className="footer1-wrapper">
 
                 <section className="footer-brand-name-wrapper">
@@ -34,11 +35,11 @@ const Footer = () => {
 
                         <label htmlFor="email-sub">Get the latest Infinity news</label>
                         <div>
-                        <input type='email' className='email-sub' name="email-sub" size={30} required />
-                        <button type="submit" form="email-sub-form">Subscribe</button>
+                        <input type='email' className={`theme-focus-ring-${currentTheme}`} name="email-sub" size={30} required />
+                        <button type="submit" className={`theme-border-${currentTheme} theme-bg-${currentTheme} theme-text-${currentTheme}-1`} form="email-sub-form">Subscribe</button>
                         </div>
 
-                        <div>
+                        <div className="flex items-center gap-2">
                         <input type='checkbox' className="email-sub-agm" id='email-sub-agm' required />
                         <label htmlFor="email-sub-agm">By checking this box, you agree to subscribe to our newsletter.</label>
                         </div>
@@ -61,7 +62,7 @@ const Footer = () => {
             </main>
 
             <main className="footer2-wrapper">
-                <hr />
+                <hr className={`theme-border-${currentTheme}-dark`} />
                 <section className="footer2-links-wrapper">
                     <Link className='footer-link-item' onClick={() => window.scrollTo(0, 0)} to='terms-of-service'>Terms of Service</Link>|
                     <Link className='footer-link-item' onClick={() => window.scrollTo(0, 0)} to='privacy-policy'>Privacy Policy</Link>|

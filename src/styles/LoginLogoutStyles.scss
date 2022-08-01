@@ -1,0 +1,157 @@
+
+
+
+
+.loginsignuppage__page-wrapper {
+	@apply w-full mx-auto relative px-4
+}
+
+
+.loginsignuppage__page-title {
+	@apply text-6xl font-bebas-neue text-slate-400 text-center mb-6
+}
+
+.loginsignuppage__page-wrapper form {
+	@apply flex flex-col gap-6 font-barlow text-slate-500 min-w-fit min-h-fit w-full h-fit bg-slate-200 p-8 py-14 mt-28 rounded-lg
+}
+
+.loginsignup-form-item-right {
+	@apply flex justify-end items-center gap-2
+}
+
+.loginsignup-form-item-left {
+	@apply flex items-center
+}
+
+.loginsignup-form-item-center {
+	@apply flex justify-center items-center gap-1
+}
+
+.loginsignup-input-field label {
+	@apply mr-2
+}
+
+.loginsignup-form-item-right input[type='checkbox'] {
+	@apply border-slate-400
+}
+
+.loginsignup-button {
+	@apply bg-slate-500 hover:bg-slate-600 text-slate-300 text-xl font-bold w-fit py-2 px-14 self-center rounded-md
+}
+
+// added by Kap
+
+// error box
+.loginsignuppage__validation_error {
+	@apply absolute flex flex-col gap-12 left-1/2 top-[50%] -translate-x-1/2 -translate-y-1/2 w-fit max-w-[350px] h-fit pt-6 pb-12 px-6 bg-red-400 text-slate-200 font-barlow rounded-xl items-center
+}
+
+.loginsignuppage__validation_error button {
+	@apply px-12 py-1 bg-slate-200 text-slate-500 rounded-md w-fit justify-self-center
+}
+
+.loginsignup__error_buttonwrapper {
+	@apply flex justify-center
+}
+
+.loginsignuppage__error_content_error {
+	@apply font-bold
+}
+
+.loginsignuppage__error_title {
+	@apply text-center text-3xl font-bold 
+}
+
+.loginsignuppage__error_content {
+	@apply flex flex-col gap-4 my-6
+}
+
+.loginsignuppage__on {
+	@apply block
+}
+
+.loginsignuppage__off {
+	@apply hidden
+}
+
+
+
+@screen sm {
+
+
+	
+
+
+
+.loginsignuppage__page-wrapper {
+	@apply w-[1024px] mx-auto relative
+}
+
+
+.loginsignuppage__page-title {
+	@apply text-6xl font-bebas-neue text-slate-400 text-center mb-6
+}
+
+.loginsignuppage__page-wrapper form {
+	@apply flex flex-col gap-6 font-barlow text-slate-500 min-w-fit min-h-fit max-w-[200px] h-fit mx-auto bg-slate-200 p-8 py-24 mt-8 rounded-lg
+}
+
+.loginsignup-form-item-right {
+	@apply flex justify-end items-center gap-2
+}
+
+.loginsignup-form-item-left {
+	@apply flex items-center
+}
+
+.loginsignup-form-item-center {
+	@apply flex justify-center items-center gap-1
+}
+
+.loginsignup-input-field label {
+	@apply mr-2
+}
+
+.loginsignup-form-item-right input[type='checkbox'] {
+	@apply border-slate-400
+}
+
+.loginsignup-button {
+	@apply bg-slate-500 hover:bg-slate-600 text-slate-300 text-xl font-bold w-fit py-2 px-14 self-center rounded-md
+}
+
+// added by Kap
+
+// error box
+.loginsignuppage__validation_error {
+	@apply absolute flex flex-col gap-12 left-1/2 top-[50%] -translate-x-1/2 -translate-y-1/2 w-fit max-w-[350px] h-fit pt-6 pb-12 px-6 bg-red-400 text-slate-200 font-barlow rounded-xl items-center
+}
+
+.loginsignuppage__validation_error button {
+	@apply px-12 py-1 bg-slate-200 text-slate-500 rounded-md w-fit justify-self-center
+}
+
+.loginsignup__error_buttonwrapper {
+	@apply flex justify-center
+}
+
+.loginsignuppage__error_content_error {
+	@apply font-bold
+}
+
+.loginsignuppage__error_title {
+	@apply text-center text-3xl font-bold 
+}
+
+.loginsignuppage__error_content {
+	@apply flex flex-col gap-4 my-6
+}
+
+.loginsignuppage__on {
+	@apply block
+}
+
+.loginsignuppage__off {
+	@apply hidden
+}
+}

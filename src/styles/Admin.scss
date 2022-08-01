@@ -1,0 +1,205 @@
+
+
+
+.admin__page-wrapper {
+    @apply bg-slate-700 w-full min-h-screen h-full flex flex-col relative
+}
+
+
+.admin__left-panel {
+    @apply min-w-[300px] h-fit flex flex-col p-4 gap-4
+}
+
+
+
+.admin__company-info {
+    @apply text-center
+}
+
+.admin__company-info h1 {
+    @apply -mt-2 font-barlow text-slate-400 font-bold capitalize
+}
+
+.admin__logo-icon {
+    @apply w-28 mx-auto -mt-2
+}
+
+.admin__nav { 
+    @apply bg-slate-500 w-full h-full rounded-md overflow-clip hidden
+}
+
+.admin__nav-item {
+    @apply flex gap-4 items-center text-slate-300 font-barlow text-xl capitalize hover:bg-slate-400 px-8 py-4 select-none
+}
+
+.admin__company-footer-info-wrapper {
+    @apply w-full aspect-video hidden flex-col justify-start items-center capitalize text-slate-400 text-sm
+}
+
+
+.admin__right-panel {
+    @apply flex-1 flex flex-col w-full h-screen gap-0 px-2
+}
+
+.admin__buttons {
+    @apply bg-slate-300 text-slate-700 py-1 px-5 rounded-md drop-shadow-xl hover:drop-shadow-none hover:bg-slate-400 hover:text-slate-200 font-barlow
+}
+
+
+.admin__page-title-wrapper {
+    @apply p-3 w-full h-fit bg-slate-700 text-slate-300 font-barlow flex flex-col-reverse justify-between gap-3
+}
+
+.admin__page-title-wrapper h1 {
+    @apply text-3xl capitalize font-barlow
+}
+
+.admin__page-content-wrapper {
+    @apply bg-slate-500 rounded-md w-full h-full mb-4 p-8
+}
+
+
+.admin__user-info-logout-wrapper {
+    @apply w-full h-full gap-4 flex justify-between
+}
+
+.admin__user-icon-wrapper {
+    @apply flex items-center
+}
+
+.admin__user-icon-wrapper img {
+    @apply w-12 aspect-square rounded-full z-10 ring-slate-400 ring-2
+}
+
+.admin__user-icon-wrapper h1 {
+    @apply text-lg bg-slate-600 px-4 pl-8 rounded-2xl -ml-5 ring-slate-500 ring-2
+}
+
+.admin__logout-button {
+    @apply my-2 px-4 bg-slate-600 rounded-full ring-slate-600 hover:bg-slate-500 hover:ring-slate-400 ring-2
+}
+
+
+
+.admin__menu_bg {
+    @apply relative
+}
+
+.admin__menubtn {
+    @apply ml-4 -top-4 right-4 border-none outline-none absolute bg-transparent stroke-slate-400 fill-slate-400 z-50
+}
+
+.admin__menu-ul {
+	@apply absolute -top-10 -right-0 h-screen pl-5 w-fit pt-16 bg-slate-500 drop-shadow-2xl
+}
+
+.admin__menu-li {
+	@apply list-none my-3 flex items-center cursor-pointer text-xl text-slate-300 capitalize
+}
+
+.admin__icon-placeholder {
+	@apply flex justify-center items-center w-10 h-10 mr-5
+}
+
+.admin__text-placeholder {
+	@apply flex items-center w-44 h-8
+}
+
+.admin__menu_wrapper {
+	@apply absolute top-10 right-0 z-50
+}
+
+
+
+.menu-wrapper-spot {
+	@apply  w-6
+}
+
+
+
+@screen sm {
+
+    .admin__menu_wrapper {
+        @apply hidden
+    }
+
+.admin__page-wrapper {
+    @apply bg-slate-700 min-w-full w-fit flex flex-row
+}
+
+
+.admin__left-panel {
+    @apply min-w-[300px] h-full flex flex-col p-4 gap-4
+}
+
+
+
+.admin__company-info {
+    @apply h-[180px] text-center
+}
+
+.admin__company-info h1 {
+    @apply -mt-5 font-barlow text-slate-400 font-bold capitalize
+}
+
+.admin__logo-icon {
+    @apply w-48 mx-auto -mt-2
+}
+
+.admin__nav { 
+    @apply bg-slate-500 w-full h-full rounded-md overflow-clip block
+}
+
+.admin__nav-item {
+    @apply flex gap-4 items-center text-slate-300 font-barlow text-xl capitalize hover:bg-slate-400 px-8 py-4 select-none
+}
+
+.admin__company-footer-info-wrapper {
+    @apply w-full aspect-video flex flex-col justify-start items-center capitalize text-slate-400 text-sm
+}
+
+
+.admin__right-panel {
+    @apply flex-1 flex flex-col w-full min-h-full gap-0 px-0 pr-4
+}
+
+.admin__buttons {
+    @apply bg-slate-300 text-slate-700 py-1 px-5 rounded-md drop-shadow-xl hover:drop-shadow-none hover:bg-slate-400 hover:text-slate-200 font-barlow
+}
+
+
+.admin__page-title-wrapper {
+    @apply p-8 w-full h-fit bg-slate-700 text-slate-300 font-barlow flex flex-row justify-between
+}
+
+.admin__page-title-wrapper h1 {
+    @apply text-5xl capitalize font-barlow
+}
+
+.admin__page-content-wrapper {
+    @apply bg-slate-500 rounded-md w-full min-h-[400px] h-full flex-1 p-8
+}
+
+
+.admin__user-info-logout-wrapper {
+    @apply w-fit h-full gap-4 flex justify-between
+}
+
+.admin__user-icon-wrapper {
+    @apply flex items-center
+}
+
+.admin__user-icon-wrapper img {
+    @apply w-12 aspect-square rounded-full z-10 ring-slate-400 ring-2
+}
+
+.admin__user-icon-wrapper h1 {
+    @apply text-lg bg-slate-600 px-4 pl-8 rounded-2xl -ml-5 ring-slate-500 ring-2
+}
+
+.admin__logout-button {
+    @apply my-2 px-4 bg-slate-600 rounded-full ring-slate-600 hover:bg-slate-500 hover:ring-slate-400 ring-2
+}
+
+
+}

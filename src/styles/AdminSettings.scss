@@ -1,0 +1,27 @@
+.adminsettings__pagewrapper {
+    @apply flex flex-col gap-8 font-barlow
+}
+
+
+.adminsettings__item {
+    @apply flex flex-col w-full text-slate-300
+}
+
+.adminsettings__item p {
+    @apply w-48 mb-2
+}
+
+@screen sm {
+    .adminsettings__pagewrapper {
+        @apply flex flex-col gap-8 font-barlow
+    }
+    
+    
+    .adminsettings__item {
+        @apply flex flex-row items-center text-slate-300
+    }
+    
+    .adminsettings__item p {
+        @apply w-48
+    }
+}

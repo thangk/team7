@@ -1,15 +1,15 @@
 
 
 
-form {
+.filter-options form {
     @apply w-full
 }
 
-label {
+.filter-option label {
     @apply ml-2 select-none
 }
 
-section {
+.filter-options-wrapper {
     @apply flex flex-col gap-2
 }
 
@@ -17,9 +17,7 @@ section {
     @apply ml-4
 }
 
-input[type='checkbox'] {
-    @apply border-slate-300 rounded-md text-slate-400 focus:ring-slate-400
-}
+
 
 
 

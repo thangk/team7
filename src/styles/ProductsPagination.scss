@@ -3,7 +3,7 @@
 }
 
 .paginationButtonsContainer {
-	@apply  w-full h-min flex flex-row gap-1 font-medium font-barlow theme-text align-top
+	@apply  w-full h-min flex flex-row gap-1 font-medium font-barlow align-top
 }
 
 
@@ -13,11 +13,11 @@
 }
 
 .paginationButtons { 
-    @apply flex justify-center items-center  w-10 h-10 p-2 font-bold hover:cursor-pointer hover:text-slate-50 hover-theme-bg-darker hover:rounded-full
+    @apply flex justify-center items-center  w-10 h-10 p-2 font-bold hover:cursor-pointer  hover:rounded-full
 }
 
 .backButton, .nextButton {
-	@apply flex justify-center text-2xl hover:text-slate-50 hover-theme-bg-darker hover:rounded-full
+	@apply flex justify-center text-2xl hover:rounded-full
 }
 
 
@@ -27,16 +27,16 @@
 
 
 .paginationActiveButton {
-	@apply theme-bg-darker text-slate-50 rounded-full
+	@apply rounded-full
 }
 
 .paginationDisabledButton {
-	@apply text-slate-300 pointer-events-none hover:bg-slate-50
+	@apply pointer-events-none
 }
 
 
 .product-cards-pagination {
-	@apply w-full flex px-2 py-4 border-2 theme-bg;
+	@apply w-full flex px-2 py-4 border-2 ;
 }
 
 
@@ -46,11 +46,11 @@
 @screen sm {
 
     .paginationButtonsContainer {
-        @apply  w-full h-min flex flex-row gap-6 font-medium font-barlow theme-text align-top
+        @apply  w-full h-min flex flex-row gap-6 font-medium font-barlow  align-top
     }
 
     .product-cards-pagination {
-		@apply w-3/4 flex p-4 border-2 theme-bg;
+		@apply w-3/4 flex p-4 border-2 ;
 	}
 
     .pagination-wrapper {

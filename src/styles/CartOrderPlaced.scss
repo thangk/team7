@@ -1,0 +1,33 @@
+.cartorderplaced__wrapper {
+    @apply flex flex-col gap-4 w-[1024px] h-fit mx-auto py-12 -z-10;
+}
+
+.cartorderplaced__content-wrapper {
+    @apply w-full h-max flex items-start gap-4 bg-slate-50 drop-shadow-md;
+}
+
+.cartorderplaced__orderslist_wrapper {
+    @apply  flex-1
+}
+
+.cartorderplaced__orderslist_wrapper hr {
+    @apply border border-slate-300 -mb-3
+}
+
+.cartorderplaced__orderslist_wrapper-title {
+    @apply py-4 text-2xl font-barlow text-slate-600
+}
+
+.cartorderplaced__orderslist_wrapper-content {
+    @apply p-4 px-8 pt-8 h-fit flex flex-col gap-6 font-barlow text-slate-600 items-center
+}
+
+.cartorderplaced__headerwrapper {
+    @apply flex justify-between items-center px-8
+}
+
+
+.cartorderplaced__orderslist_wrapper-content button {
+    @apply bg-slate-300 hover:bg-slate-400 text-slate-600 hover:text-slate-100 py-2 px-4 text-center font-barlow rounded-md
+}
+

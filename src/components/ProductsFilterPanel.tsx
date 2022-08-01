@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect,  } from "react";
 
 //@ts-ignore
 function ProductsFilterPanel({ products, setSearchResult }) {
@@ -45,7 +45,7 @@ function ProductsFilterPanel({ products, setSearchResult }) {
     });
   };
 
-  const [count, setCount] = useState([])
+  // const [count, setCount] = useState([])
 
   const handleSearchChange = (e: any) => {
     console.log(e.target.type)
@@ -64,43 +64,43 @@ function ProductsFilterPanel({ products, setSearchResult }) {
     setSearchResult(resultArray)
   }
 
-  const handleCheckboxChange = (e: any) => {
-    // console.log(e.target.type)
-    if (!e.target.checked) { 
-      const removedItem = count.filter((item: string) => item.toLowerCase() !== e.target.value.toLowerCase())
-      setCount(removedItem)
+  // const handleCheckboxChange = (e: any) => {
+  //   // console.log(e.target.type)
+  //   if (!e.target.checked) { 
+  //     const removedItem = count.filter((item: string) => item.toLowerCase() !== e.target.value.toLowerCase())
+  //     setCount(removedItem)
       
-      return setSearchResult(products)
-    }
+  //     return setSearchResult(products)
+  //   }
 
-    // @ts-ignore
-    if (!count.includes(e.target.value)) setCount(pv => [...pv, e.target.value])
+  //   // @ts-ignore
+  //   if (!count.includes(e.target.value)) setCount(pv => [...pv, e.target.value])
 
-    let resultArray: any = []
+  //   let resultArray: any = []
 
-    console.log(`size ${count.length}`)
+  //   console.log(`size ${count.length}`)
 
-    for (const i of count as string[]) {
-      console.log(`i ${i}`)
+  //   for (const i of count as string[]) {
+  //     console.log(`i ${i}`)
 
-      const oneResult = products.filter((product: any) => 
-      product.name.toLowerCase().includes(i.toLowerCase()) || 
-      product.brand.toLowerCase().includes(i.toLowerCase()) ||
-      product.faceSize.toLowerCase().includes(i.toLowerCase()) || 
-      product.caseColour.toLowerCase().includes(i.toLowerCase()) || 
-      product.bandColour.toLowerCase().includes(i.toLowerCase()) || 
-      product.movementType.toLowerCase().includes(i.toLowerCase())
-      )
+  //     const oneResult = products.filter((product: any) => 
+  //     product.name.toLowerCase().includes(i.toLowerCase()) || 
+  //     product.brand.toLowerCase().includes(i.toLowerCase()) ||
+  //     product.faceSize.toLowerCase().includes(i.toLowerCase()) || 
+  //     product.caseColour.toLowerCase().includes(i.toLowerCase()) || 
+  //     product.bandColour.toLowerCase().includes(i.toLowerCase()) || 
+  //     product.movementType.toLowerCase().includes(i.toLowerCase())
+  //     )
 
-      resultArray.concat(oneResult)
-      console.log(resultArray)
-    }
+  //     resultArray.concat(oneResult)
+  //     console.log(resultArray)
+  //   }
 
 
 
-    setSearchResult(resultArray)
-    // console.log(resultArray)
-  }
+  //   setSearchResult(resultArray)
+  //   // console.log(resultArray)
+  // }
 
   getKeysValues();
 
@@ -118,14 +118,14 @@ function ProductsFilterPanel({ products, setSearchResult }) {
 
       {keys_values.sort().map((item: any) => {
         return (
-          <section key={item.key}>
+          <section className="filter-options-wrapper" key={item.key}>
             <h1>{getFilterTitle(item.key)}</h1>
             <div className="filter-options">
               <form id={`filter-form-${item.key.toLowerCase()}`}>
                 {item.value.sort().map((v: any) => {
                   return (
                     <div className="filter-option" key={v}>
-                      <input type="checkbox" id={`${item.key.toLowerCase()}-${v}`} onChange={handleCheckboxChange} name={v} value={v} />
+                      <input type="checkbox" id={`${item.key.toLowerCase()}-${v}`} onChange={handleSearchChange} name={v} value={v} />
                       <label htmlFor={`${item.key.toLowerCase()}-${v}`}>{v}</label>
                     </div>
                   );

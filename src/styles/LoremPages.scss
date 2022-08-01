@@ -6,11 +6,11 @@
 }
 
 .page-title {
-	@apply text-3xl font-bebas-neue theme-text;
+	@apply text-3xl font-bebas-neue ;
 }
 
 .lorempage-content-wrapper {
-	@apply w-full h-max flex flex-col gap-4 p-4 border-2 theme-border;
+	@apply w-full h-max flex flex-col gap-4 p-4 border-2 ;
 }
 
 .lorempage-content-wrapper p {
@@ -33,7 +33,7 @@
 
 	
 	.lorempage-content-wrapper {
-		@apply w-full h-max p-12 border-2 theme-border;
+		@apply w-full h-max p-12 border-2 ;
 	}
 	
     .lorempage-content-wrapper p {

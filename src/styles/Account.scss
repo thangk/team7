@@ -1,0 +1,107 @@
+.page-title {
+	@apply text-3xl font-bebas-neue;
+}
+
+.accountpage-wrapper {
+    @apply flex flex-col gap-4 w-full h-fit mx-auto px-4 py-6;
+}
+
+.accountpage-content-wrapper {
+    @apply w-full h-max flex flex-col items-start gap-4  drop-shadow-md;
+}
+
+.accountpage-leftpanel {
+    @apply  w-full p-4 flex gap-4 justify-center items-center
+}
+
+.accountpage-rightpanel {
+    @apply  w-full
+}
+
+.accountpage-rightpanel hr {
+    @apply border  -mb-3
+}
+
+.accountpage-userinfo {
+    @apply flex flex-col flex-1 gap-2 justify-center items-center mt-4
+}
+
+.accountpage-userinfo img {
+    @apply w-24 aspect-square bg-slate-300 rounded-md
+}
+
+.accountpage-userinfo h1 {
+    @apply text-xl font-barlow font-bold
+}
+
+.accountpage-nav {
+    @apply  flex flex-col flex-1 gap-4
+}
+
+.accountpage-nav-item {
+    @apply bg-slate-300 hover:bg-slate-400 text-slate-500 hover:text-slate-200 py-2 px-4 text-center font-barlow rounded-md
+}
+
+.accountpage-rightpanel-title {
+    @apply py-4 pl-4 text-2xl font-barlow capitalize
+}
+
+.accountpage-rightpanel-content {
+    @apply p-4 pt-8 h-fit
+}
+
+
+
+@screen sm {
+
+
+
+    .accountpage-wrapper {
+        @apply flex flex-col gap-4 w-[1024px] h-fit mx-auto px-4 py-12;
+    }
+
+    .accountpage-content-wrapper {
+        @apply w-full h-max flex flex-row items-start gap-4  drop-shadow-md;
+    }
+
+    .accountpage-leftpanel {
+        @apply  w-48 p-4 flex flex-col gap-4 justify-center items-center
+    }
+
+    .accountpage-rightpanel {
+        @apply  flex-1
+    }
+
+    .accountpage-rightpanel hr {
+        @apply border  -mb-3
+    }
+
+    .accountpage-userinfo {
+        @apply flex flex-col gap-2 justify-center items-center mt-4
+    }
+
+    .accountpage-userinfo img {
+        @apply w-24 aspect-square bg-slate-300 rounded-md
+    }
+
+    .accountpage-userinfo h1 {
+        @apply text-xl font-barlow font-bold
+    }
+
+    .accountpage-nav {
+        @apply  flex flex-col gap-4 mt-6
+    }
+
+    .accountpage-nav-item {
+        @apply bg-slate-300 hover:bg-slate-400  hover:text-slate-200 py-2 px-4 text-center font-barlow rounded-md
+    }
+
+    .accountpage-rightpanel-title {
+        @apply py-4 text-2xl font-barlow capitalize
+    }
+
+    .accountpage-rightpanel-content {
+        @apply p-4 pt-8 h-fit
+    }
+}
+

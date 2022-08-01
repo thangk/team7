@@ -2,12 +2,16 @@ import { motion, useCycle } from "framer-motion";
 import { useRef, useState } from "react";
 import { useDimensions } from "../customHooks/useDimension";
 import { MenuList, MenuToggle } from "./HeaderMenu";
-import logo2 from "../images/icons/logo2-icon.png";
+import logo from "../images/icons/logo-icon-small.png";
 import { Link, useNavigate } from "react-router-dom";
-import { headerNavLinks, headerSocialIcons } from "./Constants";
+import { headerNavLinks, themeIcons } from "./Constants";
+import { useTheme } from "../contexts/ThemeContext";
+import { HeaderSpacer } from "./Utils";
+import Footer from "./Footer";
 
 
-const Header = () => {
+// @ts-ignore
+const Header = ({ children }) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const [tooltip, setTooltip] = useState("");
   const containerRef = useRef(null);
@@ -15,6 +19,8 @@ const Header = () => {
   const { height } = useDimensions(containerRef);
 
   const navigate = useNavigate();
+
+  const { currentTheme, setCurrentTheme } = useTheme()
 
   //@ts-ignore
   const showTooltip = (e) => {
@@ -25,31 +31,46 @@ const Header = () => {
 
     for (const child of childNodes) {
       if (child.classList.contains('tooltip')) {
-        child.classList.toggle('show-tooltip');
+        child.classList.add('show-tooltip');
       }
     }
   }
+
+    //@ts-ignore
+    const hideTooltip = (e) => {
+
+      setTooltip(e.currentTarget.id);
+  
+      const childNodes = e.currentTarget.childNodes;
+  
+      for (const child of childNodes) {
+        if (child.classList.contains('tooltip')) {
+          child.classList.remove('show-tooltip');
+        }
+      }
+    }
 
 
 
   return (
     <>
+    <div className={`theme-bg-${currentTheme}`}>
       {/* Navbar */}
-      <div className="header-wrapper">
-      <div className="fixed w-full h-fit theme-bg drop-shadow-lg z-50">
+      <div className={`header-wrapper theme-bg-${currentTheme}`}>
+      <div className="fixed w-full h-fit drop-shadow-lg z-50">
 
 
 
       </div>
 
-        <div className="header">
+        <div className={`header theme-bg-${currentTheme}`}>
 
           {/* display social links */}
           <nav className="navbar socials">
-            {headerSocialIcons.map(item => {
+            {themeIcons.map(item => {
               return (
-              <motion.a className="links" key={item.name} id={item.name} onMouseOver={showTooltip} onMouseOut={showTooltip} onClick={() => alert(`${item.name} link will go here`)} whileHover={{ y: -2 }}>
-              <div className="tooltip">
+              <motion.a className="links" key={item.name} id={item.name} onMouseOver={showTooltip} onMouseOut={hideTooltip} onClick={() => setCurrentTheme(`${item.name}`)} whileHover={{ y: -2 }}>
+              <div className={`tooltip theme-bg-${currentTheme}-darker theme-text-${currentTheme}-2`}>
                   {tooltip}
                 </div>
                 {item.icon}
@@ -59,7 +80,7 @@ const Header = () => {
           </nav>
 
             {/* website logo */}
-          <img src={logo2} alt="logo2" className="logo-image" onClick={() => navigate('/', {replace: true})} />
+          <img src={logo} alt="logo" className="logo-image" onClick={() => navigate('/', {replace: true})} />
 
             {/* display nav links */}
           <nav className="navbar">
@@ -68,9 +89,9 @@ const Header = () => {
               // if it's the menu button, display it
               if (item.name === 'menu') {
                 return (
-                  <div className="links menu-wrapper-spot" key={item.name} id="menu" onMouseOver={showTooltip} onMouseOut={showTooltip}>
+                  <div className={`links theme-text-${currentTheme}-1 menu-wrapper-spot`} key={item.name} id="menu" onMouseOver={showTooltip} onMouseOut={hideTooltip}>
 
-                  <div className="tooltip">
+                  <div className={`tooltip theme-bg-${currentTheme}-darker theme-text-${currentTheme}-2`}>
                       {tooltip}
                     </div>
                     <motion.div
@@ -79,10 +100,11 @@ const Header = () => {
                       custom={height}
                       ref={containerRef}
                       className="menu-wrapper"
+                      id='dropdown-menu'
                     >
                       
                       <div className="menu-bg">
-                        <MenuToggle toggle={() => toggleOpen()} />
+                        <MenuToggle currentTheme={currentTheme} toggle={() => toggleOpen()} />
                         {isOpen && <MenuList isOpen={isOpen} />}
                       </div>
                     </motion.div>
@@ -92,8 +114,8 @@ const Header = () => {
 
               // if not, then display the nav links
               return (
-              <motion.div className="links" key={item.name} id={item.name} onMouseOver={showTooltip} onMouseOut={showTooltip} whileHover={{ y: -2 }}>
-                  <div className="tooltip">
+              <motion.div className={`links theme-text-${currentTheme}-1`} key={item.name} id={item.name} onMouseOver={showTooltip} onMouseOut={hideTooltip} whileHover={{ y: -2 }}>
+                  <div className={`tooltip theme-bg-${currentTheme}-darker theme-text-${currentTheme}-2`}>
                     {tooltip}
                   </div>
                   <Link to={item.url}>{item.icon}</Link>
@@ -106,7 +128,15 @@ const Header = () => {
           </nav>
         </div>
       </div>
+
+      <HeaderSpacer />
+      {children}
+
+      <Footer />
+      </div>
     </>
+
+    
   );
 };
 

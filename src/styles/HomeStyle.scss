@@ -1,22 +1,24 @@
 
+// added by Kap start
+
 .homepage-wrapper {
-  @apply flex flex-col gap-8
+  @apply flex flex-col gap-8 w-full
 }
 
 .page-title-center {
-    @apply text-6xl font-bebas-neue theme-text text-center;
+    @apply text-5xl font-bebas-neue 
   }
 
 .background-wrapper {
-  @apply w-full h-[450px] mx-auto ;
+  @apply w-full h-fit mx-auto ;
 }
 
 .background-wrapper img {
-  @apply w-full h-full object-cover object-center ;
+  @apply w-full h-[150px] object-cover object-center ;
 }
 
 .home-products-panel {
-	@apply flex w-full gap-4 justify-center;
+	@apply grid grid-cols-2
 }
 
 .home-product-cards-wrapper {
@@ -24,13 +26,60 @@
 }
 
 .home-product-card {
-	@apply  w-[415px] theme-bg hover-theme-bg-dark hover:drop-shadow-lg p-2 hover:cursor-pointer;
+	@apply  w-full  hover:drop-shadow-lg p-2 hover:cursor-pointer;
 }
 
 .home-product-card-image {
-	@apply p-2 border-2 theme-border flex w-[400px];
+	@apply p-2 border-2  flex w-full;
 }
 
 .home-product-card-text {
-	@apply py-2  theme-text;
+	@apply py-2  ;
+}
+
+// added by Kap end
+
+
+
+
+@screen sm {
+
+
+
+
+	.homepage-wrapper {
+		@apply flex flex-col gap-8 mt-8
+	  }
+	  
+	  .page-title-center {
+		  @apply text-6xl font-bebas-neue  text-center;
+		}
+	  
+	  .background-wrapper {
+		@apply w-full h-[450px] mx-auto ;
+	  }
+	  
+	  .background-wrapper img {
+		@apply w-full h-full object-cover object-center ;
+	  }
+	  
+	  .home-products-panel {
+		  @apply flex w-full gap-4 justify-center;
+	  }
+	  
+	  .home-product-cards-wrapper {
+		  @apply grid grid-cols-2 gap-3 ;
+	  }
+	  
+	  .home-product-card {
+		  @apply  w-[415px] hover:drop-shadow-lg p-2 hover:cursor-pointer font-barlow;
+	  }
+	  
+	  .home-product-card-image {
+		  @apply p-2 border-2 flex w-[400px];
+	  }
+	  
+	  .home-product-card-text {
+		  @apply py-2 ;
+	  }
 }

@@ -66,7 +66,7 @@ export const MenuItem = ({ i }) => {
       variants={variant1}
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.98 }}
-      onClick={() => alert("implementing redirect soon")}
+      onClick={() => alert(`Link to ${menuItems[i].text}`)}
     >
       <div className="icon-placeholder">{menuItems[i].icon}</div>
       <div className="text-placeholder">{menuItems[i].text}</div>
@@ -89,8 +89,11 @@ const Path = (props) => (
 
 // from Framer Motion's examples list
 // @ts-ignore
-export const MenuToggle = ({ toggle }) => (
-  <motion.button className="menubtn" onClick={toggle} whileHover={{ y: -2 }}>
+export const MenuToggle = ({ toggle, currentTheme }) => (
+
+  
+
+  <motion.button className={`menubtn theme-text-${currentTheme}-2 theme-fill-${currentTheme} theme-stroke-${currentTheme}`} onClick={toggle} whileHover={{ y: -2 }}>
     <svg width="23" height="23" viewBox="0 0 23 23">
       <Path
         variants={{

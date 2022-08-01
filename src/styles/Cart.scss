@@ -1,0 +1,200 @@
+.cartpage__headerwrapper {
+    @apply flex justify-between items-center px-3
+}
+
+.cartpage__orderbutton_mobile {
+    @apply block bg-slate-300 hover:bg-slate-400 text-slate-600 hover:text-slate-100 py-2 px-4 text-center font-barlow rounded-md
+}
+
+.cartpage__orderbutton_desktop {
+    @apply hidden
+}
+
+
+.cartpage__orderslist_content_wrapper {
+    @apply flex flex-col gap-1  font-barlow max-h-[480px] min-h-[fit] overflow-y-auto
+}
+
+.cartpage__contentwrapper hr {
+    @apply mb-1
+}
+
+.cartpage__contentwrapper_header {
+    @apply flex p-2 gap-1
+}
+
+
+.cartpage__contentwrapper_item {
+    @apply flex p-2 rounded-md bg-slate-200 gap-1
+}
+
+
+.cartpage__contentwrapper_col1 {
+    @apply flex-1 
+}
+
+.cartpage__contentwrapper_col2 {
+    @apply min-w-[48px] max-w-fit  flex justify-center items-center
+}
+
+.cartpage__contentwrapper_col3 {
+    @apply min-w-[80px] max-w-fit  flex justify-end items-center
+}
+
+.cartpage__contentwrapper_col4 {
+    @apply w-10  flex justify-center items-center
+}
+
+
+.cartpage-wrapper {
+    @apply flex flex-col gap-4 w-full mx-auto px-4 py-6 ;
+}
+
+.cartpage-content-wrapper {
+    @apply w-full h-max flex items-start gap-4 bg-slate-50 drop-shadow-md;
+}
+
+.cartpage__orderslist_wrapper {
+    @apply  flex-1
+}
+
+.cartpage__orderslist_wrapper hr {
+    @apply border border-slate-300 -mb-3
+}
+
+.cartpage__orderslist_wrapper-title {
+    @apply py-4 text-2xl font-barlow 
+}
+
+.cartpage__orderslist_wrapper-content {
+    @apply p-4 px-3 pt-8 h-fit flex flex-col gap-6
+}
+
+
+
+.cartpage__deletebutton {
+    @apply text-xl text-slate-400 hover:cursor-pointer hover:text-slate-900 hover:text-2xl
+}
+
+.cartpage__totalwrapper {
+    @apply flex flex-col  font-barlow max-h-[480px] min-h-[fit] overflow-y-auto
+}
+
+.cartpage__total_item {
+    @apply flex justify-end px-2 py-1 rounded-md gap-1
+}
+
+.cartpage__total_col1 {
+    @apply flex-1 flex justify-end
+}
+.cartpage__total_col2 {
+    @apply min-w-[80px] max-w-fit flex justify-end items-center
+}
+.cartpage__total_col3 {
+    @apply w-10 flex justify-center items-center
+}
+
+
+
+
+@screen sm {
+
+
+    .cartpage__headerwrapper {
+        @apply flex justify-between items-center px-8
+    }
+    
+    .cartpage__orderbutton_desktop {
+        @apply block bg-slate-300 hover:bg-slate-400 text-slate-600 hover:text-slate-100 py-2 px-4 text-center font-barlow rounded-md
+    }
+    
+    .cartpage__orderbutton_mobile {
+        @apply hidden
+    }
+    
+    
+    .cartpage__orderslist_content_wrapper {
+        @apply flex flex-col gap-1  font-barlow max-h-[480px] min-h-[fit] overflow-y-auto
+    }
+    
+    .cartpage__contentwrapper hr {
+        @apply mb-1
+    }
+    
+    .cartpage__contentwrapper_header {
+        @apply flex p-2 gap-2
+    }
+    
+    
+    .cartpage__contentwrapper_item {
+        @apply flex p-2 rounded-md bg-slate-200 gap-2
+    }
+    
+    
+    .cartpage__contentwrapper_col1 {
+        @apply flex-1 
+    }
+    
+    .cartpage__contentwrapper_col2 {
+        @apply min-w-[48px] max-w-fit  flex justify-center items-center
+    }
+    
+    .cartpage__contentwrapper_col3 {
+        @apply min-w-[80px] max-w-fit  flex justify-end items-center
+    }
+    
+    .cartpage__contentwrapper_col4 {
+        @apply w-10  flex justify-center items-center
+    }
+    
+    
+    .cartpage-wrapper {
+        @apply flex flex-col gap-4 w-[1024px] mx-auto px-4 py-12 ;
+    }
+    
+    .cartpage-content-wrapper {
+        @apply w-full h-max flex items-start gap-4 bg-slate-50 drop-shadow-md;
+    }
+    
+    .cartpage__orderslist_wrapper {
+        @apply  flex-1
+    }
+    
+    .cartpage__orderslist_wrapper hr {
+        @apply border border-slate-300 -mb-3
+    }
+    
+    .cartpage__orderslist_wrapper-title {
+        @apply py-4 text-2xl font-barlow 
+    }
+    
+    .cartpage__orderslist_wrapper-content {
+        @apply p-4 px-8 pt-8 h-fit flex flex-col gap-6
+    }
+    
+    
+    
+    .cartpage__deletebutton {
+        @apply text-xl text-slate-400 hover:cursor-pointer hover:text-slate-900 hover:text-2xl
+    }
+    
+    .cartpage__totalwrapper {
+        @apply flex flex-col gap-1  font-barlow max-h-[480px] min-h-[fit] overflow-y-auto
+    }
+    
+    .cartpage__total_item {
+        @apply flex justify-end p-2 rounded-md  gap-2
+    }
+    
+    .cartpage__total_col1 {
+        @apply flex-1 flex justify-end
+    }
+    .cartpage__total_col2 {
+        @apply min-w-[80px] max-w-fit flex justify-end items-center
+    }
+    .cartpage__total_col3 {
+        @apply w-10 flex justify-center items-center
+    }
+    
+
+}

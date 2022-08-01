@@ -1,0 +1,51 @@
+
+.adminaddform__wrapper {
+    @apply absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 w-fit h-fit bg-slate-600 z-10 p-4 rounded-xl drop-shadow-2xl
+}
+
+.adminaddform__wrapper h1 {
+    @apply text-center
+}
+
+.adminaddform__wrapper form {
+    @apply flex flex-col gap-4 mt-6
+}
+
+.adminaddform__wrapper label {
+    @apply capitalize text-right text-slate-300
+}
+
+.adminaddform__listitem {
+    @apply grid grid-cols-[1fr,2fr] gap-x-4 items-center
+}
+
+.adminaddform__buttons-wrapper {
+    @apply flex gap-2 justify-center mt-6
+}
+
+@screen sm {
+    
+.adminaddform__wrapper {
+    @apply absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 w-fit h-fit bg-slate-600 z-10 p-6 rounded-xl drop-shadow-2xl
+}
+
+.adminaddform__wrapper h1 {
+    @apply text-center
+}
+
+.adminaddform__wrapper form {
+    @apply flex flex-col gap-4 mt-12
+}
+
+.adminaddform__wrapper label {
+    @apply capitalize text-right text-slate-300
+}
+
+.adminaddform__listitem {
+    @apply grid grid-cols-[1fr,2fr] gap-x-4 items-center
+}
+
+.adminaddform__buttons-wrapper {
+    @apply flex gap-2 justify-center mt-12
+}
+}

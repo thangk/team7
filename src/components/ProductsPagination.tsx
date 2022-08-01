@@ -1,5 +1,6 @@
 import { AiOutlineCaretLeft, AiOutlineCaretRight } from "react-icons/ai";
 import ReactPaginate from "react-paginate";
+import { useTheme } from "../contexts/ThemeContext";
 
 
 
@@ -7,7 +8,7 @@ import ReactPaginate from "react-paginate";
 const ProductsPagination = ({ products, productsPerPage, setPageNumber, getDisplayRangeNMarginPages }) => {
 
     
-
+	const { currentTheme } = useTheme()
 
 
 
@@ -22,18 +23,18 @@ const ProductsPagination = ({ products, productsPerPage, setPageNumber, getDispl
 		<>
 			<section className="pagination-wrapper">
 				<div className="left-side"></div>
-				<div className="product-cards-pagination">
+				<div className={`product-cards-pagination theme-border-${currentTheme}-light theme-bg-${currentTheme}`}>
 					<ReactPaginate
 						previousLabel={<AiOutlineCaretLeft />}
 						nextLabel={<AiOutlineCaretRight />}
 						pageCount={pageCount}
 						onPageChange={changePage}
-						containerClassName={"paginationButtonsContainer"}
-						pageClassName={"paginationButtons"}
-						previousClassName={"backButton"}
-						nextClassName={"nextButton"}
-						disabledClassName={"paginationDisabledButton"}
-						activeClassName={"paginationActiveButton"}
+						containerClassName={`paginationButtonsContainer  theme-text-${currentTheme} hover-theme-text-${currentTheme}`}
+						pageClassName={`paginationButtons hover-theme-bg-${currentTheme}-darker`}
+						previousClassName={`backButton hover-theme-bg-${currentTheme}-darker`}
+						nextClassName={`nextButton hover-theme-bg-${currentTheme}-darker`}
+						disabledClassName={`paginationDisabledButton theme-text-${currentTheme}-0`}
+						activeClassName={`paginationActiveButton theme-bg-${currentTheme}-darker hover-theme-bg-${currentTheme} theme-text-${currentTheme}`}
 						breakLabel={"..."}
 						breakClassName={"breakLabel"}
 						pageRangeDisplayed={getDisplayRangeNMarginPages().displayRange}

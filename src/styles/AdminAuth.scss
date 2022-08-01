@@ -1,0 +1,90 @@
+
+
+
+.adminauth__pagewrapper {
+    @apply bg-slate-500 w-screen h-screen flex justify-center items-center drop-shadow-2xl
+}
+
+
+.adminauth__content-wrapper {
+    @apply bg-slate-300 flex flex-col gap-8 w-fit h-fit px-3 py-12 pt-0 rounded-xl text-slate-500 font-barlow capitalize
+}
+
+
+.adminauth__logoandtitle h1 {
+    @apply text-center -mt-4  font-bold
+}
+
+.adminauth__content-wrapper form {
+    @apply grid gap-4 items-center px-4
+}
+
+.adminauth__content-wrapper label {
+    @apply text-right mr-4 flex-1
+}
+
+.adminauth__button-wrapper {
+    @apply flex justify-center items-center
+}
+
+.adminauth__content-wrapper button {
+    @apply capitalize mt-6 py-1 px-10 bg-slate-500 hover:bg-slate-600 text-slate-50 rounded-sm w-[75%]
+}
+
+.adminauth__inputfields {
+    @apply flex justify-end items-center
+}
+
+.adminauth__inputfields input { 
+    @apply rounded-md ring-slate-600 w-[175px]
+
+}
+
+
+
+
+
+@screen sm {
+
+    
+
+
+.adminauth__pagewrapper {
+    @apply bg-slate-500 w-screen h-screen flex justify-center items-center drop-shadow-2xl
+}
+
+
+.adminauth__content-wrapper {
+    @apply bg-slate-300 flex flex-col gap-8 w-fit h-fit p-8 pt-0 rounded-xl text-slate-500 font-barlow capitalize
+}
+
+
+.adminauth__logoandtitle h1 {
+    @apply text-center -mt-4  font-bold
+}
+
+.adminauth__content-wrapper form {
+    @apply grid gap-4 items-center
+}
+
+.adminauth__content-wrapper label {
+    @apply text-right mr-4 flex-1
+}
+
+.adminauth__button-wrapper {
+    @apply flex justify-center items-center
+}
+
+.adminauth__content-wrapper button {
+    @apply capitalize mt-6 py-1 px-10 bg-slate-500 hover:bg-slate-600 text-slate-50 rounded-sm w-[75%]
+}
+
+.adminauth__inputfields {
+    @apply flex justify-end items-center
+}
+
+.adminauth__inputfields input { 
+    @apply rounded-md ring-slate-600 w-[200px]
+
+}
+}
