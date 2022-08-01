@@ -15,6 +15,7 @@ const AdminAddForm = ({ add, setAdd, mode, setList }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
+    
     const [name, setName] = useState('');
     const [brand, setBrand] = useState('');
     const [desc, setDesc] = useState('');
@@ -29,6 +30,9 @@ const AdminAddForm = ({ add, setAdd, mode, setList }) => {
     const [stock, setStock] = useState(0);
 
     const { signup } = useAuthAdmin();
+
+    console.log(name)
+    console.log(imageUpload)
 
     let addMode: any;
 

@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { FaInfo, FaMapMarkerAlt, FaPhoneAlt, FaRegNewspaper, FaUsers } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 import { adminNavLinks } from './Constants'

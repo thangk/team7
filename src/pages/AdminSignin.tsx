@@ -17,6 +17,7 @@ const AdminSignin = () => {
 
     const [admins, setAdmins] = useState([])
 
+    console.log(loading)
 
     // @ts-ignore
     const handleSignin = async (e) => {
@@ -108,6 +109,4 @@ const AdminSignin = () => {
 
 export default AdminSignin;
 
-function setLoggedInAdmin(item: never) {
-    throw new Error('Function not implemented.');
-}
+

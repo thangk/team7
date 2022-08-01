@@ -1,4 +1,4 @@
-import api from '../api/base'
+// import api from '../api/base'
 
 
 // for spacing out the header in mobile screen
@@ -124,7 +124,7 @@ export const validateInput = (...inputs) => {
     let password;
 
     const name_pattern = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/ig
-    const email_pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ig
+    const email_pattern = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/ig
     const password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,24}$/ig
 
     const errorCodes: { errMessage: string, valid: string}[] = [];

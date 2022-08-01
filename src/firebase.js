@@ -12,14 +12,14 @@ const firebaseConfig_Admins = {
 }
 
 // for Customers
-const firebaseConfig_Customers = {
-    apiKey: process.env.REACT_APP_FIREBASE_API_KEY_CUSTOMERS,
-    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN_CUSTOMERS,
-    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID_CUSTOMERS,
-    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET_CUSTOMERS,
-    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID_CUSTOMERS,
-    appId: process.env.REACT_APP_FIREBASE_APP_ID_CUSTOMERS
-}
+// const firebaseConfig_Customers = {
+//     apiKey: process.env.REACT_APP_FIREBASE_API_KEY_CUSTOMERS,
+//     authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN_CUSTOMERS,
+//     projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID_CUSTOMERS,
+//     storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET_CUSTOMERS,
+//     messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID_CUSTOMERS,
+//     appId: process.env.REACT_APP_FIREBASE_APP_ID_CUSTOMERS
+// }
 
 export const appAdmins = initializeApp(firebaseConfig_Admins)
 export const authAdmins = getAuth(appAdmins)

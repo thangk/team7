@@ -8,18 +8,18 @@ const CartOrderPlaced = () => {
     
     const navigate = useNavigate()
 
-    // @ts-ignore
-    const handlePlaceOrder = (e) => {
-        e.preventDefault()
-    }
+    // // @ts-ignore
+    // const handlePlaceOrder = (e) => {
+    //     e.preventDefault()
+    // }
 
-    // @ts-ignore
-    const handleDeleteItem = (e) => {
-        e.preventDefault()
+    // // @ts-ignore
+    // const handleDeleteItem = (e) => {
+    //     e.preventDefault()
 
-        // alert('deleting')
-        // console.log('deleting')
-    }
+    //     // alert('deleting')
+    //     // console.log('deleting')
+    // }
 
     return (
         <main className="cartorderplaced__wrapper">
