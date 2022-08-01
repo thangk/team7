@@ -25,7 +25,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/products" element={<Products />} />
         <Route path="/404" element={<ErrorPage />} />
-        <Route path="/ProductDetails" element={<ProductsDetailsPage />} />{" "}
+        <Route path="/:id" element={<ProductsDetailsPage/>} /> {/*using id's as url parameter, will send to ProductDetailsPage component*/}
         <Route path='/About' element={<AboutPage />} />
 
         {/* this line has to be in the last line */}
