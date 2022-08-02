@@ -2,11 +2,9 @@ import api from '../api/base'
 import { useEffect, useState } from 'react';
 import AdminAddForm from './AdminAddForm';
 import AdminEditForm from './AdminEditForm';
-// import { useNavigate } from 'react-router-dom';
 
 const AdminCustomers = () => {
 
-    // const navigate = useNavigate();
 
     const [customers, setCustomers] = useState([]);
 
@@ -23,7 +21,7 @@ const AdminCustomers = () => {
     }
 
     useEffect(() => {
-        const fetchAdmins = async () => {
+        const fetchCustomers = async () => {
             try {
                 const res = await api.get('/customers');
                 setCustomers(res.data);
@@ -37,7 +35,9 @@ const AdminCustomers = () => {
             }
         }
 
-        fetchAdmins()
+        fetchCustomers()
+        console.log(customers)
+
 
     }, [add, edit, customers])
     
@@ -71,7 +71,7 @@ const AdminCustomers = () => {
                         <div className='admincontents__listing_contents'>
 
                         {/* @ts-ignore */}
-                        {customers && customers.map((item: any) => {   
+                        {/* {customers && customers.map((item: any) => {   
                             return (                         
                             <div className='admincontents__listing_item' key={item.id} id={item.id} onClick={handleEdit}>
                                 <h2 className='admincontents__listing_item_id'>{item.id}</h2>
@@ -79,7 +79,7 @@ const AdminCustomers = () => {
                                 <h2 className='admincontents__listing_item_lastname'>{item.lastName}</h2>
                                 <h2 className='admincontents__listing_item_email'>{item.email}</h2>
                             </div>)
-                        })}
+                        })} */}
                         </div>
     
     

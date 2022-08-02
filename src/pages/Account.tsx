@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useTheme } from '../contexts/ThemeContext';
 import noimage from '../images/icons/account-icon.png'
 
@@ -14,8 +14,10 @@ const Account = ({ children }) => {
 
     const { currentTheme } = useTheme()
 
-    const handleLogout = () => {
+    const navigate = useNavigate()
 
+    const handleLogout = () => {
+        navigate('/login')
     }
 
     return (
