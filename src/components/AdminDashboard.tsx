@@ -5,8 +5,8 @@ import api from '../api/base'
 const AdminDashboard = () => {
 
     const [admins, setAdmins] = useState([]);
-    const [customers, setCustomers] = useState([]);
-    const [products, setProducts] = useState([]);
+    const [customers] = useState([]);
+    const [products] = useState([]);
 
     
 

@@ -42,14 +42,12 @@ const App = () => {
 
   
   useEffect(() => {
-    // console.log(`theme-bg-${currentTheme}`)
   }, [currentTheme])
 
   return (
       <AuthContextProviderAdmin>
         <Routes>
           {/* public */}
-          {/* <div className={`theme-bg-${currentTheme}`}> */}
           
           <Route path="/" element={<Header>{<Home />}</Header>} />
           <Route path="/login" element={<Header>{<LoginPage />}</Header>} />

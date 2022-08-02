@@ -61,10 +61,9 @@ const Account = ({ children }) => {
                     <div className="accountpage-rightpanel-content">
 
                         
-                        {/* List of Orders */}
-                        {React.Children.map(children, (child) =>
+                        {/* {React.Children.map(children, (child) =>
                             React.cloneElement(child, { setPageTitle })
-                            )}
+                            )} */}
 
                     </div>
 

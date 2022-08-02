@@ -68,39 +68,39 @@
 	// 	@apply absolute bg-slate-400 text-slate-50 w-max h-fit font-barlow text-xs -top-10 left-1/2 -translate-x-1/2 px-2 py-1 rounded-md capitalize
 	// }
 
-	.tooltip {
-		display: none;
-		position: absolute;
-		width: max-content;
-		height: fit-content;
-		font-family: 'barlow';
-		font-size: 12px;
-		top: -45px;
-		left: 50%;
-		transform: translateX(-50%);
-		padding: 0px 10px;
-		color: #f8fafc;
-		background-color: #94a3b8;
-		border-radius: 6px;
-		text-transform: capitalize;
-	}
+	// .tooltip {
+	// 	display: none;
+	// 	position: absolute;
+	// 	width: max-content;
+	// 	height: fit-content;
+	// 	font-family: 'barlow';
+	// 	font-size: 12px;
+	// 	top: -45px;
+	// 	left: 50%;
+	// 	transform: translateX(-50%);
+	// 	padding: 0px 10px;
+	// 	color: #f8fafc;
+	// 	background-color: #94a3b8;
+	// 	border-radius: 6px;
+	// 	text-transform: capitalize;
+	// }
 
-	.tooltip:after {
-		content: "";
-		position: absolute;
-		width: 0;
-		height: 0;
-		left: 50%;
-		transform: translateX(-50%);
-		bottom: -12px;
-		border: 5px solid transparent;
-		border-top: 10px solid #94a3b8;
-		z-index: 3;
-	  }
+	// .tooltip:after {
+	// 	content: "";
+	// 	position: absolute;
+	// 	width: 0;
+	// 	height: 0;
+	// 	left: 50%;
+	// 	transform: translateX(-50%);
+	// 	bottom: -12px;
+	// 	border: 5px solid transparent;
+	// 	border-top: 10px solid #94a3b8;
+	// 	z-index: 3;
+	//   }
 
-	.show-tooltip {
-		display: inline-block;
-	}
+	// .show-tooltip {
+	// 	display: inline-block;
+	// }
 	  
 
 	// .tooltip2:before {

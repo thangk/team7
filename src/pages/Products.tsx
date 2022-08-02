@@ -63,7 +63,7 @@ function Products() {
                   <motion.div
                     className={`product-card theme-bg-${currentTheme} hover-theme-bg-${currentTheme}-dark`}
                     onClick={() => {
-                      navigate(`/${item.id}`); console.log(`/${item.id}`)
+                      navigate(`/products/${item.id}`); console.log(`/${item.id}`)
                     }}
                     key={index}
                     whileHover={{ y: -10 }}
