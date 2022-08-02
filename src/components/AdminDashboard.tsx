@@ -14,9 +14,9 @@ const AdminDashboard = () => {
     const getStat = (apiName: string) => {
 
         switch (apiName) {
-            case 'admins': return admins.length ?? 0
-            case 'customers': return customers.length ?? 0
-            case 'watches': return products.length ?? 0
+            case 'admins': return admins.length ? admins.length : 0
+            case 'customers': return customers.length ? customers.length : 0
+            case 'watches': return products.length ? products.length : 0
             default: return 0
         }
 
