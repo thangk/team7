@@ -28,12 +28,12 @@ const AdminDashboard = () => {
         const fetchDatas = async () => {
             try {
                 const res_admin = await api.get(`/admins`)
-                const res_customers = await api.get(`/customers`)
-                const res_products = await api.get(`/watches`)
+                // const res_customers = await api.get(`/customers`)
+                // const res_products = await api.get(`/watches`)
     
                 setAdmins(res_admin.data)
-                setCustomers(res_customers.data)
-                setProducts(res_products.data)
+                // setCustomers(res_customers.data)
+                // setProducts(res_products.data)
                 
             } catch (err) {
                 // @ts-ignore
