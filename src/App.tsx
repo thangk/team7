@@ -17,8 +17,7 @@ import { AuthContextProviderAdmin } from './contexts/AuthContextAdmin';
 import AdminSignin from './pages/AdminSignin';
 import PrivateRouteAdmin from './components/PrivateRouteAdmin';
 
-// @ts-ignore
-import LoginPage from './pages/LoginPage';
+import LoginPage from './pages/CustomerLogin';
 
 import SignupPage from './pages/SignupPage';
 import Account from './pages/Account';
