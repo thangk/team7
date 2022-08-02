@@ -25,14 +25,14 @@ const variant1 = {
 };
 
 // a type of animation motion set
-const variant2 = {
-  open: {
-    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
-  },
-  closed: {
-    transition: { staggerChildren: 0.05, staggerDirection: -1 },
-  },
-};
+// const variant2 = {
+//   open: {
+//     transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+//   },
+//   closed: {
+//     transition: { staggerChildren: 0.05, staggerDirection: -1 },
+//   },
+// };
 
 // list of items in the menu
 const menuItems = [

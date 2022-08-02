@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { dashboardStats } from "./Constants";
-import api from '../api/base'
+// import api from '../api/base'
 
 const AdminDashboard = () => {
 
@@ -14,9 +14,9 @@ const AdminDashboard = () => {
     const getStat = (apiName: string) => {
 
         switch (apiName) {
-            case 'admins': return admins.length ? admins.length : 0
-            case 'customers': return customers.length ? customers.length : 0
-            case 'watches': return products.length ? products.length : 0
+            case 'admins': return admins.length ? admins.length : 1
+            case 'customers': return customers.length ? customers.length : 2
+            case 'watches': return products.length ? products.length : 3
             default: return 0
         }
 
@@ -31,7 +31,7 @@ const AdminDashboard = () => {
                 // const res_customers = await api.get(`/customers`)
                 // const res_products = await api.get(`/watches`)
     
-                // setAdmins(res_admin.data)
+                setAdmins([])
                 // setCustomers(res_customers.data)
                 // setProducts(res_products.data)
                 
