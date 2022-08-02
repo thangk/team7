@@ -13,12 +13,14 @@ const AdminCustomers = () => {
     const [editId, setEditId] = useState(null);
 
     // @ts-ignore
-    const handleEdit = (e) => {
-        e.preventDefault()
+    // const handleEdit = (e) => {
+    //     e.preventDefault()
 
-        setEditId(e.currentTarget.id)
-        setEdit(true)
-    }
+    //     setEditId(e.currentTarget.id)
+    //     setEdit(true)
+    // }
+
+    console.log(setEditId)
 
     useEffect(() => {
         const fetchCustomers = async () => {
