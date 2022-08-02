@@ -30,8 +30,6 @@ function ProductsFilterPanel({ products, setSearchResult }) {
         return "Band Colour";
       case "movementTypes":
         return "Movement Type";
-      case "prices":
-        return "Price Range";
     }
   };
 
@@ -45,7 +43,6 @@ function ProductsFilterPanel({ products, setSearchResult }) {
     });
   };
 
-  // const [count, setCount] = useState([])
 
   const handleSearchChange = (e: any) => {
     console.log(e.target.type)
@@ -63,6 +60,8 @@ function ProductsFilterPanel({ products, setSearchResult }) {
 
     setSearchResult(resultArray)
   }
+
+  // incomplete, filtering with multiple values is much more complicated than expected - Kap
 
   // const handleCheckboxChange = (e: any) => {
   //   // console.log(e.target.type)
