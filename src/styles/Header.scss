@@ -4,11 +4,11 @@
 
 
 .header-wrapper {
-	@apply fixed w-full h-fit drop-shadow-lg z-50;
+	@apply fixed w-full h-fit drop-shadow-lg z-50
 }
 
 .header {
-	@apply flex flex-row justify-between items-center w-full -ml-6 -mt-6 ;
+	@apply flex flex-row justify-between items-center w-full -ml-6 -mt-6 
 }
 
 .header img, .header nav {
@@ -20,11 +20,11 @@
 }
 
 .navbar {
-	@apply relative flex flex-row justify-center items-center content-center gap-8 font-bebas-neue;
+	@apply relative flex flex-row justify-center items-center content-center gap-8 font-bebas-neue
 }
 
 .links {
-	@apply tracking-wider text-3xl cursor-pointer;
+	@apply tracking-wider text-3xl cursor-pointer
 }
 
 .socials {
@@ -32,11 +32,11 @@
 }
 
 .logo-image {
-	@apply w-36 hover:cursor-pointer;
+	@apply w-36 hover:cursor-pointer
 }
 
 .tooltip, .tooltip:after, .show-tooltip {
-	display: none;
+	@apply hidden
 }
 
 
@@ -48,20 +48,20 @@
 
 
 	.header-wrapper {
-		@apply static min-w-max h-auto drop-shadow-lg pb-4 z-50 -mt-1;
+		@apply static min-w-max h-auto drop-shadow-lg pb-4 z-50 -mt-1
 	}
 
 	.header {
-		@apply flex justify-between mt-1 w-[1024px] p-4 mx-auto;
+		@apply flex justify-between mt-1 w-[1024px] p-4 mx-auto
 	}
 	
 	.logo-image {
-		@apply w-44 scale-100 hover:cursor-pointer;
+		@apply w-44 scale-100 hover:cursor-pointer
 	}
 
 
 	.links {
-		@apply relative  tracking-wider text-2xl;
+		@apply relative  tracking-wider text-2xl
 	}
 
 	// .tooltip2 {

@@ -2,15 +2,15 @@
 // lorempage page
 
 .lorempage-wrapper {
-	@apply flex flex-col gap-4 w-full mx-auto py-6 px-4;
+	@apply flex flex-col gap-4 w-full mx-auto py-6 px-4
 }
 
 .page-title {
-	@apply text-3xl font-bebas-neue ;
+	@apply text-3xl font-bebas-neue
 }
 
 .lorempage-content-wrapper {
-	@apply w-full h-max flex flex-col gap-4 p-4 border-2 ;
+	@apply w-full h-max flex flex-col gap-4 p-4 border-2
 }
 
 .lorempage-content-wrapper p {
@@ -24,16 +24,16 @@
 
 
 	.lorempage-wrapper {
-		@apply flex flex-col gap-4 w-[1024px] mx-auto py-12;
+		@apply flex flex-col gap-4 w-[1024px] mx-auto py-12
 	}
 
 	.product-cards-wrapper {
-		@apply grid grid-cols-3 gap-4;
+		@apply grid grid-cols-3 gap-4
 	}
 
 	
 	.lorempage-content-wrapper {
-		@apply w-full h-max p-12 border-2 ;
+		@apply w-full h-max p-12 border-2 
 	}
 	
     .lorempage-content-wrapper p {

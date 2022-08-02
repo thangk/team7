@@ -61,9 +61,9 @@ const Account = ({ children }) => {
                     <div className="accountpage-rightpanel-content">
 
                         
-                        {/* {React.Children.map(children, (child) =>
+                        {React.Children.map(children, (child) =>
                             React.cloneElement(child, { setPageTitle })
-                            )} */}
+                            )}
 
                     </div>
 

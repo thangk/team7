@@ -1,13 +1,13 @@
 .page-title {
-	@apply text-3xl font-bebas-neue;
+	@apply text-3xl font-bebas-neue
 }
 
 .accountpage-wrapper {
-    @apply flex flex-col gap-4 w-full h-fit mx-auto px-4 py-6;
+    @apply flex flex-col gap-4 w-full h-fit mx-auto px-4 py-6
 }
 
 .accountpage-content-wrapper {
-    @apply w-full h-max flex flex-col items-start gap-4  drop-shadow-md;
+    @apply w-full h-max flex flex-col items-start gap-4  drop-shadow-md
 }
 
 .accountpage-leftpanel {
@@ -57,11 +57,11 @@
 
 
     .accountpage-wrapper {
-        @apply flex flex-col gap-4 w-[1024px] h-fit mx-auto px-4 py-12;
+        @apply flex flex-col gap-4 w-[1024px] h-fit mx-auto px-4 py-12
     }
 
     .accountpage-content-wrapper {
-        @apply w-full h-max flex flex-row items-start gap-4  drop-shadow-md;
+        @apply w-full h-max flex flex-row items-start gap-4  drop-shadow-md
     }
 
     .accountpage-leftpanel {

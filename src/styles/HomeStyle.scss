@@ -10,11 +10,11 @@
   }
 
 .background-wrapper {
-  @apply w-full h-fit mx-auto ;
+  @apply w-full h-fit mx-auto 
 }
 
 .background-wrapper img {
-  @apply w-full h-[150px] object-cover object-center ;
+  @apply w-full h-[150px] object-cover object-center 
 }
 
 .home-products-panel {
@@ -22,19 +22,19 @@
 }
 
 .home-product-cards-wrapper {
-	@apply grid grid-cols-2 gap-3;
+	@apply grid grid-cols-2 gap-3
 }
 
 .home-product-card {
-	@apply  w-full  hover:drop-shadow-lg p-2 hover:cursor-pointer;
+	@apply  w-full  hover:drop-shadow-lg p-2 hover:cursor-pointer
 }
 
 .home-product-card-image {
-	@apply p-2 border-2  flex w-full;
+	@apply p-2 border-2  flex w-full
 }
 
 .home-product-card-text {
-	@apply py-2  ;
+	@apply py-2  
 }
 
 // added by Kap end
@@ -52,34 +52,34 @@
 	  }
 	  
 	  .page-title-center {
-		  @apply text-6xl font-bebas-neue  text-center;
+		  @apply text-6xl font-bebas-neue  text-center
 		}
 	  
 	  .background-wrapper {
-		@apply w-full h-[450px] mx-auto ;
+		@apply w-full h-[450px] mx-auto 
 	  }
 	  
 	  .background-wrapper img {
-		@apply w-full h-full object-cover object-center ;
+		@apply w-full h-full object-cover object-center 
 	  }
 	  
 	  .home-products-panel {
-		  @apply flex w-full gap-4 justify-center;
+		  @apply flex w-full gap-4 justify-center
 	  }
 	  
 	  .home-product-cards-wrapper {
-		  @apply grid grid-cols-2 gap-3 ;
+		  @apply grid grid-cols-2 gap-3 
 	  }
 	  
 	  .home-product-card {
-		  @apply  w-[415px] hover:drop-shadow-lg p-2 hover:cursor-pointer font-barlow;
+		  @apply  w-[415px] hover:drop-shadow-lg p-2 hover:cursor-pointer font-barlow
 	  }
 	  
 	  .home-product-card-image {
-		  @apply p-2 border-2 flex w-[400px];
+		  @apply p-2 border-2 w-[400px] flex 
 	  }
 	  
 	  .home-product-card-text {
-		  @apply py-2 ;
+		  @apply py-2
 	  }
 }

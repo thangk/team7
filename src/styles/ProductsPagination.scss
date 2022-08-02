@@ -1,5 +1,5 @@
 .pagination-wrapper {
-	@apply w-full h-max flex justify-end items-end gap-4;
+	@apply w-full h-max flex justify-end items-end gap-4
 }
 
 .paginationButtonsContainer {
@@ -36,7 +36,7 @@
 
 
 .product-cards-pagination {
-	@apply w-full flex px-2 py-4 border-2 ;
+	@apply w-full flex px-2 py-4 border-2
 }
 
 
@@ -50,11 +50,11 @@
     }
 
     .product-cards-pagination {
-		@apply w-3/4 flex p-4 border-2 ;
+		@apply w-3/4 flex p-4 border-2
 	}
 
     .pagination-wrapper {
-        @apply w-full h-max flex flex-row gap-4;
+        @apply w-full h-max flex flex-row gap-4
     }
 }
 

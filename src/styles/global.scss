@@ -4,8 +4,8 @@
 @tailwind utilities;
 
 /* import fonts here */
-@import url(https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Barlow&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
 
 /* import other styles here ############################################### */
 /* aded by Kap start */
@@ -26,7 +26,6 @@
 @import './AdminEditForm.scss';
 @import './AdminDashboard.scss';
 @import './AdminAuth.scss';
-
 @import './LoginLogoutStyles.scss';
 @import './Account.scss';
 @import './AccountDashboard.scss';
@@ -38,7 +37,7 @@
 /* aded by Kap end */
 
 
-@import './ProductDetailsStyles.scss';
+// @import './ProductDetailsStyles.scss';
 @import './About.scss';
 
 
@@ -228,7 +227,7 @@
 
 // theme-ring-colour-2
 .theme-focus-ring-white {
-	@apply focus:ring-slate-500;
+	@apply focus:ring-slate-500
 }
 
 .theme-focus-ring-blue {

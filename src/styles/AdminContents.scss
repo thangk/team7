@@ -66,27 +66,27 @@
 
 
 
-.admincontents__listing table {
-    @apply table-auto border border-slate-300 text-slate-300 font-barlow
-}
+// .admincontents__listing table {
+//     @apply table-auto border border-slate-300 text-slate-300 font-barlow
+// }
 
 
-.admincontents__listing tbody {
-    @apply h-24
-}
+// .admincontents__listing tbody {
+//     @apply h-24
+// }
 
-.admincontents__listing thead {
-    @apply sticky
-}
+// .admincontents__listing thead {
+//     @apply sticky
+// }
 
-.admincontents__listing th {
-    @apply sticky border border-slate-300 py-1
-}
+// .admincontents__listing th {
+//     @apply sticky border border-slate-300 py-1
+// }
 
-.admincontents__listing td {
-    @apply pl-2 h-10
-}
+// .admincontents__listing td {
+//     @apply pl-2 h-10
+// }
 
-.admincontents__listing tbody tr {
-    @apply hover:bg-slate-400 hover:cursor-pointer
-}
+// .admincontents__listing tbody tr {
+//     @apply hover:bg-slate-400 hover:cursor-pointer
+// }
