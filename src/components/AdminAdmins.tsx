@@ -52,7 +52,7 @@ const AdminAdmins = () => {
 
         fetchAdmins()
 
-    }, [add, edit])
+    }, [add, edit, admins])
     
         return (
                 <main className="admincontents__wrapper">

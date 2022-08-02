@@ -39,7 +39,7 @@ const AdminCustomers = () => {
 
         fetchAdmins()
 
-    }, [add, edit])
+    }, [add, edit, customers])
     
         return (
             <>
