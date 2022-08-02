@@ -49,7 +49,7 @@ const AdminCustomers = () => {
                     {/* @ts-ignore */}
                     {edit && <AdminEditForm edit={edit} setEdit={setEdit} mode={'customers'} setList={setCustomers} editId={editId} />}
     
-                    <h1>{customers.length} Customers</h1>
+                    <h1>{customers && customers.length} Customers</h1>
     
                     <section className="admincontents__action-buttons-wrapper">
     
@@ -70,7 +70,8 @@ const AdminCustomers = () => {
 
                         <div className='admincontents__listing_contents'>
 
-                        {customers.map((item: any) => {   
+                        {/* @ts-ignore */}
+                        {customers && customers.map((item: any) => {   
                             return (                         
                             <div className='admincontents__listing_item' key={item.id} id={item.id} onClick={handleEdit}>
                                 <h2 className='admincontents__listing_item_id'>{item.id}</h2>
