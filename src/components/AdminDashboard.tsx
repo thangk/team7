@@ -28,12 +28,9 @@ const AdminDashboard = () => {
     useEffect(() => {
         const fetchDatas = async () => {
             try {
-                const res_admin = await axios.get(`import api from '../api/base'
-                admins`)
-                const res_customers = await axios.get(`import api from '../api/base'
-                customers`)
-                const res_products = await axios.get(`import api from '../api/base'
-                watches`)
+                const res_admin = await axios.get(`https://team7-backend.herokuapp.com/admins`)
+                const res_customers = await axios.get(`https://team7-backend.herokuapp.com/customers`)
+                const res_products = await axios.get(`https://team7-backend.herokuapp.com/watches`)
     
                 setAdmins(res_admin.data)
                 setCustomers(res_customers.data)
