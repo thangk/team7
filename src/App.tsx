@@ -13,9 +13,10 @@ import AdminAdmins from './components/AdminAdmins';
 import AdminCustomers from './components/AdminCustomers';
 import AdminImportExport from './components/AdminImportExport';
 
-import { AuthContextProviderAdmin } from './contexts/AuthContextAdmin';
+import { AuthContextProvider } from './contexts/AuthContext';
 import AdminSignin from './pages/AdminSignin';
 import PrivateRouteAdmin from './components/PrivateRouteAdmin';
+import PrivateRouteCustomer from './components/PrivateRouteCustomer';
 
 import LoginPage from './pages/CustomerLogin';
 
@@ -30,35 +31,20 @@ import AccountOrders from './components/AccountOrders';
 import AccountAccountSettings from './components/AccountAccountSettings';
 import CartOrderPlaced from './pages/CartOrderPlaced';
 import AdminSettings from './components/AdminSettings';
-import { useTheme } from './contexts/ThemeContext';
-import { useEffect } from 'react';
 
 
 
 
 const App = () => {
 
-  const { currentTheme } = useTheme()
-
-  
-  useEffect(() => {
-  }, [currentTheme])
 
   return (
-      <AuthContextProviderAdmin>
+      <AuthContextProvider>
         <Routes>
-          {/* public */}
-          
+          {/* public routes */}
           <Route path="/" element={<Header>{<Home />}</Header>} />
-          <Route path="/login" element={<Header>{<LoginPage />}</Header>} />
-          <Route path='/signup' element={<Header>{<SignupPage />}</Header>} />
-          <Route path='/signup-success' element={<Header>{<SignupSuccess />}</Header>} />
-          {/* @ts-ignore */}
-          <Route path='/account' element={<Header>{<Account>{<AccountDashboard />}</Account>}</Header>} />
-          {/* @ts-ignore */}
-          <Route path='/account/orders' element={<Header>{<Account>{<AccountOrders />}</Account>}</Header>} />
-          {/* @ts-ignore */}
-          <Route path='/account/settings' element={<Header>{<Account>{<AccountAccountSettings />}</Account>}</Header>} />
+          
+          
           <Route path='/cart' element={<Header>{<Cart />}</Header>} />
           <Route path='/cart/order-placed' element={<Header>{<CartOrderPlaced />}</Header>} />
           <Route path='/reset-password' element={<Header>{<PasswordResetPage />}</Header>} />
@@ -67,12 +53,21 @@ const App = () => {
           <Route path="/products/:id" element={<Header>{<ProductsDetailsPage />}</Header>} />
           <Route path="/404" element={<Header>{<ErrorPage />}</Header>} />
           <Route path='/about' element={<Header>{<AboutPage />}</Header>} />
-          <Route path='/:lorem' element={<Header>{<LoremPages />}</Header>} /> 
+           
+          <Route path='/signup' element={<Header>{<SignupPage />}</Header>} />
+          <Route path="/login" element={<Header>{<LoginPage />}</Header>} />
           
-          <Route path="/admin" element={<AdminSignin />} />
-          {/* </div> */}
+          {/* private routes for customer */}
+          <Route path='/account' element={<PrivateRouteCustomer />}>
+            <Route path='/account/signup-success' element={<Header>{<SignupSuccess />}</Header>} />
+            <Route path='/account/dashboard' element={<Header>{<Account>{<AccountDashboard />}</Account>}</Header>} />
+            <Route path='/account/orders' element={<Header>{<Account>{<AccountOrders />}</Account>}</Header>} />
+            <Route path='/account/settings' element={<Header>{<Account>{<AccountAccountSettings />}</Account>}</Header>} />
+          </Route>
 
-          {/* private */}
+          <Route path="/admin" element={<AdminSignin />} />
+
+          {/* private routes for admin */}
           <Route path='/admin' element={<PrivateRouteAdmin />}>
             <Route path="/admin/dashboard" element={<Admin>{<AdminDashboard />}</Admin>} />
             <Route path="/admin/admins" element={<Admin>{<AdminAdmins />}</Admin>} />
@@ -81,10 +76,14 @@ const App = () => {
             <Route path="/admin/settings" element={<Admin>{<AdminSettings />}</Admin>} />
             <Route path="/admin/ie" element={<Admin>{<AdminImportExport />}</Admin>} />
           </Route>
+        
+          {/* error page */}
+          <Route path='/:lorem' element={<Header>{<LoremPages />}</Header>} />
         </Routes>
 
+
         
-      </AuthContextProviderAdmin>
+      </AuthContextProvider>
 
 
         

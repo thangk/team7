@@ -1,5 +1,5 @@
 import React, { useContext, createContext, useState, useEffect } from 'react'
-import { authAdmins } from '../firebase'
+import { auth } from '../firebase'
 import { 
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
@@ -8,35 +8,35 @@ import {
     updatePassword,
  } from 'firebase/auth'
 
-const AdminContext = createContext()
+const AuthContext = createContext()
 
 
-export const useAuthAdmin = () => {
-    return useContext(AdminContext)
+export const useAuth = () => {
+    return useContext(AuthContext)
 }
 
-export const AuthContextProviderAdmin = ({ children }) => {
+export const AuthContextProvider = ({ children }) => {
 
-    const [currentAdmin, setCurrentAdmin] = useState();
+    const [currentUser, setCurrentUser] = useState();
 
-    const [loggedInAdmin, setLoggedInAdmin] = useState(null);
+    // const [loggedInAdmin, setLoggedInAdmin] = useState(null);
 
     const [loading, setLoading] = useState(true)
 
     const signup = (email, password) => {
-        return createUserWithEmailAndPassword(authAdmins, email, password)
+        return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const signin = (email, password) => {
-        return signInWithEmailAndPassword(authAdmins, email, password)
+        return signInWithEmailAndPassword(auth, email, password)
     }
 
     const signout = () => {
-        return signOut(authAdmins)
+        return signOut(auth)
     }
 
     const updateCurrentUserPassword = (password) => {
-        return updatePassword(currentAdmin, password)
+        return updatePassword(currentUser, password)
     }
 
     // const deleteAccount = () => {
@@ -45,9 +45,9 @@ export const AuthContextProviderAdmin = ({ children }) => {
 
     useEffect(() => {
 
-        const unsubscribe = onAuthStateChanged(authAdmins, admin => {
+        const unsubscribe = onAuthStateChanged(auth, user => {
             // console.log(admin)
-            setCurrentAdmin(admin)
+            setCurrentUser(user)
             setLoading(false)
         })
 
@@ -56,9 +56,7 @@ export const AuthContextProviderAdmin = ({ children }) => {
 
 
     const value = {
-        currentAdmin,
-        loggedInAdmin,
-        setLoggedInAdmin,
+        currentUser,
         signup,
         signin,
         signout,
@@ -66,8 +64,8 @@ export const AuthContextProviderAdmin = ({ children }) => {
     }
 
     return (
-        <AdminContext.Provider value={value}>
+        <AuthContext.Provider value={value}>
             {!loading && children}
-        </AdminContext.Provider>
+        </AuthContext.Provider>
     )
 }

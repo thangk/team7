@@ -2,12 +2,12 @@
 import { motion } from 'framer-motion';
 import { FiDelete } from 'react-icons/fi'
 import { useNavigate } from 'react-router-dom';
-import { useTheme } from '../contexts/ThemeContext';
-
+import { useSelector } from 'react-redux'
 
 const Cart = () => {
 
-    const { currentTheme } = useTheme()
+    // @ts-ignore
+  const currentTheme = useSelector(state => state.theme.current)
 
     const navigate = useNavigate()
 

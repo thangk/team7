@@ -3,11 +3,13 @@ import { addAdmin, addCustomers, addWatches } from "./Constants";
 import { getInputType, noSpaces } from "./Utils";
 import api from '../api/base'
 import { AxiosResponse } from "axios";
-import { useAuthAdmin } from "../contexts/AuthContextAdmin";
+// import { useAuthAdmin } from "../contexts/AuthContextAdmin";
+
+import { useSelector, useDispatch } from 'react-redux'
+import { setLoggedInUser } from "../features/loggedInUserSlice";
 
 // @ts-ignore
 const AdminEditForm = ({ edit, setEdit, mode, setList, editId }) => {
-
 
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -28,7 +30,12 @@ const AdminEditForm = ({ edit, setEdit, mode, setList, editId }) => {
     const [price, setPrice] = useState('');
     const [stock, setStock] = useState(0);
 
-    const { updateCurrentUserPassword } = useAuthAdmin()
+    // const { updateCurrentUserPassword } = useAuthAdmin()
+
+    // @ts-ignore
+    const loggedInUser = useSelector(state => state.loggedInUser.current)
+
+    const dispatch = useDispatch()
 
     let addMode: any;
 
@@ -59,7 +66,7 @@ const AdminEditForm = ({ edit, setEdit, mode, setList, editId }) => {
                 }
                 if (mode === 'watches') {
                     const res = await api.get(`/watches/${editId}`)
-                    // setName(res.data.name);
+                    setName(res.data.name);
                     setBrand(res.data.brand);
                     setDesc(res.data.desc);
                     setCaseColour(res.data.caseColour);
@@ -68,7 +75,7 @@ const AdminEditForm = ({ edit, setEdit, mode, setList, editId }) => {
                     setMovementType(res.data.movementType);
                     setFaceSize(res.data.faceSize);
                     setImageUrl(res.data.imageUrl);
-                    // setImageUpload(res.data.imageUpload);
+                    setImageUpload(res.data.imageUpload);
                     setPrice(res.data.price);
                     setStock(res.data.stock);
                 }
@@ -207,43 +214,65 @@ const AdminEditForm = ({ edit, setEdit, mode, setList, editId }) => {
         e.preventDefault();
  
 
-        await updateCurrentUserPassword(password)
+        // await updateCurrentUserPassword(password)
 
         try {
             let res: AxiosResponse<any, any>;
             
             if (mode === 'admins') {
-                res = await api.patch(`/admins/${editId}`, {
-                    firstName,
-                    lastName,
-                    role,
-                    email,
-                    password
-                })
+                try {
+                    res = await api.patch(`/admins/${editId}`, {
+                        firstName,
+                        lastName,
+                        role,
+                        email,
+                        password
+                    })
+
+                    dispatch(setLoggedInUser({...loggedInUser, firstName, lastName}))
+
+                } catch {
+                    alert('Something went wrong attempting to update.')
+                }
+
+                
             }
             if (mode === 'customers') {
-                res = await api.patch(`/customers/${editId}`, {
-                    firstName,
-                    lastName,
-                    email,
-                    password
-                })
+                try {
+                    res = await api.patch(`/customers/${editId}`, {
+                        firstName,
+                        lastName,
+                        email,
+                        password
+                    })
+
+                    dispatch(setLoggedInUser({...loggedInUser, firstName, lastName}))
+
+                } catch {
+                    alert('Something went wrong attempting to update.')
+                }
             }
             if (mode === 'watches') {
-                res = await api.patch(`/watches/${editId}`, {
-                    // name,
-                    brand,
-                    desc,
-                    caseColour,
-                    bandColour,
-                    bandType,
-                    movementType,
-                    faceSize,
-                    imageUrl,
-                    // imageUpload,
-                    price,
-                    stock
-                })
+
+                try {
+
+                    res = await api.patch(`/watches/${editId}`, {
+                        name,
+                        brand,
+                        desc,
+                        caseColour,
+                        bandColour,
+                        bandType,
+                        movementType,
+                        faceSize,
+                        imageUrl,
+                        imageUpload,
+                        price,
+                        stock
+                    })
+                } catch {
+                    alert('Something went wrong attempting to update.')
+                }
             }
             setList((prev: any[]) => prev.map(item => item.id === editId ? { ...res.data} : item))
         } catch (err) {

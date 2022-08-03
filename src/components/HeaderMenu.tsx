@@ -122,10 +122,22 @@ export const MenuToggle = ({ toggle, currentTheme }) => (
 const itemIds = [0, 1, 2, 3, 4];
 
 // @ts-ignore
-export const MenuList = ({ isOpen }) => (
+export const MenuList = ({ isOpen, themeIcons, handleSetTheme }) => (
   <motion.ul className={`menu-ul menu-${isOpen}-ul-zindex`}>
     {itemIds.map((i) => (
       <MenuItem i={i} key={i} />
     ))}
+
+        <nav className="mobile-theme-picker">
+          
+          {/* @ts-ignore */}
+            {themeIcons.map(item => {
+              return (
+              <motion.a className="links" key={item.name} id={item.name} onClick={() => handleSetTheme(item.name)} whileHover={{ y: -2 }}>
+                {item.icon}
+              </motion.a>
+              )
+            })}
+          </nav>
   </motion.ul>
 );

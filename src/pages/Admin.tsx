@@ -4,24 +4,35 @@ import { adminNavLinks, adminPanelTexts } from "../components/Constants";
 import logo from '../images/icons/logo2-icon.png'
 import defaultuser from '../images/test_users/user.png'
 
-import { useAuthAdmin } from '../contexts/AuthContextAdmin'
+import { useAuth } from '../contexts/AuthContext'
 import { motion, useCycle } from "framer-motion";
 import { useDimensions } from "../customHooks/useDimension";
 import { MenuListAdmin, MenuToggleAdmin } from "../components/HeaderMenuAdmin";
+
+import { useSelector, useDispatch } from 'react-redux'
+import { setLoggedInUser } from "../features/loggedInUserSlice";
+
 
 // @ts-ignore
 const Admin = ({ children }) => {
 
     const location = useLocation();
-    const { currentAdmin, signout, loggedInAdmin, setLoggedInAdmin } = useAuthAdmin()
+    const { currentAdmin, signout } = useAuth()
+
+    
+
     const navigate = useNavigate()
 
     const [isOpen, toggleOpen] = useCycle(false, true);
     const containerRef = useRef(null);
     const { height } = useDimensions(containerRef);
 
-    const [profilePic] = useState(defaultuser)
+    const [profilePic, setProfilePic] = useState(defaultuser)
 
+    // @ts-ignore
+    const loggedInUser = useSelector(state => state.loggedInUser.current)
+
+    const dispatch = useDispatch()
 
     let defaultTitle = 'Dashboard';
 
@@ -40,7 +51,7 @@ const Admin = ({ children }) => {
     const handleSignout = async () => {
         try {
             await signout()
-            setLoggedInAdmin(null)
+            dispatch(setLoggedInUser(null))
             navigate('/admin')
         } catch (e) {
             // @ts-ignore
@@ -49,13 +60,11 @@ const Admin = ({ children }) => {
     }
 
     useEffect(() => {
-        // if (loggedInAdmin.imageUrl.length > 0) {
-        //     setProfilePic(loggedInAdmin.imageUrl)
-        //     console.log(loggedInAdmin.imageUrl)
-        // }
-        console.log(loggedInAdmin)
+        if (loggedInUser && loggedInUser.imageUpload) {
+            setProfilePic(loggedInUser.imageUpload)
+        }
 
-    }, [loggedInAdmin])
+    }, [loggedInUser])
 
     return (
         <main className="admin__page-wrapper">
@@ -130,7 +139,7 @@ const Admin = ({ children }) => {
                             
                         <div className="admin__user-icon-wrapper">
                             <img src={profilePic} alt='user profile icon' />
-                            <h1 className="admin__username-text">{loggedInAdmin ? `${loggedInAdmin.firstName} ${loggedInAdmin.lastName}`: currentAdmin.email}</h1>
+                            <h1 className="admin__username-text">{loggedInUser ? `${loggedInUser.firstName} ${loggedInUser.lastName}`: currentAdmin.email}</h1>
                         </div>
 
                         <button className="admin__logout-button" onClick={handleSignout}>Logout</button>

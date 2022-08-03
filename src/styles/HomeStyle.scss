@@ -2,11 +2,11 @@
 // added by Kap start
 
 .homepage-wrapper {
-  @apply flex flex-col gap-8 w-full
+  @apply flex flex-col gap-8 w-full mt-24
 }
 
 .page-title-center {
-    @apply text-5xl font-bebas-neue 
+    @apply text-5xl font-bebas-neue text-center
   }
 
 .background-wrapper {
@@ -72,11 +72,11 @@
 	  }
 	  
 	  .home-product-card {
-		  @apply  w-[415px] hover:drop-shadow-lg p-2 hover:cursor-pointer font-barlow
+		  @apply  max-w-[300px] hover:drop-shadow-lg p-2 hover:cursor-pointer font-barlow
 	  }
 	  
 	  .home-product-card-image {
-		  @apply p-2 border-2 w-[400px] flex 
+		  @apply p-2 border-2 w-full flex 
 	  }
 	  
 	  .home-product-card-text {

@@ -1,26 +1,29 @@
 import { motion, useCycle } from "framer-motion";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDimensions } from "../customHooks/useDimension";
 import { MenuList, MenuToggle } from "./HeaderMenu";
 import logo from "../images/icons/logo-icon-small.png";
 import { Link, useNavigate } from "react-router-dom";
 import { headerNavLinks, themeIcons } from "./Constants";
-import { useTheme } from "../contexts/ThemeContext";
 import { HeaderSpacer } from "./Utils";
 import Footer from "./Footer";
-
+import { useSelector, useDispatch } from 'react-redux'
+import { setTheme } from "../features/themeSlice";
 
 // @ts-ignore
 const Header = ({ children }) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const [tooltip, setTooltip] = useState("");
   const containerRef = useRef(null);
-  // const link = useRef(null);
   const { height } = useDimensions(containerRef);
 
   const navigate = useNavigate();
 
-  const { currentTheme, setCurrentTheme } = useTheme()
+
+  // @ts-ignore
+  const currentTheme = useSelector(state => state.theme.current)
+
+  const dispatch = useDispatch()
 
   //@ts-ignore
   const showTooltip = (e) => {
@@ -50,7 +53,30 @@ const Header = ({ children }) => {
       }
     }
 
+    const handleSetTheme = (newTheme: string) => {
+      dispatch(setTheme(newTheme))
+    }
 
+    useEffect(() => {
+      // console.log(`initial val of currentTheme: ${currentTheme}`)
+    }, [])
+
+    const ThemePickerMobile = () => {
+      return (
+        <nav className="navbar socials">
+            {themeIcons.map(item => {
+              return (
+              <motion.a className="links" key={item.name} id={item.name} onMouseOver={showTooltip} onMouseOut={hideTooltip} onClick={() => handleSetTheme(item.name)} whileHover={{ y: -2 }}>
+              <div className={`tooltip theme-bg-${currentTheme}-darker theme-text-${currentTheme}-2`}>
+                  {tooltip}
+                </div>
+                {item.icon}
+              </motion.a>
+              )
+            })}
+          </nav>
+      )
+    }
 
   return (
     <>
@@ -65,11 +91,11 @@ const Header = ({ children }) => {
 
         <div className={`header theme-bg-${currentTheme}`}>
 
-          {/* display social links */}
-          <nav className="navbar socials">
+          {/* display theme icons */}
+          <nav className="desktop-theme-picker">
             {themeIcons.map(item => {
               return (
-              <motion.a className="links" key={item.name} id={item.name} onMouseOver={showTooltip} onMouseOut={hideTooltip} onClick={() => setCurrentTheme(`${item.name}`)} whileHover={{ y: -2 }}>
+              <motion.a className="links" key={item.name} id={item.name} onMouseOver={showTooltip} onMouseOut={hideTooltip} onClick={() => handleSetTheme(item.name)} whileHover={{ y: -2 }}>
               <div className={`tooltip theme-bg-${currentTheme}-darker theme-text-${currentTheme}-2`}>
                   {tooltip}
                 </div>
@@ -105,7 +131,7 @@ const Header = ({ children }) => {
                       
                       <div className="menu-bg">
                         <MenuToggle currentTheme={currentTheme} toggle={() => toggleOpen()} />
-                        {isOpen && <MenuList isOpen={isOpen} />}
+                        {isOpen && <MenuList themeIcons={themeIcons} handleSetTheme={handleSetTheme} isOpen={isOpen} />}
                       </div>
                     </motion.div>
                   </div>

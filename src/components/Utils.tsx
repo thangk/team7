@@ -204,6 +204,15 @@ export const validateInput = (...inputs) => {
                 })
             }
         }
+
+        if (input.type === 'logincheck') {
+            if (input.value) {
+                errorCodes.push({
+                    errMessage: 'Failed to login. Incorrect credentials.',
+                    valid: 'Double check your input.'
+                })
+            }
+        }
     }
 
     return errorCodes
@@ -211,6 +220,8 @@ export const validateInput = (...inputs) => {
 
 
 export const isDuplicateAccount = (email: string, usertype: any) => {
+
+    console.log(usertype)
 
     for (const item of usertype) {
         if (item.email === email) {
@@ -224,3 +235,6 @@ export const isDuplicateAccount = (email: string, usertype: any) => {
 
 
 
+export const kaplog = (message: string) => {
+    console.log(message)
+}

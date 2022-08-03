@@ -1,37 +1,68 @@
 import { useEffect, useState } from 'react';
 import logo from '../images/icons/logo-icon-small.png'
-import { useAuthAdmin } from '../contexts/AuthContextAdmin';
+import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import api from '../api/base'
+
+import { useDispatch, useSelector } from 'react-redux'
+import { setLoggedInUser } from "../features/loggedInUserSlice";
+import { validateInput } from '../components/Utils';
+import InputErrorCheck from '../components/InputErrorCheck';
 
 const AdminSignin = () => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+    // @ts-ignore
+    const loggedInUser = useSelector(state => state.loggedInUser.current)
 
-    const { signin, setLoggedInAdmin } = useAuthAdmin()
+    const dispatch = useDispatch()
+
+
+    const { signin } = useAuth()
     const navigate = useNavigate()
     const [error, setError] = useState('')
+    const [errorToggle, setErrorToggle] = useState('off')
+    const [validatedResult, setValidatedResult] = useState([])
+
     const [loading, setLoading] = useState(false)
 
     const [admins, setAdmins] = useState([])
 
-    console.log(loading)
+    if (loading) {
+        
+    }
+
+    const fetchAdmins = async () => {
+        try {
+            const res = await api.get('/admins')
+            setAdmins(res.data)
+            
+        } catch (e) {
+            // @ts-ignore
+            console.log(e.message)
+        }
+    }
 
     // @ts-ignore
     const handleSignin = async (e) => {
         e.preventDefault()
+
+        // fetchAdmins()
 
         try {
             setError('')
             setLoading(true)
             await signin(email, password)
 
-            for (const item of admins) {
+            console.log(admins)
+
+            for (const admin of admins) {
                 // @ts-ignore
-                if (item.email === email) {
-                    setLoggedInAdmin(item)
+                if (admin.email === email) {
+                    dispatch(setLoggedInUser(admin))
+                    console.log('this ran?')
                 }
             }
 
@@ -41,6 +72,17 @@ const AdminSignin = () => {
         } catch (err) {
             setError('Faild to login.')
             console.log(error)
+
+            const result = validateInput({ type: 'logincheck', value: 'failed' })
+
+            if (result.length > 0) {
+                // @ts-ignore
+                setValidatedResult(result)
+                setErrorToggle('on')
+                return
+            }
+
+            
         }
 
         setLoading(false)
@@ -48,17 +90,8 @@ const AdminSignin = () => {
 
 
     useEffect(() => {
-        const fetchAdmins = async () => {
-            try {
-                const res = await api.get('/admins')
-                setAdmins(res.data)
-                
-            } catch (e) {
-                // @ts-ignore
-                console.log(e.message)
-            }
-        }
         fetchAdmins()
+        
     }, [])
 
 
@@ -67,7 +100,7 @@ const AdminSignin = () => {
     return (
         <main className="adminauth__pagewrapper">
 
-
+            <InputErrorCheck errorToggle={errorToggle} setErrorToggle={setErrorToggle} validatedResult={validatedResult} />
 
             <section className="adminauth__content-wrapper">
 
@@ -82,13 +115,13 @@ const AdminSignin = () => {
                     <div className='adminauth__inputfields'>
                         <label htmlFor='email'>Email</label>
                         {/* @ts-ignore */}
-                        <input type='text' id='email' onChange={e => setEmail(e.target.value)}  />
+                        <input type='text' id='email' onChange={e => setEmail(e.target.value)}  required />
                     </div>
 
                     <div className='adminauth__inputfields'>
                         <label htmlFor='password'>password</label>
                         {/* @ts-ignore */}
-                        <input type='password' id='password' onChange={e => setPassword(e.target.value)} />
+                        <input type='password' id='password' onChange={e => setPassword(e.target.value)} required />
                     </div>
 
                     <div className='adminauth__button-wrapper'>

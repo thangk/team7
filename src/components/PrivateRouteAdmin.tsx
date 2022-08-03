@@ -1,10 +1,17 @@
 import { Navigate, Outlet } from "react-router-dom";
-import { useAuthAdmin } from "../contexts/AuthContextAdmin";
+import { useAuth } from "../contexts/AuthContext";
+import { useSelector } from 'react-redux'
 
 const PrivateRouteAdmin = () => {
 
-    const { currentAdmin } = useAuthAdmin()
+    const { currentUser } = useAuth()
 
-    return currentAdmin ? <Outlet /> : <Navigate to='/admin' replace />}     
+    // @ts-ignore
+    const loggedInUser = useSelector(state => state.loggedInUser.current)
+
+    if (currentUser && (loggedInUser.role !== 'Customer')) return <Outlet />
+
+    return <Navigate to='/admin' replace />
+}    
 
 export default PrivateRouteAdmin;

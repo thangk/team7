@@ -1,29 +1,65 @@
 import { useRef, useState } from 'react';
 
-import { useAuthAdmin } from '../contexts/AuthContextAdmin';
+import { useAuth } from '../contexts/AuthContext';
+
+// @ts-ignore
+import FileBase64 from 'react-file-base64'
+import api from '../api/base'
+
+import { useSelector, useDispatch } from 'react-redux'
+import { setLoggedInUser } from '../features/loggedInUserSlice';
+
 
 const AdminSettings = () => {
 
-    const { updateCurrentUserPassword } = useAuthAdmin()
+    const { updateCurrentUserPassword } = useAuth()
+
+
+    // @ts-ignore
+    const loggedInUser = useSelector(state => state.loggedInUser.current)
 
     const [newPassword, setNewPassword] = useState('');
+    const [newProfilePic, setNewProfilePic] = useState('');
 
     const newPasswordRef = useRef()
+
+    const dispatch = useDispatch()
 
 
     // @ts-ignore
     const handleSave = async (e) => {
         e.preventDefault()
+
+        // console.log(loggedInUser.id)
+
+        if (!newPassword.length && !newProfilePic) return
         
+        // update password
         if (newPassword.length > 0) {
             await updateCurrentUserPassword(newPassword)
             console.log('Password updated')
             setNewPassword('')
             // @ts-ignore
             newPasswordRef.current.value = ''
-        } else {
+        }
 
-            console.log('Password not updated')
+        console.log(newProfilePic)
+
+        // update profile pic
+        if (newProfilePic.length > 0) {
+
+            
+            try {
+                
+                await api.patch(`/admins/${loggedInUser.id}`, {
+                    imageUpload: newProfilePic
+                }) 
+
+                dispatch(setLoggedInUser({...loggedInUser, imageUpload: newProfilePic}))
+            } catch {
+                alert('Something went wrong. Maybe your file is too large.')
+            }
+            
         }
 
     }
@@ -39,7 +75,10 @@ const AdminSettings = () => {
             
             <div className='adminsettings__item'>
                 <p>Change Profile Picture<br /><span className='text-[12px]'>(jpg/png)</span></p>
-                <input type='file' accept="image/png, image/jpeg, image/jpg" />
+                <FileBase64 
+                    type='file' multiple={false}
+                    // @ts-ignore
+                    onDone={({ base64 }) => setNewProfilePic(base64)} />
             </div>
 
             <div className='adminsettings__item'>

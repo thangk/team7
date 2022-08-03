@@ -5,7 +5,7 @@
 }
 
 .menubtn {
-	@apply ml-4 -top-8 right-0 border-none outline-none absolute bg-transparent 
+	@apply ml-4 -top-8 right-0 border-none outline-none absolute bg-transparent z-50
 }
 
 
@@ -19,7 +19,7 @@
 }
 
 .menu-ul {
-	@apply absolute -right-6 h-screen pl-8 w-fit pt-10 bg-slate-50
+	@apply absolute -right-6 h-screen pl-8 w-fit pt-10 top-2 bg-slate-50
 }
 
 .menu-li {

@@ -3,12 +3,12 @@ import noimage from '../images/icons/noimage.jpg'
 import { useParams } from 'react-router-dom';
 // import api from '../api/base';
 import data from "../assets/template.json";
-import { useTheme } from "../contexts/ThemeContext";
-
+import { useSelector } from 'react-redux'
 
 function ProductsDetailsPage() {
 
-  const { currentTheme } = useTheme()
+  // @ts-ignore
+  const currentTheme = useSelector(state => state.theme.current)
 
   // set the watch we fetched from the api to this, so we can use it to display it later in the jsx portion
   const defaultWatch = {

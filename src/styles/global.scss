@@ -381,6 +381,14 @@
 
 
 
+.hideOnDesktop {
+	@apply hidden
+}
+
+.hideOnMobile {
+	@apply hidden
+}
+
 // body
 .pseudo__body {
 	@apply bg-blue-600;

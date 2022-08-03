@@ -3,12 +3,12 @@ import { addAdmin, addCustomers, addWatches } from "./Constants";
 import { getInputType, noSpaces } from "./Utils";
 import api from '../api/base'
 import { AxiosResponse } from "axios";
-import { useAuthAdmin } from "../contexts/AuthContextAdmin";
+import { useAuth } from "../contexts/AuthContext";
 
 // @ts-ignore
 const AdminAddForm = ({ add, setAdd, mode, setList }) => {
 
-    // const { currentAdmin } = useAuthAdmin()
+    // const { currentAdmin } = useAuth()
 
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -29,10 +29,10 @@ const AdminAddForm = ({ add, setAdd, mode, setList }) => {
     const [imageUrl, setImageUrl] = useState('');
     
     const [imageUpload, setImageUpload] = useState('');
-    const [price, setPrice] = useState('');
+    const [price, setPrice] = useState(0);
     const [stock, setStock] = useState(0);
 
-    const { signup } = useAuthAdmin();
+    const { signup } = useAuth();
 
     if (name) { }
 
@@ -158,7 +158,7 @@ const AdminAddForm = ({ add, setAdd, mode, setList }) => {
                 res = await api.post('/customers', {
                     firstName,
                     lastName,
-                    role,
+                    role: 'Customer',
                     email,
                     password
                 })
@@ -191,7 +191,10 @@ const AdminAddForm = ({ add, setAdd, mode, setList }) => {
             console.log(err.response.headers)
         }
 
-        await signup(email, password)
+        if (mode === 'admins' || mode === 'customers') {
+            await signup(email, password)
+        }
+
 
         if (mode === 'admins' || mode === 'customers') {
             setFirstName(prev => prev = '')
@@ -212,7 +215,7 @@ const AdminAddForm = ({ add, setAdd, mode, setList }) => {
             setFaceSize(prev => prev = '')
             setImageUrl(prev => prev = '')
             setImageUpload(prev => prev = '')
-            setPrice(prev => prev = '')
+            setPrice(prev => prev = 0)
             setStock(prev => prev = 0)
         }
 

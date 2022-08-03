@@ -7,7 +7,7 @@ import { nanoid } from "nanoid";
 import ProductsFilterPanel from "../components/ProductsFilterPanel";
 import ProductsPagination from "../components/ProductsPagination";
 import { useNavigate } from "react-router-dom";
-import { useTheme } from "../contexts/ThemeContext";
+import { useSelector } from 'react-redux'
 
 const SCREEN_SM = 640;
 
@@ -18,7 +18,9 @@ function Products() {
 
   const navigate = useNavigate();
 
-  const { currentTheme } = useTheme()
+  // const { currentTheme } = useTheme()
+  // @ts-ignore
+  const currentTheme = useSelector(state => state.theme.current)
 
   const screenSize = window.innerWidth;
 

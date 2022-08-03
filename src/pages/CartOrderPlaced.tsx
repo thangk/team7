@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router-dom";
-import { useTheme } from "../contexts/ThemeContext";
 
-
+import { useSelector } from 'react-redux'
 
 
 const CartOrderPlaced = () => {
 
-    const { currentTheme } = useTheme()
+    // @ts-ignore
+    const currentTheme = useSelector(state => state.theme.current)
 
     
     const navigate = useNavigate()

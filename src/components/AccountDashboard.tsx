@@ -1,9 +1,13 @@
-
+import { useDispatch } from 'react-redux'
+import { setPageTitle } from '../features/accountAreaSlice';
 
 // @ts-ignore
-const AccountDashboard = ({ setPageTitle }) => {
+const AccountDashboard = () => {
 
-    setPageTitle('dashboard');
+    const dispatch = useDispatch()
+
+    dispatch(setPageTitle('dashboard'))
+
 
     return (
         

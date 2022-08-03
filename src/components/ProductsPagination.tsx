@@ -1,16 +1,14 @@
 import { AiOutlineCaretLeft, AiOutlineCaretRight } from "react-icons/ai";
 import ReactPaginate from "react-paginate";
-import { useTheme } from "../contexts/ThemeContext";
-
+import { useSelector } from 'react-redux'
 
 
 // @ts-ignore
 const ProductsPagination = ({ products, productsPerPage, setPageNumber, getDisplayRangeNMarginPages }) => {
 
     
-	const { currentTheme } = useTheme()
-
-
+	// @ts-ignore
+	const currentTheme = useSelector(state => state.theme.current)
 
 	const pageCount = Math.ceil(products.length / productsPerPage);
 

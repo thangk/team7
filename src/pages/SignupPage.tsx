@@ -1,14 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import api from '../api/base'
+import InputErrorCheck from "../components/InputErrorCheck";
 import { isDuplicateAccount, validateInput } from "../components/Utils";
+import { setLoggedInUser } from "../features/loggedInUserSlice";
+import { useDispatch } from 'react-redux'
+import { useAuth } from "../contexts/AuthContext";
 
 export default function SignupPage() {
 
   const [errorToggle, setErrorToggle] = useState('off');
   // const [errors, setErrors] = useState([]);
 
-  const [validateResult, setValidatedResult] = useState([]);
+  const [validatedResult, setValidatedResult] = useState([]);
 
   const firstNameRef = useRef()
   const lastNameRef = useRef()
@@ -18,9 +22,34 @@ export default function SignupPage() {
 
   const [customers, setCustomers] = useState();
 
+  const { signup, signin } = useAuth()
+
+  const dispatch = useDispatch()
+
+
+  const navigate = useNavigate()
+
+  const fetchCustomers = async () => {
+    try {
+        const res = await api.get('/customers');
+        setCustomers(res.data);
+    } catch (err) {
+        // @ts-ignore
+        console.log(err.response.data)
+        // @ts-ignore
+        console.log(err.response.status)
+        // @ts-ignore
+        console.log(err.response.headers)
+    }
+  }
+
   // @ts-ignore
-  const handleSignup = (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault()
+
+    
+
+    
 
     // @ts-ignore
     const result = validateInput(
@@ -66,27 +95,54 @@ export default function SignupPage() {
       setErrorToggle('on')
       return
     }
+
+    const newUser = {
+      // @ts-ignore
+      firstName: firstNameRef.current.value,
+      // @ts-ignore
+      lastName: lastNameRef.current.value,
+      // @ts-ignore
+      email: emailRef.current.value,
+      role: 'Customer',
+      // @ts-ignore
+      password: passwordRef.current.value
+    }
+
+    try {
+      // @ts-ignore
+      await signup(emailRef.current.value, passwordRef.current.value)
+
+      // add to database
+      await api.post('/customers', newUser)
+
+      fetchCustomers()
+
+      // @ts-ignore
+      for (const customer of customers) {
+        // @ts-ignore
+        if (customer.email === email) {
+            dispatch(setLoggedInUser(customer))
+            console.log('this ran?')
+        }
+    }
+
+      console.log(newUser)
+
+      // @ts-ignore
+      await signin(emailRef.current.value, passwordRef.current.value)
+
+      navigate('/signup-success')
+
+      console.log(`no errors`)
+    } catch {
+      console.log('Sign up failed. Something went wrong.')
+    }
     
-    console.log(`no errors`)
   }
 
 
   useEffect(() => {
-    const fetchCustomers = async () => {
-      try {
-          const res = await api.get('/customers');
-          setCustomers(res.data);
-      } catch (err) {
-          // @ts-ignore
-          console.log(err.response.data)
-          // @ts-ignore
-          console.log(err.response.status)
-          // @ts-ignore
-          console.log(err.response.headers)
-      }
-    }
-
-  fetchCustomers()
+    fetchCustomers()
 
   }, [errorToggle])
 
@@ -94,32 +150,7 @@ export default function SignupPage() {
 
         <main className="loginsignuppage__page-wrapper">
 
-          <div className={`loginsignuppage__validation_error loginsignuppage__${errorToggle}`}>
-
-            <h1 className="loginsignuppage__error_title">Error</h1>
-
-            <div className="loginsignuppage__error_content">
-
-              {/* @ts-ignore */}
-              {validateResult.map((item, index) => {
-
-                return (
-                  <div className="loginsignuppage__error_content_item" key={index}>
-                    {/* @ts-ignore */}
-                    <h1 className="loginsignuppage__error_content_error">{item.errMessage}</h1>
-                    {/* @ts-ignore */}
-                    <h1 className="loginsignuppage__error_content_valid">{item.valid}</h1>
-                  </div>
-                )
-              })}
-
-            </div>
-
-              <div className="loginsignup__error_buttonwrapper">
-                <button onClick={() => setErrorToggle('off')}>OK</button>
-              </div>
-
-          </div>
+          <InputErrorCheck errorToggle={errorToggle} setErrorToggle={setErrorToggle} validatedResult={validatedResult} />
           
           <form onSubmit={handleSignup}>
             

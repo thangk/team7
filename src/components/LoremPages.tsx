@@ -1,9 +1,11 @@
 import { Navigate, useParams } from "react-router-dom";
-import { useTheme } from "../contexts/ThemeContext";
+import { useSelector } from 'react-redux'
+
 
 const LoremPages = () => {
 
-  const { currentTheme } = useTheme()
+  // @ts-ignore
+  const currentTheme = useSelector(state => state.theme.current)
 
   let pageTitle: string;
 

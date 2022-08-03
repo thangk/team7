@@ -58,7 +58,7 @@ export const headerSocialIcons = [
     },
     {
         name: 'account',
-        url: '/account',
+        url: '/account/dashboard',
         icon: <AiOutlineUser />
     },
     {

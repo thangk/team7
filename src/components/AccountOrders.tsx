@@ -1,16 +1,17 @@
 import { format } from 'date-fns'
+import { useDispatch } from 'react-redux'
+import { setPageTitle } from '../features/accountAreaSlice';
 
 
 // @ts-ignore
-const AccountOrders = ({ setPageTitle }) => {
+const AccountOrders = () => {
 
     const today = format(new Date(),'dd-MM-yyyy');
 
 
+    const dispatch = useDispatch()
 
-    // console.log(today)
-
-    setPageTitle('orders')
+    dispatch(setPageTitle('orders'))
 
     return (
         <main className="accountorders__pagewrapper">

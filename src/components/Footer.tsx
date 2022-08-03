@@ -1,14 +1,14 @@
 import { FaFacebookSquare, FaInstagram, FaPinterest, FaTwitter, FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { useTheme } from "../contexts/ThemeContext";
 
-
+import { useSelector } from 'react-redux'
 
 
 
 const Footer = () => {
 
-    const { currentTheme } = useTheme()
+    // @ts-ignore
+    const currentTheme = useSelector(state => state.theme.current)
 
     return (
         <>

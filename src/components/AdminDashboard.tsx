@@ -33,6 +33,7 @@ const AdminDashboard = () => {
                 const res_products = await api.get(`/watches`)
     
                 setAdmins(res_admin.data)
+                // console.log(res_admin.data)
                 setCustomers(res_customers.data)
                 setProducts(res_products.data)
                 
