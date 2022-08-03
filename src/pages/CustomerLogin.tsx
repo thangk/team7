@@ -98,8 +98,8 @@ export default function LoginPage() {
 
             <button type="submit" className="loginsignup-button">Log In</button>
 
-            <div className="loginsignup-form-item-center">Forgot password?<Link to='/reset-password' className="form-bottom-link">Reset here.</Link></div>
-            <div className="loginsignup-form-item-center">New to Infinity Watches?<Link to='/signup' className="form-bottom-link">Sign Up here.</Link></div>
+            <div className="loginsignup-form-item-center">Forgot password?<Link to='/reset-password' className="form-bottom-link underline">Reset here.</Link></div>
+            <div className="loginsignup-form-item-center">New to Infinity Watches?<Link to='/signup' className="form-bottom-link underline">Sign Up here.</Link></div>
 
           </form>
 

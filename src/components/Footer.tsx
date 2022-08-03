@@ -11,7 +11,7 @@ const Footer = () => {
     const currentTheme = useSelector(state => state.theme.current)
 
     return (
-        <>
+        <div className={`flex-1 theme-bg-${currentTheme} flex flex-end`}>
         <div className={`footers-wrapper theme-bg-${currentTheme}-darker theme-text-${currentTheme}-2`}>
             <main className="footer1-wrapper">
 
@@ -71,7 +71,7 @@ const Footer = () => {
                 <h1 className="footer2-copyright">&copy;2022 Infinity Watches, LLC. All Rights Reserved.</h1>
             </main>
             </div>
-        </>
+        </div>
     )};
 
 export default Footer;

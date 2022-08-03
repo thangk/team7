@@ -5,7 +5,7 @@
 
 
 .footers-wrapper {
-    @apply self-end w-full  mt-36 pb-10 font-barlow 
+    @apply self-end flex-1  mt-36 pb-10 font-barlow 
 }
 
 .footers-wrapper Link {
@@ -72,7 +72,7 @@
 @screen sm {
 
     .footers-wrapper {
-        @apply self-end w-full  pb-10 font-barlow 
+        @apply w-full pb-10 font-barlow 
     }
     
     .footers-wrapper Link {

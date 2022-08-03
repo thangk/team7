@@ -64,7 +64,7 @@ const Header = ({ children }) => {
 
   return (
     <>
-    <div className={`theme-bg-${currentTheme}`}>
+    <div className={`flex flex-col theme-bg-${currentTheme} w-full min-h-screen `}>
       {/* Navbar */}
       <div className={`header-wrapper theme-bg-${currentTheme}`}>
       <div className="fixed w-full h-fit drop-shadow-lg z-50">

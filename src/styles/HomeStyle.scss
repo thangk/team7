@@ -2,7 +2,7 @@
 // added by Kap start
 
 .homepage-wrapper {
-  @apply flex flex-col gap-8 w-full mt-24
+  @apply flex flex-col gap-8 w-full mt-10
 }
 
 .page-title-center {
@@ -80,6 +80,6 @@
 	  }
 	  
 	  .home-product-card-text {
-		  @apply py-2
+		  @apply py-2 text-xl
 	  }
 }
