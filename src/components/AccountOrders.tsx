@@ -25,13 +25,6 @@ const AccountOrders = () => {
                 <hr className="accountorders__hr col-span-3" />
 
                 <div className="accountorders__contentwrapper_item">
-                    <div className="accountorders__contentwrapper_col1">Apple Watch 3 Apple Watch 3 Apple Watch 3 Apple Watch 3 Apple Watch 3 Apple Watch 3 Apple Watch 3 Apple Watch 3 Apple Watch 3 Apple Watch 3 Apple Watch 3 Apple Watch 3</div>
-                    <div className="accountorders__contentwrapper_col2">2</div>
-                    
-                    <div className="accountorders__contentwrapper_col3">{today}</div>
-                </div>
-
-                <div className="accountorders__contentwrapper_item">
                     <div className="accountorders__contentwrapper_col1">Apple Watch 3</div>
                     <div className="accountorders__contentwrapper_col2">2</div>
                     
@@ -39,105 +32,56 @@ const AccountOrders = () => {
                 </div>
 
                 <div className="accountorders__contentwrapper_item">
-                    <div className="accountorders__contentwrapper_col1">Apple Watch 3</div>
+                    <div className="accountorders__contentwrapper_col1">Samsung Galaxy Watch 4</div>
+                    <div className="accountorders__contentwrapper_col2">4</div>
+                    
+                    <div className="accountorders__contentwrapper_col3">{today}</div>
+                </div>
+
+                <div className="accountorders__contentwrapper_item">
+                    <div className="accountorders__contentwrapper_col1">Google Watch</div>
+                    <div className="accountorders__contentwrapper_col2">3</div>
+                    
+                    <div className="accountorders__contentwrapper_col3">{today}</div>
+                </div>
+
+                <div className="accountorders__contentwrapper_item">
+                    <div className="accountorders__contentwrapper_col1">Rolex 5000 Ultra</div>
+                    <div className="accountorders__contentwrapper_col2">1</div>
+                    
+                    <div className="accountorders__contentwrapper_col3">{today}</div>
+                </div>
+
+                <div className="accountorders__contentwrapper_item">
+                    <div className="accountorders__contentwrapper_col1">Garmin Smart Watch</div>
                     <div className="accountorders__contentwrapper_col2">2</div>
                     
                     <div className="accountorders__contentwrapper_col3">{today}</div>
                 </div>
 
                 <div className="accountorders__contentwrapper_item">
-                    <div className="accountorders__contentwrapper_col1">Apple Watch 3</div>
+                    <div className="accountorders__contentwrapper_col1">Fitbit Sense</div>
                     <div className="accountorders__contentwrapper_col2">2</div>
                     
                     <div className="accountorders__contentwrapper_col3">{today}</div>
                 </div>
 
                 <div className="accountorders__contentwrapper_item">
-                    <div className="accountorders__contentwrapper_col1">Apple Watch 3</div>
+                    <div className="accountorders__contentwrapper_col1">Mobvoi Ticwatch Pro 3 Ultra</div>
                     <div className="accountorders__contentwrapper_col2">2</div>
                     
                     <div className="accountorders__contentwrapper_col3">{today}</div>
                 </div>
 
                 <div className="accountorders__contentwrapper_item">
-                    <div className="accountorders__contentwrapper_col1">Apple Watch 3</div>
+                    <div className="accountorders__contentwrapper_col1">Skagen Hybrid HR Jorn</div>
                     <div className="accountorders__contentwrapper_col2">2</div>
                     
                     <div className="accountorders__contentwrapper_col3">{today}</div>
                 </div>
 
                 <div className="accountorders__contentwrapper_item">
-                    <div className="accountorders__contentwrapper_col1">Apple Watch 3</div>
-                    <div className="accountorders__contentwrapper_col2">2</div>
-                    
-                    <div className="accountorders__contentwrapper_col3">{today}</div>
-                </div>
-
-                <div className="accountorders__contentwrapper_item">
-                    <div className="accountorders__contentwrapper_col1">Apple Watch 3</div>
-                    <div className="accountorders__contentwrapper_col2">2</div>
-                    
-                    <div className="accountorders__contentwrapper_col3">{today}</div>
-                </div>
-
-                <div className="accountorders__contentwrapper_item">
-                    <div className="accountorders__contentwrapper_col1">Apple Watch 3</div>
-                    <div className="accountorders__contentwrapper_col2">2</div>
-                    
-                    <div className="accountorders__contentwrapper_col3">{today}</div>
-                </div>
-
-                <div className="accountorders__contentwrapper_item">
-                    <div className="accountorders__contentwrapper_col1">Apple Watch 3</div>
-                    <div className="accountorders__contentwrapper_col2">2</div>
-                    
-                    <div className="accountorders__contentwrapper_col3">{today}</div>
-                </div>
-
-                <div className="accountorders__contentwrapper_item">
-                    <div className="accountorders__contentwrapper_col1">Apple Watch 3</div>
-                    <div className="accountorders__contentwrapper_col2">2</div>
-                    
-                    <div className="accountorders__contentwrapper_col3">{today}</div>
-                </div>
-
-                <div className="accountorders__contentwrapper_item">
-                    <div className="accountorders__contentwrapper_col1">Apple Watch 3</div>
-                    <div className="accountorders__contentwrapper_col2">2</div>
-                    
-                    <div className="accountorders__contentwrapper_col3">{today}</div>
-                </div>
-
-                <div className="accountorders__contentwrapper_item">
-                    <div className="accountorders__contentwrapper_col1">Apple Watch 3</div>
-                    <div className="accountorders__contentwrapper_col2">2</div>
-                    
-                    <div className="accountorders__contentwrapper_col3">{today}</div>
-                </div>
-
-                <div className="accountorders__contentwrapper_item">
-                    <div className="accountorders__contentwrapper_col1">Apple Watch 3</div>
-                    <div className="accountorders__contentwrapper_col2">2</div>
-                    
-                    <div className="accountorders__contentwrapper_col3">{today}</div>
-                </div>
-
-                <div className="accountorders__contentwrapper_item">
-                    <div className="accountorders__contentwrapper_col1">Apple Watch 3</div>
-                    <div className="accountorders__contentwrapper_col2">2</div>
-                    
-                    <div className="accountorders__contentwrapper_col3">{today}</div>
-                </div>
-
-                <div className="accountorders__contentwrapper_item">
-                    <div className="accountorders__contentwrapper_col1">Apple Watch 3</div>
-                    <div className="accountorders__contentwrapper_col2">2</div>
-                    
-                    <div className="accountorders__contentwrapper_col3">{today}</div>
-                </div>
-
-                <div className="accountorders__contentwrapper_item">
-                    <div className="accountorders__contentwrapper_col1">Apple Watch 3</div>
+                    <div className="accountorders__contentwrapper_col1">Casio ProTrek PRW-61</div>
                     <div className="accountorders__contentwrapper_col2">2</div>
                     
                     <div className="accountorders__contentwrapper_col3">{today}</div>

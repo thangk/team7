@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FaInfo, FaMapMarkerAlt, FaPhoneAlt, FaRegNewspaper, FaUsers } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const xValue = window.innerWidth < 640 ? 50 : 0;
 const yValue = window.innerWidth < 640 ? 0 : 50;
@@ -39,34 +40,45 @@ const menuItems = [
   {
     icon: <FaUsers />,
     text: "Community",
+    url: '/community'
   },
   {
     icon: <FaMapMarkerAlt />,
     text: "Find a store",
+    url: '/find-a-store'
   },
   {
     icon: <FaRegNewspaper />,
     text: "Newsletter",
+    url: '/newsletter'
   },
   {
     icon: <FaInfo />,
     text: "About Us",
+    url: '/about-us'
   },
   {
     icon: <FaPhoneAlt />,
     text: "Contact",
+    url: '/contact'
   },
 ];
 
 // @ts-ignore
 export const MenuItem = ({ i }) => {
+
+  const navigate = useNavigate()
+
   return (
     <motion.li
       className="menu-li"
       variants={variant1}
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.98 }}
-      onClick={() => alert(`Link to ${menuItems[i].text}`)}
+      onClick={() => {
+        window.scrollTo(0, 0)
+        navigate(menuItems[i].url)
+      }}
     >
       <div className="icon-placeholder">{menuItems[i].icon}</div>
       <div className="text-placeholder">{menuItems[i].text}</div>

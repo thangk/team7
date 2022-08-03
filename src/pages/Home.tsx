@@ -35,13 +35,13 @@ return (
         key={nanoid()}
       >         
       <motion.div
-        className={`home-product-card theme-bg-${currentTheme} hover-theme-bg-${currentTheme}`}
+        className={`home-product-card theme-bg-${currentTheme}`}
         onClick={() => {
         navigate(`/${data[0].id}`); console.log(`/${data[0].id}`)
         }}
         whileHover={{ y: -10 }}
       >
-      <div className={`home-product-card-image theme-border-${currentTheme}`}>
+      <div className={`home-product-card-image theme-border-${currentTheme}-light`}>
         <img src={noimage} alt="noimage" />
       </div>
       <div className={`home-product-card-text theme-border-${currentTheme}`}>
@@ -59,13 +59,13 @@ return (
         key={nanoid()}
       >         
       <motion.div
-        className={`home-product-card theme-bg-${currentTheme} hover-theme-bg-${currentTheme}`}
+        className={`home-product-card theme-bg-${currentTheme}`}
         onClick={() => {
         navigate(`/${data[1].id}`); console.log(`/${data[1].id}`)
         }}
         whileHover={{ y: -10 }}
       >
-      <div className={`home-product-card-image theme-border-${currentTheme}`}>
+      <div className={`home-product-card-image theme-border-${currentTheme}-light`}>
         <img src={noimage} alt="noimage" />
       </div>
       <div className={`home-product-card-text theme-border-${currentTheme}`}>
@@ -82,13 +82,13 @@ return (
         key={nanoid()}
       >         
       <motion.div
-        className={`home-product-card theme-bg-${currentTheme} hover-theme-bg-${currentTheme}`}
+        className={`home-product-card theme-bg-${currentTheme}`}
         onClick={() => {
         navigate(`/${data[2].id}`); console.log(`/${data[2].id}`)
         }}
         whileHover={{ y: -10 }}
       >
-      <div className={`home-product-card-image theme-border-${currentTheme}`}>
+      <div className={`home-product-card-image theme-border-${currentTheme}-light`}>
         <img src={noimage} alt="noimage" />
       </div>
       <div className={`home-product-card-text theme-border-${currentTheme}`}>
@@ -105,13 +105,13 @@ return (
         key={nanoid()}
       >         
       <motion.div
-        className={`home-product-card theme-bg-${currentTheme} hover-theme-bg-${currentTheme}`}
+        className={`home-product-card theme-bg-${currentTheme}`}
         onClick={() => {
         navigate(`/${data[3].id}`); console.log(`/${data[3].id}`)
         }}
         whileHover={{ y: -10 }}
       >
-      <div className={`home-product-card-image theme-border-${currentTheme}`}>
+      <div className={`home-product-card-image theme-border-${currentTheme}-light`}>
         <img src={noimage} alt="noimage" />
       </div>
       <div className={`home-product-card-text theme-border-${currentTheme}`}>

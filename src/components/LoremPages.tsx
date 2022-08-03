@@ -39,6 +39,21 @@ const LoremPages = () => {
     case "accessibility-statement":
       pageTitle = "Accessibility Statement";
       break;
+      case "community":
+        pageTitle = "Community";
+        break;
+        case "find-a-store":
+      pageTitle = "Find a store";
+      break;
+      case "about-us":
+      pageTitle = "About Us";
+      break;
+      case "contact":
+      pageTitle = "Contact";
+      break;
+      case "newsletter":
+        pageTitle = "Newsletter";
+        break;
     default:
       pageTitle = "404";
       break;

@@ -38,6 +38,8 @@ function Products() {
   //   console.log(searchResult)
   // }, [searchResult])
 
+  
+
   return (
     <>
       <motion.main 
