@@ -73,7 +73,7 @@
 
 
 .cartpage__deletebutton {
-    @apply text-xl text-slate-400 hover:cursor-pointer hover:text-slate-900 hover:text-2xl
+    @apply text-xl text-slate-400 hover:cursor-pointer  hover:text-2xl
 }
 
 .cartpage__totalwrapper {
@@ -175,7 +175,7 @@
     
     
     .cartpage__deletebutton {
-        @apply text-xl text-slate-400 hover:cursor-pointer hover:text-slate-900 hover:text-2xl
+        @apply text-xl text-slate-400 hover:cursor-pointer  hover:text-2xl
     }
     
     .cartpage__totalwrapper {

@@ -67,7 +67,7 @@ const Cart = () => {
                                 
                                 <div className="cartpage__contentwrapper_col3">$5034.00</div>
                                 <div className="cartpage__contentwrapper_col4">
-                                    <FiDelete className='cartpage__deletebutton' onClick={handleDeleteItem} />
+                                    <FiDelete className={`cartpage__deletebutton hover-theme-text-${currentTheme}-1`} onClick={handleDeleteItem} />
                                 </div>
                             </div>
 
@@ -77,7 +77,7 @@ const Cart = () => {
                                 
                                 <div className="cartpage__contentwrapper_col3">$50.00</div>
                                 <div className="cartpage__contentwrapper_col4">
-                                    <FiDelete className='cartpage__deletebutton' onClick={handleDeleteItem} />
+                                    <FiDelete className={`cartpage__deletebutton hover-theme-text-${currentTheme}-1`} onClick={handleDeleteItem} />
                                 </div>
                             </div>
 
@@ -87,7 +87,7 @@ const Cart = () => {
                                 
                                 <div className="cartpage__contentwrapper_col3">$50.00</div>
                                 <div className="cartpage__contentwrapper_col4">
-                                    <FiDelete className='cartpage__deletebutton' onClick={handleDeleteItem} />
+                                    <FiDelete className={`cartpage__deletebutton hover-theme-text-${currentTheme}-1`} onClick={handleDeleteItem} />
                                 </div>
                             </div>
 

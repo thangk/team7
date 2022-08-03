@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from '../api/base'
 import { useEffect, useState } from "react";
 import { dashboardStats } from "./Constants";
 // import api from '../api/base'
@@ -28,9 +28,9 @@ const AdminDashboard = () => {
     useEffect(() => {
         const fetchDatas = async () => {
             try {
-                const res_admin = await axios.get(`https://team7-backend.herokuapp.com/admins`)
-                const res_customers = await axios.get(`https://team7-backend.herokuapp.com/customers`)
-                const res_products = await axios.get(`https://team7-backend.herokuapp.com/watches`)
+                const res_admin = await api.get(`/admins`)
+                const res_customers = await api.get(`/customers`)
+                const res_products = await api.get(`/watches`)
     
                 setAdmins(res_admin.data)
                 setCustomers(res_customers.data)

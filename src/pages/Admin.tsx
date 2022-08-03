@@ -53,6 +53,7 @@ const Admin = ({ children }) => {
         //     setProfilePic(loggedInAdmin.imageUrl)
         //     console.log(loggedInAdmin.imageUrl)
         // }
+        console.log(loggedInAdmin)
 
     }, [])
 

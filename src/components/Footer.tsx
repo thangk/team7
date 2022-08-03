@@ -64,9 +64,9 @@ const Footer = () => {
             <main className="footer2-wrapper">
                 <hr className={`theme-border-${currentTheme}-dark`} />
                 <section className="footer2-links-wrapper">
-                    <Link className='footer-link-item' onClick={() => window.scrollTo(0, 0)} to='terms-of-service'>Terms of Service</Link>|
-                    <Link className='footer-link-item' onClick={() => window.scrollTo(0, 0)} to='privacy-policy'>Privacy Policy</Link>|
-                    <Link className='footer-link-item' onClick={() => window.scrollTo(0, 0)} to='accessibility-statement'>Accessibility Statement</Link>
+                    <Link className='footer-link-item' onClick={() => window.scrollTo(0, 0)} to='/terms-of-service'>Terms of Service</Link>|
+                    <Link className='footer-link-item' onClick={() => window.scrollTo(0, 0)} to='/privacy-policy'>Privacy Policy</Link>|
+                    <Link className='footer-link-item' onClick={() => window.scrollTo(0, 0)} to='/accessibility-statement'>Accessibility Statement</Link>
                 </section>
                 <h1 className="footer2-copyright">&copy;2022 Infinity Watches, LLC. All Rights Reserved.</h1>
             </main>

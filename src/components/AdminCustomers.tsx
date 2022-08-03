@@ -1,5 +1,5 @@
 // import api from '../api/base'
-import axios from 'axios';
+import api from '../api/base'
 import { useEffect, useState } from 'react';
 import AdminAddForm from './AdminAddForm';
 import AdminEditForm from './AdminEditForm';
@@ -25,7 +25,7 @@ const AdminCustomers = () => {
     useEffect(() => {
         const fetchCustomers = async () => {
             try {
-                const res = await axios.get('https://team7-backend.herokuapp.com/customers');
+                const res = await api.get('/customers');
                 setCustomers(res.data);
             } catch (err) {
                 // @ts-ignore

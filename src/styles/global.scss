@@ -206,6 +206,23 @@
 	@apply text-gray-400
 }
 
+// hover
+.hover-theme-text-white-1 {
+	@apply text-slate-400;
+}
+
+.hover-theme-text-blue-1 {
+	@apply text-blue-500
+}
+
+.hover-theme-text-teal-1 {
+	@apply text-teal-700
+}
+
+.hover-theme-text-dark-1 {
+	@apply text-gray-400
+}
+
 
 // theme-text-colour-2
 .theme-text-white-2 {
@@ -290,6 +307,9 @@
 .theme-font-2 {
 	@apply font-barlow
 }
+
+
+// UNUSED ONES BELOW
 
 
 

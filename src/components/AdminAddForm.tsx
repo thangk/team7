@@ -8,14 +8,16 @@ import { useAuthAdmin } from "../contexts/AuthContextAdmin";
 // @ts-ignore
 const AdminAddForm = ({ add, setAdd, mode, setList }) => {
 
+    // const { currentAdmin } = useAuthAdmin()
+
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [role, setRole] = useState('Staff');
     const [email, setEmail] = useState('');
-    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    
+    // const [uid, setUid] = useState('');
+   
     const [name, setName] = useState('');
     const [brand, setBrand] = useState('');
     const [desc, setDesc] = useState('');
@@ -25,14 +27,16 @@ const AdminAddForm = ({ add, setAdd, mode, setList }) => {
     const [movementType, setMovementType] = useState('');
     const [faceSize, setFaceSize] = useState('');
     const [imageUrl, setImageUrl] = useState('');
+    
     const [imageUpload, setImageUpload] = useState('');
     const [price, setPrice] = useState('');
     const [stock, setStock] = useState(0);
 
     const { signup } = useAuthAdmin();
 
-    console.log(name)
-    console.log(imageUpload)
+    if (name) { }
+
+    if (imageUpload) { }
 
     let addMode: any;
 
@@ -53,8 +57,7 @@ const AdminAddForm = ({ add, setAdd, mode, setList }) => {
             {
                 name: 'firstname',
                 action: setFirstName
-            },
-            {
+            },{
                 name: 'lastname',
                 action: setLastName
             },{
@@ -63,9 +66,6 @@ const AdminAddForm = ({ add, setAdd, mode, setList }) => {
             },{
                 name: 'email',
                 action: setEmail
-            },{
-                name: 'username',
-                action: setUsername
             },{
                 name: 'password',
                 action: setPassword
@@ -79,16 +79,15 @@ const AdminAddForm = ({ add, setAdd, mode, setList }) => {
             {
                 name: 'firstname',
                 action: setFirstName
-            },
-            {
+            },{
                 name: 'lastname',
                 action: setLastName
             },{
+                name: 'role',
+                action: setRole
+            },{
                 name: 'email',
                 action: setEmail
-            },{
-                name: 'username',
-                action: setUsername
             },{
                 name: 'password',
                 action: setPassword
@@ -102,8 +101,7 @@ const AdminAddForm = ({ add, setAdd, mode, setList }) => {
             {
                 name: 'name',
                 action: setName
-            },
-            {
+            },{
                 name: 'brand',
                 action: setBrand
             },{
@@ -153,7 +151,6 @@ const AdminAddForm = ({ add, setAdd, mode, setList }) => {
                     lastName,
                     role,
                     email,
-                    username,
                     password
                 })
             }
@@ -161,14 +158,14 @@ const AdminAddForm = ({ add, setAdd, mode, setList }) => {
                 res = await api.post('/customers', {
                     firstName,
                     lastName,
+                    role,
                     email,
-                    username,
                     password
                 })
             }
             if (mode === 'watches') {
                 res = await api.post('/watches', {
-                    // name,
+                    name,
                     brand,
                     desc,
                     caseColour,
@@ -177,14 +174,12 @@ const AdminAddForm = ({ add, setAdd, mode, setList }) => {
                     movementType,
                     faceSize,
                     imageUrl,
-                    // imageUpload,
+                    imageUpload,
                     price,
                     stock
                 })
             }
 
-            // @ts-ignore
-            // console.log(typeof res.data)
             
             setList((prev: any) => [...prev, res.data])
         } catch (err) {
@@ -203,7 +198,6 @@ const AdminAddForm = ({ add, setAdd, mode, setList }) => {
             setLastName(prev => prev = '')
             setRole(prev => prev = '')
             setEmail(prev => prev = '')
-            setUsername(prev => prev = '')
             setPassword(prev => prev = '')
         }
 

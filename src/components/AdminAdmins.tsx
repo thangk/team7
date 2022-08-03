@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import AdminAddForm from './AdminAddForm';
 import AdminEditForm from './AdminEditForm';
-import axios from 'axios';
+import api from '../api/base'
 
 const AdminAdmins = () => {
 
@@ -18,18 +18,6 @@ const AdminAdmins = () => {
     const handleEdit = (e) => {
         e.preventDefault()
 
-        // testing(testItem, testItem2, testItem3)
-        // const testing = 'Kap Thang'
-        // const pattern = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/ig
-        // const result = testing.match(pattern)
-
-        // // console.log(result)
-
-
-        // const result2 = isDuplicateAccount('test8', admins)
-        // console.log(`result2: ${result2}`)
-
-
 
         setEditId(e.currentTarget.id)
         setEdit(true)
@@ -38,7 +26,7 @@ const AdminAdmins = () => {
     useEffect(() => {
         const fetchAdmins = async () => {
             try {
-                const res = await axios.get('https://team7-backend.herokuapp.com/admins');
+                const res = await api.get('/admins');
                 setAdmins(res.data);
             } catch (err) {
                 // @ts-ignore

@@ -1,6 +1,10 @@
 import { Navigate, useParams } from "react-router-dom";
+import { useTheme } from "../contexts/ThemeContext";
 
 const LoremPages = () => {
+
+  const { currentTheme } = useTheme()
+
   let pageTitle: string;
 
   const { lorem } = useParams();
@@ -45,10 +49,10 @@ const LoremPages = () => {
       ) : (
         <>
           {/* <ScrollToTop smooth /> */}
-          <main className="lorempage-wrapper">
+          <main className={`lorempage-wrapper theme-text-${currentTheme}-1 `}>
             <h1 className="page-title">{pageTitle}</h1>
 
-            <div className="lorempage-content-wrapper">
+            <div className={`lorempage-content-wrapper theme-border-${currentTheme}-light`}>
               <p>
                 Lorem ipsum dolor sit amet. A aperiam Quis et repellendus quisquam aut nesciunt pariatur eum facere
                 animi. Ab quasi dolorem et molestiae culpa sed aliquam deserunt non eligendi quia. 33 omnis accusantium
@@ -58,7 +62,7 @@ const LoremPages = () => {
                 minus illum eum architecto dolorem. Sed amet distinctio nam aperiam laudantium eos maxime culpa. In
                 dolore fugit aut sequi quia in quam nihil in inventore tempore est adipisci provident rem fuga tempore
                 nam perferendis doloremque! Sed eaque nihil et sint impedit et sint voluptate vel nesciunt nobis sed
-                excepturi inventore eum cumque saepe?{" "}
+                excepturi inventore eum cumque saepe?
               </p>
               <p>
                 Et nisi internos aut deserunt vitae non iste ipsum sit reprehenderit amet qui corrupti obcaecati et
@@ -69,7 +73,7 @@ const LoremPages = () => {
                 explicabo magni ad quia perferendis. Ea praesentium voluptate id accusamus sequi quo molestias numquam
                 est assumenda asperiores eos veritatis galisum? Et tempora optio et eligendi nemo est eveniet natus in
                 earum labore ut distinctio minima aut velit labore. Et maiores deleniti id unde esse ut repellat
-                perspiciatis?{" "}
+                perspiciatis?
               </p>
               <p>
                 Ut dolorem quasi ab velit voluptate non provident nihil ut voluptatem dicta est dolorum quia. Et aperiam
@@ -79,7 +83,7 @@ const LoremPages = () => {
                 saepe qui quidem excepturi. At reiciendis facilis sit esse libero cum doloremque animi aut quia officiis
                 sit omnis optio qui voluptatibus amet. Qui consequatur molestiae ab internos deleniti sed explicabo
                 voluptatem ut laboriosam galisum. Nam facilis dolorum et dolorum cupiditate aut omnis quasi est expedita
-                laborum ea saepe deserunt.{" "}
+                laborum ea saepe deserunt.
               </p>
             </div>
           </main>
