@@ -4,7 +4,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import api from '../api/base'
 
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { setLoggedInUser } from "../features/loggedInUserSlice";
 import { validateInput } from '../components/Utils';
 import InputErrorCheck from '../components/InputErrorCheck';
@@ -15,7 +15,7 @@ const AdminSignin = () => {
     const [password, setPassword] = useState('')
 
     // @ts-ignore
-    const loggedInUser = useSelector(state => state.loggedInUser.current)
+    // const loggedInUser = useSelector(state => state.loggedInUser.current)
 
     const dispatch = useDispatch()
 

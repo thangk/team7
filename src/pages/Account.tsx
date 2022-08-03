@@ -69,7 +69,7 @@ const Account = ({ children }) => {
 
         // console.log(customers)
 
-    },[])
+    })
     
 
     return (
