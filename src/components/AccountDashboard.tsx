@@ -16,14 +16,14 @@ const AccountDashboard = () => {
 
             <section className="accountdashboard__numoforders">
 
-                <h1>34</h1>
+                <h1>9</h1>
                 <h2>orders</h2>
 
             </section>
 
             <section className="accountdashboard__numofitemsincart">
 
-                <h1>10</h1>
+                <h1>0</h1>
                 <h2>in cart</h2>
 
             </section>
