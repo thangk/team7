@@ -55,7 +55,7 @@ const Admin = ({ children }) => {
         // }
         console.log(loggedInAdmin)
 
-    }, [])
+    }, [loggedInAdmin])
 
     return (
         <main className="admin__page-wrapper">
