@@ -14,12 +14,12 @@ const AdminCustomers = () => {
     const [editId, setEditId] = useState(null);
 
     // @ts-ignore
-    // const handleEdit = (e) => {
-    //     e.preventDefault()
+    const handleEdit = (e) => {
+        e.preventDefault()
 
-    //     setEditId(e.currentTarget.id)
-    //     setEdit(true)
-    // }
+        setEditId(e.currentTarget.id)
+        setEdit(true)
+    }
 
     console.log(setEditId)
 
@@ -39,10 +39,9 @@ const AdminCustomers = () => {
         }
 
         fetchCustomers()
-        console.log(customers)
 
 
-    }, [add, edit, customers])
+    }, [add, edit])
     
         return (
             <>
@@ -74,7 +73,7 @@ const AdminCustomers = () => {
                         <div className='admincontents__listing_contents'>
 
                         {/* @ts-ignore */}
-                        {/* {customers && customers.map((item: any) => {   
+                        {customers && customers.map((item: any) => {   
                             return (                         
                             <div className='admincontents__listing_item' key={item.id} id={item.id} onClick={handleEdit}>
                                 <h2 className='admincontents__listing_item_id'>{item.id}</h2>
@@ -82,7 +81,7 @@ const AdminCustomers = () => {
                                 <h2 className='admincontents__listing_item_lastname'>{item.lastName}</h2>
                                 <h2 className='admincontents__listing_item_email'>{item.email}</h2>
                             </div>)
-                        })} */}
+                        })}
                         </div>
     
     

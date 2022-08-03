@@ -1,7 +1,7 @@
-import api from '../api/base'
 import { useEffect, useState } from 'react';
 import AdminAddForm from './AdminAddForm';
 import AdminEditForm from './AdminEditForm';
+import axios from 'axios';
 // import { useNavigate } from 'react-router-dom';
 
 const AdminProducts = () => {
@@ -24,7 +24,7 @@ const AdminProducts = () => {
     useEffect(() => {
         const fetchAdmins = async () => {
             try {
-                const res = await api.get('/watches');
+                const res = await axios.get('https://team7-backend.herokuapp.com/watches');
                 setProducts(res.data);
             } catch (err) {
                 // @ts-ignore

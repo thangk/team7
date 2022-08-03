@@ -1,7 +1,7 @@
-import api from '../api/base'
 import { useEffect, useState } from 'react';
 import AdminAddForm from './AdminAddForm';
 import AdminEditForm from './AdminEditForm';
+import axios from 'axios';
 
 const AdminAdmins = () => {
 
@@ -38,7 +38,7 @@ const AdminAdmins = () => {
     useEffect(() => {
         const fetchAdmins = async () => {
             try {
-                const res = await api.get('/admins');
+                const res = await axios.get('https://team7-backend.herokuapp.com/admins');
                 setAdmins(res.data);
             } catch (err) {
                 // @ts-ignore
@@ -52,7 +52,7 @@ const AdminAdmins = () => {
 
         fetchAdmins()
 
-    }, [add, edit, admins])
+    }, [add, edit])
     
         return (
                 <main className="admincontents__wrapper">

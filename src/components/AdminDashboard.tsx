@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { dashboardStats } from "./Constants";
 // import api from '../api/base'
@@ -5,8 +6,8 @@ import { dashboardStats } from "./Constants";
 const AdminDashboard = () => {
 
     const [admins, setAdmins] = useState([]);
-    const [customers] = useState([]);
-    const [products] = useState([]);
+    const [customers, setCustomers] = useState([]);
+    const [products, setProducts] = useState([]);
 
     
 
@@ -14,9 +15,9 @@ const AdminDashboard = () => {
     const getStat = (apiName: string) => {
 
         switch (apiName) {
-            case 'admins': return admins.length ? admins.length : 1
-            case 'customers': return customers.length ? customers.length : 2
-            case 'watches': return products.length ? products.length : 3
+            case 'admins': return admins.length ? admins.length : 0
+            case 'customers': return customers.length ? customers.length : 0
+            case 'watches': return products.length ? products.length : 0
             default: return 0
         }
 
@@ -27,13 +28,16 @@ const AdminDashboard = () => {
     useEffect(() => {
         const fetchDatas = async () => {
             try {
-                // const res_admin = await api.get(`/admins`)
-                // const res_customers = await api.get(`/customers`)
-                // const res_products = await api.get(`/watches`)
+                const res_admin = await axios.get(`import api from '../api/base'
+                admins`)
+                const res_customers = await axios.get(`import api from '../api/base'
+                customers`)
+                const res_products = await axios.get(`import api from '../api/base'
+                watches`)
     
-                setAdmins([])
-                // setCustomers(res_customers.data)
-                // setProducts(res_products.data)
+                setAdmins(res_admin.data)
+                setCustomers(res_customers.data)
+                setProducts(res_products.data)
                 
             } catch (err) {
                 // @ts-ignore
