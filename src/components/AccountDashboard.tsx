@@ -23,7 +23,7 @@ const AccountDashboard = () => {
 
             <section className="accountdashboard__numofitemsincart">
 
-                <h1>0</h1>
+                <h1>3</h1>
                 <h2>in cart</h2>
 
             </section>
