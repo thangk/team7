@@ -22,7 +22,7 @@ const AdminProducts = () => {
     }
 
     useEffect(() => {
-        const fetchAdmins = async () => {
+        const fetchProducts = async () => {
             try {
                 const res = await axios.get('https://team7-backend.herokuapp.com/watches');
                 setProducts(res.data);
@@ -36,7 +36,7 @@ const AdminProducts = () => {
             }
         }
 
-        fetchAdmins()
+        fetchProducts()
 
     }, [add, edit])
     

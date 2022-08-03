@@ -21,7 +21,6 @@ const AdminCustomers = () => {
         setEdit(true)
     }
 
-    console.log(setEditId)
 
     useEffect(() => {
         const fetchCustomers = async () => {
