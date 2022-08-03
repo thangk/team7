@@ -61,22 +61,6 @@ const Header = ({ children }) => {
       // console.log(`initial val of currentTheme: ${currentTheme}`)
     }, [])
 
-    const ThemePickerMobile = () => {
-      return (
-        <nav className="navbar socials">
-            {themeIcons.map(item => {
-              return (
-              <motion.a className="links" key={item.name} id={item.name} onMouseOver={showTooltip} onMouseOut={hideTooltip} onClick={() => handleSetTheme(item.name)} whileHover={{ y: -2 }}>
-              <div className={`tooltip theme-bg-${currentTheme}-darker theme-text-${currentTheme}-2`}>
-                  {tooltip}
-                </div>
-                {item.icon}
-              </motion.a>
-              )
-            })}
-          </nav>
-      )
-    }
 
   return (
     <>
