@@ -40,7 +40,7 @@ function ProductsDetailsPage() {
     
     <>
       <div className='product-details-wrapper'>
-        <h1 className='page-title product-details-title'>{currentWatch.name}</h1>
+        <h1 className={`page-title product-details-title theme-text-${currentTheme}`}>{currentWatch.name}</h1>
 
         <div className='inner-flex'>
 
