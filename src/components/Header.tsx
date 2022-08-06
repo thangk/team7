@@ -2,13 +2,15 @@ import { motion, useCycle } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useDimensions } from "../customHooks/useDimension";
 import { MenuList, MenuToggle } from "./HeaderMenu";
-import logo from "../images/icons/logo-icon-small.png";
 import { Link, useNavigate } from "react-router-dom";
 import { headerNavLinks, themeIcons } from "./Constants";
 import { HeaderSpacer } from "./Utils";
-import Footer from "./Footer";
 import { useSelector, useDispatch } from 'react-redux'
 import { setTheme } from "../features/themeSlice";
+import { setErrorImages } from "../features/errorImagesSlice";
+import logo from "../images/icons/logo-icon-small.png";
+import Footer from "./Footer";
+
 
 // @ts-ignore
 const Header = ({ children }) => {
@@ -18,6 +20,7 @@ const Header = ({ children }) => {
   const { height } = useDimensions(containerRef);
 
   const navigate = useNavigate();
+
 
 
   // @ts-ignore
@@ -58,8 +61,17 @@ const Header = ({ children }) => {
     }
 
     useEffect(() => {
-      // console.log(`initial val of currentTheme: ${currentTheme}`)
-    }, [])
+
+      // import error images into an array and store it in a redux context for use in other components efficiently
+      const errorImages = []
+
+      for (let i = 1; i < 9; i++) {
+        errorImages.push(require(`../images/error_images/ei${i}.jpg`))
+      }
+
+      dispatch(setErrorImages(errorImages))
+
+    })
 
 
   return (

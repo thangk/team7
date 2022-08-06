@@ -33,7 +33,7 @@
 }
 
 .admin__company-footer-info-wrapper {
-    @apply w-full aspect-video hidden flex-col justify-start items-center capitalize text-slate-400 text-sm
+    @apply w-full aspect-w-16 aspect-h-9 hidden flex-col justify-start items-center capitalize text-slate-400 text-sm
 }
 
 
@@ -68,7 +68,7 @@
 }
 
 .admin__user-icon-wrapper img {
-    @apply w-12 aspect-square rounded-full z-10 ring-slate-400 ring-2
+    @apply w-12 aspect-1 rounded-full z-10 ring-slate-400 ring-2
 }
 
 .admin__user-icon-wrapper h1 {
@@ -155,7 +155,7 @@
 }
 
 .admin__company-footer-info-wrapper {
-    @apply w-full aspect-video flex flex-col justify-start items-center capitalize text-slate-400 text-sm
+    @apply w-full aspect-w-16 aspect-h-9 flex flex-col justify-start items-center capitalize text-slate-400 text-sm
 }
 
 
@@ -190,7 +190,7 @@
 }
 
 .admin__user-icon-wrapper img {
-    @apply w-12 aspect-square rounded-full z-10 ring-slate-400 ring-2
+    @apply w-12 aspect-1 rounded-full z-10 ring-slate-400 ring-2
 }
 
 .admin__user-icon-wrapper h1 {

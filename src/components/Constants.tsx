@@ -1,27 +1,23 @@
 import {  AiOutlineUser } from "react-icons/ai";
 import { BsFillCartFill, BsGrid1X2Fill } from "react-icons/bs";
 import { FaFacebookSquare, FaInstagramSquare, FaPinterest, FaTwitterSquare } from "react-icons/fa";
-
 import { BsWatch } from 'react-icons/bs'
 import { RiGroupFill, RiSettings4Fill, RiUserStarFill } from 'react-icons/ri'
 import { MdDashboard } from 'react-icons/md'
 import { VscSettings } from 'react-icons/vsc'
-import kap from '../images/test_users/kap.jpg'
+import defaultUser from '../images/test_users/user.png'
 
 export const headerSocialIcons = [
     {
       name: 'facebook',
       icon: <FaFacebookSquare />
-    },
-    {
+    },{
       name: 'instagram',
       icon: <FaInstagramSquare />
-    },
-    {
+    },{
       name: 'twitter',
       icon: <FaTwitterSquare />
-    },
-    {
+    },{
       name: 'pinterest',
       icon: <FaPinterest />
     }
@@ -30,22 +26,15 @@ export const headerSocialIcons = [
   export const themeIcons = [
     {
       name: 'white',
-       // @ts-ignore
       icon: <div className='w-6 h-6 drop-shadow-md bg-slate-50 rounded-full border-2 border-slate-200'></div>
-    },
-    {
+    },{
       name: 'dark',
-       // @ts-ignore
       icon: <div className='w-6 h-6 drop-shadow-md bg-gray-600 rounded-full border-2 border-gray-700'></div>
-    },
-    {
+    },{
       name: 'blue',
-       // @ts-ignore
       icon: <div className='w-6 h-6 drop-shadow-md bg-blue-200 rounded-full border-2 border-blue-300'></div>
-    },
-    {
+    },{
       name: 'teal',
-      // @ts-ignore
       icon: <div className='w-6 h-6 drop-shadow-md bg-teal-400 rounded-full border-2 border-teal-500'></div>
     }
   ]
@@ -55,18 +44,15 @@ export const headerSocialIcons = [
         name: 'products',
         url: '/products',
         icon: <BsGrid1X2Fill />
-    },
-    {
+    },{
         name: 'account',
         url: '/account/dashboard',
         icon: <AiOutlineUser />
-    },
-    {
+    },{
         name: 'cart',
         url: '/cart',
         icon: <BsFillCartFill />
-    },
-    {
+    },{
         name: 'menu',
         url: '',
         icon: ''
@@ -80,28 +66,23 @@ export const headerSocialIcons = [
       name: 'dashboard',
       url: '/admin/dashboard',
       icon: <MdDashboard />
-    },
-    {
+    },{
       name: 'administrators',
       url: '/admin/admins',
       icon: <RiUserStarFill />
-    },
-    {
+    },{
       name: 'customers',
       url: '/admin/customers',
       icon: <RiGroupFill />
-    },
-    {
+    },{
       name: 'products',
       url: '/admin/products',
       icon: <BsWatch />
-    },
-    {
+    },{
       name: 'settings',
       url: '/admin/settings',
       icon: <VscSettings />
-    },
-    {
+    },{
       name: 'import / export',
       url: '/admin/ie',
       icon: <RiSettings4Fill />
@@ -117,7 +98,7 @@ export const headerSocialIcons = [
 
   export const user = {
     name: 'Kap Thang',
-    icon: kap
+    icon: defaultUser
   }
 
   export const importExportData = ['administrators', 'customers', 'products']

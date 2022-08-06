@@ -238,3 +238,12 @@ export const isDuplicateAccount = (email: string, usertype: any) => {
 export const kaplog = (message: string) => {
     console.log(message)
 }
+
+export const camelCase = (string: string) => {
+    const pattern = /(?:^\w|[A-Z]|\b\w)/g
+    const removeSpaceBetweenWordsPattern = /\s+/g
+
+    return string.replace(pattern, (word, index) => {
+        return index === 0 ? word.toLowerCase() : word.toUpperCase()
+    }).replace(removeSpaceBetweenWordsPattern, '')
+}
