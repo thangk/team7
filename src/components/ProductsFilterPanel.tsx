@@ -1,4 +1,4 @@
-import { querystring } from '@firebase/util';
+// import { querystring } from '@firebase/util';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { camelCase } from './Utils'
@@ -60,14 +60,7 @@ function ProductsFilterPanel({ products, setSearchResult }) {
   const [ runQuery, setRunQuery ] = useState(false)
 
 
-  const fetchQueriedFilter = async (querystring: any) => {
-    try {
-      const { data } = await api.get(`/watches?${querystring}`)
-      setSearchResult(data)
-    } catch {
-      console.log('Query error')
-    }
-  }
+  
 
 
   const deleteFromParamsArray = (key: string, value: string) => {
@@ -146,6 +139,15 @@ function ProductsFilterPanel({ products, setSearchResult }) {
   }
 
   useEffect(() => {
+
+    const fetchQueriedFilter = async (querystring: any) => {
+      try {
+        const { data } = await api.get(`/watches?${querystring}`)
+        setSearchResult(data)
+      } catch {
+        console.log('Query error')
+      }
+    }
     
     if (runQuery) { 
       fetchQueriedFilter(searchParam.toString())
@@ -153,7 +155,7 @@ function ProductsFilterPanel({ products, setSearchResult }) {
     }
     
 
-  }, [runQuery])
+  }, [runQuery, searchParam, setSearchResult])
 
 
 

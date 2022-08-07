@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux'
 import logo from "../images/icons/logo2-icon.png";
 
+
+
 function AboutUs(){
 
     // @ts-ignore
