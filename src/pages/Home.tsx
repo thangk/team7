@@ -17,13 +17,12 @@ function Home() {
   // @ts-ignore
   const currentTheme = useSelector(state => state.theme.current)
 
-  console.log(window.location.href)
-
 const navigate = useNavigate();
 return (
     
   <main className="homepage-wrapper">
 
+    {/* added by Kap */}
     <Helmet>
       {/* Primary Meta Tags */}
       <meta name="title" content="Infinity Watches" />
