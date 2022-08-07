@@ -29,7 +29,7 @@ function Products() {
   const getDisplayRangeNMarginPages = () => {
     if (screenSize < SCREEN_SM) return { displayRange: 2, marginPages: 1, itemsPerPage: 4 };
 
-    return { displayRange: 4, marginPages: 2, itemsPerPage: 6 };
+    return { displayRange: 4, marginPages: 2, itemsPerPage: 12 };
   };
 
   const productsPerPage = getDisplayRangeNMarginPages().itemsPerPage;
@@ -59,17 +59,15 @@ function Products() {
         <h1 className="page-title">Products</h1>
 
         <div className="products-content-wrapper">
-          {/* filtering panel LEFT SIDE */}
-          <section className={`filter-panel theme-border-${currentTheme}-light`}>
+          {/* filtering panel LEFT SIDE */}         
             <ProductsFilterPanel products={products} setSearchResult={setSearchResult} />
-          </section>
 
           {/* products listing RIGHT SIDE */}
           <section className={`products-panel theme-border-${currentTheme}-light`}>
             <motion.div
               // initial={{ opacity: 0 }}
               // animate={{ opacity: 1 }}
-              layout
+              
               key={nanoid()}
               className="product-cards-wrapper"
             >
@@ -78,16 +76,20 @@ function Products() {
               displayProducts.map((item, index) => {
                 return (
                   <motion.div
+                  layout
                     className={`product-card theme-bg-${currentTheme} hover-theme-bg-${currentTheme}-dark`}
                     onClick={() => {
                       // @ts-ignore
                       navigate(`/products/${item.id}`);
+                      // @ts-ignore
+                      console.log(item.id)
                     }}
                     key={index}
                     whileHover={{ y: -10 }}
                   >
                     <div className={`product-card-image theme-border-${currentTheme}-light`}>
-                      <img src={noimage} alt="noimage" />
+                      {/* @ts-ignore */}
+                      <img src={item.imageUrl ? item.imageUrl: item.imageUpload ? item.imageUpload : noimage} alt="noimage" />
                       {/* @ts-ignore */}
                       {/* <img src={item.imageUrl} alt="noimage" /> */}
                     </div>
@@ -97,6 +99,8 @@ function Products() {
                       <div>Name: {item.name ?? ''}</div>
                       {/* @ts-ignore */}
                       <div>Brand: {item.brand ?? ''}</div>
+                      {/* @ts-ignore */}
+                      <div>Face Size: {item.faceSize ?? ''}</div>
                       {/* @ts-ignore */}
                       <div>Price: {cf.format(item.price, {code: 'USD'}) ?? ''}</div>
                     </div>

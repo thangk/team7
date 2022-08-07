@@ -10,7 +10,7 @@ import { setTheme } from "../features/themeSlice";
 import { setErrorImages } from "../features/errorImagesSlice";
 import logo from "../images/icons/logo-icon-small.png";
 import Footer from "./Footer";
-
+// import { toggleMenu } from "../features/menuToggleSlice";
 
 // @ts-ignore
 const Header = ({ children }) => {
@@ -25,6 +25,15 @@ const Header = ({ children }) => {
 
   // @ts-ignore
   const currentTheme = useSelector(state => state.theme.current)
+
+  // @ts-ignore
+  // const testt = useSelector(state => state.theme.test)
+  
+  // @ts-ignore
+  // const {menuToggle} = useSelector(state => state)
+
+  // const isOpen = menuToggle
+
 
   const dispatch = useDispatch()
 
@@ -56,9 +65,29 @@ const Header = ({ children }) => {
       }
     }
 
-    const handleSetTheme = (newTheme: string) => {
+    // @ts-ignore
+    const handleSetTheme = (newTheme: string, e) => {
       dispatch(setTheme(newTheme))
     }
+
+    // @ts-ignore
+    // const test = (e) => {
+    //   e.preventDefault()
+
+    //   if (!e.target.classList.contains('menu-ul')) {
+
+    //     // console.log(e.target.className)
+    //     // console.log({isOpen})
+    //     console.log({currentTheme})
+    //     // dispatch(toggleMenu)
+    //   }
+
+    // }
+
+    // const handleToggle = () => {
+      
+    // }
+
 
     useEffect(() => {
 
@@ -71,12 +100,23 @@ const Header = ({ children }) => {
 
       dispatch(setErrorImages(errorImages))
 
-    })
+
+
+      // console.log({isOpen})
+      // console.log({testt})
+      // console.log({currentTheme})
+      
+
+    }, [dispatch, isOpen])
 
 
   return (
-    <>
+
+    // The super root div
     <div className={`flex flex-col theme-bg-${currentTheme} w-full min-h-screen `}>
+
+
+
       {/* Navbar */}
       <div className={`header-wrapper theme-bg-${currentTheme}`}>
       <div className="fixed w-full h-fit drop-shadow-lg z-50">
@@ -91,7 +131,7 @@ const Header = ({ children }) => {
           <nav className="desktop-theme-picker">
             {themeIcons.map(item => {
               return (
-              <motion.a className="links" key={item.name} id={item.name} onMouseOver={showTooltip} onMouseOut={hideTooltip} onClick={() => handleSetTheme(item.name)} whileHover={{ y: -2 }}>
+              <motion.a className="links" key={item.name} id={item.name} onMouseOver={showTooltip} onMouseOut={hideTooltip} onClick={(e) => handleSetTheme(item.name, e)} whileHover={{ y: -2 }}>
               <div className={`tooltip theme-bg-${currentTheme}-darker theme-text-${currentTheme}-2`}>
                   {tooltip}
                 </div>
@@ -126,7 +166,7 @@ const Header = ({ children }) => {
                     >
                       
                       <div className="menu-bg">
-                        <MenuToggle currentTheme={currentTheme} toggle={() => toggleOpen()} />
+                        <MenuToggle currentTheme={currentTheme} toggle={toggleOpen} />
                         {isOpen && <MenuList themeIcons={themeIcons} handleSetTheme={handleSetTheme} isOpen={isOpen} />}
                       </div>
                     </motion.div>
@@ -156,7 +196,6 @@ const Header = ({ children }) => {
 
       <Footer />
       </div>
-    </>
 
     
   );

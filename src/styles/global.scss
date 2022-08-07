@@ -55,16 +55,17 @@
 	@apply grid grid-cols-1 gap-4
 }
 
-
 @screen md {
 	.horizontal-form {
 		@apply grid grid-cols-2 gap-4
 	}
 }
+
 @screen lg {
 	.horizontal-form {
 		@apply grid grid-cols-2 gap-4
 	}
+
 }
 @screen xl {
 	.horizontal-form {

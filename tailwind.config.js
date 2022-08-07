@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      screens: {
+        '4xl': '1700px'
+      },
 
       fontFamily: {
         'bebas-neue': ['Bebas Neue', 'cursive'],

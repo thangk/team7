@@ -3,40 +3,48 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { camelCase } from './Utils'
 import api from '../api/base'
+import { useSelector } from 'react-redux'
+import { productsFilterKeyValues } from '../components/Constants'
 
 
 //@ts-ignore
 function ProductsFilterPanel({ products, setSearchResult }) {
   
+  // @ts-ignore
+  const currentTheme = useSelector(state => state.theme.current)
 
-  const getListItems = (key: string) => {
-    // @ts-ignore
-    return [...new Set(products.map((item: {key: any}) => item[key]))]
-  }
+  const [ searchParam, setSearchParam ] = useSearchParams()
 
-  
+  const [ paramsArray, setParamsArray ] = useState([])
 
-  const products_filter_keyvalue_pair = [
-    {
-      key: 'Brand',
-      value: getListItems('brand')
-    },{
-      key: 'Face Size',
-      value: getListItems('faceSize')
-    },{
-      key: 'Case Colour',
-      value: getListItems('caseColour')
-    },{
-      key: 'Band Colour',
-      value: getListItems('bandColour')
-    },{
-      key: 'Movement Type',
-      value: getListItems('movementType')
-    },{
-      key: 'Price',
-      value: getListItems('price')
-    }
-  ]
+  const [ runQuery, setRunQuery ] = useState(false)
+
+  // const getListItems = (key: string) => {
+  //   // @ts-ignore
+  //   return [...new Set(products.map((item: {key: any}) => item[key]))]
+  // }
+
+  // const products_filter_keyvalue_pair = [
+  //   {
+  //     key: 'Brand',
+  //     values: getListItems('brand')
+  //   },{
+  //     key: 'Face Size',
+  //     values: getListItems('faceSize')
+  //   },{
+  //     key: 'Case Colour',
+  //     values: getListItems('caseColour')
+  //   },{
+  //     key: 'Band Colour',
+  //     values: getListItems('bandColour')
+  //   },{
+  //     key: 'Movement Type',
+  //     values: getListItems('movementType')
+  //   },{
+  //     key: 'Price',
+  //     values: getListItems('price')
+  //   }
+  // ]
 
 
   // const handleSearchChange = (e: any) => {
@@ -53,11 +61,7 @@ function ProductsFilterPanel({ products, setSearchResult }) {
   //   setSearchResult(resultArray)
   // }
 
-  const [ searchParam, setSearchParam ] = useSearchParams()
-
-  const [ paramsArray, setParamsArray ] = useState([])
-
-  const [ runQuery, setRunQuery ] = useState(false)
+  
 
 
   
@@ -160,16 +164,17 @@ function ProductsFilterPanel({ products, setSearchResult }) {
 
 
   return (
-    <>
-      <input className="searchbox" id="searchbox" type="text" placeholder="Search" onChange={handleSearchChange} />
+    <div className={`filterpanel__wrapper theme-border-${currentTheme}-light`}>
+      <div className='filterpanel__content_wrapper'>      
+      <input id="searchbox" type="text" placeholder="Search" onChange={handleSearchChange} />
 
-      {products_filter_keyvalue_pair.sort().map((item: any) => {
+      {productsFilterKeyValues.sort().map((item: any) => {
         return (
           <section className="filter-options-wrapper" key={item.key}>
             <h1>{item.key}</h1>
             <div className="filter-options">
               <form id={`filter-form-${item.key.toLowerCase()}`}>
-                {item.value.sort().map((v: any) => {
+                {item.values.sort().map((v: any) => {
                   return (
                     <div className="filter-option" key={v}>
                       <input type="checkbox" className={item.key} id={`${item.key.toLowerCase()}-${v}`} onChange={handleSearchChange} name={v} value={v} />
@@ -182,7 +187,9 @@ function ProductsFilterPanel({ products, setSearchResult }) {
           </section>
         );
       })}
-    </>
+      </div>
+
+    </div>
   );
 }
 

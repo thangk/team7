@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { MouseEvent, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { useAuth } from '../contexts/AuthContext';
 import { setPageTitle } from '../features/accountAreaSlice';
@@ -27,8 +27,7 @@ const AccountAccountSettings = () => {
     
 
 
-    // @ts-ignore
-    const handleSave = async (e) => {
+    const handleSave = async (e: MouseEvent) => {
         e.preventDefault();
 
         if (!newPassword.length && !newProfilePic) return
@@ -70,7 +69,6 @@ const AccountAccountSettings = () => {
                 alert('Something went wrong. Maybe your file is too large.')
             }
             
-            console.log('this ran?')
         }
     }
 
@@ -98,6 +96,8 @@ const AccountAccountSettings = () => {
                     <input type='password' />
                 </div>
             </section>
+
+
 
             <section className="accountsettings__item">
 

@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { FormEvent, useRef, useState } from 'react';
 
 import { useAuth } from '../contexts/AuthContext';
 
@@ -26,8 +26,8 @@ const AdminSettings = () => {
     const dispatch = useDispatch()
 
 
-    // @ts-ignore
-    const handleSave = async (e) => {
+    
+    const handleSave = async (e: FormEvent) => {
         e.preventDefault()
 
         // console.log(loggedInUser.id)
@@ -43,7 +43,7 @@ const AdminSettings = () => {
             newPasswordRef.current.value = ''
         }
 
-        console.log(newProfilePic)
+        // console.log(newProfilePic)
 
         // update profile pic
         if (newProfilePic.length > 0) {

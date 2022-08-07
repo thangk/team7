@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux'
 import logo from "../images/icons/logo2-icon.png";
 
@@ -11,13 +10,13 @@ function AboutUs(){
     const currentTheme = useSelector(state => state.theme.current)
 
 
-    const navigate = useNavigate();
 
     return (
         
         <main className="about-us-wrapper">
             <h1 className={`about-us-page-title theme-text-${currentTheme}-1`}>About us</h1>
-            <div className={`about-us-content-wrapper theme-text-${currentTheme}-1`}>
+            {/* added theme-font-2 and border colour -- Kap */}
+            <div className={`about-us-content-wrapper theme-text-${currentTheme}-1 theme-border-${currentTheme}-light theme-font-2`}>
                 <p>
                     Infinity watches is a store where you can buy a wide variety of watches all in one place.
                     Brand name watches can be purchased from our website for a normal price and shipped to the seller at a rapid pace.

@@ -1,5 +1,11 @@
 
+.filterpanel__wrapper {
+	@apply w-full h-auto p-8 border-2  
+}
 
+.filterpanel__content_wrapper {
+    @apply grid grid-cols-2 gap-3
+}
 
 .filter-options form {
     @apply w-full
@@ -22,13 +28,21 @@
 
 
 #searchbox {
-    @apply flex w-full h-8 border-0 my-auto bg-slate-200 focus:ring-slate-300 rounded-sm theme-text-darker font-barlow placeholder:font-barlow col-span-2
+    @apply hidden w-full h-8 border-0 my-auto bg-slate-200 focus:ring-slate-300 rounded-sm theme-text-darker font-barlow placeholder:font-barlow col-span-2
 }
 
 
 @screen sm {
     #searchbox {
-        @apply w-full
+        @apply w-full h-fit hidden
+    }
+
+    .filterpanel__wrapper {
+		@apply w-1/4 h-auto border-2 p-4
+	}
+
+    .filterpanel__content_wrapper {
+        @apply flex flex-col gap-2
     }
 }
 

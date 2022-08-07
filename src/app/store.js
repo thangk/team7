@@ -1,18 +1,20 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
+
 import themeReducer from '../features/themeSlice'
 import accountAreaReducer from '../features/accountAreaSlice'
 import loggedInUserReducer from '../features/loggedInUserSlice'
-import errorImagesSlice from '../features/errorImagesSlice'
-
-import { persistStore, persistReducer } from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
+import errorImagesReducer from '../features/errorImagesSlice'
+import menuToggleReducer from '../features/menuToggleSlice'
 
 
 const rootReducer = combineReducers({
     theme: themeReducer,
     accountArea: accountAreaReducer,
     loggedInUser: loggedInUserReducer,
-    errorImages: errorImagesSlice
+    errorImages: errorImagesReducer,
+    menuToggle: menuToggleReducer,
 })
 
 

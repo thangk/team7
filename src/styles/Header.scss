@@ -31,14 +31,9 @@
 	@apply hidden
 }
 
-
-
-
 .links {
 	@apply tracking-wider text-3xl cursor-pointer
 }
-
-
 
 .logo-image {
 	@apply w-36 hover:cursor-pointer
@@ -86,80 +81,19 @@
 		@apply w-44 scale-100 hover:cursor-pointer
 	}
 
+	
+
 
 	.links {
 		@apply relative  tracking-wider text-2xl
 	}
 
-	// .tooltip2 {
-	// 	@apply absolute bg-slate-400 text-slate-50 w-max h-fit font-barlow text-xs -top-10 left-1/2 -translate-x-1/2 px-2 py-1 rounded-md capitalize
-	// }
+	.tooltip {
+		@apply hidden absolute w-max h-fit font-barlow text-xs -top-[45px] left-1/2 -translate-x-1/2 py-[10px] px-3 rounded-md capitalize
+	}
 
-	// .tooltip {
-	// 	display: none;
-	// 	position: absolute;
-	// 	width: max-content;
-	// 	height: fit-content;
-	// 	font-family: 'barlow';
-	// 	font-size: 12px;
-	// 	top: -45px;
-	// 	left: 50%;
-	// 	transform: translateX(-50%);
-	// 	padding: 0px 10px;
-	// 	color: #f8fafc;
-	// 	background-color: #94a3b8;
-	// 	border-radius: 6px;
-	// 	text-transform: capitalize;
-	// }
-
-	// .tooltip:after {
-	// 	content: "";
-	// 	position: absolute;
-	// 	width: 0;
-	// 	height: 0;
-	// 	left: 50%;
-	// 	transform: translateX(-50%);
-	// 	bottom: -12px;
-	// 	border: 5px solid transparent;
-	// 	border-top: 10px solid #94a3b8;
-	// 	z-index: 3;
-	//   }
-
-	// .show-tooltip {
-	// 	display: inline-block;
-	// }
-	  
-
-	// .tooltip2:before {
-	// 	@apply content-[""] absolute w-0 h-0 left-1/2 -translate-x-1/2 -bottom-[7px] 
-	// 	border-[6px] 
-	// 	border-solid 
-	// 	border-transparent 
-	// 	border-t-[4px]
-	// 	border-slate-400
-	// 	z-20
-	// }
-
-	// .tooltip2:before {
-	// 	border-top-style: solid;
-	// }
-
-	// .tooltip2:after {
-	// 	@apply content-[""] absolute w-0 h-0 left-1/2 -translate-x-1/2 -bottom-[5px] 
-	// 	border-[4px] 
-	// 	border-solid 
-	// 	border-transparent 
-	// 	border-t-[2px] 
-	// 	border-slate-50
-	// 	z-30 
-	// }
-
-	// .tooltip2:after {
-	// 	border-top-style: solid;
-	// }
-
-	.socials {
-		@apply flex
+	.show-tooltip {
+		@apply inline-block
 	}
 
 }

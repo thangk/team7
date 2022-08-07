@@ -56,13 +56,13 @@ const AdminSignin = () => {
             setLoading(true)
             await signin(email, password)
 
-            console.log(admins)
+            // console.log(admins)
 
             for (const admin of admins) {
                 // @ts-ignore
                 if (admin.email === email) {
                     dispatch(setLoggedInUser(admin))
-                    console.log('this ran?')
+                    // console.log('this ran?')
                 }
             }
 

@@ -6,7 +6,6 @@ import api from '../api/base'
 
 const AdminProducts = () => {
 
-    // const navigate = useNavigate();
 
     const [products, setProducts] = useState([]);
     const [add, setAdd] = useState(false);

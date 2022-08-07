@@ -19,8 +19,6 @@ const Account = ({ children }) => {
     // @ts-ignore
     const pageTitle = useSelector(state => state.accountArea.pagetitle)
 
-    // const [customers, setCustomers] = useState(null);
-
     // @ts-ignore
     const loggedInUser = useSelector(state => state.loggedInUser.current)
 
@@ -46,12 +44,10 @@ const Account = ({ children }) => {
 
         const fetchCustomers = async () => {
             try {
-                // @ts-ignore
                 const { data } = await api.get(`/customers`)
                 
                 for (const customer of data) {
 
-                    // @ts-ignore
                     if (customer.email === currentUser.email) {
                         dispatch(setLoggedInUser(customer))
                         console.log(loggedInUser)
@@ -66,8 +62,6 @@ const Account = ({ children }) => {
         }
 
         fetchCustomers()
-
-        // console.log(customers)
 
     })
     
