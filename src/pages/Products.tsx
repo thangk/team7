@@ -8,6 +8,9 @@ import ProductsFilterPanel from "../components/ProductsFilterPanel";
 import ProductsPagination from "../components/ProductsPagination";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux'
+// @ts-ignore
+import { Helmet } from 'react-helmet'
+import iwlogo from '../images/icons/logo-icon-small.png'
 
 const cf = require('currency-formatter')
 
@@ -50,12 +53,35 @@ function Products() {
 
   }, [])
 
+  
+
   return (
     <>
       <motion.main 
       initial={{ opacity: 0.5 }}
       animate={{ opacity: 1 }}
       className={`productspage-wrapper theme-text-${currentTheme}-1`}>
+
+        <Helmet>
+          {/* Primary Meta Tags */}
+          <meta name="title" content="Products" />
+          <meta name="description" content="List of Infinity Watches" />
+          
+          {/* Open Graph / Facebook Meta Tags */}
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content={window.location.href} />
+          <meta property="og:title" content="Products" />
+          <meta property="og:description" content="List of Infinity Watches" />
+          <meta property="og:image" content={iwlogo} />
+          
+          {/* Twitter Meta Tags */}
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:url" content={window.location.href} />
+          <meta property="twitter:title" content="Products" />
+          <meta property="twitter:description" content="List of Infinity Watches" />
+          <meta property="twitter:image" content={iwlogo} />
+        </Helmet>
+
         <h1 className="page-title">Products</h1>
 
         <div className="products-content-wrapper">

@@ -7,17 +7,43 @@ import { useNavigate } from "react-router-dom";
 import { nanoid } from "nanoid";
 // import { useTheme } from "../contexts/ThemeContext";
 import { useSelector } from 'react-redux'
+import iwlogo from '../images/icons/logo-icon-small.png'
+
+// @ts-ignore
+import { Helmet } from 'react-helmet'
 
 function Home() {
 
   // @ts-ignore
   const currentTheme = useSelector(state => state.theme.current)
 
+  console.log(window.location.href)
 
 const navigate = useNavigate();
 return (
     
   <main className="homepage-wrapper">
+
+    <Helmet>
+      {/* Primary Meta Tags */}
+      <meta name="title" content="Infinity Watches" />
+      <meta name="description" content="Premium & Affordable" />
+      
+      {/* Open Graph / Facebook Meta Tags */}
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={window.location.href} />
+      <meta property="og:title" content="Infinity Watches" />
+      <meta property="og:description" content="Premium & Affordable" />
+      <meta property="og:image" content={iwlogo} />
+      
+      {/* Twitter Meta Tags */}
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content={window.location.href} />
+      <meta property="twitter:title" content="Infinity Watches" />
+      <meta property="twitter:description" content="Premium & Affordable" />
+      <meta property="twitter:image" content={iwlogo} />
+    </Helmet>
+
 
     <h1 className={`page-title-center theme-text-${currentTheme}-1`}>"Revolutionizing the way you Shop for Watches"</h1>
   
