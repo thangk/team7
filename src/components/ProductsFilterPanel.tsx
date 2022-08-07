@@ -1,4 +1,4 @@
-import { querystring } from '@firebase/util';
+// import { querystring } from '@firebase/util';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { camelCase } from './Utils'
@@ -153,7 +153,7 @@ function ProductsFilterPanel({ products, setSearchResult }) {
     }
     
 
-  }, [runQuery])
+  }, [])
 
 
 
