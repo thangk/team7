@@ -1,5 +1,65 @@
 [
     {
+        "name": "Silver tone mesh diamond watch",
+        "price": "$175.00",
+        "brand": "Guess",
+        "desc": "(desc goes here)",
+        "caseColour": "Silver",
+        "bandColour": "Silver",
+        "bandType": "Mesh",
+        "movementType": "Analog",
+        "faceSize": "44mm",
+        "id": "2"
+    },
+    {
+        "name": "Apple Watch Series 3",
+        "price": "$399.00",
+        "brand": "Apple",
+        "desc": "(desc goes here)",
+        "caseColour": "White",
+        "bandColour": "Black",
+        "bandType": "Silicone",
+        "movementType": "Digital",
+        "faceSize": "38mm",
+        "id": "3"
+    },
+    {
+        "name": "Black and Gold tone analog watch",
+        "price": "$145.00",
+        "brand": "Guess",
+        "desc": "(desc goes here)",
+        "caseColour": "Gold",
+        "bandColour": "Black",
+        "bandType": "Silicone",
+        "movementType": "Analog",
+        "faceSize": "44mm",
+        "id": "4"
+    },
+    {
+        "name": "Oversized brecken silver tone watch",
+        "price": "$390.00",
+        "brand": "Michael Kors",
+        "desc": "(desc goes here)",
+        "caseColour": "Black",
+        "bandColour": "Silver",
+        "bandType": "Steel",
+        "movementType": "Quartz",
+        "faceSize": "45mm",
+        "id": "5"
+    },
+    {
+        "name": "Silver tone mesh diamond watch",
+        "price": "$175.00",
+        "brand": "Guess",
+        "desc": "(desc goes here)",
+        "caseColour": "Silver",
+        "bandColour": "Silver",
+        "bandType": "Mesh",
+        "movementType": "Analog",
+        "faceSize": "44mm",
+        "id": "6"
+    },
+    {
         "imageUrl": "https://images.guesswatches.com/image/upload/q_auto,f_auto/e_sharpen:120,c_fill/Catalogs/timex-master-catalog/images/GW0353G1.png",
         "name": "ECO-FRIENDLY BLACK LEATHER RECYCLED ULTRA SUEDE STRAP WATCH",
         "price": 110,
@@ -323,6 +383,18 @@
         "movementType": "Quartz",
         "faceSize": "41mm" 
     },
+    {
+        "imageUrl": "https://image.s5a.com/is/image/TheBay/055092967250_main?wid=480&hei=640&qlt=90&resMode=sharp2&op_usm=0.9,1.0,8,0",
+        "name": "The Solar Black Grey Mesh & Black Case",
+        "price": 340,
+        "brand": "Solios",
+        "desc": "",
+        "caseColour": "Black",
+        "bandColour": "Black",
+        "bandType": "Chainmail",
+        "movementType": "Solar",
+        "faceSize": "36mm" 
+    }, 
     {
         
     }
