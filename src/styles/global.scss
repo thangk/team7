@@ -34,6 +34,8 @@
 @import './Cart.scss';
 @import './CartOrderPlaced.scss';
 @import './AdminSettings.scss';
+@import './AboutUs.scss';
+@import './Themes.scss';
 /* aded by Kap end */
 
 
@@ -42,315 +44,6 @@
 
 
 
-/* theme colours START ############################################### */
-/* these are some custom made colours for our theme that I picked. Can be changed (Kap)*/
-
-
-// theme-bg
-.theme-bg-white {
-	@apply bg-slate-50
-}
-
-.theme-bg-blue {
-	@apply bg-blue-200
-}
-
-.theme-bg-teal {
-	@apply bg-teal-400
-}
-
-.theme-bg-dark {
-	@apply bg-gray-600
-}
-
-// theme-bg-light
-.theme-bg-white-light {
-	@apply bg-slate-50
-}
-
-.theme-bg-blue-light {
-	@apply bg-blue-200
-}
-
-.theme-bg-teal-light {
-	@apply bg-teal-500
-}
-
-.theme-bg-dark-light {
-	@apply bg-gray-600
-}
-
-
-// theme-bg-darker
-.theme-bg-white-darker {
-	@apply bg-slate-200;
-}
-
-.theme-bg-blue-darker {
-	@apply bg-blue-300
-}
-
-.theme-bg-teal-darker {
-	@apply bg-teal-500
-}
-
-.theme-bg-dark-darker {
-	@apply bg-gray-700
-}
-
-
-// hover-theme-bg-darker
-.hover-theme-bg-white-darker {
-	@apply hover:bg-slate-200;
-}
-
-.hover-theme-bg-blue-darker {
-	@apply hover:bg-blue-300
-}
-
-.hover-theme-bg-teal-darker {
-	@apply hover:bg-teal-500
-}
-
-.hover-theme-bg-dark-darker {
-	@apply hover:bg-gray-700
-}
-
-// hover-theme-bg-darker
-.hover-theme-bg-white-darkest {
-	@apply hover:bg-slate-400;
-}
-
-.hover-theme-bg-blue-darkest {
-	@apply hover:bg-blue-400
-}
-
-.hover-theme-bg-teal-darkest {
-	@apply hover:bg-teal-600
-}
-
-.hover-theme-bg-dark-darkest {
-	@apply hover:bg-gray-500
-}
-
-
-
-
-// theme-border-colour-light
-.theme-border-white-light {
-	@apply border-slate-200;
-}
-
-.theme-border-blue-light {
-	@apply border-blue-300
-}
-
-.theme-border-teal-light {
-	@apply border-teal-300
-}
-
-.theme-border-dark-light {
-	@apply border-gray-500
-}
-
-
-// theme-border-colour-dark
-.theme-border-white-dark {
-	@apply border-slate-300;
-}
-
-.theme-border-blue-dark {
-	@apply border-blue-400
-}
-
-.theme-border-teal-dark {
-	@apply border-teal-400
-}
-
-.theme-border-dark-dark {
-	@apply border-gray-500
-}
-
-// theme-text-colour-0		INVISIBLE BLEND IN
-.theme-text-white-0 {
-	@apply text-slate-50;
-}
-
-.theme-text-blue-0 {
-	@apply text-blue-200
-}
-
-.theme-text-teal-0 {
-	@apply text-teal-400
-}
-
-.theme-text-dark-0 {
-	@apply text-gray-600
-}
-
-
-// theme-text-colour-1		DARKER
-.theme-text-white-1 {
-	@apply text-slate-400;
-}
-
-.theme-text-blue-1 {
-	@apply text-blue-500
-}
-
-.theme-text-teal-1 {
-	@apply text-teal-700
-}
-
-.theme-text-dark-1 {
-	@apply text-gray-400
-}
-
-// hover
-.hover-theme-text-white-1 {
-	@apply text-slate-400;
-}
-
-.hover-theme-text-blue-1 {
-	@apply text-blue-500
-}
-
-.hover-theme-text-teal-1 {
-	@apply text-teal-700
-}
-
-.hover-theme-text-dark-1 {
-	@apply text-gray-400
-}
-
-
-// theme-text-colour-2
-.theme-text-white-2 {
-	@apply text-slate-500;
-}
-
-.theme-text-blue-2 {
-	@apply text-blue-600
-}
-
-.theme-text-teal-2 {
-	@apply text-teal-200
-}
-
-.theme-text-dark-2 {
-	@apply text-gray-400
-}
-
-
-// theme-ring-colour-2
-.theme-focus-ring-white {
-	@apply focus:ring-slate-500
-}
-
-.theme-focus-ring-blue {
-	@apply focus:ring-blue-600
-}
-
-.theme-focus-ring-teal {
-	@apply focus:ring-teal-200
-}
-
-.theme-focus-ring-dark {
-	@apply focus:ring-gray-400
-}
-
-
-// stroke colours
-
-.theme-stroke-white {
-	@apply stroke-slate-500
-}
-
-.theme-stroke-blue {
-	@apply stroke-blue-600
-}
-
-.theme-stroke-teal {
-	@apply stroke-teal-200
-}
-
-.theme-stroke-dark {
-	@apply stroke-gray-400
-}
-
-// fill colours
-
-.theme-fill-white {
-	@apply fill-slate-500
-}
-
-.theme-fill-blue {
-	@apply fill-blue-600
-}
-
-.theme-fill-teal {
-	@apply fill-teal-200
-}
-
-.theme-fill-dark {
-	@apply fill-gray-400
-}
-
-
-
-// theme fonts
-
-.theme-font {
-	@apply font-bebas-neue;
-}
-
-.theme-font-2 {
-	@apply font-barlow
-}
-
-
-// UNUSED ONES BELOW
-
-
-
-.hover-theme-bg-white {
-	@apply hover:text-slate-50
-}
-
-
-.theme-border-white {
-	@apply border-slate-200;
-}
-
-.theme-text-light {
-	@apply text-slate-50;
-}
-
-.theme-text-white {
-	@apply text-slate-500;
-}
-
-.hover-theme-text-darker {
-	@apply hover:text-slate-500;
-}
-
-.hover-theme-bg-dark {
-	@apply hover:bg-slate-100;
-}
-
-.hover-theme-bg-darker {
-	@apply hover:bg-slate-500;
-}
-
-.theme-text-darker {
-	@apply text-slate-500;
-}
-
-.theme-text-darkest {
-	@apply text-slate-600;
-}
-
-/* theme colours END ############################################### */
 
 
 
@@ -389,16 +82,15 @@
 	@apply hidden
 }
 
-// body
-.pseudo__body {
-	
-}
-
 
 .bg-black {
 	@apply bg-blue-500
 }
 
+
+input[type='checkbox'] {
+    @apply border-slate-300 rounded-md text-slate-500 focus:ring-slate-400 focus:ring-2
+}
 
 input[type='text'], input[type='password'], input[type='email'], input[type='number'] {
     @apply w-[150px] border border-slate-300 focus:border-slate-400 rounded-md text-slate-500 focus:ring-slate-400 focus:ring-2
@@ -419,9 +111,7 @@ select, option {
 }
 
 
-input[type='checkbox'] {
-    @apply border-slate-300 rounded-md text-slate-500 focus:ring-slate-400 focus:ring-2
-}
+
 
 
 

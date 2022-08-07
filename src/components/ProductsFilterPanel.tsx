@@ -1,130 +1,176 @@
-import React, { useEffect,  } from "react";
+import { querystring } from '@firebase/util';
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { camelCase } from './Utils'
+import api from '../api/base'
+
 
 //@ts-ignore
 function ProductsFilterPanel({ products, setSearchResult }) {
-  //@ts-ignore
-  const unique = {
-    brands: [...new Set(products.map((product: { brand: any }) => product.brand))],
-    faceSizes: [...new Set(products.map((product: { faceSize: any }) => product.faceSize))],
-    caseColours: [...new Set(products.map((product: { caseColour: any }) => product.caseColour))],
-    bandColours: [...new Set(products.map((product: { bandColour: any }) => product.bandColour))],
-    movementTypes: [...new Set(products.map((product: { movementType: any }) => product.movementType))],
-    prices: [
-      ...new Set(
-        products.map((product: { price: any }) => {
-          return Number(product.price.replace(/[$]|,/gm, ""));
-        })
-      ),
-    ],
-  };
+  
 
-  const getFilterTitle = (propName: any) => {
-    switch (propName) {
-      case "brands":
-        return "Brand";
-      case "faceSizes":
-        return "Face Size";
-      case "caseColours":
-        return "Case Colour";
-      case "bandColours":
-        return "Band Colour";
-      case "movementTypes":
-        return "Movement Type";
+  const getListItems = (key: string) => {
+    // @ts-ignore
+    return [...new Set(products.map((item: {key: any}) => item[key]))]
+  }
+
+  
+
+  const products_filter_keyvalue_pair = [
+    {
+      key: 'Brand',
+      value: getListItems('brand')
+    },{
+      key: 'Face Size',
+      value: getListItems('faceSize')
+    },{
+      key: 'Case Colour',
+      value: getListItems('caseColour')
+    },{
+      key: 'Band Colour',
+      value: getListItems('bandColour')
+    },{
+      key: 'Movement Type',
+      value: getListItems('movementType')
+    },{
+      key: 'Price',
+      value: getListItems('price')
     }
-  };
+  ]
 
-  const keys_values: any = [];
 
-  const getKeysValues = () => {
-    Object.entries(unique).forEach(([key, value]) => {
-      const makePair = { key, value };
+  // const handleSearchChange = (e: any) => {
+  //   if (!e.target.value) return setSearchResult(products)
 
-      keys_values.push(makePair);
-    });
-  };
+  //   const resultArray = products.filter((product: any) => product.name.toLowerCase().includes(e.target.value.toLowerCase()) || 
+  //   product.brand.toLowerCase().includes(e.target.value.toLowerCase()) ||
+  //   product.faceSize.toLowerCase().includes(e.target.value.toLowerCase()) || 
+  //   product.caseColour.toLowerCase().includes(e.target.value.toLowerCase()) || 
+  //   product.bandColour.toLowerCase().includes(e.target.value.toLowerCase()) || 
+  //   product.movementType.toLowerCase().includes(e.target.value.toLowerCase())
+  //   )
+
+  //   setSearchResult(resultArray)
+  // }
+
+  const [ searchParam, setSearchParam ] = useSearchParams()
+
+  const [ paramsArray, setParamsArray ] = useState([])
+
+  const [ runQuery, setRunQuery ] = useState(false)
+
+
+  const fetchQueriedFilter = async (querystring: any) => {
+    try {
+      const { data } = await api.get(`/watches?${querystring}`)
+      setSearchResult(data)
+    } catch {
+      console.log('Query error')
+    }
+  }
+
+
+  const deleteFromParamsArray = (key: string, value: string) => {
+
+    return paramsArray.map((item, index) => {
+
+      
+      if (Object.keys(item)[0] === key && item[key] === value) {
+        paramsArray.splice(index, 1)
+
+        setParamsArray([...paramsArray])
+        
+      }
+      return paramsArray
+    })
+
+  }
+
+  const addToParamsArray = (key: string, value: string) => {
+
+    const tempArray = [...paramsArray]
+
+    // @ts-ignore
+    setParamsArray([...paramsArray, { [key]: value }])
+
+    return [...tempArray, { [key]: value }]
+  }
 
 
   const handleSearchChange = (e: any) => {
-    console.log(e.target.type)
-    if (!e.target.value) return setSearchResult(products)
 
-    console.log(e.target.checked)
+    const currentParam = e.target.value
+    const isChecked = e.target.checked
+    const filterType = camelCase(e.target.className)
 
-    const resultArray = products.filter((product: any) => product.name.toLowerCase().includes(e.target.value.toLowerCase()) || 
-    product.brand.toLowerCase().includes(e.target.value.toLowerCase()) ||
-    product.faceSize.toLowerCase().includes(e.target.value.toLowerCase()) || 
-    product.caseColour.toLowerCase().includes(e.target.value.toLowerCase()) || 
-    product.bandColour.toLowerCase().includes(e.target.value.toLowerCase()) || 
-    product.movementType.toLowerCase().includes(e.target.value.toLowerCase())
-    )
+    const params = new URLSearchParams();
 
-    setSearchResult(resultArray)
+
+    if (isChecked) {
+
+      const udpatedParamsArray = addToParamsArray(filterType, currentParam)
+
+      for (const item of udpatedParamsArray) {
+        // @ts-ignore
+        params.append(Object.keys(item)[0], item[Object.keys(item)[0]])
+      }
+      
+      setSearchParam(params)
+
+      // fetchQueriedFilter(searchParam.toString())
+    }
+
+
+
+    if (!isChecked) {
+
+      const updatedParamsArray = deleteFromParamsArray(filterType, currentParam)
+
+      if (paramsArray.length === 0) { 
+        setSearchParam({})
+        
+      } else {
+
+        for (const item of updatedParamsArray) {
+          // @ts-ignore
+          params.append(Object.keys(item)[0], item[Object.keys(item)[0]])
+        }
+        
+        setSearchParam(params)
+      }
+      
+    }
+
+    
+    setRunQuery(true)
   }
 
-  // incomplete, filtering with multiple values is much more complicated than expected - Kap
-
-  // const handleCheckboxChange = (e: any) => {
-  //   // console.log(e.target.type)
-  //   if (!e.target.checked) { 
-  //     const removedItem = count.filter((item: string) => item.toLowerCase() !== e.target.value.toLowerCase())
-  //     setCount(removedItem)
-      
-  //     return setSearchResult(products)
-  //   }
-
-  //   // @ts-ignore
-  //   if (!count.includes(e.target.value)) setCount(pv => [...pv, e.target.value])
-
-  //   let resultArray: any = []
-
-  //   console.log(`size ${count.length}`)
-
-  //   for (const i of count as string[]) {
-  //     console.log(`i ${i}`)
-
-  //     const oneResult = products.filter((product: any) => 
-  //     product.name.toLowerCase().includes(i.toLowerCase()) || 
-  //     product.brand.toLowerCase().includes(i.toLowerCase()) ||
-  //     product.faceSize.toLowerCase().includes(i.toLowerCase()) || 
-  //     product.caseColour.toLowerCase().includes(i.toLowerCase()) || 
-  //     product.bandColour.toLowerCase().includes(i.toLowerCase()) || 
-  //     product.movementType.toLowerCase().includes(i.toLowerCase())
-  //     )
-
-  //     resultArray.concat(oneResult)
-  //     console.log(resultArray)
-  //   }
-
-
-
-  //   setSearchResult(resultArray)
-  //   // console.log(resultArray)
-  // }
-
-  getKeysValues();
-
-  
   useEffect(() => {
-    // console.log(count)
-    // console.log(`size: ${count.length}`)
-    // console.log(searchResult)
-  })
+    
+    if (runQuery) { 
+      fetchQueriedFilter(searchParam.toString())
+      setRunQuery(false)
+    }
+    
+
+  }, [runQuery])
+
 
 
   return (
     <>
       <input className="searchbox" id="searchbox" type="text" placeholder="Search" onChange={handleSearchChange} />
 
-      {keys_values.sort().map((item: any) => {
+      {products_filter_keyvalue_pair.sort().map((item: any) => {
         return (
           <section className="filter-options-wrapper" key={item.key}>
-            <h1>{getFilterTitle(item.key)}</h1>
+            <h1>{item.key}</h1>
             <div className="filter-options">
               <form id={`filter-form-${item.key.toLowerCase()}`}>
                 {item.value.sort().map((v: any) => {
                   return (
                     <div className="filter-option" key={v}>
-                      <input type="checkbox" id={`${item.key.toLowerCase()}-${v}`} onChange={handleSearchChange} name={v} value={v} />
+                      <input type="checkbox" className={item.key} id={`${item.key.toLowerCase()}-${v}`} onChange={handleSearchChange} name={v} value={v} />
                       <label htmlFor={`${item.key.toLowerCase()}-${v}`}>{v}</label>
                     </div>
                   );

@@ -1,19 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import data from "../assets/template.json";
+// import data from "../assets/template.json";
 import noimage from "../images/icons/noimage.jpg";
-// import axios from 'axios'
+import api from '../api/base'
 import { nanoid } from "nanoid";
 import ProductsFilterPanel from "../components/ProductsFilterPanel";
 import ProductsPagination from "../components/ProductsPagination";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux'
 
+const cf = require('currency-formatter')
+
 const SCREEN_SM = 640;
 
 function Products() {
-  const [products] = useState(data);
-  const [searchResult, setSearchResult] = useState(data);
+  const [products, setProducts] = useState([]);
+  const [searchResult, setSearchResult] = useState([]);
   const [pageNumber, setPageNumber] = useState(0);
 
   const navigate = useNavigate();
@@ -34,11 +36,19 @@ function Products() {
   const pagesVisited = pageNumber * productsPerPage;
   const displayProducts = searchResult.slice(pagesVisited, pagesVisited + productsPerPage);
 
-  // useEffect(() => {
-  //   console.log(searchResult)
-  // }, [searchResult])
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const { data } = await api.get('/watches')
+        setProducts(data)
+        setSearchResult(data)
+      } catch {
+        console.log('Fetch failed.')
+      }
+    }
+    fetchProducts()
 
-  
+  }, [])
 
   return (
     <>
@@ -57,29 +67,38 @@ function Products() {
           {/* products listing RIGHT SIDE */}
           <section className={`products-panel theme-border-${currentTheme}-light`}>
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              // initial={{ opacity: 0 }}
+              // animate={{ opacity: 1 }}
+              layout
               key={nanoid()}
               className="product-cards-wrapper"
             >
-              {displayProducts.map((item, index) => {
+              {displayProducts.length === 0 ? <h1 className="prodcutspage__nomatchingresult_text">No matching results</h1> :
+              
+              displayProducts.map((item, index) => {
                 return (
                   <motion.div
                     className={`product-card theme-bg-${currentTheme} hover-theme-bg-${currentTheme}-dark`}
                     onClick={() => {
-                      navigate(`/products/${item.id}`); console.log(`/${item.id}`)
+                      // @ts-ignore
+                      navigate(`/products/${item.id}`);
                     }}
                     key={index}
                     whileHover={{ y: -10 }}
                   >
                     <div className={`product-card-image theme-border-${currentTheme}-light`}>
                       <img src={noimage} alt="noimage" />
+                      {/* @ts-ignore */}
+                      {/* <img src={item.imageUrl} alt="noimage" /> */}
                     </div>
 
                     <div className="product-card-text">
-                      <div>Name: {item.name}</div>
-                      <div>Brand: {item.brand}</div>
-                      <div>Price: {item.price}</div>
+                      {/* @ts-ignore */}
+                      <div>Name: {item.name ?? ''}</div>
+                      {/* @ts-ignore */}
+                      <div>Brand: {item.brand ?? ''}</div>
+                      {/* @ts-ignore */}
+                      <div>Price: {cf.format(item.price, {code: 'USD'}) ?? ''}</div>
                     </div>
                   </motion.div>
                 );

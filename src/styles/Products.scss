@@ -25,6 +25,10 @@
 	@apply w-full flex
 }
 
+.prodcutspage__nomatchingresult_text {
+	@apply col-span-3 text-2xl font-bold self-center text-center
+}
+
 .product-card {
 	@apply hover:drop-shadow-lg p-2 hover:cursor-pointer
 }
@@ -34,7 +38,7 @@
 }
 
 .product-cards-wrapper {
-	@apply grid grid-cols-2 gap-3
+	@apply grid grid-cols-2 gap-3  w-full
 }
 
 .product-card-image {
@@ -61,6 +65,7 @@
 
 
 
+
 @screen sm {
 
 
@@ -69,8 +74,10 @@
 	}
 
 	.product-cards-wrapper {
-		@apply grid grid-cols-3 gap-4
+		@apply grid grid-cols-3 gap-4 w-full
 	}
+
+	
 
 	
 	.products-content-wrapper {
@@ -84,6 +91,12 @@
 	.products-panel {
 		@apply border-2 p-4 w-3/4 flex
 	}
+
+	.prodcutspage__nomatchingresult_text {
+		@apply col-span-3 text-4xl font-bold self-center text-center
+	}
+
+	
 
 	.left-side {
 		@apply flex w-1/4

@@ -12,6 +12,7 @@ import AdminDashboard from './components/AdminDashboard';
 import AdminAdmins from './components/AdminAdmins';
 import AdminCustomers from './components/AdminCustomers';
 import AdminImportExport from './components/AdminImportExport';
+import AboutUs from './pages/AboutUs';
 
 import { AuthContextProvider } from './contexts/AuthContext';
 import AdminSignin from './pages/AdminSignin';
@@ -53,6 +54,7 @@ const App = () => {
           <Route path="/products/:id" element={<Header>{<ProductsDetailsPage />}</Header>} />
           <Route path="/404" element={<Header>{<ErrorPage />}</Header>} />
           <Route path='/about' element={<Header>{<AboutPage />}</Header>} />
+          <Route path='/about-us' element={<Header>{<AboutUs />}</Header>} />
            
           <Route path='/signup' element={<Header>{<SignupPage />}</Header>} />
           <Route path="/login" element={<Header>{<LoginPage />}</Header>} />

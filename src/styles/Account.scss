@@ -27,7 +27,7 @@
 }
 
 .accountpage-userinfo img {
-    @apply w-24 aspect-square bg-slate-300 rounded-md
+    @apply w-24 aspect-1 bg-slate-300 rounded-md
 }
 
 .accountpage-userinfo h1 {
@@ -81,7 +81,7 @@
     }
 
     .accountpage-userinfo img {
-        @apply w-24 aspect-square bg-slate-300 rounded-md
+        @apply w-24 aspect-1 bg-slate-300 rounded-md
     }
 
     .accountpage-userinfo h1 {
