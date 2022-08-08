@@ -14,6 +14,9 @@ const AccountAccountSettings = () => {
 
     const dispatch = useDispatch()
     
+    // @ts-ignore
+    const currentTheme = useSelector(state => state.theme.current)
+    
     dispatch(setPageTitle('settings'))
 
     const [newPassword, setNewPassword] = useState('');
@@ -73,7 +76,7 @@ const AccountAccountSettings = () => {
     }
 
     return (
-        <main className="accountsettings__pagewrapper">
+        <main className={`accountsettings__pagewrapper theme-text-${currentTheme}-1`}>
 
             <section className="accountsettings__item">
 

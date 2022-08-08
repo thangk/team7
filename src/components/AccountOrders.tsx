@@ -1,5 +1,5 @@
 import { format } from 'date-fns'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { setPageTitle } from '../features/accountAreaSlice';
 
 
@@ -8,6 +8,9 @@ const AccountOrders = () => {
     const today = format(new Date(),'dd-MM-yyyy');
 
     const dispatch = useDispatch()
+
+    // @ts-ignore
+    const currentTheme = useSelector(state => state.theme.current)
 
     dispatch(setPageTitle('orders'))
 
@@ -61,7 +64,7 @@ const AccountOrders = () => {
 
     const watchesArrayList = staticData.map(item => {
         return (
-            <div className="accountorders__contentwrapper_item">
+            <div className={`accountorders__contentwrapper_item hover-theme-bg-${currentTheme}-darkest`}>
                     <div className="accountorders__contentwrapper_col1">{item.name}</div>
                     <div className="accountorders__contentwrapper_col2">{item.qty}</div>
                     
@@ -71,7 +74,7 @@ const AccountOrders = () => {
     })
 
     return (
-        <main className="accountorders__pagewrapper">
+        <main className={`accountorders__pagewrapper theme-text-${currentTheme}-1`}>
 
                 <div className="accountorders__contentwrapper_header">
                     <div className="accountorders__contentwrapper_col1">Name</div>

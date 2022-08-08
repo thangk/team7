@@ -5,7 +5,7 @@
 
     
 .accountorders__pagewrapper {
-    @apply flex flex-col gap-1 text-slate-600 font-barlow max-h-[480px] min-h-fit overflow-y-auto
+    @apply flex flex-col gap-1  font-barlow max-h-[480px] min-h-fit overflow-y-auto
 }
 
 .accountorders__contentwrapper hr {
@@ -18,7 +18,7 @@
 
 
 .accountorders__contentwrapper_item {
-    @apply flex p-2 rounded-md bg-slate-200 hover:bg-slate-300 hover:cursor-pointer
+    @apply flex p-2 rounded-md hover:cursor-pointer bg-slate-300 hover:text-slate-200
 }
 
 .accountorders__hr {
