@@ -21,7 +21,7 @@ return (
   <main className="homepage-wrapper">
 
     {/* added by Kap */}
-    <Helmet>
+    <Helmet prioritizeSeoTags>
       {/* Primary Meta Tags */}
       <meta name="title" content="Infinity Watches" />
       <meta name="description" content="Premium & Affordable" />

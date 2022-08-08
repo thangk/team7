@@ -62,19 +62,19 @@ function Products() {
       animate={{ opacity: 1 }}
       className={`productspage-wrapper theme-text-${currentTheme}-1`}>
 
-        <Helmet>
-          Primary Meta Tags
+        <Helmet prioritizeSeoTags>
+          {/* Primary Meta Tags */}
           <meta name="title" content="Products" />
           <meta name="description" content="List of Infinity Watches" />
           
-          Open Graph / Facebook Meta Tags
+          {/* Open Graph / Facebook Meta Tags */}
           <meta property="og:type" content="website" />
           <meta property="og:url" content={window.location.href} />
           <meta property="og:title" content="Products" />
           <meta property="og:description" content="List of Infinity Watches" />
           <meta property="og:image" content={iwlogo} />
           
-          Twitter Meta Tags
+          {/* Twitter Meta Tags */}
           <meta property="twitter:card" content="summary_large_image" />
           <meta property="twitter:url" content={window.location.href} />
           <meta property="twitter:title" content="Products" />
