@@ -8,9 +8,7 @@ import { nanoid } from "nanoid";
 // import { useTheme } from "../contexts/ThemeContext";
 import { useSelector } from 'react-redux'
 import iwlogo from '../images/icons/logo-icon-small.png'
-
-// @ts-ignore
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet-async'
 
 function Home() {
 
