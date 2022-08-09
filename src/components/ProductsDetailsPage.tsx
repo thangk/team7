@@ -3,9 +3,9 @@ import { useState } from "react";
 import noimage from '../images/icons/noimage.jpg'
 import { useParams } from 'react-router-dom';
 import api from '../api/base';
-//import data from "../assets/template.json";
-import { useSelector } from 'react-redux'
-import axios from "axios";
+import { useDispatch, useSelector } from 'react-redux'
+import { addToCart } from "../features/guestSlice";
+import { AxiosError } from "axios";
 
 function ProductsDetailsPage() {
 
@@ -31,6 +31,7 @@ function ProductsDetailsPage() {
   const [watch, setWatch] = useState(defaultWatch)
   const { id } = useParams(); //URL id parameter from router in App component
 
+  /*Fetching watch to populate properties*/
   useEffect(() => {
     async function getWatch() {
       try {
@@ -44,6 +45,44 @@ function ProductsDetailsPage() {
     getWatch();
 
   }, [])
+
+
+  // @ts-ignore
+  const whoIsLoggedInUser = useSelector(state => state.loggedInUser.current)
+
+  // this will get customer's info
+  const loggedInUser = !whoIsLoggedInUser ? null : whoIsLoggedInUser.role === 'Customer' ? whoIsLoggedInUser : null
+
+  const dispatch = useDispatch()
+
+  // @ts-ignore
+  const handleAddToCart = async (watchId, e) => {
+    e.preventDefault()
+
+    // if guest account
+    if (!loggedInUser) {
+        dispatch(addToCart(watchId))    // we pass in watchId here and it'll be added to guest account
+        return
+    }
+
+    // if registered account
+    try {
+    
+        await api.post(`/cart-watches`, {
+            cartId: loggedInUser.cartId,
+            watchId
+        })
+    
+    } catch (error) {
+    
+        const err = error as AxiosError
+    
+        console.log(err.response?.data)
+        console.log(err.response?.status)
+        console.log(err.response?.headers)
+    }
+
+  }
 
   return (
     
@@ -65,8 +104,8 @@ function ProductsDetailsPage() {
             <div><b>Band Type:</b> {watch.bandType} </div>
             <div><b>Movement Type:</b> {watch.movementType} </div>
             <div><b>Face Size:</b> {watch.faceSize} </div>
-            
-            <button className={`btn theme-bg-${currentTheme}-darker`}>Add to Cart</button>
+            {/*@ts-ignore*/}
+            <button className={`btn theme-bg-${currentTheme}-darker`} onClick={e => handleAddToCart(watch.id, e)}>Add to Cart</button>
 
           </div>
 
