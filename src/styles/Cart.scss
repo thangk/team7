@@ -34,7 +34,8 @@
 }
 
 .cartpage__contentwrapper_col2 {
-    @apply min-w-[48px] max-w-fit  flex justify-center items-center
+    @apply min-w-[48px] max-w-fit flex gap-2
+    justify-center items-center
 }
 
 .cartpage__contentwrapper_col3 {
@@ -73,7 +74,7 @@
 
 
 .cartpage__deletebutton {
-    @apply text-xl text-slate-400 hover:cursor-pointer  hover:text-2xl
+    @apply text-xl  hover:cursor-pointer  hover:text-2xl
 }
 
 .cartpage__totalwrapper {
@@ -105,7 +106,7 @@
     }
     
     .cartpage__orderbutton_desktop {
-        @apply block bg-slate-300 hover:bg-slate-400 text-slate-600 hover:text-slate-100 py-2 px-4 text-center font-barlow rounded-md
+        @apply block bg-slate-300 hover:text-slate-100 py-2 px-4 text-center font-barlow rounded-md
     }
     
     .cartpage__orderbutton_mobile {
@@ -136,7 +137,15 @@
     }
     
     .cartpage__contentwrapper_col2 {
-        @apply min-w-[48px] max-w-fit  flex justify-center items-center
+        @apply min-w-[85px] max-w-fit flex justify-between items-center gap-2
+    }
+
+    .cartpage__contentwrapper_qtyheader {
+        @apply min-w-[85px] max-w-fit flex justify-center items-center gap-2
+    }
+
+    .cartpage__contentwrapper_qtybuttons {
+        @apply hover:text-lg hover:cursor-pointer
     }
     
     .cartpage__contentwrapper_col3 {
@@ -175,7 +184,7 @@
     
     
     .cartpage__deletebutton {
-        @apply text-xl text-slate-400 hover:cursor-pointer  hover:text-2xl
+        @apply text-xl  hover:cursor-pointer  hover:text-2xl
     }
     
     .cartpage__totalwrapper {

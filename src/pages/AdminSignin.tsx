@@ -54,35 +54,33 @@ const AdminSignin = () => {
         try {
             setError('')
             setLoading(true)
-            await signin(email, password)
-
+            
             // console.log(admins)
 
             for (const admin of admins) {
                 // @ts-ignore
                 if (admin.email === email) {
+                    await signin(email, password)
                     dispatch(setLoggedInUser(admin))
-                    // console.log('this ran?')
+                    navigate('/admin/dashboard')
+                    return
                 }
             }
 
-            navigate('/admin/dashboard')
-
-            
+           
         } catch (err) {
             setError('Faild to login.')
             console.log(error)
 
-            const result = validateInput({ type: 'logincheck', value: 'failed' })
+        }
 
-            if (result.length > 0) {
-                // @ts-ignore
-                setValidatedResult(result)
-                setErrorToggle('on')
-                return
-            }
+        const result = validateInput({ type: 'logincheck', value: 'failed' })
 
-            
+        if (result.length > 0) {
+            // @ts-ignore
+            setValidatedResult(result)
+            setErrorToggle('on')
+            return
         }
 
         setLoading(false)

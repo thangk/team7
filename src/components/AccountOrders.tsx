@@ -76,7 +76,7 @@ const AccountOrders = () => {
     return (
         <main className={`accountorders__pagewrapper theme-text-${currentTheme}-1`}>
 
-                <div className="accountorders__contentwrapper_header">
+                <div className={`accountorders__contentwrapper_header theme-text-${currentTheme}-2`}>
                     <div className="accountorders__contentwrapper_col1">Name</div>
                     <div className="accountorders__contentwrapper_col2">Qty</div>
                     <div className="accountorders__contentwrapper_col3">Date</div>
