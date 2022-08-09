@@ -1,7 +1,8 @@
 [
     {
+        "imageUrl":"https://img.guess.com/image/upload/b_auto,c_pad,dpr_1.0,f_auto,h_532,q_auto,w_400/c_pad,h_532,w_400/v1/NA/Style/ECOMM/GW0248G1-MULTI?pgw=1",
         "name": "Silver tone mesh diamond watch",
-        "price": "$175.00",
+        "price": 175,
         "brand": "Guess",
         "desc": "(desc goes here)",
         "caseColour": "Silver",
@@ -9,11 +10,12 @@
         "bandType": "Mesh",
         "movementType": "Analog",
         "faceSize": "44mm",
-        "id": "2"
+        "stock": 2
     },
     {
+        "imageUrl":"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/FQK22_AV1?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1522690911515",
         "name": "Apple Watch Series 3",
-        "price": "$399.00",
+        "price": 399,
         "brand": "Apple",
         "desc": "(desc goes here)",
         "caseColour": "White",
@@ -21,11 +23,12 @@
         "bandType": "Silicone",
         "movementType": "Digital",
         "faceSize": "38mm",
-        "id": "3"
+        "stock": 5
     },
     {
+        "imageUrl":"https://img.guess.com/image/upload/f_auto,q_auto,fl_strip_profile,w_800,c_scale/v1/NA/Style/ECOMM/U1264G1-BLK",
         "name": "Black and Gold tone analog watch",
-        "price": "$145.00",
+        "price": 145,
         "brand": "Guess",
         "desc": "(desc goes here)",
         "caseColour": "Gold",
@@ -33,11 +36,12 @@
         "bandType": "Silicone",
         "movementType": "Analog",
         "faceSize": "44mm",
-        "id": "4"
+        "stock": 8
     },
     {
+        "imageUrl":"https://michaelkors.scene7.com/is/image/MichaelKors/MK8847-0040_1?wid=388&hei=523&op_sharpen=1&resMode=sharp2&qlt=90",
         "name": "Oversized brecken silver tone watch",
-        "price": "$390.00",
+        "price": 390,
         "brand": "Michael Kors",
         "desc": "(desc goes here)",
         "caseColour": "Black",
@@ -45,11 +49,12 @@
         "bandType": "Steel",
         "movementType": "Quartz",
         "faceSize": "45mm",
-        "id": "5"
+        "stock": 4
     },
     {
+        "imageUrl":"https://img.guess.com/image/upload/b_auto,c_pad,dpr_1.0,f_auto,h_532,q_auto,w_400/c_pad,h_532,w_400/v1/NA/Style/ECOMM/GW0248G1-MULTI?pgw=1",
         "name": "Silver tone mesh diamond watch",
-        "price": "$175.00",
+        "price": 175,
         "brand": "Guess",
         "desc": "(desc goes here)",
         "caseColour": "Silver",
@@ -57,7 +62,7 @@
         "bandType": "Mesh",
         "movementType": "Analog",
         "faceSize": "44mm",
-        "id": "6"
+        "stock": 9
     },
     {
         "imageUrl": "https://images.guesswatches.com/image/upload/q_auto,f_auto/e_sharpen:120,c_fill/Catalogs/timex-master-catalog/images/GW0353G1.png",
@@ -69,7 +74,8 @@
         "bandColour": "Silver",
         "bandType": "leather",
         "movementType": "Quartz",
-        "faceSize": "42mm"
+        "faceSize": "42mm",
+        "stock": 7
     },
     {
         "imageUrl": "https://images.guesswatches.com/image/upload/q_auto,f_auto/e_sharpen:120,c_fill/Catalogs/timex-master-catalog/images/GW0387G4.png",
@@ -81,7 +87,8 @@
         "bandColour": "Blue",
         "bandType": "Steel",
         "movementType": "Quartz",
-        "faceSize": "43mm"
+        "faceSize": "43mm",
+        "stock": 3
     },
     {
         "imageUrl": "https://citizenwatch.widen.net/content/sujuakmxc8/jpeg/Addysen.jpeg?u=41zuoe&width=500&height=625&quality=80&crop=false&keep=c&color=F9F8F6",
@@ -93,7 +100,8 @@
         "bandColour": "Gold",
         "bandType": "Steel",
         "movementType": "Solar",
-        "faceSize": "41mm"
+        "faceSize": "41mm",
+        "stock": 12
     }, 
     {
         "imageUrl": "https://michaelkors.scene7.com/is/image/MichaelKors/MK8957-0100_1?wid=934&hei=1259&op_sharpen=1&resMode=sharp2&qlt=90",
@@ -105,7 +113,8 @@
         "bandColour": "White",
         "bandType": "Silicone",
         "movementType": "Quartz",
-        "faceSize": "45mm"
+        "faceSize": "45mm",
+        "stock": 15
     },
     {
         "imageUrl": "https://michaelkors.scene7.com/is/image/MichaelKors/MK8953-0710_1?wid=934&hei=1259&op_sharpen=1&resMode=sharp2&qlt=90",
@@ -117,7 +126,8 @@
         "bandColour": "Gold",
         "bandType": "Steel",
         "movementType": "Quartz",
-        "faceSize": "43mm"
+        "faceSize": "43mm",
+        "stock": 20
     },
     {
         "imageUrl": "https://michaelkors.scene7.com/is/image/MichaelKors/MK8953-0710_1?wid=934&hei=1259&op_sharpen=1&resMode=sharp2&qlt=90",
@@ -129,7 +139,8 @@
         "bandColour": "Gold",
         "bandType": "Steel",
         "movementType": "Quartz",
-        "faceSize": "45mm"
+        "faceSize": "45mm",
+        "stock": 10
     },
     {
         "imageUrl": "https://michaelkors.scene7.com/is/image/MichaelKors/MK3178-0040_1?wid=934&hei=1259&op_sharpen=1&resMode=sharp2&qlt=90",
@@ -141,7 +152,8 @@
         "bandColour": "Silver",
         "bandType": "Steel",
         "movementType": "Quartz",
-        "faceSize": "42mm"
+        "faceSize": "42mm",
+        "stock": 8
     },
     {
         "imageUrl": "https://michaelkors.scene7.com/is/image/MichaelKors/MK3178-0040_1?wid=934&hei=1259&op_sharpen=1&resMode=sharp2&qlt=90",
@@ -153,7 +165,8 @@
         "bandColour": "Black",
         "bandType": "Steel",
         "movementType": "Quartz",
-        "faceSize": "45mm"
+        "faceSize": "45mm",
+        "stock": 30
     },
     {
         "imageUrl": "https://michaelkors.scene7.com/is/image/MichaelKors/MK3179-0710_1?wid=934&hei=1259&op_sharpen=1&resMode=sharp2&qlt=90",
@@ -165,7 +178,8 @@
         "bandColour": "Gold",
         "bandType": "Steel",
         "movementType": "Quartz",
-        "faceSize": "42mm"
+        "faceSize": "42mm",
+        "stock": 23
     },
     {
         "imageUrl": "https://michaelkors.scene7.com/is/image/MichaelKors/MK8507-0001_1?wid=934&hei=1259&op_sharpen=1&resMode=sharp2&qlt=90",
@@ -177,7 +191,8 @@
         "bandColour": "Black",
         "bandType": "Steel",
         "movementType": "Quartz",
-        "faceSize": "42mm"
+        "faceSize": "42mm",
+        "stock": 27
     },
     {
         "imageUrl": "https://fossil.scene7.com/is/image/FossilPartners/FS5926_main?$sfcc_fos_large$",
@@ -189,7 +204,8 @@
         "bandColour": "Black",
         "bandType": "Leather",
         "movementType": "Quartz",
-        "faceSize": "42mm" 
+        "faceSize": "42mm" ,
+        "stock": 3
     },
     {
         "imageUrl": "https://fossil.scene7.com/is/image/FossilPartners/FS5384_main?$sfcc_fos_large$",
@@ -201,7 +217,8 @@
         "bandColour": "Silver",
         "bandType": "Steel",
         "movementType": "Quartz",
-        "faceSize": "44mm"
+        "faceSize": "44mm",
+        "stock": 14
     }, 
     {
         "imageUrl": "https://fossil.scene7.com/is/image/FossilPartners/FTW40531_main?$sfcc_fos_large$",
@@ -213,7 +230,8 @@
         "bandColour": "Black",
         "bandType": "Silcone",
         "movementType": "Smart Watch",
-        "faceSize": "45mm"
+        "faceSize": "45mm",
+        "stock": 8
     }, 
     {
         "imageUrl": "https://fossil.scene7.com/is/image/FossilPartners/FS5447_main?$sfcc_fos_large$",
@@ -225,7 +243,8 @@
         "bandColour": "Black",
         "bandType": "Leather",
         "movementType": "Quartz",
-        "faceSize": "44mm"
+        "faceSize": "44mm",
+        "stock": 7
     },
     {
         "imageUrl": "https://fossil.scene7.com/is/image/FossilPartners/FS5666_main?$sfcc_fos_large$",
@@ -237,19 +256,8 @@
         "bandColour": "Brown",
         "bandType": "Leather",
         "movementType": "Quartz",
-        "faceSize": "42mm"
-    },
-    {
-        "imageUrl": "https://fossil.scene7.com/is/image/FossilPartners/FS5666_main?$sfcc_fos_large$",
-        "name": "Copeland 42 mm Three-Hand Brown Leather Watch",
-        "price": 179,
-        "brand": "Fossil",
-        "desc": "",
-        "caseColour": "Black",
-        "bandColour": "Brown",
-        "bandType": "Leather",
-        "movementType": "Quartz",
-        "faceSize": "42mm"
+        "faceSize": "42mm",
+        "stock": 19
     },
     {
         "imageUrl": "https://fossil.scene7.com/is/image/FossilPartners/FS5380_main?$sfcc_fos_large$",
@@ -261,7 +269,8 @@
         "bandColour": "Brown",
         "bandType": "Leather",
         "movementType": "Quartz",
-        "faceSize": "44mm"
+        "faceSize": "44mm",
+        "stock": 12
     },
     {
         "imageUrl": "https://images.timex.com/image/upload/q_auto,f_auto/if_!alt!_in_tags/e_sharpen:120,h_350,w_350,c_fill/if_else/e_sharpen:120,b_rgb:f2f3f3,h_350,w_350,c_lpad/if_end/Catalogs/timex-master-catalog/images/T20501.png",
@@ -273,7 +282,8 @@
         "bandColour": "Black",
         "bandType": "Leather",
         "movementType": "Quartz",
-        "faceSize": "35mm"
+        "faceSize": "35mm",
+        "stock": 40
     },
     {
         "imageUrl": "https://images.timex.com/image/upload/q_auto,f_auto/if_!alt!_in_tags/e_sharpen:120,h_350,w_350,c_fill/if_else/e_sharpen:120,b_rgb:f2f3f3,h_350,w_350,c_lpad/if_end/Catalogs/timex-master-catalog/images/TW2V03400.png",
@@ -285,7 +295,8 @@
         "bandColour": "Black",
         "bandType": "Silicone",
         "movementType": "Automatic Mechanical",
-        "faceSize": "38mm"
+        "faceSize": "38mm",
+        "stock": 23
     },
     {
         "imageUrl": "https://content.rolex.com/dam/2021/upright-bba/m124273-0001.png?impolicy=v6-upright%22",
@@ -297,7 +308,8 @@
         "bandColour": "Silver & Gold",
         "bandType": "Oystersteel",
         "movementType": "Mechanical",
-        "faceSize": "36mm"
+        "faceSize": "36mm",
+        "stock": 3
     },
     {
         "imageUrl": "https://cdn.shopify.com/s/files/1/0238/6181/products/LimitedEdition38MMTitaniumCarbonDial_1024x1024_crop_center.jpg?v=1658249977",
@@ -309,7 +321,8 @@
         "bandColour": "Black",
         "bandType": "Leather",
         "movementType": "Mechanical",
-        "faceSize": "38mm"
+        "faceSize": "38mm",
+        "stock": 10
     },
     {
         "imageUrl": "https://www.omegawatches.com/media/catalog/product/cache/a5c37fddc1a529a1a44fea55d527b9a116f3738da3a2cc38006fcc613c37c391/o/m/omega-constellation-13113392001001-l.png",
@@ -321,7 +334,8 @@
         "bandColour": "Silver",
         "bandType": "Steel",
         "movementType": "Automatic Mechanical",
-        "faceSize": "36mm"
+        "faceSize": "36mm",
+        "stock": 4
     },
     {
         "imageUrl": "https://www.omegawatches.com/media/catalog/product/cache/a5c37fddc1a529a1a44fea55d527b9a116f3738da3a2cc38006fcc613c37c391/o/m/omega-seamaster-diver-300m-21032422004001-l.png",
@@ -333,7 +347,8 @@
         "bandColour": "Black",
         "bandType": "Rubber",
         "movementType": "Automatic Mechanical",
-        "faceSize": "42mm"
+        "faceSize": "42mm",
+        "stock": 2
     },
     {
         "imageUrl": "https://www.omegawatches.com/media/catalog/product/cache/a5c37fddc1a529a1a44fea55d527b9a116f3738da3a2cc38006fcc613c37c391/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382003001-l.png",
@@ -345,7 +360,8 @@
         "bandColour": "Silver",
         "bandType": "Steel",
         "movementType": "Automatic Mechanical",
-        "faceSize": "38mm"
+        "faceSize": "38mm",
+        "stock": 5
     },
     {
         "imageUrl": "https://www.omegawatches.com/media/catalog/product/cache/a5c37fddc1a529a1a44fea55d527b9a116f3738da3a2cc38006fcc613c37c391/o/m/omega-seamaster-aqua-terra-150m-22013412101001-l.png",
@@ -357,7 +373,8 @@
         "bandColour": "Black",
         "bandType": "Leather",
         "movementType": "Automatic Mechanical",
-        "faceSize": "41mm"
+        "faceSize": "41mm",
+        "stock": 3
     },
     {
         "imageUrl": "https://image.s5a.com/is/image/TheBay/055092972285_main?wid=480&hei=640&qlt=90&resMode=sharp2&op_usm=0.9,1.0,8,0",
@@ -369,7 +386,8 @@
         "bandColour": "Black",
         "bandType": "Leather",
         "movementType": "Quartz",
-        "faceSize": "42mm"
+        "faceSize": "42mm",
+        "stock": 20
     },
     {
         "imageUrl": "https://image.s5a.com/is/image/TheBay/055092967250_main?wid=480&hei=640&qlt=90&resMode=sharp2&op_usm=0.9,1.0,8,0",
@@ -381,7 +399,8 @@
         "bandColour": "Brown",
         "bandType": "Leather",
         "movementType": "Quartz",
-        "faceSize": "41mm" 
+        "faceSize": "41mm",
+        "stock": 30
     },
     {
         "imageUrl": "https://image.s5a.com/is/image/TheBay/055092967250_main?wid=480&hei=640&qlt=90&resMode=sharp2&op_usm=0.9,1.0,8,0",
@@ -393,9 +412,7 @@
         "bandColour": "Black",
         "bandType": "Chainmail",
         "movementType": "Solar",
-        "faceSize": "36mm" 
-    }, 
-    {
-        
+        "faceSize": "36mm",
+        "stock": 17
     }
 ]
