@@ -56,13 +56,13 @@ const Cart = () => {
 
 
     // Test Static User
-    const currentVisitor = {
-        id: 1,
-        firstName: 'John',
-        lastName: 'Doe',
-        role: 'Customer',
-        cartId: 5
-    }
+    // const currentVisitor = {
+    //     id: 1,
+    //     firstName: 'John',
+    //     lastName: 'Doe',
+    //     role: 'Customer',
+    //     cartId: 5
+    // }
 
     // @ts-ignore
     const handlePlaceOrder = (e) => {
@@ -113,7 +113,7 @@ const Cart = () => {
         
             await api.delete(`/cart-watches`, {
                 data: {
-                    cartId: currentVisitor.cartId,
+                    cartId: loggedInUser.cartId,
                     watchId,
                     deleteAll: true
                 }
@@ -150,7 +150,7 @@ const Cart = () => {
         
             await api.delete(`/cart-watches`, {
                 data: {
-                    cartId: currentVisitor.cartId,
+                    cartId: loggedInUser.cartId,
                     watchId
                 }
             })
@@ -187,7 +187,7 @@ const Cart = () => {
         try {
         
             await api.post(`/cart-watches`, {
-                cartId: currentVisitor.cartId,
+                cartId: loggedInUser.cartId,
                 watchId
             })
         
@@ -276,9 +276,14 @@ const Cart = () => {
 
         if (!loggedInUser) {
 
-            for (const item of guestCart) {
-                totalNumOfItems += item.qty
+            // console.log(guestCart)
+
+            if (guestCart.length) {
+                for (const item of guestCart) {
+                    totalNumOfItems += item.qty
+                }
             }
+
             
             // set items count in redux
             dispatch(setNumOfCartItems(totalNumOfItems))
@@ -304,7 +309,7 @@ const Cart = () => {
 
             let tempArray: WatchQty[] = []
         
-            const { data } = await api.get(`/cart-watches/${currentVisitor.cartId}`)
+            const { data } = await api.get(`/cart-watches/${loggedInUser.cartId}`)
 
             for (const item of data) {
 

@@ -34,7 +34,9 @@ export const guestSlice = createSlice({
     name: 'guest',
     initialState,
     reducers: {
-        addToCart: (state, action) => [...state.cart, action.payload],
+        addToCart: (state, action) => { 
+            state.cart = [...state.cart, { watchId: action.payload, qty: 1 }]
+        },
 
         removeFromCart: (state, action) => {
             state.cart = state.cart.filter(item => item.watchId !== action.payload)
