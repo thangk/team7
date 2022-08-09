@@ -45,9 +45,6 @@ const LoremPages = () => {
         case "find-a-store":
       pageTitle = "Find a store";
       break;
-      case "contact":
-      pageTitle = "Contact";
-      break;
       case "newsletter":
         pageTitle = "Newsletter";
         break;

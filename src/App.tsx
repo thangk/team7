@@ -13,6 +13,7 @@ import AdminAdmins from './components/AdminAdmins';
 import AdminCustomers from './components/AdminCustomers';
 import AdminImportExport from './components/AdminImportExport';
 import AboutUs from './pages/AboutUs';
+import ContactUs from './pages/ContactUs';
 
 import { AuthContextProvider } from './contexts/AuthContext';
 import AdminSignin from './pages/AdminSignin';
@@ -32,7 +33,7 @@ import AccountOrders from './components/AccountOrders';
 import AccountAccountSettings from './components/AccountAccountSettings';
 import CartOrderPlaced from './pages/CartOrderPlaced';
 import AdminSettings from './components/AdminSettings';
-import ContactUs from './pages/ContactUs';
+
 
 
 
