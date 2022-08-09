@@ -1,17 +1,20 @@
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { setPageTitle } from '../features/accountAreaSlice';
 
-// @ts-ignore
 const AccountDashboard = () => {
 
     const dispatch = useDispatch()
 
+    // @ts-ignore
+    const currentTheme = useSelector(state => state.theme.current)
+
     dispatch(setPageTitle('dashboard'))
 
+    
 
     return (
         
-        <main className="accountdashboard__dashboard_wrapper">
+        <main className={`accountdashboard__dashboard_wrapper theme-text-${currentTheme}-1`}>
 
 
             <section className="accountdashboard__numoforders">

@@ -7,6 +7,71 @@ import { MdDashboard } from 'react-icons/md'
 import { VscSettings } from 'react-icons/vsc'
 import defaultUser from '../images/test_users/user.png'
 
+
+
+export const productsFilterKeyValues = [
+  {
+    key: 'Brand',
+    values: [
+      'Alfred Sung',
+      'Apple',
+      'Citizen',
+      'Fossil',
+      'Guess',
+      'Micheal Kors',
+      'Omega',
+      'Rolex',
+      'Solios',
+      'Timex',
+      'Weiss',
+    ]
+  },{
+    key: 'Face Size',
+    values: [
+      '35mm',
+      '36mm',
+      '38mm',
+      '41mm',
+      '42mm',
+      '43mm',
+      '44mm',
+      '45mm'
+    ]
+  },{
+    key: 'Case Colour',
+    values: [
+      'Black',
+      'Blue',
+      'Gold',
+      'Silver',
+      'White'
+    ]
+  },{
+    key: 'Band Colour',
+    values: [
+      'Black',
+      'Blue',
+      'Brown',
+      'Gold',
+      'Silver',
+      'Silver & Gold',
+      'White'
+    ]
+  },{
+    key: 'Movement Type',
+    values: [
+      'Analog',
+      'Automatic Mechanical',
+      'Digital',
+      'Mechanical',
+      'Quartz',
+      'Smart Watch',
+      'Solar'
+    ]
+  }
+]
+
+
 export const headerSocialIcons = [
     {
       name: 'facebook',

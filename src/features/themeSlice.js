@@ -3,7 +3,8 @@ import { createSlice } from '@reduxjs/toolkit'
 
 
 const initialState = {
-    current: 'white'
+    current: 'white',
+    test: 'false'
 }
 
 export const themeSlice = createSlice({

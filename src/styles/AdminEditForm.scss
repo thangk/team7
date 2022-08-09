@@ -1,6 +1,7 @@
 
+
 .admineditform__wrapper {
-    @apply absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 w-fit h-fit bg-slate-600 z-10 p-6 rounded-xl drop-shadow-2xl
+    @apply absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 w-fit h-fit bg-slate-600 z-10 p-4 rounded-xl drop-shadow-2xl
 }
 
 .admineditform__wrapper h1 {
@@ -8,7 +9,7 @@
 }
 
 .admineditform__wrapper form {
-    @apply flex flex-col gap-4 mt-12
+    @apply flex flex-col gap-4 mt-6
 }
 
 .admineditform__wrapper label {
@@ -20,5 +21,38 @@
 }
 
 .admineditform__buttons-wrapper {
-    @apply flex gap-2 justify-center mt-12
+    @apply flex gap-2 justify-center mt-6
+}
+
+@screen sm {
+    
+    .admineditform__wrapper {
+        @apply absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 min-w-[475px] w-fit h-fit bg-slate-600 z-10 p-6 rounded-xl drop-shadow-2xl
+    }
+
+    .admineditform__wrapper h1 {
+        @apply text-center
+    }
+
+    .admineditform__wrapper form {
+        @apply flex flex-col gap-4 mt-12
+    }
+
+    .admineditform__wrapper label {
+        @apply capitalize text-right text-slate-300
+    }
+
+    .admineditform__listitem {
+        @apply flex flex-col gap-1
+    }
+
+    .admineditform__buttons-wrapper {
+        @apply flex gap-2 justify-center mt-12
+    }
+}
+
+@screen 4xl {
+    .admineditform__listitem {
+        @apply grid grid-cols-[1fr,2fr] gap-x-4 items-center
+    }
 }

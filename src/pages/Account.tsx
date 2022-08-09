@@ -19,8 +19,6 @@ const Account = ({ children }) => {
     // @ts-ignore
     const pageTitle = useSelector(state => state.accountArea.pagetitle)
 
-    // const [customers, setCustomers] = useState(null);
-
     // @ts-ignore
     const loggedInUser = useSelector(state => state.loggedInUser.current)
 
@@ -46,15 +44,13 @@ const Account = ({ children }) => {
 
         const fetchCustomers = async () => {
             try {
-                // @ts-ignore
                 const { data } = await api.get(`/customers`)
                 
                 for (const customer of data) {
 
-                    // @ts-ignore
                     if (customer.email === currentUser.email) {
                         dispatch(setLoggedInUser(customer))
-                        console.log(loggedInUser)
+                        // console.log(loggedInUser)
                         return
                     }
                 }
@@ -67,18 +63,17 @@ const Account = ({ children }) => {
 
         fetchCustomers()
 
-        // console.log(customers)
-
-    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
     
 
     return (
         <motion.main 
         initial={{ opacity: 0.5 }}
         animate={{ opacity: 1 }}
-        className={`accountpage-wrapper theme-text-${currentTheme}-1`}>
+        className={`accountpage-wrapper theme-text-${currentTheme}-2`}>
 
-            <h1 className="page-title">Account</h1>
+            <h1 className={`page-title theme-text-${currentTheme}-3`}>Account</h1>
 
             <section className={`accountpage-content-wrapper theme-bg-${currentTheme}-darker`}>
 
@@ -94,7 +89,7 @@ const Account = ({ children }) => {
 
                     </div>
 
-                    <nav className="accountpage-nav">
+                    <nav className={`accountpage-nav theme-text-${currentTheme}-1`}>
 
                         <Link to='/account/dashboard' className={`accountpage-nav-item hover-theme-bg-${currentTheme}-darkest`}>Dashboard</Link>
                         <Link to='/account/orders' className={`accountpage-nav-item hover-theme-bg-${currentTheme}-darkest `}>Orders</Link>

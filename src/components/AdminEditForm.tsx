@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { addAdmin, addCustomers, addWatches } from "./Constants";
 import { getInputType, noSpaces } from "./Utils";
 import api from '../api/base'
-import { AxiosResponse } from "axios";
+import { AxiosError, AxiosResponse } from "axios";
 // import { useAuthAdmin } from "../contexts/AuthContextAdmin";
 
 import { useSelector, useDispatch } from 'react-redux'
@@ -248,9 +248,16 @@ const AdminEditForm = ({ edit, setEdit, mode, setList, editId }) => {
 
                     dispatch(setLoggedInUser({...loggedInUser, firstName, lastName}))
 
-                } catch {
+                } catch (error) {
+                    const err = error as AxiosError
+                
+                    console.log(err.response?.data)
+                    console.log(err.response?.status)
+                    console.log(err.response?.headers)
+
                     alert('Something went wrong attempting to update.')
                 }
+
             }
             if (mode === 'watches') {
 

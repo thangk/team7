@@ -127,7 +127,7 @@
 	@apply border-gray-500
 }
 
-// theme-text-colour-0		INVISIBLE BLEND IN
+// theme-text-colour-0		OPPOSITE OF THEME COLOUR
 .theme-text-white-0 {
 	@apply text-slate-50;
 }
@@ -147,7 +147,7 @@
 
 // theme-text-colour-1		DARKER
 .theme-text-white-1 {
-	@apply text-slate-400;
+	@apply text-slate-500;
 }
 
 .theme-text-blue-1 {
@@ -159,10 +159,10 @@
 }
 
 .theme-text-dark-1 {
-	@apply text-gray-400
+	@apply text-gray-500
 }
 
-// hover
+// hover text-1 (4,5,6,4)
 .hover-theme-text-white-1 {
 	@apply text-slate-400;
 }
@@ -172,7 +172,7 @@
 }
 
 .hover-theme-text-teal-1 {
-	@apply text-teal-700
+	@apply text-teal-600
 }
 
 .hover-theme-text-dark-1 {
@@ -186,7 +186,7 @@
 }
 
 .theme-text-blue-2 {
-	@apply text-blue-600
+	@apply text-blue-500
 }
 
 .theme-text-teal-2 {
@@ -195,6 +195,40 @@
 
 .theme-text-dark-2 {
 	@apply text-gray-400
+}
+
+// hover text-3 (4,5,6,4)
+.theme-text-white-3 {
+	@apply text-slate-400;
+}
+
+.theme-text-blue-3 {
+	@apply text-blue-500
+}
+
+.theme-text-teal-3 {
+	@apply text-teal-600
+}
+
+.theme-text-dark-3 {
+	@apply text-gray-400
+}
+
+// theme-ring-colour-1
+.theme-focus-ring-white-1 {
+	@apply focus:ring-slate-400
+}
+
+.theme-focus-ring-blue-1 {
+	@apply focus:ring-blue-500
+}
+
+.theme-focus-ring-teal-1 {
+	@apply focus:ring-teal-600
+}
+
+.theme-focus-ring-dark-1 {
+	@apply focus:ring-gray-400
 }
 
 

@@ -10,6 +10,8 @@ import { setTheme } from "../features/themeSlice";
 import { setErrorImages } from "../features/errorImagesSlice";
 import logo from "../images/icons/logo-icon-small.png";
 import Footer from "./Footer";
+import HeaderCart from "./HeaderCart";
+
 
 
 // @ts-ignore
@@ -21,12 +23,13 @@ const Header = ({ children }) => {
 
   const navigate = useNavigate();
 
+  const dispatch = useDispatch()
 
+  // @ts-ignore
+  const cartItemsCount = useSelector(state => state.cart.numOfItems)
 
   // @ts-ignore
   const currentTheme = useSelector(state => state.theme.current)
-
-  const dispatch = useDispatch()
 
   //@ts-ignore
   const showTooltip = (e) => {
@@ -56,9 +59,11 @@ const Header = ({ children }) => {
       }
     }
 
-    const handleSetTheme = (newTheme: string) => {
+    // @ts-ignore
+    const handleSetTheme = (newTheme: string, e) => {
       dispatch(setTheme(newTheme))
     }
+
 
     useEffect(() => {
 
@@ -71,12 +76,17 @@ const Header = ({ children }) => {
 
       dispatch(setErrorImages(errorImages))
 
-    })
+
+    }, [dispatch, isOpen, cartItemsCount])
 
 
   return (
-    <>
+
+    // The super root div
     <div className={`flex flex-col theme-bg-${currentTheme} w-full min-h-screen `}>
+
+
+
       {/* Navbar */}
       <div className={`header-wrapper theme-bg-${currentTheme}`}>
       <div className="fixed w-full h-fit drop-shadow-lg z-50">
@@ -91,7 +101,7 @@ const Header = ({ children }) => {
           <nav className="desktop-theme-picker">
             {themeIcons.map(item => {
               return (
-              <motion.a className="links" key={item.name} id={item.name} onMouseOver={showTooltip} onMouseOut={hideTooltip} onClick={() => handleSetTheme(item.name)} whileHover={{ y: -2 }}>
+              <motion.a className="links" key={item.name} id={item.name} onMouseOver={showTooltip} onMouseOut={hideTooltip} onClick={(e) => handleSetTheme(item.name, e)} whileHover={{ y: -2 }}>
               <div className={`tooltip theme-bg-${currentTheme}-darker theme-text-${currentTheme}-2`}>
                   {tooltip}
                 </div>
@@ -102,7 +112,10 @@ const Header = ({ children }) => {
           </nav>
 
             {/* website logo */}
-          <img src={logo} alt="logo" className="logo-image" onClick={() => navigate('/', {replace: true})} />
+          <motion.img src={logo} alt="logo" className="logo-image" onClick={() => navigate('/', {replace: true})} 
+          drag
+          dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0}}
+          />
 
             {/* display nav links */}
           <nav className="navbar">
@@ -126,7 +139,7 @@ const Header = ({ children }) => {
                     >
                       
                       <div className="menu-bg">
-                        <MenuToggle currentTheme={currentTheme} toggle={() => toggleOpen()} />
+                        <MenuToggle currentTheme={currentTheme} toggle={toggleOpen} />
                         {isOpen && <MenuList themeIcons={themeIcons} handleSetTheme={handleSetTheme} isOpen={isOpen} />}
                       </div>
                     </motion.div>
@@ -140,7 +153,12 @@ const Header = ({ children }) => {
                   <div className={`tooltip theme-bg-${currentTheme}-darker theme-text-${currentTheme}-2`}>
                     {tooltip}
                   </div>
-                  <Link to={item.url}>{item.icon}</Link>
+                  <div className="header__cartItemsCount_wrapper">
+                    {item.name === 'cart' && cartItemsCount > 0 ? 
+                    <HeaderCart /> : ''}
+                    
+                    <Link to={item.url}>{item.icon}</Link>
+                  </div>
                 </motion.div>
               )
             })}
@@ -156,7 +174,6 @@ const Header = ({ children }) => {
 
       <Footer />
       </div>
-    </>
 
     
   );

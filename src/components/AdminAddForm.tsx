@@ -1,22 +1,19 @@
-import { useState } from "react";
+import { MouseEvent, useState } from "react";
 import { addAdmin, addCustomers, addWatches } from "./Constants";
 import { getInputType, noSpaces } from "./Utils";
 import api from '../api/base'
-import { AxiosResponse } from "axios";
+import { AxiosError, AxiosResponse } from "axios";
 import { useAuth } from "../contexts/AuthContext";
 
 // @ts-ignore
 const AdminAddForm = ({ add, setAdd, mode, setList }) => {
 
-    // const { currentAdmin } = useAuth()
 
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [role, setRole] = useState('Staff');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
-    // const [uid, setUid] = useState('');
    
     const [name, setName] = useState('');
     const [brand, setBrand] = useState('');
@@ -27,7 +24,6 @@ const AdminAddForm = ({ add, setAdd, mode, setList }) => {
     const [movementType, setMovementType] = useState('');
     const [faceSize, setFaceSize] = useState('');
     const [imageUrl, setImageUrl] = useState('');
-    
     const [imageUpload, setImageUpload] = useState('');
     const [price, setPrice] = useState(0);
     const [stock, setStock] = useState(0);
@@ -46,7 +42,6 @@ const AdminAddForm = ({ add, setAdd, mode, setList }) => {
         case 'watches': addMode = addWatches; break;
         default: break;
     }
-
 
 
     let actionArray: any;
@@ -138,9 +133,10 @@ const AdminAddForm = ({ add, setAdd, mode, setList }) => {
         ]
     }
 
+    
 
-    // @ts-ignore
-    const handleAdd = async (e) => {
+
+    const handleAdd = async (e: MouseEvent) => {
         e.preventDefault();
 
         try {
@@ -179,16 +175,16 @@ const AdminAddForm = ({ add, setAdd, mode, setList }) => {
                     stock
                 })
             }
-
             
             setList((prev: any) => [...prev, res.data])
-        } catch (err) {
-            // @ts-ignore
-            console.log(err.response.data)
-            // @ts-ignore
-            console.log(err.response.status)
-            // @ts-ignore
-            console.log(err.response.headers)
+
+        } catch (error) {
+
+            const err = error as AxiosError
+
+            console.log(err.response?.data)
+            console.log(err.response?.status)
+            console.log(err.response?.headers)
         }
 
         if (mode === 'admins' || mode === 'customers') {
@@ -222,8 +218,7 @@ const AdminAddForm = ({ add, setAdd, mode, setList }) => {
         setAdd(false)
     }
 
-    // @ts-ignore
-    const handleCancel = (e) => {
+    const handleCancel = (e: MouseEvent) => {
         e.preventDefault();
         setAdd(false);
     }

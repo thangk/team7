@@ -1,3 +1,19 @@
 .about-us-wrapper {
-    @apply flex flex-col gap-8 w-full mt-10
+    @apply flex flex-col gap-4 w-[1024px] mx-auto py-12
   }
+
+  .about-us-text{
+    @apply indent-8 pb-4 text-justify  font-barlow
+  }
+
+  .about-us-page-title {
+    @apply text-3xl font-bebas-neue
+  }
+
+  .about-us-content-wrapper {
+    @apply w-full h-max p-12 border-2 
+  }
+
+  .about-us-content-wrapper p {
+    @apply indent-8 pb-4 text-justify 
+}
