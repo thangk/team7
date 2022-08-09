@@ -60,7 +60,7 @@ const menuItems = [
   {
     icon: <FaPhoneAlt />,
     text: "Contact",
-    url: '/contact'
+    url: '/contact-us'
   },
 ];
 
