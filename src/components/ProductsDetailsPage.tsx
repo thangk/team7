@@ -1,9 +1,11 @@
 import React from "react";
+import { useState } from "react";
 import noimage from '../images/icons/noimage.jpg'
 import { useParams } from 'react-router-dom';
-// import api from '../api/base';
-import data from "../assets/template.json";
+import api from '../api/base';
+//import data from "../assets/template.json";
 import { useSelector } from 'react-redux'
+import axios from "axios";
 
 function ProductsDetailsPage() {
 
@@ -23,24 +25,25 @@ function ProductsDetailsPage() {
     "faceSize": "N/A",
     "id": "N/A"
   }
-  // const [watch, setWatch] = useState(defaultWatch);  commenting out so netlify will compile - Kap
+  
+  const [watch, setWatch] = useState(defaultWatch)
   const { id } = useParams(); //URL id parameter from router in App component
 
-  let currentWatch = data.find(watch => watch.id === id); //Finding watch with current id in database (template json)
+  async function getWatch() {
 
-  if(currentWatch === undefined) {
-    currentWatch = defaultWatch;
+    let response = await api.get(`/watches/${id}`)
+    const {data: watchData} = response
+    setWatch(watchData)
   }
 
-  // setWatch(currentWatch);
-  //NOTE: Need to fix and have it work with useState, it just gave a blank white screen last time trying
+  getWatch();
 
 
   return (
     
     <>
       <div className='product-details-wrapper'>
-        <h1 className={`page-title product-details-title theme-text-${currentTheme}`}>{currentWatch.name}</h1>
+        <h1 className={`page-title product-details-title theme-text-${currentTheme}`}>{watch.name}</h1>
 
         <div className='inner-flex'>
 
@@ -48,14 +51,14 @@ function ProductsDetailsPage() {
 
           <div className={`product-details-text theme-text-${currentTheme}`}>
             
-            <div className='price-field'>{currentWatch.price} </div>
-            <div><b>ID:</b> {currentWatch.id}</div>
-            <div><b>Brand:</b> {currentWatch.brand} </div>
-            <div><b>Case Color:</b> {currentWatch.caseColour} </div>
-            <div><b>Band Color:</b> {currentWatch.bandColour} </div>
-            <div><b>Band Type:</b> {currentWatch.bandType} </div>
-            <div><b>Movement Type:</b> {currentWatch.movementType} </div>
-            <div><b>Face Size:</b> {currentWatch.faceSize} </div>
+            <div className='price-field'>{watch.price} </div>
+            <div><b>ID:</b> {watch.id}</div>
+            <div><b>Brand:</b> {watch.brand} </div>
+            <div><b>Case Color:</b> {watch.caseColour} </div>
+            <div><b>Band Color:</b> {watch.bandColour} </div>
+            <div><b>Band Type:</b> {watch.bandType} </div>
+            <div><b>Movement Type:</b> {watch.movementType} </div>
+            <div><b>Face Size:</b> {watch.faceSize} </div>
             
             <button className={`btn theme-bg-${currentTheme}-darker`}>Add to Cart</button>
 
