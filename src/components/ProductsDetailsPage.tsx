@@ -44,7 +44,7 @@ function ProductsDetailsPage() {
 
     getWatch();
 
-  }, [])
+  }, [id])
 
 
   // @ts-ignore
