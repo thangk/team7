@@ -92,11 +92,11 @@ function ProductsDetailsPage() {
 
         <div className='inner-flex'>
 
-          <img className='product-details-image' src={noimage} alt='noimage' />
+          <img className='product-details-image' src={watch.imageUrl} alt='noimage' />
 
           <div className={`product-details-text theme-text-${currentTheme}`}>
             
-            <div className='price-field'>{watch.price} </div>
+            <div className='price-field'>${watch.price} </div>
             <div><b>ID:</b> {watch.id}</div>
             <div><b>Brand:</b> {watch.brand} </div>
             <div><b>Case Color:</b> {watch.caseColour} </div>

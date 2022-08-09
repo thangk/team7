@@ -15,6 +15,10 @@
 	}
 }
 
+.product-details-image {
+	@apply h-[600px] object-cover
+}
+
 .product-details-title {
 	@apply text-center mb-5
 }
