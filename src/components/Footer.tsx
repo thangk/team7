@@ -10,6 +10,14 @@ const Footer = () => {
     // @ts-ignore
     const currentTheme = useSelector(state => state.theme.current)
 
+
+    // @ts-ignore
+    const handleEmailSubmit = (e) => {
+        e.preventDefault()
+
+        alert('Thank you for subscribing to our newsletter!')
+    }
+
     return (
         <div className={`flex-1 theme-bg-${currentTheme} flex flex-end`}>
         <div className={`footers-wrapper theme-bg-${currentTheme}-darker theme-text-${currentTheme}-2`}>
@@ -31,7 +39,7 @@ const Footer = () => {
                     </div>
 
                     <div className="footer-links-right">
-                        <form id='email-sub-form'>
+                        <form id='email-sub-form' onSubmit={handleEmailSubmit}>
 
                         <label htmlFor="email-sub">Get the latest Infinity news</label>
                         <div>

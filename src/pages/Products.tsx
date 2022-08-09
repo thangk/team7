@@ -8,7 +8,6 @@ import ProductsFilterPanel from "../components/ProductsFilterPanel";
 import ProductsPagination from "../components/ProductsPagination";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux'
-// @ts-ignore
 import { Helmet } from 'react-helmet-async'
 import iwlogo from '../images/icons/logo-icon-small.png'
 
@@ -60,7 +59,7 @@ function Products() {
       <motion.main 
       initial={{ opacity: 0.5 }}
       animate={{ opacity: 1 }}
-      className={`productspage-wrapper theme-text-${currentTheme}-1`}>
+      className={`productspage-wrapper theme-text-${currentTheme}-3`}>
 
         <Helmet prioritizeSeoTags>
           {/* Primary Meta Tags */}
@@ -108,7 +107,7 @@ function Products() {
                       // @ts-ignore
                       navigate(`/products/${item.id}`);
                       // @ts-ignore
-                      console.log(item.id)
+                      // console.log(item.id)
                     }}
                     key={index}
                     whileHover={{ y: -10 }}

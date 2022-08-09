@@ -7,7 +7,9 @@ import accountAreaReducer from '../features/accountAreaSlice'
 import loggedInUserReducer from '../features/loggedInUserSlice'
 import errorImagesReducer from '../features/errorImagesSlice'
 import menuToggleReducer from '../features/menuToggleSlice'
-
+import cartReducer from '../features/cartSlice'
+import guestReducer from '../features/guestSlice'
+import refReducer from '../features/refSlice'
 
 const rootReducer = combineReducers({
     theme: themeReducer,
@@ -15,6 +17,9 @@ const rootReducer = combineReducers({
     loggedInUser: loggedInUserReducer,
     errorImages: errorImagesReducer,
     menuToggle: menuToggleReducer,
+    cart: cartReducer,
+    guest: guestReducer,
+    ref: refReducer
 })
 
 

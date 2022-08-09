@@ -9,11 +9,12 @@ const PrivateRouteAdmin = () => {
     // @ts-ignore
     const loggedInUser = useSelector(state => state.loggedInUser.current)
 
-    if (loggedInUser.role !== null) 
+   
+    if (!loggedInUser) return <Navigate to='/admin' replace />
     
-    if (currentUser && (loggedInUser.role !== 'Customer')) return <Outlet />
+    if (currentUser && (loggedInUser.role === 'Customer')) return <Navigate to='/admin' replace />
 
-    if (currentUser) return <Outlet />
+    if (currentUser || loggedInUser) return <Outlet />
 
     return <Navigate to='/admin' replace />
 }    
