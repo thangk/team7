@@ -13,6 +13,7 @@ import AdminAdmins from './components/AdminAdmins';
 import AdminCustomers from './components/AdminCustomers';
 import AdminImportExport from './components/AdminImportExport';
 import AboutUs from './pages/AboutUs';
+import ContactUs from './pages/ContactUs';
 
 import { AuthContextProvider } from './contexts/AuthContext';
 import AdminSignin from './pages/AdminSignin';
@@ -36,6 +37,7 @@ import AdminSettings from './components/AdminSettings';
 
 
 
+
 const App = () => {
 
 
@@ -55,6 +57,7 @@ const App = () => {
           <Route path="/404" element={<Header>{<ErrorPage />}</Header>} />
           <Route path='/about' element={<Header>{<AboutPage />}</Header>} />
           <Route path='/about-us' element={<Header>{<AboutUs />}</Header>} />
+          <Route path='/contact-us' element={<Header>{<ContactUs />}</Header>} />
            
           <Route path='/signup' element={<Header>{<SignupPage />}</Header>} />
           <Route path="/login" element={<Header>{<LoginPage />}</Header>} />
