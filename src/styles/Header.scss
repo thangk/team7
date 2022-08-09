@@ -43,6 +43,13 @@
 	@apply hidden
 }
 
+.header__cartItemsCount_wrapper {
+	@apply relative
+}
+
+.header__cartItemsCount {
+	@apply absolute flex justify-center items-center text-[13px] w-5 h-5 rounded-full p-1 -right-2 -top-2 font-barlow font-bold
+}
 
 
 
@@ -94,6 +101,14 @@
 
 	.show-tooltip {
 		@apply inline-block
+	}
+
+	.header__cartItemsCount_wrapper {
+		@apply relative
+	}
+
+	.header__cartItemsCount {
+		@apply absolute flex justify-center items-center text-[13px] w-5 h-5 rounded-full p-1 -right-2 -top-2 font-barlow font-bold
 	}
 
 }

@@ -42,27 +42,29 @@ export default function LoginPage() {
 
     try {
 
-      await signin(email, password)
+      
 
       for (const customer of customers) {
         // @ts-ignore
         if (customer.email === email) {
+            await signin(email, password)
             dispatch(setLoggedInUser(customer))
-            console.log('this ran?')
+            navigate('/account/dashboard')
+            return
         }
       }
 
-      navigate('/account/dashboard')
-
     } catch {
-      const result = validateInput({ type: 'logincheck', value: 'failed' })
+        console.log('Failed to login.')
+    }
 
-            if (result.length > 0) {
-                // @ts-ignore
-                setValidatedResult(result)
-                setErrorToggle('on')
-                return
-            }
+    const result = validateInput({ type: 'logincheck', value: 'failed' })
+
+    if (result.length > 0) {
+        // @ts-ignore
+        setValidatedResult(result)
+        setErrorToggle('on')
+        return
     }
   }
 

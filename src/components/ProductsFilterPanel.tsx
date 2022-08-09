@@ -19,52 +19,7 @@ function ProductsFilterPanel({ products, setSearchResult }) {
 
   const [ runQuery, setRunQuery ] = useState(false)
 
-  // const getListItems = (key: string) => {
-  //   // @ts-ignore
-  //   return [...new Set(products.map((item: {key: any}) => item[key]))]
-  // }
 
-  // const products_filter_keyvalue_pair = [
-  //   {
-  //     key: 'Brand',
-  //     values: getListItems('brand')
-  //   },{
-  //     key: 'Face Size',
-  //     values: getListItems('faceSize')
-  //   },{
-  //     key: 'Case Colour',
-  //     values: getListItems('caseColour')
-  //   },{
-  //     key: 'Band Colour',
-  //     values: getListItems('bandColour')
-  //   },{
-  //     key: 'Movement Type',
-  //     values: getListItems('movementType')
-  //   },{
-  //     key: 'Price',
-  //     values: getListItems('price')
-  //   }
-  // ]
-
-
-  // const handleSearchChange = (e: any) => {
-  //   if (!e.target.value) return setSearchResult(products)
-
-  //   const resultArray = products.filter((product: any) => product.name.toLowerCase().includes(e.target.value.toLowerCase()) || 
-  //   product.brand.toLowerCase().includes(e.target.value.toLowerCase()) ||
-  //   product.faceSize.toLowerCase().includes(e.target.value.toLowerCase()) || 
-  //   product.caseColour.toLowerCase().includes(e.target.value.toLowerCase()) || 
-  //   product.bandColour.toLowerCase().includes(e.target.value.toLowerCase()) || 
-  //   product.movementType.toLowerCase().includes(e.target.value.toLowerCase())
-  //   )
-
-  //   setSearchResult(resultArray)
-  // }
-
-  
-
-
-  
 
 
   const deleteFromParamsArray = (key: string, value: string) => {
@@ -98,23 +53,24 @@ function ProductsFilterPanel({ products, setSearchResult }) {
 
     const currentParam = e.target.value
     const isChecked = e.target.checked
-    const filterType = camelCase(e.target.className)
+    const filterType = e.target.classList[0]
 
     const params = new URLSearchParams();
 
 
     if (isChecked) {
 
-      const udpatedParamsArray = addToParamsArray(filterType, currentParam)
+      const updatedParamsArray = addToParamsArray(filterType, currentParam)
 
-      for (const item of udpatedParamsArray) {
+      // console.log(updatedParamsArray)
+
+      for (const item of updatedParamsArray) {
         // @ts-ignore
         params.append(Object.keys(item)[0], item[Object.keys(item)[0]])
       }
       
       setSearchParam(params)
 
-      // fetchQueriedFilter(searchParam.toString())
     }
 
 
@@ -123,14 +79,25 @@ function ProductsFilterPanel({ products, setSearchResult }) {
 
       const updatedParamsArray = deleteFromParamsArray(filterType, currentParam)
 
+      // console.log(updatedParamsArray)
+
       if (paramsArray.length === 0) { 
         setSearchParam({})
         
       } else {
 
         for (const item of updatedParamsArray) {
+
+          // console.log(Object.keys(item)[0])
           // @ts-ignore
-          params.append(Object.keys(item)[0], item[Object.keys(item)[0]])
+          // console.log(item[Object.keys(item)[0]])
+
+          if (item) {
+
+            // @ts-ignore
+            params.append(Object.keys(item)[0], item[Object.keys(item)[0]])
+          }
+
         }
         
         setSearchParam(params)
@@ -138,7 +105,6 @@ function ProductsFilterPanel({ products, setSearchResult }) {
       
     }
 
-    
     setRunQuery(true)
   }
 
@@ -177,7 +143,7 @@ function ProductsFilterPanel({ products, setSearchResult }) {
                 {item.values.sort().map((v: any) => {
                   return (
                     <div className="filter-option" key={v}>
-                      <input type="checkbox" className={item.key} id={`${item.key.toLowerCase()}-${v}`} onChange={handleSearchChange} name={v} value={v} />
+                      <input type="checkbox" className={`${camelCase(item.key)} theme-text-${currentTheme}-3 theme-border-${currentTheme}-dark theme-focus-ring-${currentTheme}-1`} id={`${item.key.toLowerCase()}-${v}`} onChange={handleSearchChange} name={v} value={v} />
                       <label htmlFor={`${item.key.toLowerCase()}-${v}`}>{v}</label>
                     </div>
                   );

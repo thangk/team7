@@ -10,7 +10,9 @@ import { setTheme } from "../features/themeSlice";
 import { setErrorImages } from "../features/errorImagesSlice";
 import logo from "../images/icons/logo-icon-small.png";
 import Footer from "./Footer";
-// import { toggleMenu } from "../features/menuToggleSlice";
+import HeaderCart from "./HeaderCart";
+
+
 
 // @ts-ignore
 const Header = ({ children }) => {
@@ -21,21 +23,13 @@ const Header = ({ children }) => {
 
   const navigate = useNavigate();
 
+  const dispatch = useDispatch()
 
+  // @ts-ignore
+  const cartItemsCount = useSelector(state => state.cart.numOfItems)
 
   // @ts-ignore
   const currentTheme = useSelector(state => state.theme.current)
-
-  // @ts-ignore
-  // const testt = useSelector(state => state.theme.test)
-  
-  // @ts-ignore
-  // const {menuToggle} = useSelector(state => state)
-
-  // const isOpen = menuToggle
-
-
-  const dispatch = useDispatch()
 
   //@ts-ignore
   const showTooltip = (e) => {
@@ -70,24 +64,6 @@ const Header = ({ children }) => {
       dispatch(setTheme(newTheme))
     }
 
-    // @ts-ignore
-    // const test = (e) => {
-    //   e.preventDefault()
-
-    //   if (!e.target.classList.contains('menu-ul')) {
-
-    //     // console.log(e.target.className)
-    //     // console.log({isOpen})
-    //     console.log({currentTheme})
-    //     // dispatch(toggleMenu)
-    //   }
-
-    // }
-
-    // const handleToggle = () => {
-      
-    // }
-
 
     useEffect(() => {
 
@@ -101,13 +77,7 @@ const Header = ({ children }) => {
       dispatch(setErrorImages(errorImages))
 
 
-
-      // console.log({isOpen})
-      // console.log({testt})
-      // console.log({currentTheme})
-      
-
-    }, [dispatch, isOpen])
+    }, [dispatch, isOpen, cartItemsCount])
 
 
   return (
@@ -142,7 +112,10 @@ const Header = ({ children }) => {
           </nav>
 
             {/* website logo */}
-          <img src={logo} alt="logo" className="logo-image" onClick={() => navigate('/', {replace: true})} />
+          <motion.img src={logo} alt="logo" className="logo-image" onClick={() => navigate('/', {replace: true})} 
+          drag
+          dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0}}
+          />
 
             {/* display nav links */}
           <nav className="navbar">
@@ -180,7 +153,12 @@ const Header = ({ children }) => {
                   <div className={`tooltip theme-bg-${currentTheme}-darker theme-text-${currentTheme}-2`}>
                     {tooltip}
                   </div>
-                  <Link to={item.url}>{item.icon}</Link>
+                  <div className="header__cartItemsCount_wrapper">
+                    {item.name === 'cart' && cartItemsCount > 0 ? 
+                    <HeaderCart /> : ''}
+                    
+                    <Link to={item.url}>{item.icon}</Link>
+                  </div>
                 </motion.div>
               )
             })}

@@ -91,11 +91,11 @@
 
 
 input[type='checkbox'] {
-    @apply border-slate-300 rounded-md text-slate-500 focus:ring-slate-400 focus:ring-2
+    @apply rounded-md  focus:ring-2
 }
 
 input[type='text'], input[type='password'], input[type='email'], input[type='number'] {
-    @apply w-[150px] border border-slate-300 focus:border-slate-400 rounded-md text-slate-500 focus:ring-slate-400 focus:ring-2
+    @apply w-[150px] border border-slate-300 focus:border-slate-400 rounded-l-md text-slate-500 focus:ring-slate-400 focus:ring-2
 }
 
 select, option {
