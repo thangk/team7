@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import noimage from '../images/icons/noimage.jpg'
 import { useParams } from 'react-router-dom';
@@ -16,6 +16,8 @@ function ProductsDetailsPage() {
   const defaultWatch = {
     "name": "Default",
     "price": "0",
+    "imageUrl": noimage,
+    "imageUpload": null,
     "brand": "N/A",
     "desc": "N/A",
     "caseColour": "N/A",
@@ -29,15 +31,19 @@ function ProductsDetailsPage() {
   const [watch, setWatch] = useState(defaultWatch)
   const { id } = useParams(); //URL id parameter from router in App component
 
-  async function getWatch() {
+  useEffect(() => {
+    async function getWatch() {
+      try {
+        const { data } = await api.get(`/watches/${id}`)
+        setWatch(data);
+      } catch {
+        console.log('Failed to get watch')
+      }
+    }
 
-    let response = await api.get(`/watches/${id}`)
-    const {data: watchData} = response
-    setWatch(watchData)
-  }
+    getWatch();
 
-  getWatch();
-
+  }, [])
 
   return (
     
