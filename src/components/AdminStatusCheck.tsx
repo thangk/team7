@@ -8,7 +8,7 @@ const AdminStatusCheck = () => {
     useEffect(() => {
         const checkConnection = async () => {
             try {
-                const backendResponse = await api.get(`/admins`)
+                await api.get(`/admins`)
                 setStatus({name: "online", color: "green"})
             } catch (err) {
                 //@ts-ignore
