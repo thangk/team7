@@ -1,5 +1,27 @@
 .contact-us-wrapper {
-    @apply flex flex-col gap-4 w-[1024px] mx-auto py-12
+    @apply flex flex-col gap-4 w-full mx-auto py-12 px-4
+  }
+
+  .contact-us-text{
+    @apply indent-8 pb-4 text-justify  font-barlow
+  }
+
+  .contact-us-page-title {
+    @apply text-3xl font-bebas-neue
+  }
+
+  .contact-us-content-wrapper {
+    @apply w-full h-max p-4 border-2 
+  }
+
+  .contact-us-content-wrapper p {
+    @apply pb-4 text-center
+}
+
+@screen sm {
+
+  .contact-us-wrapper {
+    @apply flex flex-col gap-4 w-[1024px] mx-auto py-12 px-4
   }
 
   .contact-us-text{
@@ -16,4 +38,5 @@
 
   .contact-us-content-wrapper p {
     @apply pb-4 text-center
+}
 }

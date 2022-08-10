@@ -14,9 +14,9 @@ function ContactUs(){
     return (
         
         <main className="contact-us-wrapper">
-            <h1 className={`contact-us-page-title theme-text-${currentTheme}-1`}>Contact Us</h1>
+            <h1 className={`contact-us-page-title theme-text-${currentTheme}-3`}>Contact Us</h1>
             {/* added theme-font-2 and border colour -- Kap */}
-            <div className={`contact-us-content-wrapper theme-text-${currentTheme}-1 theme-border-${currentTheme}-light theme-font-2`}>
+            <div className={`contact-us-content-wrapper theme-text-${currentTheme}-3 theme-border-${currentTheme}-light theme-font-2`}>
                 
                 <p>
                 If you have any questions or concerns regarding Infinity watches website, or the company in general,

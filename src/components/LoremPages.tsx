@@ -57,7 +57,7 @@ const LoremPages = () => {
       ) : (
         <>
           {/* <ScrollToTop smooth /> */}
-          <main className={`lorempage-wrapper theme-text-${currentTheme}-1 `}>
+          <main className={`lorempage-wrapper theme-text-${currentTheme}-3 `}>
             <h1 className="page-title">{pageTitle}</h1>
 
             <div className={`lorempage-content-wrapper theme-border-${currentTheme}-light`}>
