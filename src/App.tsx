@@ -18,6 +18,7 @@ import { AuthContextProvider } from './contexts/AuthContext';
 import AdminSignin from './pages/AdminSignin';
 import PrivateRouteAdmin from './components/PrivateRouteAdmin';
 import PrivateRouteCustomer from './components/PrivateRouteCustomer';
+import AdminStatusCheck from './components/AdminStatusCheck';
 
 import LoginPage from './pages/CustomerLogin';
 
@@ -85,6 +86,7 @@ const App = () => {
             <Route path="/admin/products" element={<Admin>{<AdminProducts />}</Admin>} />
             <Route path="/admin/settings" element={<Admin>{<AdminSettings />}</Admin>} />
             <Route path="/admin/ie" element={<Admin>{<AdminImportExport />}</Admin>} />
+            <Route path="/admin/statuscheck" element={<Admin>{<AdminStatusCheck />}</Admin>} />
           </Route>
         
           {/* error page */}
