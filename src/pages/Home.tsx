@@ -73,16 +73,16 @@ return (
     </Helmet>
 
 
-    <h1 className={`page-title-center theme-text-${currentTheme}-1`}>"Revolutionizing the way you Shop for Watches"</h1>
+    <h1 className={`page-title-center theme-text-${currentTheme}-3`}>"Revolutionizing the way you Shop for Watches"</h1>
   
   
     <div className="background-wrapper">
       <img src={watch} alt="watch" />
     </div>
-    <h1 className={`page-title-center theme-text-${currentTheme}-1`}>Newest Additions</h1>
+    <h1 className={`page-title-center theme-text-${currentTheme}-3`}>Newest Additions</h1>
 
     {/*Newest addition listings*/}
-    <div className={`home-products-panel theme-text-${currentTheme}-1`}>
+    <div className={`home-products-panel theme-text-${currentTheme}-3`}>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
