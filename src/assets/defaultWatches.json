@@ -1,0 +1,58 @@
+[
+    {
+        "imageUrl":"/images/icons/noimage.jpg",
+        "name": "N/A",
+        "price": 0,
+        "brand": "N/A",
+        "desc": "N/A",
+        "caseColour": "N/A",
+        "bandColour": "N/A",
+        "bandType": "N/A",
+        "movementType": "N/A",
+        "faceSize": "N/A",
+        "stock": 0,
+        "id": 1000 
+    }, 
+    {
+        "imageUrl":"/images/icons/noimage.jpg",
+        "name": "N/A",
+        "price": 0,
+        "brand": "N/A",
+        "desc": "N/A",
+        "caseColour": "N/A",
+        "bandColour": "N/A",
+        "bandType": "N/A",
+        "movementType": "N/A",
+        "faceSize": "N/A",
+        "stock": 0,
+        "id": 1000
+    },
+    {
+        "imageUrl":"/images/icons/noimage.jpg",
+        "name": "N/A",
+        "price": 0,
+        "brand": "N/A",
+        "desc": "N/A",
+        "caseColour": "N/A",
+        "bandColour": "N/A",
+        "bandType": "N/A",
+        "movementType": "N/A",
+        "faceSize": "N/A",
+        "stock": 0,
+        "id": 1000
+    },
+    {
+        "imageUrl":"/images/icons/noimage.jpg",
+        "name": "N/A",
+        "price": 0,
+        "brand": "N/A",
+        "desc": "N/A",
+        "caseColour": "N/A",
+        "bandColour": "N/A",
+        "bandType": "N/A",
+        "movementType": "N/A",
+        "faceSize": "N/A",
+        "stock": 0,
+        "id": 1000
+    }
+]
