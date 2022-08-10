@@ -1,0 +1,11 @@
+.adminStatus-outer-wrapper {
+    @apply h-[100%] flex justify-center items-center 
+}
+
+.adminStatus-element {
+    @apply bg-slate-700 p-4 rounded-md text-slate-200
+}
+
+.adminStatus-text {
+    @apply text-4xl capitalize text-center
+}
