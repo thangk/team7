@@ -1,4 +1,29 @@
 .about-us-wrapper {
+    @apply flex flex-col gap-4 w-full mx-auto py-4 px-4
+  }
+
+  .about-us-text{
+    @apply indent-8 pb-4 text-justify  font-barlow
+  }
+
+  .about-us-page-title {
+    @apply text-3xl font-bebas-neue
+  }
+
+  .about-us-content-wrapper {
+    @apply w-full h-max p-4 border-2 
+  }
+
+  .about-us-content-wrapper p {
+    @apply indent-8 pb-4 text-justify 
+}
+
+
+// added mobile view - Kap
+
+
+@screen sm {
+  .about-us-wrapper {
     @apply flex flex-col gap-4 w-[1024px] mx-auto py-12
   }
 
@@ -16,4 +41,5 @@
 
   .about-us-content-wrapper p {
     @apply indent-8 pb-4 text-justify 
+}
 }

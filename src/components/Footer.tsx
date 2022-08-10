@@ -44,7 +44,7 @@ const Footer = () => {
                         <label htmlFor="email-sub">Get the latest Infinity news</label>
                         <div>
                         <input type='email' className={`theme-focus-ring-${currentTheme}`} name="email-sub" size={30} required />
-                        <button type="submit" className={`theme-border-${currentTheme} theme-bg-${currentTheme} theme-text-${currentTheme}-1`} form="email-sub-form">Subscribe</button>
+                        <button type="submit" className={`theme-border-${currentTheme} theme-bg-${currentTheme} theme-text-${currentTheme}-3`} form="email-sub-form">Subscribe</button>
                         </div>
 
                         <div className="flex items-center gap-2">

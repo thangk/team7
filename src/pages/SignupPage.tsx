@@ -6,6 +6,7 @@ import { isDuplicateAccount, validateInput } from "../components/Utils";
 import { setLoggedInUser } from "../features/loggedInUserSlice";
 import { useDispatch } from 'react-redux'
 import { useAuth } from "../contexts/AuthContext";
+import { setRefUrl } from "../features/refSlice";
 
 export default function SignupPage() {
 
@@ -22,7 +23,7 @@ export default function SignupPage() {
 
   const [customers, setCustomers] = useState();
 
-  const { signup, signin } = useAuth()
+  const { signup, signin, sendVerificationEmail } = useAuth()
 
   const dispatch = useDispatch()
 
@@ -111,6 +112,7 @@ export default function SignupPage() {
     try {
       // @ts-ignore
       await signup(emailRef.current.value, passwordRef.current.value)
+      sendVerificationEmail()
 
       // add to database
       await api.post('/customers', newUser)
@@ -131,6 +133,7 @@ export default function SignupPage() {
       // @ts-ignore
       await signin(emailRef.current.value, passwordRef.current.value)
 
+      dispatch(setRefUrl('/signup'))
       navigate('/signup-success')
 
       console.log(`no errors`)

@@ -48,6 +48,7 @@ export interface CartWatch {
 export interface Watch {
     id: number,
     name: string,
+    brand: string,
     imageUrl: string,
     imageUpload: string,
     price: number,

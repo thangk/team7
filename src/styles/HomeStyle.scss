@@ -26,11 +26,11 @@
 }
 
 .home-product-card {
-	@apply  w-full  hover:drop-shadow-lg p-2 hover:cursor-pointer
+	@apply  w-full hover:drop-shadow-lg p-2 hover:cursor-pointer
 }
 
 .home-product-card-image {
-	@apply p-2 border-2  flex w-full
+	@apply p-2 border-2  flex h-[220px] w-full 
 }
 
 .home-product-card-text {
@@ -64,7 +64,7 @@
 	  }
 	  
 	  .home-products-panel {
-		  @apply flex w-full gap-4 justify-center
+		  @apply flex w-full gap-4 justify-center px-4
 	  }
 	  
 	  .home-product-cards-wrapper {
@@ -72,12 +72,16 @@
 	  }
 	  
 	  .home-product-card {
-		  @apply  max-w-[300px] hover:drop-shadow-lg p-2 hover:cursor-pointer font-barlow
+		  @apply  max-w-[300px] h-full hover:drop-shadow-lg p-2 hover:cursor-pointer font-barlow
 	  }
 	  
 	  .home-product-card-image {
-		  @apply p-2 border-2 w-full flex 
+		  @apply p-2 border-2 w-[280px] h-[365px] flex justify-center items-center
 	  }
+
+	  .home-product-card-image img {
+		@apply  object-cover object-center 
+		}
 	  
 	  .home-product-card-text {
 		  @apply py-2 text-xl

@@ -1,5 +1,31 @@
 .find-store-wrapper {
-    @apply flex flex-col gap-4 w-[1024px] mx-auto py-12
+    @apply flex flex-col gap-4 w-full mx-auto py-12 px-4
+  }
+
+  .find-store-text{
+    @apply indent-8 pb-4 text-justify  font-barlow
+  }
+
+  .find-store-page-title {
+    @apply text-3xl font-bebas-neue
+  }
+
+  .find-store-content-wrapper {
+    @apply w-full h-max p-4 border-2 
+  }
+
+  .find-store-content-wrapper p {
+    @apply indent-8 pb-4 text-justify 
+}
+
+// added the mobile views - Kap
+
+@screen sm {
+
+
+
+  .find-store-wrapper {
+    @apply flex flex-col gap-4 w-[1024px] mx-auto py-12 px-4
   }
 
   .find-store-text{
@@ -16,4 +42,5 @@
 
   .find-store-content-wrapper p {
     @apply indent-8 pb-4 text-justify 
+}
 }

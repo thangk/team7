@@ -1,12 +1,20 @@
-// import { Link } from "react-router-dom";
+import { useRef } from "react";
+import { useAuth } from "../contexts/AuthContext";
 
 
 const PasswordResetPage = () => {
+
+  const emailRef = useRef()
+
+  const { resetPassword } = useAuth()
 
     
     // @ts-ignore
     const handleReoverPassword = (e) => {
         e.preventDefault()
+
+        resetPassword(emailRef)
+        alert('Check your email for reset confirmation.')
     }
 
     return (
@@ -19,7 +27,8 @@ const PasswordResetPage = () => {
             
             <div className="flex flex-col justify-center items-center gap-2 w-full">
                 <label htmlFor="email">Email:</label>
-                <input type="text" id="email" className="w-full" required />
+                {/* @ts-ignore */}
+                <input type="text" id="email" ref={emailRef} className="w-full" required />
             </div>
             
 

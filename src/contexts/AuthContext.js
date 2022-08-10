@@ -6,6 +6,8 @@ import {
     signOut,
     onAuthStateChanged,
     updatePassword,
+    sendPasswordResetEmail,
+    sendEmailVerification
  } from 'firebase/auth'
 
 const AuthContext = createContext()
@@ -39,9 +41,14 @@ export const AuthContextProvider = ({ children }) => {
         return updatePassword(currentUser, password)
     }
 
-    // const deleteAccount = () => {
-    //     return
-    // }
+    const sendVerificationEmail = () => {
+        return sendEmailVerification(currentUser)
+    }
+
+    const resetPassword = (email) => {
+        return sendPasswordResetEmail(auth, email)
+    }
+
 
     useEffect(() => {
 
@@ -60,7 +67,9 @@ export const AuthContextProvider = ({ children }) => {
         signup,
         signin,
         signout,
-        updateCurrentUserPassword
+        updateCurrentUserPassword,
+        resetPassword,
+        sendVerificationEmail
     }
 
     return (

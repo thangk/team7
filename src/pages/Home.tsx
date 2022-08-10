@@ -1,6 +1,6 @@
 import watch from "../images/icons/watch.jpg";
 import React, { useEffect, useState } from 'react';
-import noimage from "../images/icons/noimage.jpg";
+// import noimage from "../images/icons/noimage.jpg";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { nanoid } from "nanoid";
@@ -10,7 +10,11 @@ import iwlogo from '../images/icons/logo-icon-small.png'
 // @ts-ignore
 import { Helmet } from 'react-helmet-async'
 import api from '../api/base';
-import defaultWatches from "../assets/defaultWatches.json";
+// import defaultWatches from "../assets/defaultWatches.json";
+import { Watch } from '../interfaces'
+import { AxiosError } from "axios";
+
+const cf = require('currency-formatter')
 
 function Home() {
 
@@ -19,18 +23,25 @@ function Home() {
 
   const navigate = useNavigate();
 
-  //@ts-ignore
-  const [watches, setWatches] = useState(defaultWatches);
+  const [watches, setWatches] = useState<Watch[]>([]);
 
   useEffect(() => {
     async function getWatches() {
       try {
-        const {data} = await api.get('/watches/new-releases')
+        const { data } = await api.get('/watches/new-releases')
         setWatches(data)
-      } catch {
+      } catch (error) {
+    
+        const err = error as AxiosError
+      
+        console.log(err.response?.data)
+        console.log(err.response?.status)
+        console.log(err.response?.headers)
+
         console.log("Failed to retrieve newest edition watches")
       }
     }
+   
 
     getWatches()
 
@@ -80,18 +91,18 @@ return (
       <motion.div
         className={`home-product-card theme-bg-${currentTheme}`}
         onClick={() => {
-        {/*@ts-ignore*/}
+        
         navigate(`products/${watches[0].id}`); console.log(`products/${watches[0].id}`)
         }}
         whileHover={{ y: -10 }}
       >
       <div className={`home-product-card-image theme-border-${currentTheme}-light`}>
-        <img src={watches[0].imageUrl} alt="noimage" />
+        <img src={watches[0]?.imageUrl} alt="noimage" />
       </div>
       <div className={`home-product-card-text theme-border-${currentTheme}`}>
-        <div>Name: {watches[0].name}</div>
-        <div>Brand: {watches[0].brand}</div>
-        <div>Price: {watches[0].price}</div>
+        <div>Name: {watches[0]?.name}</div>
+        <div>Brand: {watches[0]?.brand}</div>
+        <div>Price: {cf.format(watches[0]?.price, {code: 'USD'}) ?? ''}</div>
         
       </div>
       </motion.div>
@@ -102,21 +113,45 @@ return (
         animate={{ opacity: 1 }}
         key={nanoid()}
       >         
+        <motion.div
+          className={`home-product-card theme-bg-${currentTheme}`}
+          onClick={() => {
+          
+          navigate(`products/${watches[4]?.id}`); console.log(`products/${watches[4]?.id}`)
+          }}
+          whileHover={{ y: -10 }}
+        >
+        <div className={`home-product-card-image theme-border-${currentTheme}-light`}>
+          <img src={watches[4]?.imageUrl} alt="noimage" />
+        </div>
+        <div className={`home-product-card-text theme-border-${currentTheme}`}>
+          <div>Name: {watches[4]?.name}</div>
+          <div>Brand: {watches[4]?.brand}</div>
+          <div>Price: {cf.format(watches[4]?.price, {code: 'USD'}) ?? ''}</div>
+        </div>
+        </motion.div>
+    </motion.div>
+
+    <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        key={nanoid()}
+      >         
       <motion.div
         className={`home-product-card theme-bg-${currentTheme}`}
         onClick={() => {
-        {/*@ts-ignore*/}
-        navigate(`products/${watches[1].id}`); console.log(`products/${watches[1].id}`)
+        
+        navigate(`products/${watches[2]?.id}`); console.log(`products/${watches[2]?.id}`)
         }}
         whileHover={{ y: -10 }}
       >
       <div className={`home-product-card-image theme-border-${currentTheme}-light`}>
-        <img src={watches[1].imageUrl} alt="noimage" />
+        <img src={watches[2]?.imageUrl} alt="noimage" />
       </div>
       <div className={`home-product-card-text theme-border-${currentTheme}`}>
-        <div>Name: {watches[1].name}</div>
-        <div>Brand: {watches[1].brand}</div>
-        <div>Price: {watches[1].price}</div>
+        <div>Name: {watches[2]?.name}</div>
+        <div>Brand: {watches[2]?.brand}</div>
+        <div>Price: {cf.format(watches[2]?.price, {code: 'USD'}) ?? ''}</div>
       </div>
       </motion.div>
     </motion.div>
@@ -129,42 +164,18 @@ return (
       <motion.div
         className={`home-product-card theme-bg-${currentTheme}`}
         onClick={() => {
-        {/*@ts-ignore*/}
-        navigate(`products/${watches[2].id}`); console.log(`products/${watches[2].id}`)
+        
+        navigate(`products/${watches[3]?.id}`); console.log(`products/${watches[3]?.id}`)
         }}
         whileHover={{ y: -10 }}
       >
       <div className={`home-product-card-image theme-border-${currentTheme}-light`}>
-        <img src={watches[2].imageUrl} alt="noimage" />
+        <img src={watches[3]?.imageUrl} alt="noimage" />
       </div>
       <div className={`home-product-card-text theme-border-${currentTheme}`}>
-        <div>Name: {watches[2].name}</div>
-        <div>Brand: {watches[2].brand}</div>
-        <div>Price: {watches[2].price}</div>
-      </div>
-      </motion.div>
-    </motion.div>
-
-    <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        key={nanoid()}
-      >         
-      <motion.div
-        className={`home-product-card theme-bg-${currentTheme}`}
-        onClick={() => {
-        {/*@ts-ignore*/}
-        navigate(`products/${watches[3].id}`); console.log(`products/${watches[3].id}`)
-        }}
-        whileHover={{ y: -10 }}
-      >
-      <div className={`home-product-card-image theme-border-${currentTheme}-light`}>
-        <img src={watches[3].imageUrl} alt="noimage" />
-      </div>
-      <div className={`home-product-card-text theme-border-${currentTheme}`}>
-        <div>Name: {watches[3].name}</div>
-        <div>Brand: {watches[3].brand}</div>
-        <div>Price: {watches[3].price}</div>
+        <div>Name: {watches[3]?.name}</div>
+        <div>Brand: {watches[3]?.brand}</div>
+        <div>Price: {cf.format(watches[3]?.price, {code: 'USD'}) ?? ''}</div>
       </div>
       </motion.div>
     </motion.div>

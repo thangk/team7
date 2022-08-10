@@ -15,8 +15,12 @@
 	@apply -mb-6
 }
 
+.logo-image-wrapper {
+	@apply w-20 h-20 flex justify-center items-center
+}
+
 .logo-image {
-	@apply scale-50 hover:cursor-pointer
+	@apply ml-10 hover:cursor-pointer object-contain object-center
 }
 
 .navbar {
@@ -83,10 +87,15 @@
 	.header {
 		@apply flex justify-between mt-1 w-[1024px] p-4 mx-auto
 	}
+
+	.logo-image-wrapper {
+		@apply w-44 flex justify-center items-center
+	}
 	
 	.logo-image {
-		@apply w-44 scale-100 hover:cursor-pointer
+		@apply m-0 hover:cursor-pointer object-contain object-center
 	}
+	
 
 	
 

@@ -4,7 +4,6 @@ import ErrorPage from './pages/ErrorPage';
 import Home from './pages/Home';
 import ProductsDetailsPage from './components/ProductsDetailsPage';
 import Header from './components/Header';
-import AboutPage from './components/AboutPage';
 import LoremPages from './components/LoremPages';
 import Admin from './pages/Admin';
 import AdminProducts from './components/AdminProducts';
@@ -58,7 +57,6 @@ const App = () => {
           <Route path="/products" element={<Header>{<Products />}</Header>} />
           <Route path="/products/:id" element={<Header>{<ProductsDetailsPage />}</Header>} />
           <Route path="/404" element={<Header>{<ErrorPage />}</Header>} />
-          <Route path='/about' element={<Header>{<AboutPage />}</Header>} />
           <Route path='/about-us' element={<Header>{<AboutUs />}</Header>} />
           <Route path='/contact-us' element={<Header>{<ContactUs />}</Header>} />
 
@@ -67,11 +65,11 @@ const App = () => {
           <Route path='/faq' element={<Header>{<FAQPage />}</Header>} />
            
           <Route path='/signup' element={<Header>{<SignupPage />}</Header>} />
+          <Route path='/signup-success' element={<Header>{<SignupSuccess />}</Header>} />
           <Route path="/login" element={<Header>{<LoginPage />}</Header>} />
           
           {/* private routes for customer */}
           <Route path='/account' element={<PrivateRouteCustomer />}>
-            <Route path='/account/signup-success' element={<Header>{<SignupSuccess />}</Header>} />
             <Route path='/account/dashboard' element={<Header>{<Account>{<AccountDashboard />}</Account>}</Header>} />
             <Route path='/account/orders' element={<Header>{<Account>{<AccountOrders />}</Account>}</Header>} />
             <Route path='/account/settings' element={<Header>{<Account>{<AccountAccountSettings />}</Account>}</Header>} />

@@ -10,8 +10,8 @@ function FAQPage() {
 
   return (
     <div className="FAQ-wrapper">
-        <h1 className={`FAQ-page-title theme-text-${currentTheme}-1`}>Frequently Asked Questions</h1>
-            <div className={`FAQ-content-wrapper theme-text-${currentTheme}-1 theme-border-${currentTheme}-light theme-font-2`}>
+        <h1 className={`FAQ-page-title theme-text-${currentTheme}-3`}>Frequently Asked Questions</h1>
+            <div className={`FAQ-content-wrapper theme-text-${currentTheme}-3 theme-border-${currentTheme}-light theme-font-2`}>
                 <h3> How do I cancel/unsubscribe from the newsletter? </h3>
                 <p> Simply scroll to the bottom of any email you receive from us and click the “Unsubscribe” link. </p>
 

@@ -112,10 +112,13 @@ const Header = ({ children }) => {
           </nav>
 
             {/* website logo */}
-          <motion.img src={logo} alt="logo" className="logo-image" onClick={() => navigate('/', {replace: true})} 
-          drag
-          dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0}}
-          />
+            <div className="logo-image-wrapper">
+
+              <motion.img src={logo} alt="logo" className="logo-image" onClick={() => navigate('/', {replace: true})} 
+              drag
+              dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0}}
+              />
+            </div>
 
             {/* display nav links */}
           <nav className="navbar">
@@ -124,7 +127,7 @@ const Header = ({ children }) => {
               // if it's the menu button, display it
               if (item.name === 'menu') {
                 return (
-                  <div className={`links theme-text-${currentTheme}-1 menu-wrapper-spot`} key={item.name} id="menu" onMouseOver={showTooltip} onMouseOut={hideTooltip}>
+                  <div className={`links theme-text-${currentTheme}-3 menu-wrapper-spot`} key={item.name} id="menu" onMouseOver={showTooltip} onMouseOut={hideTooltip}>
 
                   <div className={`tooltip theme-bg-${currentTheme}-darker theme-text-${currentTheme}-2`}>
                       {tooltip}
@@ -149,7 +152,7 @@ const Header = ({ children }) => {
 
               // if not, then display the nav links
               return (
-              <motion.div className={`links theme-text-${currentTheme}-1`} key={item.name} id={item.name} onMouseOver={showTooltip} onMouseOut={hideTooltip} whileHover={{ y: -2 }}>
+              <motion.div className={`links theme-text-${currentTheme}-3`} key={item.name} id={item.name} onMouseOver={showTooltip} onMouseOut={hideTooltip} whileHover={{ y: -2 }}>
                   <div className={`tooltip theme-bg-${currentTheme}-darker theme-text-${currentTheme}-2`}>
                     {tooltip}
                   </div>
