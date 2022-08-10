@@ -34,6 +34,8 @@ import AccountAccountSettings from './components/AccountAccountSettings';
 import CartOrderPlaced from './pages/CartOrderPlaced';
 import AdminSettings from './components/AdminSettings';
 import FindStore from './pages/FindStore';
+import FAQPage from './components/FAQPage';
+
 
 
 
@@ -59,7 +61,10 @@ const App = () => {
           <Route path='/about' element={<Header>{<AboutPage />}</Header>} />
           <Route path='/about-us' element={<Header>{<AboutUs />}</Header>} />
           <Route path='/contact-us' element={<Header>{<ContactUs />}</Header>} />
+
           <Route path='/find-store' element={<Header>{<FindStore />}</Header>} />
+
+          <Route path='/faq' element={<Header>{<FAQPage />}</Header>} />
            
           <Route path='/signup' element={<Header>{<SignupPage />}</Header>} />
           <Route path="/login" element={<Header>{<LoginPage />}</Header>} />
