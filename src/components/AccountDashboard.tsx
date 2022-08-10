@@ -24,6 +24,46 @@ const AccountDashboard = () => {
 
     dispatch(setPageTitle('dashboard'))
 
+
+    const inCartList = () => {
+
+        const getCorrectWatchIds = watchList.filter(item => item.isInCart === true)
+
+        const result: Watch[] = []
+
+        if (getCorrectWatchIds)
+
+        for (const item of getCorrectWatchIds) {
+            for (const watch of watches) {
+                if (item.watchId === watch.id) {
+                    result.push(watch)
+                }
+            }
+        }
+
+        return result
+    }
+
+    const ordersList = () => {
+
+        const getCorrectWatchIds = watchList.filter(item => item.isInCart === false)
+
+        const result: Watch[] = []
+
+        if (getCorrectWatchIds)
+
+        for (const item of getCorrectWatchIds) {
+            for (const watch of watches) {
+                if (item.watchId === watch.id) {
+                    result.push(watch)
+                }
+            }
+        }
+
+        return result
+    }
+
+
     useEffect(() => {
 
         const fetchDatas = async () => {
@@ -61,14 +101,14 @@ const AccountDashboard = () => {
 
             <section className="accountdashboard__numoforders">
 
-                <h1>9</h1>
+                <h1>{ordersList.length}</h1>
                 <h2>orders</h2>
 
             </section>
 
             <section className="accountdashboard__numofitemsincart">
 
-                <h1>3</h1>
+                <h1>{inCartList.length}</h1>
                 <h2>in cart</h2>
 
             </section>
