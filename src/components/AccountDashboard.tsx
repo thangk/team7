@@ -3,14 +3,17 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setPageTitle } from '../features/accountAreaSlice';
 import api from '../api/base'
 import { AxiosError } from 'axios';
-import { CartWatch, Watch } from '../interfaces'
+import { CartWatch } from '../interfaces'
 
 const AccountDashboard = () => {
 
-    const [watchList, setWatchList] = useState<CartWatch[]>([])
+    // const [watchList, setWatchList] = useState<CartWatch[]>([])
 
-    const [watches, setWatches] = useState<Watch[]>([])
+    // const [watches, setWatches] = useState<Watch[]>([])
 
+    const [inCartList, setInCartList] = useState<CartWatch[]>([])
+
+    const [ordersList, setOrdersList] = useState<CartWatch[]>([])
 
     const dispatch = useDispatch()
 
@@ -24,6 +27,22 @@ const AccountDashboard = () => {
 
     dispatch(setPageTitle('dashboard'))
 
+
+    const getInCartList = (watchList: CartWatch[]) => {
+
+        const result = watchList.filter(item => item.isInCart === true)
+
+        setInCartList(result)
+    }
+
+    const getOrdersList = (watchList: CartWatch[]) => {
+
+        const result = watchList.filter(item => item.isInCart === false)
+
+        setOrdersList(result)
+    }
+
+
     useEffect(() => {
 
         const fetchDatas = async () => {
@@ -31,10 +50,13 @@ const AccountDashboard = () => {
             
                 const watchList = await api.get(`/cart-watches/${loggedInUser.id}`)
 
-                const watches = await api.get(`/watches`)
+                // const watches = await api.get(`/watches`)
 
-                setWatchList(watchList.data)
-                setWatches(watches.data)
+                getInCartList(watchList.data)
+                getOrdersList(watchList.data)
+
+                // setWatchList(watchList.data)
+                // setWatches(watches.data)
             } catch (error) {
             
                 const err = error as AxiosError
@@ -51,8 +73,12 @@ const AccountDashboard = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
-    console.log(watchList)
-    console.log(watches)
+
+    console.log(`ordersLength: ${ordersList.length}`)
+    console.log(`inCartLength: ${inCartList.length}`)
+
+    console.log(ordersList)
+    console.log(inCartList)
 
     return (
         
@@ -61,14 +87,14 @@ const AccountDashboard = () => {
 
             <section className="accountdashboard__numoforders">
 
-                <h1>9</h1>
+                <h1>{ordersList.length}</h1>
                 <h2>orders</h2>
 
             </section>
 
             <section className="accountdashboard__numofitemsincart">
 
-                <h1>3</h1>
+                <h1>{inCartList.length}</h1>
                 <h2>in cart</h2>
 
             </section>
