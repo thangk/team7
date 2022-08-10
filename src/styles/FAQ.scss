@@ -1,0 +1,27 @@
+.FAQ-wrapper {
+    @apply flex flex-col gap-4 w-[1024px] mx-auto py-12
+  }
+
+.FAQ-text{
+    @apply indent-8 pb-4 text-justify font-barlow
+}
+
+.FAQ-page-title {
+    @apply text-3xl font-bebas-neue
+}
+
+.FAQ-content-wrapper {
+    @apply w-full h-max p-12 border-2 
+}
+
+.FAQ-content-wrapper p {
+    @apply pb-4 text-justify pl-5
+}
+
+.FAQ-content-wrapper h3 {
+    @apply text-xl font-bold
+}
+
+.FAQ-content-wrapper ul {
+    @apply pl-3
+}

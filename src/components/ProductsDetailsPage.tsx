@@ -62,6 +62,7 @@ function ProductsDetailsPage() {
     // if guest account
     if (!loggedInUser) {
         dispatch(addToCart(watchId))    // we pass in watchId here and it'll be added to guest account
+        alert("Added to cart")
         return
     }
 
@@ -72,6 +73,8 @@ function ProductsDetailsPage() {
             cartId: loggedInUser.cartId,
             watchId
         })
+
+        alert("Added to cart")
     
     } catch (error) {
     
@@ -87,7 +90,7 @@ function ProductsDetailsPage() {
   return (
     
     <>
-      <div className='product-details-wrapper'>
+      <div className={`product-details-wrapper theme-border-${currentTheme}-light`}>
         <h1 className={`page-title product-details-title theme-text-${currentTheme}`}>{watch.name}</h1>
 
         <div className='inner-flex'>
