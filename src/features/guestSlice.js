@@ -14,20 +14,7 @@ import { createSlice } from '@reduxjs/toolkit'
 */
 
 const initialState = {
-    cart: [
-        {
-            watchId: 11,
-            qty: 2
-        },
-        {
-            watchId: 15,
-            qty: 2
-        },
-        {
-            watchId: 18,
-            qty: 1
-        }
-    ]
+    cart: []
 }
 
 export const guestSlice = createSlice({
