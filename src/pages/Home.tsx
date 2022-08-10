@@ -6,9 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { nanoid } from "nanoid";
 // import { useTheme } from "../contexts/ThemeContext";
 import { useSelector } from 'react-redux'
-import iwlogo from '../images/icons/logo-icon-small.png'
 // @ts-ignore
-import { Helmet } from 'react-helmet-async'
 import api from '../api/base';
 // import defaultWatches from "../assets/defaultWatches.json";
 import { Watch } from '../interfaces'
