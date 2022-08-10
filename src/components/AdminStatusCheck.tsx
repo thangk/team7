@@ -1,17 +1,17 @@
 import api from '../api/base'
 import { useEffect, useState } from "react";
-import { dashboardStats } from "./Constants";
+// import { dashboardStats } from "./Constants";
 
 const AdminStatusCheck = () => {
 
-    const [admins, setAdmins] = useState([]);
-    const [error, setError] = useState(false);
+    // const [admins, setAdmins] = useState([]);
+    // const [error, setError] = useState(false);
     const [status, setStatus] = useState("Connecting...");
 
     useEffect(() => {
         const checkConnection = async () => {
             try {
-                const backendResponse = await api.get(`/admins`)
+                await api.get(`/admins`)
                 setStatus("Status online [✓]")
             } catch (err) {
                 //@ts-ignore
