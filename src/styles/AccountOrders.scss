@@ -5,7 +5,7 @@
 
     
 .accountorders__pagewrapper {
-    @apply flex flex-col gap-1  font-barlow max-h-[480px] min-h-fit overflow-y-auto
+    @apply flex flex-col gap-1  font-barlow max-h-[480px] min-h-fit
 }
 
 .accountorders__contentwrapper hr {
@@ -35,4 +35,8 @@
 
 .accountorders__contentwrapper_col3 {
     @apply w-24  text-center
+}
+
+.accountorders__orderslist_wrapper {
+    @apply overflow-y-auto
 }

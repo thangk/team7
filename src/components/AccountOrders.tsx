@@ -77,54 +77,6 @@ const AccountOrders = () => {
         setOrdersList(tempArray)
     }
 
-    // const staticData = [
-    //     {
-    //         name: 'Apple Watch 3',
-    //         qty: 2,
-    //         orderDate: today
-    //     },
-    //     {
-    //         name: 'Samsung Galaxy Watch 4',
-    //         qty: 2,
-    //         orderDate: today
-    //     },
-    //     {
-    //         name: 'Google Watch',
-    //         qty: 2,
-    //         orderDate: today
-    //     },
-    //     {
-    //         name: 'Rolex 5000 Ultra',
-    //         qty: 2,
-    //         orderDate: today
-    //     },
-    //     {
-    //         name: 'Garmin Smart Watch',
-    //         qty: 2,
-    //         orderDate: today
-    //     },
-    //     {
-    //         name: 'Mobvoi Ticwatch Pro 3 Ultra',
-    //         qty: 2,
-    //         orderDate: today
-    //     },
-    //     {
-    //         name: 'Skagen Hybrid HR Jorn',
-    //         qty: 2,
-    //         orderDate: today
-    //     },
-    //     {
-    //         name: 'Casio ProTrek PRW-61',
-    //         qty: 2,
-    //         orderDate: today
-    //     },
-    //     {
-    //         name: 'Fitbit Sense',
-    //         qty: 2,
-    //         orderDate: today
-    //     }
-    // ]
-
     const watchesArrayList = ordersList.map(item => {
         return (
             <div className={`accountorders__contentwrapper_item hover-theme-bg-${currentTheme}-darkest`}>
@@ -163,6 +115,8 @@ const AccountOrders = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
+    console.log(watchesArrayList)
+
     return (
         <main className={`accountorders__pagewrapper theme-text-${currentTheme}-1`}>
 
@@ -174,7 +128,9 @@ const AccountOrders = () => {
 
                 <hr className="accountorders__hr col-span-3" />
 
-                {!watchesArrayList ? <h1>No orders yet</h1> : watchesArrayList}
+                <div className='accountorders__orderslist_wrapper'>
+                    {watchesArrayList.length === 0 ? <h1>No orders yet</h1> : watchesArrayList}
+                </div>
 
 
 
