@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaInfo, FaMapMarkerAlt, FaPhoneAlt, FaRegNewspaper, FaUsers } from "react-icons/fa";
+import { FaInfo, FaMapMarkerAlt, FaPhoneAlt, FaRegNewspaper, FaQuestion } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const xValue = window.innerWidth < 640 ? 50 : 0;
@@ -38,9 +38,9 @@ const variant1 = {
 // list of items in the menu
 const menuItems = [
   {
-    icon: <FaUsers />,
-    text: "Community",
-    url: '/community'
+    icon: <FaQuestion />,
+    text: "FAQ",
+    url: '/faq'
   },
   {
     icon: <FaMapMarkerAlt />,
