@@ -45,7 +45,7 @@ const menuItems = [
   {
     icon: <FaMapMarkerAlt />,
     text: "Find a store",
-    url: '/find-a-store'
+    url: '/find-store'
   },
   {
     icon: <FaRegNewspaper />,

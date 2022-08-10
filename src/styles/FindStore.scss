@@ -1,19 +1,19 @@
-.contact-us-wrapper {
+.find-store-wrapper {
     @apply flex flex-col gap-4 w-[1024px] mx-auto py-12
   }
 
-  .contact-us-text{
+  .find-store-text{
     @apply indent-8 pb-4 text-justify  font-barlow
   }
 
-  .contact-us-page-title {
+  .find-store-page-title {
     @apply text-3xl font-bebas-neue
   }
 
-  .contact-us-content-wrapper {
+  .find-store-content-wrapper {
     @apply w-full h-max p-12 border-2 
   }
 
-  .contact-us-content-wrapper p {
-    @apply pb-4 text-center
+  .find-store-content-wrapper p {
+    @apply indent-8 pb-4 text-justify 
 }

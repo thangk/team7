@@ -42,9 +42,6 @@ const LoremPages = () => {
       case "community":
         pageTitle = "Community";
         break;
-        case "find-a-store":
-      pageTitle = "Find a store";
-      break;
       case "newsletter":
         pageTitle = "Newsletter";
         break;

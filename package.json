@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@googlemaps/react-wrapper": "^1.1.35",
     "@reduxjs/toolkit": "^1.8.3",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@types/jest": "^27.5.1",
