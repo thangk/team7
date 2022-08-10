@@ -6,14 +6,16 @@ const AdminStatusCheck = () => {
 
     const [admins, setAdmins] = useState([]);
     const [error, setError] = useState(false);
+    const [status, setStatus] = useState("Connecting...");
 
     useEffect(() => {
         const checkConnection = async () => {
             try {
                 const backendResponse = await api.get(`/admins`)
+                setStatus("Status online [✓]")
             } catch (err) {
                 //@ts-ignore
-                setError(true)
+                setStatus("Status offline [X]")
                 // @ts-ignore
                 console.log(err.response.data)
                 // @ts-ignore
@@ -26,19 +28,10 @@ const AdminStatusCheck = () => {
         checkConnection();
     }, [])
 
-    function checkError() {
-        if (error === false) {
-            return "Status Online ✓"
-        }
-        else {
-            return "Status Offline [X]"
-        }
-    }
-
     return (
         <main>
             {/*@ts-ignore*/}
-            <h1>{checkError()}</h1>
+            <h1>{status}</h1>
 
         </main>
     )};
