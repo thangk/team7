@@ -45,7 +45,7 @@ const AccountDashboard = () => {
 
     useEffect(() => {
 
-        const fetchDatas = async () => {
+        const fetchData = async () => {
             try {
             
                 const watchList = await api.get(`/cart-watches/${loggedInUser.id}`)
@@ -67,18 +67,11 @@ const AccountDashboard = () => {
             }
         }
 
-        fetchDatas()
+        fetchData()
 
         
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
-
-
-    console.log(`ordersLength: ${ordersList.length}`)
-    console.log(`inCartLength: ${inCartList.length}`)
-
-    console.log(ordersList)
-    console.log(inCartList)
 
     return (
         

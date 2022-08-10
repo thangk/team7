@@ -3,6 +3,13 @@ export interface WatchQty {
     qty: number
 }
 
+export interface OrdersList {
+    watchId: number,
+    name: string,
+    qty: number,
+    orderDate: string
+}
+
 export interface Admin { 
     id: number,
     uid: number,

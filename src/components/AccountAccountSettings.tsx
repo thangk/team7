@@ -76,7 +76,7 @@ const AccountAccountSettings = () => {
     }
 
     return (
-        <main className={`accountsettings__pagewrapper theme-text-${currentTheme}-1`}>
+        <main className={`accountsettings__pagewrapper theme-text-${currentTheme}-3`}>
 
             <section className="accountsettings__item">
 
