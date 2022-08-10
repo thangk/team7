@@ -2,7 +2,7 @@ import {  AiOutlineUser } from "react-icons/ai";
 import { BsFillCartFill, BsGrid1X2Fill } from "react-icons/bs";
 import { FaFacebookSquare, FaInstagramSquare, FaPinterest, FaTwitterSquare } from "react-icons/fa";
 import { BsWatch } from 'react-icons/bs'
-import { RiGroupFill, RiSettings4Fill, RiUserStarFill } from 'react-icons/ri'
+import { RiGroupFill, RiSettings4Fill, RiUserStarFill, RiWifiFill } from 'react-icons/ri'
 import { MdDashboard } from 'react-icons/md'
 import { VscSettings } from 'react-icons/vsc'
 import defaultUser from '../images/test_users/user.png'
@@ -151,6 +151,10 @@ export const headerSocialIcons = [
       name: 'import / export',
       url: '/admin/ie',
       icon: <RiSettings4Fill />
+    },{
+      name:'status check',
+      url: '/admin/statuscheck',
+      icon: <RiWifiFill />
     }
   ]
 
