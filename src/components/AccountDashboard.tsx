@@ -3,14 +3,17 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setPageTitle } from '../features/accountAreaSlice';
 import api from '../api/base'
 import { AxiosError } from 'axios';
-import { CartWatch, Watch } from '../interfaces'
+import { CartWatch } from '../interfaces'
 
 const AccountDashboard = () => {
 
-    const [watchList, setWatchList] = useState<CartWatch[]>([])
+    // const [watchList, setWatchList] = useState<CartWatch[]>([])
 
-    const [watches, setWatches] = useState<Watch[]>([])
+    // const [watches, setWatches] = useState<Watch[]>([])
 
+    const [inCartList, setInCartList] = useState<CartWatch[]>([])
+
+    const [ordersList, setOrdersList] = useState<CartWatch[]>([])
 
     const dispatch = useDispatch()
 
@@ -25,42 +28,18 @@ const AccountDashboard = () => {
     dispatch(setPageTitle('dashboard'))
 
 
-    const inCartList = () => {
+    const getInCartList = (watchList: CartWatch[]) => {
 
-        const getCorrectWatchIds = watchList.filter(item => item.isInCart === true)
+        const result = watchList.filter(item => item.isInCart === true)
 
-        const result: Watch[] = []
-
-        if (getCorrectWatchIds)
-
-        for (const item of getCorrectWatchIds) {
-            for (const watch of watches) {
-                if (item.watchId === watch.id) {
-                    result.push(watch)
-                }
-            }
-        }
-
-        return result
+        setInCartList(result)
     }
 
-    const ordersList = () => {
+    const getOrdersList = (watchList: CartWatch[]) => {
 
-        const getCorrectWatchIds = watchList.filter(item => item.isInCart === false)
+        const result = watchList.filter(item => item.isInCart === false)
 
-        const result: Watch[] = []
-
-        if (getCorrectWatchIds)
-
-        for (const item of getCorrectWatchIds) {
-            for (const watch of watches) {
-                if (item.watchId === watch.id) {
-                    result.push(watch)
-                }
-            }
-        }
-
-        return result
+        setOrdersList(result)
     }
 
 
@@ -71,10 +50,13 @@ const AccountDashboard = () => {
             
                 const watchList = await api.get(`/cart-watches/${loggedInUser.id}`)
 
-                const watches = await api.get(`/watches`)
+                // const watches = await api.get(`/watches`)
 
-                setWatchList(watchList.data)
-                setWatches(watches.data)
+                getInCartList(watchList.data)
+                getOrdersList(watchList.data)
+
+                // setWatchList(watchList.data)
+                // setWatches(watches.data)
             } catch (error) {
             
                 const err = error as AxiosError
@@ -91,8 +73,12 @@ const AccountDashboard = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
-    console.log(watchList)
-    console.log(watches)
+
+    console.log(`ordersLength: ${ordersList.length}`)
+    console.log(`inCartLength: ${inCartList.length}`)
+
+    console.log(ordersList)
+    console.log(inCartList)
 
     return (
         
