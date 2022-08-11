@@ -18,12 +18,14 @@ export const productsFilterKeyValues = [
       'Citizen',
       'Fossil',
       'Guess',
-      'Micheal Kors',
+      'Michael Kors',
       'Omega',
       'Rolex',
       'Solios',
       'Timex',
       'Weiss',
+      'Nixon',
+      'Lilienthal Berlin'
     ]
   },{
     key: 'Face Size',
