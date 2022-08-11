@@ -35,6 +35,7 @@ import CartOrderPlaced from './pages/CartOrderPlaced';
 import AdminSettings from './components/AdminSettings';
 import FindStore from './pages/FindStore';
 import FAQPage from './components/FAQPage';
+import AdminDoc from './components/AdminDoc';
 
 
 
@@ -87,6 +88,7 @@ const App = () => {
             <Route path="/admin/settings" element={<Admin>{<AdminSettings />}</Admin>} />
             <Route path="/admin/ie" element={<Admin>{<AdminImportExport />}</Admin>} />
             <Route path="/admin/statuscheck" element={<Admin>{<AdminStatusCheck />}</Admin>} />
+            <Route path="/admin/doc" element={<Admin>{<AdminDoc />}</Admin>} />
           </Route>
         
           {/* error page */}

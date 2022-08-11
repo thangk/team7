@@ -43,6 +43,7 @@ const Admin = ({ children }) => {
         case '/admin/products': defaultTitle = 'Products'; break;
         case '/admin/ie': defaultTitle = 'Import / Export'; break;
         case 'admin/statuscheck': defaultTitle = 'Status Check'; break;
+        case 'admin/doc': defaultTitle = 'Admin Documentation'; break;
         default: break;
     }
 

@@ -1,0 +1,26 @@
+.admindoc__pagewrapper {
+    @apply text-slate-300 font-barlow flex flex-col gap-6 p-0
+}
+
+.admindoc__docheader {
+    @apply font-bold text-lg
+}
+
+.admindoc__doccontent {
+    @apply pl-4
+}
+
+
+@screen sm {
+    .admindoc__pagewrapper {
+        @apply text-slate-300 font-barlow flex flex-col gap-6 p-4
+    }
+    
+    .admindoc__docheader {
+        @apply font-bold text-lg
+    }
+    
+    .admindoc__doccontent {
+        @apply pl-4
+    }
+}
