@@ -108,7 +108,7 @@ function ProductsDetailsPage() {
             <div><b>Movement Type:</b> {watch.movementType} </div>
             <div><b>Face Size:</b> {watch.faceSize} </div>
             {/*@ts-ignore*/}
-            <button className={`btn theme-bg-${currentTheme}-darker`} onClick={e => handleAddToCart(watch.id, e)}>Add to Cart</button>
+            <button className={`btn theme-bg-${currentTheme}-darker theme-text-btn-${currentTheme}`} onClick={e => handleAddToCart(watch.id, e)}>Add to Cart</button>
 
           </div>
 

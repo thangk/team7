@@ -339,3 +339,11 @@
 .theme-text-darkest {
 	@apply text-slate-600;
 }
+
+.theme-text-btn-dark {
+	@apply text-slate-50
+}
+
+.theme-text-btn-white, .theme-text-btn-blue, .theme-text-btn-teal {
+	@apply text-slate-700
+}
