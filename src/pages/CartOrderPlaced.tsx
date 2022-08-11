@@ -56,7 +56,7 @@ const CartOrderPlaced = () => {
                         {!loggedInUser ? 
                         
                         <button className={`hover-theme-bg-${currentTheme}-darkest`} onClick={() => navigate('/signup')}>Register an account</button> : 
-                        <button className={`hover-theme-bg-${currentTheme}-darkest`} onClick={() => navigate('/account')}>Go to account</button>
+                        <button className={`hover-theme-bg-${currentTheme}-darkest`} onClick={() => navigate('/account/dashboard')}>Go to account</button>
                     }
                         
 

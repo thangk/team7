@@ -18,7 +18,7 @@
 
 
 .accountorders__contentwrapper_item {
-    @apply flex p-2 rounded-md hover:cursor-pointer bg-slate-300 hover:text-slate-200
+    @apply flex p-2 rounded-md hover:cursor-pointer bg-slate-300 hover:text-slate-200 mb-1
 }
 
 .accountorders__hr {
@@ -38,5 +38,9 @@
 }
 
 .accountorders__orderslist_wrapper {
-    @apply overflow-y-auto
+    @apply  overflow-y-auto
+}
+
+.accountorders__noorderstext {
+    @apply w-full mt-4 text-center
 }

@@ -55,17 +55,8 @@ const Cart = () => {
     const navigate = useNavigate()
 
 
-    // Test Static User
-    // const currentVisitor = {
-    //     id: 1,
-    //     firstName: 'John',
-    //     lastName: 'Doe',
-    //     role: 'Customer',
-    //     cartId: 5
-    // }
-
     // @ts-ignore
-    const handlePlaceOrder = (e) => {
+    const handlePlaceOrder = async (e) => {
         e.preventDefault()
 
         // delete everything in cart when clicking place order as a guest
@@ -89,7 +80,20 @@ const Cart = () => {
                 return
         }
 
-        fetchCartItems()
+        try {
+        
+            await api.patch(`/carts/purchase/${loggedInUser.cartId}`)
+        
+        } catch (error) {
+        
+            const err = error as AxiosError
+        
+            console.log(err.response?.data)
+            console.log(err.response?.status)
+            console.log(err.response?.headers)
+        }
+
+        // fetchCartItems()
         dispatch(setRefUrl('/cart'))
         navigate('/cart/order-placed')
 
@@ -315,6 +319,8 @@ const Cart = () => {
 
                 if (!tempArray.length) {
 
+                    if (item.isInCart)
+
                     tempArray.push({
                         watchId: item.watchId,
                         qty: 1
@@ -334,12 +340,17 @@ const Cart = () => {
                     }
 
                     if (!matchFound) {
+
+                        if (item.isInCart)
+
                         tempArray.push({
                             watchId: item.watchId,
                             qty: 1
                         })
                     }
                 }
+
+                if (item.isInCart)
 
                 totalNumOfItems++
             }

@@ -115,7 +115,7 @@ const AccountOrders = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    console.log(watchesArrayList)
+    // console.log(watchesArrayList)
 
     return (
         <main className={`accountorders__pagewrapper theme-text-${currentTheme}-1`}>
@@ -129,7 +129,7 @@ const AccountOrders = () => {
                 <hr className="accountorders__hr col-span-3" />
 
                 <div className='accountorders__orderslist_wrapper'>
-                    {watchesArrayList.length === 0 ? <h1>No orders yet</h1> : watchesArrayList}
+                    {watchesArrayList.length === 0 ? <h1 className='accountorders__noorderstext'>No orders yet</h1> : watchesArrayList}
                 </div>
 
 
