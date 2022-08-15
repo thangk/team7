@@ -50,7 +50,7 @@ const AdminImportExport = () => {
             const res = await api.get(`/${apiName}`)
  
             const jsonString = `data:text/json;chatset=utf-8,${encodeURIComponent(
-                JSON.stringify(res.data)
+                JSON.stringify(res.data, null, 4)
               )}`;
               const link = document.createElement("a");
               link.href = jsonString;
